@@ -1,0 +1,3 @@
+AuthType Basic
+AuthName "My private stuff"
+require user rporanne

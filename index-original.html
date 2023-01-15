@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Willkommen auf meiner privaten Homepage</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8">
+function get_user_name() {
+    // This script finds the user name from the url and then replaces "IhrBenutzername" with the user name.
+    if (document.getElementsByTagName("pre")[0] && (document.getElementsByTagName("pre")[0]["className"].indexOf("username") == 0) )  {
+        path = window.location.pathname;
+        if (path.indexOf("/student/") == 0) {
+            user_name = path.substring(9);
+        } else {
+            user_name = path.substring(2);
+        }
+        user_name = user_name.substring(0,user_name.indexOf("/"));
+        user_name = user_name + "/";
+        
+        pre_user = document.getElementsByTagName("pre")[0].firstChild.nodeValue;
+        pre_user = pre_user.replace(/IhrBenutzername\//g, user_name);
+        document.getElementsByTagName("pre")[0].firstChild.nodeValue = pre_user;
+    }
+}
+</script>
+</head>
+<body onload="get_user_name()">
+<div id="header">
+    <h1>n.ethz.ch</h1>
+    <h2>&nbsp;</h2>
+</div>
+<div id="menu">
+    <ul>
+        <li><a href="./" onFocus="if(this.blur)this.blur()">Home</a></li>
+        <li><a href="download/" onFocus="if(this.blur)this.blur()">Download</a></li>
+        <li><a href="private/" onFocus="if(this.blur)this.blur()">Private</a></li>
+    </ul>
+</div>
+<div id="content">
+    <div id="columnA"> 
+        <h2> Willkommen auf meiner privaten Homepage.</h2>
+<ul>
+    <li><a href="private">Gesch&uuml;tzter Bereich</a> (Benutzername und Passwort erforderlich)</li>
+    <li><a href="download">Download Bereich</a></li>
+    </ul>
+    <p> Eine Anleitungen zur Erstellung von HTML Dokumenten, zur Web-Programmierung
+    und weiteres mehr, finden Sie unter
+    <a href="http://www.id.ethz.ch/services/list/stud_homepage">Homepage f&uuml;r Studierende</a>.
+    <br/>Bitte beachten Sie bei der Erstellung von Web-Inhalten die
+    <a href="http://www.id.ethz.ch/documentation/rechtliches">rechtlichen Rahmenbedingungen.</a></p>
+    <p>Viel Spass beim Gestalten Ihrer pers&ouml;nlichen Homepage!</p>
+    <p>Bei unüberwindlichen Problemen hilft der <a href="https://helpdesk-anfrage.ethz.ch/">Support</a> gerne weiter.</p>
+    <hr/>
+    <p>Folgende Dateien und Verzeichnisse wurden f&uuml;r Sie erzeugt:</p>
+    <pre class="username">IhrBenutzername/homepage - Verzeichnis in dem sich Ihre Webseiten befinden.
+IhrBenutzername/homepage/index.html - diese Datei
+IhrBenutzername/homepage/private - Passwortgesch&uuml;tzter Bereich
+IhrBenutzername/homepage/private/.htaccess.n - Datei mit der Zugangsregelung
+IhrBenutzername/homepage/download - Download Zone
+    </pre>
+    </div>
+
+    <div style="clear: both;">&nbsp;</div>
+</div>
+<div id="footer">
+    <p>Designed by <a href="http://www.freecsstemplates.org" class="link1">Free CSS Templates</a></p>
+</div>
+</body>
+</html>
