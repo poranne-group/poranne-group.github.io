@@ -38,6 +38,46 @@
 				<![endif]-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/counter.js"> </script>
+
+    <style>
+        /* Fix for gallery layout */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+        
+        .gallery-item {
+            flex: 0 0 calc(25% - 15px);
+            margin-bottom: 20px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #000000;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .gallery-item {
+                flex: 0 0 calc(33.333% - 14px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 0 0 calc(50% - 10px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-item {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -115,46 +155,48 @@
                <section class="about section">
                     <div class="section-inner">
 					<h2 class="heading">Poranne Group Cover Gallery</h2>
-                    <div class="row">
-						<div class="column col-lg-3">
-							<img src="assets/images/covers/CEJ-triplet.jpg" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;" class="img-responsive project-image"/>
+                    
+                    <div class="gallery-container">
+                        <div class="gallery-item">
+							<img src="assets/images/covers/CEJ-triplet.jpg" class="img-responsive project-image"/>
                         </div>
-						<div class="column col-lg-3">
-							<img src="assets/images/covers/PCCP-NICS2BC.jpg" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
+						<div class="gallery-item">
+							<img src="assets/images/covers/PCCP-NICS2BC.jpg" class="img-responsive project-image"/>
                         </div>
-						<div class="column col-lg-3">
-							<img src="assets/images/covers/JACS-helicenes.jpg" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
+						<div class="gallery-item">
+							<img src="assets/images/covers/JACS-helicenes.jpg" class="img-responsive project-image"/>
 						</div>
-                        <div class="column col-lg-3">
-							<img src="assets/images/covers/JCIM-COMPAS.jpg" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
+                        <div class="gallery-item">
+							<img src="assets/images/covers/JCIM-COMPAS.jpg" class="img-responsive project-image"/>
                         </div>
-                        <div class="column col-lg-3">
-                            <img src="assets/images/covers/JOC_Cover_DL.jpg" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
+                        <div class="gallery-item">
+                            <img src="assets/images/covers/JOC_Cover_DL.jpg" class="img-responsive project-image"/>
                         </div>
-                         <div class="column col-lg-3">
-                            <img src="assets/images/covers/TBCOT-Cover.jpg" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
+                         <div class="gallery-item">
+                            <img src="assets/images/covers/TBCOT-Cover.jpg" class="img-responsive project-image"/>
                         </div>
-                        <div class="column col-lg-3">
-                            <img src="assets/images/covers/JPOC-s1-PBHs.png" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
+                        <div class="gallery-item">
+                            <img src="assets/images/covers/JPOC-s1-PBHs.png" class="img-responsive project-image"/>
                         </div>
-                         <div class="column col-lg-3">
-                            <img src="assets/images/covers/JCIM-COMPAS4.jpg" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
+                         <div class="gallery-item">
+                            <img src="assets/images/covers/JCIM-COMPAS4.jpg" class="img-responsive project-image"/>
                         </div>
-                        <div class="column col-lg-3">
-                            <img src="assets/images/covers/ChemSci-cover-indenofluorenes.png" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
+                        <div class="gallery-item">
+                            <img src="assets/images/covers/ChemSci-cover-indenofluorenes.png" class="img-responsive project-image"/>
                         </div>
-                        <div class="column col-lg-3">
-                            <img src="assets/images/covers/Me-migration-Cover.jpg" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
+                        <div class="gallery-item">
+                            <img src="assets/images/covers/Me-migration-Cover.jpg" class="img-responsive project-image"/>
                         </div>
-                        <div class="column col-lg-3">
-                            <img src="assets/images/covers/GaUDI.jpg" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
+                        <div class="gallery-item">
+                            <img src="assets/images/covers/GaUDI.jpg" class="img-responsive project-image"/>
                         </div>
-                        <div class="column col-lg-3">
-                            <img src="assets/images/covers/Repercussions-Cover.jpg" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
+                        <div class="gallery-item">
+                            <img src="assets/images/covers/Repercussions-Cover.jpg" class="img-responsive project-image"/>
                         </div>
-                        <div class="column col-lg-3">
-                            <img src="assets/images/covers/PCCP-Accelerated.png" style="border:1px solid #000000; margin-top: 3.5em; margin-right: 2.5em;"  class="img-responsive project-image"/>
-                        </div>    
+                        <div class="gallery-item">
+                            <img src="assets/images/covers/PCCP-Accelerated.png" class="img-responsive project-image"/>
+                        </div>
+                    </div>
                         <!--//content-->
                     </div>
                     <!--//section-inner-->
