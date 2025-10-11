@@ -40,6 +40,15 @@
 	<script type="text/javascript" src="js/counter.js"> </script>
     
     <style>
+	
+		h3.title {
+			font-size: 1.1em;  /* Relative to body font size */
+		}
+
+		.publication {
+			font-size: 0.9em;  /* Slightly smaller than body */
+		}
+	
         .publication-item {
             background: #fff;
             border: 4px solid #64b92c;
@@ -48,7 +57,8 @@
             margin-bottom: 25px;
             transition: box-shadow 0.3s ease, border-color 0.3s ease;
             position: relative;
-            min-height: 200px;
+            min-height: 100px;
+			max-width: 1100px;  /* Add this line - adjust value as needed */
         }
         
         .publication-item:hover {
@@ -80,7 +90,7 @@
         }
         
         .publication-item .col-sm-3 {
-            padding-left: 60px;
+            padding-left: 10px;
         }
         
         .publication-item img {
@@ -117,6 +127,46 @@
             text-decoration: underline;
         }
         
+		.publication-item {
+			padding: 20px 10px 20px 20px;  /* Less padding on right */
+		}
+
+		.publication-item .desc {
+			padding-right: 5px;  /* Minimal right padding */
+		}
+
+		.publication-item .item.row {
+			margin: 0;
+			display: flex;  /* Ensure flexbox is active */
+			align-items: stretch;  /* Make columns equal height */
+		}
+
+		.publication-item .col-sm-3 {
+			padding-left: 10px;
+			display: flex;
+			align-items: center;  /* This centers vertically */
+			justify-content: center;  /* This centers horizontally */
+		}
+
+		.publication-item .col-sm-3 a {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			align-items: center;  /* Center the image inside the link */
+			justify-content: center;
+		}
+
+		.publication-item img {
+			border-radius: 6px;
+			box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+			width: 100%;
+			max-width: 100%;
+			height: auto;  /* Keep this as auto */
+			object-fit: contain;
+			max-height: 200px;
+		}
+		
+		
         @media (max-width: 768px) {
             .publication-item .item.row {
                 display: flex;
@@ -125,19 +175,19 @@
             
             .publication-item .col-sm-3 {
                 width: 100%;
-                padding-left: 20px;
+                padding-left: 10px;
                 margin-bottom: 15px;
                 text-align: center;
             }
             
             .publication-item .desc {
                 width: 100%;
-                padding-left: 15px;
-                padding-right: 15px;
+                padding-left: 10px;
+                padding-right: 10px;
             }
             
             .publication-item img {
-                max-width: 300px;
+                max-width: 150px;
                 width: 100%;
                 height: auto;
             }
@@ -817,7 +867,7 @@
 							<div class="publication-item">
 								<div class="publication-number">7</div>
 								<div class="item row">
-									<a class="col-sm-3 col-sm-20" href="papers/CompMajor.pdf" target="_blank"> <img class="img-responsive project-image" src="assets/images/magnetic-criteria.JPG" /> </a>
+									<a class="col-sm-3 col-sm-20" target="_blank"> <img src="assets/images/magnetic-criteria.JPG" /> </a>
 									<div class="desc col-md-8 col-sm-8 col-xs-12">
 										<h3 class="title"><a href="https://pubs.rsc.org/en/Content/ArticleLanding/2015/CS/C5CS00114E#!divAbstract">Magnetic Criteria of Aromaticity</a></h3><br>
 										Renana Gershoni-Poranne, Amnon Stanger</span><br>
@@ -829,7 +879,7 @@
 							<div class="publication-item">
 								<div class="publication-number">6</div>
 								<div class="item row">
-									<a class="col-sm-3 col-sm-20" href="papers/CompMajor.pdf" target="_blank"> <img class="img-responsive project-image" src="assets/images/tetrazacenes.JPG" /> </a>
+									<a class="col-sm-3 col-sm-20" target="_blank"> <img class="img-responsive project-image" src="assets/images/tetrazacenes.JPG" /> </a>
 									<div class="desc col-md-8 col-sm-8 col-xs-12">
 										<h3 class="title"><a href="https://pubs.acs.org/doi/abs/10.1021/jo502297w">Tetraazaacenes Containing Four-Membered Rings in Different Oxidation States. Are They Aromatic? A Computational Study</a></h3><br>
 										Manuel Schaffroth, Renana Gershoni-Poranne, Amnon Stanger, and Uwe H. F. Bunz</span><br>
@@ -841,7 +891,7 @@
 							<div class="publication-item">
 								<div class="publication-number">5</div>
 								<div class="item row">
-									<a class="col-sm-3 col-sm-20" href="papers/CompMajor.pdf" target="_blank"> <img class="img-responsive project-image" src="assets/images/NICS-XY.JPG" /> </a>
+									<a class="col-sm-3 col-sm-20" target="_blank"> <img class="img-responsive project-image" src="assets/images/NICS-XY.JPG" /> </a>
 									<div class="desc col-md-8 col-sm-8 col-xs-12">
 										<h3 class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/chem.201304307/full">The NICS-XY-Scan: Identification of Local and Global Ring Currents in Multi-Ring Systems</a></h3><br>
 										Renana Gershoni-Poranne and Amnon Stanger</span><br>
@@ -853,7 +903,7 @@
 							<div class="publication-item">
 								<div class="publication-number">4</div>
 								<div class="item row">
-									<a class="col-sm-3 col-sm-20" href="papers/CompMajor.pdf" target="_blank"> <img class="img-responsive project-image" src="assets/images/concurrence.jpg" /> </a>
+									<a class="col-sm-3 col-sm-20" target="_blank"> <img class="img-responsive project-image" src="assets/images/concurrence.jpg" /> </a>
 									<div class="desc col-md-8 col-sm-8 col-xs-12">
 										<h3 class="title"><a href="https://pubs.acs.org/doi/abs/10.1021/jo4011014">Concurrence between Current Density, Nucleus-Independent Chemical Shifts, and Aromatic Stabilization Energy: The Case of Isomeric [4]- and [5]Phenylenes</a></h3><br>
 										Renana Gershoni-Poranne, Christopher M. Gibson, Patrick W. Fowler, and Amnon Stanger</span><br>
@@ -865,7 +915,7 @@
 							<div class="publication-item">
 								<div class="publication-number">3</div>
 								<div class="item row">
-									<a class="col-sm-3 col-sm-20" href="papers/CompMajor.pdf" target="_blank"> <img class="img-responsive project-image" src="assets/images/MO-based.gif" /> </a>
+									<a class="col-sm-3 col-sm-20" target="_blank"> <img class="img-responsive project-image" src="assets/images/MO-based.gif" /> </a>
 									<div class="desc col-md-8 col-sm-8 col-xs-12">
 										<h3 class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/cphc.201200147/full">An MO-Based Identification of Charge-Shift Bonds</a></h3><br>
 										Renana Gershoni-Poranne, Amnon Stanger</span><br>
@@ -877,7 +927,7 @@
 							<div class="publication-item">
 								<div class="publication-number">2</div>
 								<div class="item row">
-									<a class="col-sm-3 col-sm-20" href="papers/CompMajor.pdf" target="_blank"> <img class="img-responsive project-image" src="assets/images/double-stranded1.JPG" /> </a>
+									<a class="col-sm-3 col-sm-20" target="_blank"> <img class="img-responsive project-image" src="assets/images/double-stranded1.JPG" /> </a>
 									<div class="desc col-md-8 col-sm-8 col-xs-12">
 										<h3 class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/chem.201100443/full">Evidence for Fully Conjugated Double-Stranded Cycles</a></h3><br>
 										Malte Standera, Rolf Häfliger, Renana Gershoni-Poranne, Amnon Stanger, Gunnar Jeschke, Jacco D. van Beek, Louis Bertschi, and A. Dieter Schlüter</span><br>
@@ -889,7 +939,7 @@
 							<div class="publication-item">
 								<div class="publication-number">1</div>
 								<div class="item row">
-									<a class="col-sm-3 col-sm-20" href="papers/CompMajor.pdf" target="_blank"> <img class="img-responsive project-image" src="assets/images/Corannulene.JPG" /> </a>
+									<a class="col-sm-3 col-sm-20" target="_blank"> <img class="img-responsive project-image" src="assets/images/Corannulene.JPG" /> </a>
 									<div class="desc col-md-8 col-sm-8 col-xs-12">
 										<h3 class="title"><a href="https://pubs.acs.org/doi/abs/10.1021/ol902352k">Corannulene Ethers via Ullmann Condensation</a></h3><br>
 										Renana Gershoni-Poranne, Doron Pappo, Ephrath Solel, and Ehud Keinan</span><br>
