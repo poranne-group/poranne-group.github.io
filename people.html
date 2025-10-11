@@ -47,19 +47,20 @@
             margin-top: 30px;
         }
         
-        .member-card {
-            flex: 0 0 calc(33.333% - 20px);
-            background: #fff;
-            border: 1px solid #e8e8e8;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: box-shadow 0.3s ease;
-        }
-        
-        .member-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+		.member-card {
+			flex: 0 0 calc(33.333% - 20px);
+			background: #fff;
+			border: 4px solid #64b92c;  /* Changed from 1px #e8e8e8 */
+			border-radius: 8px;
+			padding: 20px;
+			text-align: center;
+			transition: box-shadow 0.3s ease, border-color 0.3s ease;  /* Updated transition */
+		}
+
+		.member-card:hover {
+			box-shadow: 0 4px 12px rgba(100, 185, 44, 0.3);  /* Changed hover effect */
+			border-color: #5aa526;  /* Added border color change on hover */
+		}
         
         .member-image-wrapper {
             width: 200px;

@@ -39,75 +39,109 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/counter.js"> </script>
     
-    <style>
-        .alumni-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
+html<style>
+    .alumni-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-top: 30px;
+    }
+    
+    .alumni-card {
+        flex: 0 0 calc(20% - 20px);  /* 5 per row */
+        background: #fff;
+        border: 4px solid #64b92c;
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .alumni-card:hover {
+        box-shadow: 0 4px 12px rgba(100, 185, 44, 0.3);
+        border-color: #5aa526;
+    }
+    
+    .alumni-image-wrapper {
+        width: 120px;  /* Smaller for 5 columns */
+        height: 120px;
+        margin: 0 auto 12px;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 2px solid #e8e8e8;
+    }
+    
+    .alumni-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .alumni-card h3 {
+        margin: 12px 0 8px;
+        font-size: 1em;
+        color: #2c3e50;
+    }
+    
+    .alumni-card .role {
+        display: block;
+        color: #7f8c8d;
+        font-size: 0.85em;
+        line-height: 1.4;
+    }
+    
+    .alumni-card .now {
+        display: block;
+        margin-top: 8px;
+        color: #888;
+        font-size: 0.8em;
+        font-style: italic;
+    }
+    
+    @media (max-width: 1200px) {
         .alumni-card {
-            flex: 0 0 calc(33.333% - 20px);
-            background: #fff;
-            border: 1px solid #e8e8e8;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: box-shadow 0.3s ease;
+            flex: 0 0 calc(25% - 19px);  /* 4 per row on large tablets */
         }
         
-        .alumni-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        .alumni-image-wrapper {
+            width: 140px;
+            height: 140px;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .alumni-card {
+            flex: 0 0 calc(33.333% - 17px);  /* 3 per row on tablets */
+        }
+        
+        .alumni-image-wrapper {
+            width: 160px;
+            height: 160px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .alumni-card {
+            flex: 0 0 calc(50% - 12.5px);  /* 2 per row on small screens */
+        }
+        
+        .alumni-image-wrapper {
+            width: 180px;
+            height: 180px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .alumni-card {
+            flex: 0 0 100%;  /* 1 per row on mobile */
         }
         
         .alumni-image-wrapper {
             width: 200px;
             height: 200px;
-            margin: 0 auto 15px;
-            overflow: hidden;
-            border-radius: 8px;
         }
-        
-        .alumni-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .alumni-card h3 {
-            margin: 15px 0 10px;
-            font-size: 1.3em;
-            color: #333;
-        }
-        
-        .alumni-card .role {
-            display: block;
-            color: #666;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-        
-        .alumni-card .now {
-            display: block;
-            margin-top: 10px;
-            color: #888;
-            font-size: 0.9em;
-            font-style: italic;
-        }
-        
-        @media (max-width: 992px) {
-            .alumni-card {
-                flex: 0 0 calc(50% - 15px);
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .alumni-card {
-                flex: 0 0 100%;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
