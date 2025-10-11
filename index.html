@@ -38,6 +38,40 @@
 						<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 				<![endif]-->
 
+<style>
+    .latest .publication-item .item.row {
+        display: flex;
+        align-items: stretch;
+        margin: 0;
+    }
+    
+    .latest .publication-item .col-sm-3 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 10px;
+    }
+    
+    .latest .publication-item .col-sm-3 a {
+        display: flex !important;
+        width: 100%;
+        height: 100%;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .latest .publication-item img {
+        max-height: 180px !important;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+
 </head>
 
 <body>
@@ -145,9 +179,7 @@
 				</section>
 				<!--//section-->
 
-    
-    
-				
+		
 
 <!--//content-->
                   </div>
@@ -155,7 +187,7 @@
                 </section>
                 <!--//section-->
 
-
+			</div>
             </div>
             <!--//primary-->
             <div class="secondary col-md-4 col-sm-12 col-xs-12">
@@ -194,9 +226,7 @@
     <!-- custom js -->
     <script type="text/javascript" src="assets/js/main.js"></script>
 
-Great! Now let's add frames. Replace the JavaScript section with this updated version:
 
-```javascript
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
     fetch('publications.html')
