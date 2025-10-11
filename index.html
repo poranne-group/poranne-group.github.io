@@ -194,6 +194,9 @@
     <!-- custom js -->
     <script type="text/javascript" src="assets/js/main.js"></script>
 
+Great! Now let's add frames. Replace the JavaScript section with this updated version:
+
+```javascript
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
     fetch('publications.html')
@@ -220,11 +223,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     pubNumber.remove();
                 }
                 
-                // Remove the publication-item wrapper styles
-                pub.style.border = 'none';
-                pub.style.padding = '0';
-                pub.style.marginBottom = '30px';
-                pub.style.background = 'transparent';
+                // Keep the frame styling but adjust for home page
+                pub.style.border = '3px solid #64b92c';
+                pub.style.borderRadius = '8px';
+                pub.style.padding = '20px';
+                pub.style.marginBottom = '25px';
+                pub.style.background = '#fff';
                 
                 contentDiv.appendChild(pub);
             }
