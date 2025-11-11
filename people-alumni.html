@@ -6,17 +6,8 @@
 <!--<![endif]-->
 
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109068390-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-109068390-1');
-	</script>
     
-	<title>Poranne Research Group - The Group</title>
+	<title>Poranne Research Group - Alumni</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta https-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,109 +30,206 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/counter.js"> </script>
     
-html<style>
-    .alumni-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 25px;
-        margin-top: 30px;
-    }
-    
-    .alumni-card {
-        flex: 0 0 calc(20% - 20px);  /* 5 per row */
-        background: #fff;
-        border: 4px solid #64b92c;
-        border-radius: 8px;
-        padding: 15px;
-        text-align: center;
-        transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-    
-    .alumni-card:hover {
-        box-shadow: 0 4px 12px rgba(100, 185, 44, 0.3);
-        border-color: #5aa526;
-    }
-    
-    .alumni-image-wrapper {
-        width: 120px;  /* Smaller for 5 columns */
-        height: 120px;
-        margin: 0 auto 12px;
-        overflow: hidden;
-        border-radius: 8px;
-        border: 2px solid #e8e8e8;
-    }
-    
-    .alumni-image-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .alumni-card h3 {
-        margin: 12px 0 8px;
-        font-size: 1em;
-        color: #2c3e50;
-    }
-    
-    .alumni-card .role {
-        display: block;
-        color: #7f8c8d;
-        font-size: 0.85em;
-        line-height: 1.4;
-    }
-    
-    .alumni-card .now {
-        display: block;
-        margin-top: 8px;
-        color: #888;
-        font-size: 0.8em;
-        font-style: italic;
-    }
-    
-    @media (max-width: 1200px) {
+    <style>
+        /* Section containers with header banners */
+        .degree-section {
+            background: #fff;
+            border: 3px solid #64b92c;
+            border-radius: 12px;
+            margin: 35px 0;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .degree-section:hover {
+            box-shadow: 0 4px 16px rgba(100, 185, 44, 0.15);
+        }
+        
+        /* Header banner for each section */
+        .degree-header {
+            background: #64b92c;
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 1.6em;
+            font-weight: bold;
+            margin: 0;
+            border-bottom: 2px solid #5aa526;
+        }
+        
+        /* Content area inside the box */
+        .degree-content {
+            padding: 30px;
+            background: #fafafa;
+        }
+        
+        .alumni-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 0;
+        }
+        
         .alumni-card {
-            flex: 0 0 calc(25% - 19px);  /* 4 per row on large tablets */
+            flex: 0 0 calc(20% - 20px);  /* 5 per row */
+            background: #fff;
+            border: 3px solid #64b92c;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .alumni-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(100, 185, 44, 0.25);
+            border-color: #5aa526;
         }
         
         .alumni-image-wrapper {
-            width: 140px;
-            height: 140px;
-        }
-    }
-    
-    @media (max-width: 992px) {
-        .alumni-card {
-            flex: 0 0 calc(33.333% - 17px);  /* 3 per row on tablets */
+            width: 120px;  /* Smaller for 5 columns */
+            height: 120px;
+            margin: 0 auto 12px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 2px solid #e8e8e8;
         }
         
-        .alumni-image-wrapper {
-            width: 160px;
-            height: 160px;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .alumni-card {
-            flex: 0 0 calc(50% - 12.5px);  /* 2 per row on small screens */
+        .alumni-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .alumni-image-wrapper {
-            width: 180px;
-            height: 180px;
-        }
-    }
-    
-    @media (max-width: 576px) {
-        .alumni-card {
-            flex: 0 0 100%;  /* 1 per row on mobile */
+        .alumni-card h3 {
+            margin: 12px 0 8px;
+            font-size: 1em;
+            color: #2c3e50;
         }
         
-        .alumni-image-wrapper {
-            width: 200px;
-            height: 200px;
+        .alumni-card .role {
+            display: block;
+            color: #7f8c8d;
+            font-size: 0.85em;
+            line-height: 1.4;
         }
-    }
-</style>
+        
+        .alumni-card .now {
+            display: block;
+            margin-top: 8px;
+            color: #888;
+            font-size: 0.8em;
+            font-style: italic;
+        }
+        
+        /* Empty state message */
+        .empty-section {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 8px;
+            border: 2px dashed #e0e0e0;
+        }
+        
+        .empty-section i {
+            font-size: 3em;
+            color: #d0d0d0;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        /* Optional: Add subtle pattern to section backgrounds */
+        .degree-content {
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(100, 185, 44, 0.01) 10px,
+                    rgba(100, 185, 44, 0.01) 20px
+                );
+        }
+        
+        /* Stats badge (optional enhancement) */
+        .alumni-count {
+            float: right;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.55em;
+            font-weight: normal;
+            margin-top: 1px;
+        }
+        
+        @media (max-width: 1200px) {
+            .alumni-card {
+                flex: 0 0 calc(25% - 19px);  /* 4 per row on large tablets */
+            }
+            
+            .alumni-image-wrapper {
+                width: 140px;
+                height: 140px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .alumni-card {
+                flex: 0 0 calc(33.333% - 17px);  /* 3 per row on tablets */
+            }
+            
+            .alumni-image-wrapper {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .degree-content {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .alumni-card {
+                flex: 0 0 calc(50% - 12.5px);  /* 2 per row on small screens */
+            }
+            
+            .alumni-image-wrapper {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .degree-header {
+                font-size: 1.4em;
+                padding: 10px 15px;
+            }
+            
+            .alumni-count {
+                display: none;  /* Hide count on mobile for cleaner look */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .alumni-card {
+                flex: 0 0 100%;  /* 1 per row on mobile */
+            }
+            
+            .alumni-image-wrapper {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .degree-header {
+                font-size: 1.2em;
+                padding: 10px 12px;
+            }
+            
+            .degree-content {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -179,28 +267,28 @@ html<style>
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
-							<div class="navbar-collapse collapse ">
-						<ul class="nav navbar-nav">
 							<li><a href="index.html"><h4 class="name">Home</h4></a></li>
-							<li class="active" class="dropdown">
-								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">People</h4><b class=" icon-angle-down"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="people.html">The Poranne Group</a></li>
-									<li><a href="rgp.html">Renana Gershoni Poranne</a></li>
-									<li><a href="people-alumni.html">Former Group Members</a></li>
-								</ul>
-							<li><a href="research.html"><h4 class="name">Research Projects</h4></a></li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Publications</h4><b class=" icon-angle-down"></b></a>
+								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">The Group </h4><b class=" icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="publications.html">Papers</a></li>
+									<li><a href="people-currentmembers.html">Current Members</a></li>
+									<li><a href="people-alumni.html">Alumni</a></li>
+								</ul>
+							</li>
+							<li><a href="publications.html"><h4 class="name">Publications</h4></a></li>
+							<li><a href="research.html"><h4 class="name">Research</h4></a></li>
+							<li><a href="news.html"><h4 class="name">News</h4></a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Gallery </h4><b class=" icon-angle-down"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="gallery.html">Photo Gallery</a></li>
 									<li><a href="covers.html">Cover Gallery</a></li>
 								</ul>
 							<li class="dropdown">
@@ -218,121 +306,174 @@ html<style>
                 <section class="latest section">
                     <div class="section-inner">
                         <h2 class="heading">Poranne Group Alumni</h2>
-							<div class="content">
+						<div class="content">
 
-                                <div class="alumni-grid">
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/Keren_Yunker.jpg" alt="Keren Yunker Omer" />
+                            <!-- POSTDOC SECTION -->
+                            <div class="degree-section">
+                                <h3 class="degree-header">
+                                    Postdoctoral Researchers
+                                    <span class="alumni-count">1 Alumni</span>
+                                </h3>
+                                <div class="degree-content">
+									<div class="alumni-grid">
+										
+										<div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/Kasia Pienko.png" alt="Dr. Katarzyna Młodzikowska-Pienko" />
+                                            </div>
+                                            <h3 class="title">Dr. Katarzyna Młodzikowska-Pienko</h3>  
+                                            <span class="role"><em>Azrieli Postdoctoral Fellow</em><br> March 2022-October 2025</span>
                                         </div>
-                                        <h3 class="title">Keren Yunker Omer</h3>  
-                                        <span class="role"><em>BSc Semester Project</em><br> Summer 2025</span>
-                                    </div>
-
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/Yaara_Pelleg.jpg" alt="Yaara Pelleg" />
-                                        </div>
-                                        <h3 class="title">Yaara Pelleg</h3>  
-                                        <span class="role"><em>Archimedes Semester Project</em><br> Summer 2024</span>
-                                    </div>
-
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/Yair_Davidson.jpg" alt="Yair Davidson" />
-                                        </div>
-                                        <h3 class="title">Yair Davidson</h3>  
-                                        <span class="role"><em>BSc Semester Project (With Computer Science)</em><br> March 2024-March 2025</span>
-                                    </div>
-
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/Aviad Philipp.jpg" alt="Aviad Philipp" />
-                                        </div>
-                                        <h3 class="title">Aviad Philipp</h3>  
-                                        <span class="role"><em>BSc Semester Project (with Computer Science)</em><br> March 2024-March 2025</span>
-                                    </div>
-
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/Shany Erez.png" alt="Shany Erez" />
-                                        </div>
-                                        <h3 class="title">Shany Erez</h3>  
-                                        <span class="role"><em>PhD Candidate</em><br> October 2021-October 2024</span>
-                                    </div>
-        
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/Eduardo Mayo.png" alt="Eduardo Mayo" />
-                                        </div>
-                                        <h3 class="title">Eduardo Mayo</h3>  
-                                        <span class="role"><em>MSc Student</em><br> March 2022-August 2024</span>
-                                    </div>
-
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/AlexandraWahab-resized.jpeg" alt="Alexandra Wahab" />
-                                        </div>
-                                        <h3 class="title">Alexandra Wahab</h3>  
-                                        <span class="role"><em>PhD Candidate</em><br> September 2019-September 2024</span>
-                                    </div>
-									
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/Joel_Landis.jpg" alt="Joel Landis" />
-                                        </div>
-                                        <h3 class="title">Joel Landis</h3>  
-                                        <span class="role"><em>MSc Semester Project</em><br> October 2022-March 2023</span>
-                                    </div>
-																				
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/SaharSagy.jpg" alt="Sahar Sagy" />
-                                        </div>
-                                        <h3 class="title">Sahar Sagy</h3>  
-                                        <span class="role"><em>BSc Thesis (Excellence Program)</em><br> October 2021-December 2023</span>
-                                    </div>
-								  
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/DominicEgger.jpg" alt="Dominic Egger" />
-                                        </div>
-                                        <h3 class="title">Dominic Egger</h3>  
-                                        <span class="role"><em>MSc Semester Project</em><br> 2020-2021</span>
-                                    </div>
-							   							   
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/LaraPfuderer-resized.jpg" alt="Lara Pfuderer" />
-                                        </div>
-                                        <h3 class="title">Lara Pfuderer</h3>  
-                                        <span class="role"><em>MSc Semester Project</em><br> 2020</span>
-                                    </div>									 
-								 
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/StefanFeusi-resized.jpg" alt="Stefan Feusi" />
-                                        </div>
-                                        <h3 class="title">Stefan Feusi</h3>  
-                                        <span class="role"><em>MSc Semester Project and MSc Thesis</em><br> 2019-2020</span>
-                                    </div>								 
-								 
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/GretaMarkert-resized.jpg" alt="Greta Markert" />
-                                        </div>
-                                        <h3 class="title">Greta Markert</h3>  
-                                        <span class="role"><em>MSc Semester Project</em><br> 2019</span>
-                                    </div>
-																	
-                                    <div class="alumni-card">
-                                        <div class="alumni-image-wrapper">
-                                            <img src="assets/images/people/PatrickFinkelstein-resized.jpeg" alt="Patrick Finkelstein" />
-                                        </div>
-                                        <h3 class="title">Patrick Finkelstein</h3>  
-                                        <span class="role"><em>MSc Semester Project</em><br> 2018-2019</span>
                                     </div>
                                 </div>
+                            </div>
+
+                            <!-- PHD SECTION -->
+                            <div class="degree-section">
+                                <h3 class="degree-header">
+                                    PhD Students
+                                    <span class="alumni-count">1 Alumna</span>
+                                </h3>
+                                <div class="degree-content">
+                                    <div class="alumni-grid">
+            
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/AlexandraWahab-resized.jpeg" alt="Alexandra Wahab" />
+                                            </div>
+                                            <h3 class="title">Alexandra Wahab</h3>  
+                                            <span class="role"><em>PhD Candidate</em><br> September 2019-September 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MSC SECTION -->
+                            <div class="degree-section">
+                                <h3 class="degree-header">
+                                    MSc Students
+                                    <span class="alumni-count">7 Alumni</span>
+                                </h3>
+                                <div class="degree-content">
+                                    <div class="alumni-grid">
+									
+										<div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/Shany Erez.png" alt="Shany Erez" />
+                                            </div>
+                                            <h3 class="title">Shany Erez</h3>  
+                                            <span class="role"><em>MSc Exploratory Research</em><br> October 2021-October 2024</span>
+                                        </div>					
+									
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/Eduardo Mayo.png" alt="Eduardo Mayo" />
+                                            </div>
+                                            <h3 class="title">Eduardo Mayo</h3>  
+                                            <span class="role"><em>MSc Student</em><br> March 2022-August 2024</span>
+                                        </div>
+
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/Joel_Landis.jpg" alt="Joel Landis" />
+                                            </div>
+                                            <h3 class="title">Joel Landis</h3>  
+                                            <span class="role"><em>MSc Semester Project</em><br> October 2022-March 2023</span>
+                                        </div>
+
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/DominicEgger.jpg" alt="Dominic Egger" />
+                                            </div>
+                                            <h3 class="title">Dominic Egger</h3>  
+                                            <span class="role"><em>MSc Semester Project</em><br> 2020-2021</span>
+                                        </div>
+
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/LaraPfuderer-resized.jpg" alt="Lara Pfuderer" />
+                                            </div>
+                                            <h3 class="title">Lara Pfuderer</h3>  
+                                            <span class="role"><em>MSc Semester Project</em><br> 2020</span>
+                                        </div>
+
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/StefanFeusi-resized.jpg" alt="Stefan Feusi" />
+                                            </div>
+                                            <h3 class="title">Stefan Feusi</h3>  
+                                            <span class="role"><em>MSc Semester Project and MSc Thesis</em><br> 2019-2020</span>
+                                        </div>
+
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/GretaMarkert-resized.jpg" alt="Greta Markert" />
+                                            </div>
+                                            <h3 class="title">Greta Markert</h3>  
+                                            <span class="role"><em>MSc Semester Project</em><br> 2019</span>
+                                        </div>
+
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/PatrickFinkelstein-resized.jpeg" alt="Patrick Finkelstein" />
+                                            </div>
+                                            <h3 class="title">Patrick Finkelstein</h3>  
+                                            <span class="role"><em>MSc Semester Project</em><br> 2018-2019</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- BSC SECTION -->
+                            <div class="degree-section">
+                                <h3 class="degree-header">
+                                    BSc Students
+                                    <span class="alumni-count">5 Alumni</span>
+                                </h3>
+                                <div class="degree-content">
+                                    <div class="alumni-grid">
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/Keren_Yunker.jpg" alt="Keren Yunker Omer" />
+                                            </div>
+                                            <h3 class="title">Keren Yunker Omer</h3>  
+                                            <span class="role"><em>BSc Semester Project</em><br> Summer 2025</span>
+                                        </div>
+
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/Yaara_Pelleg.jpg" alt="Yaara Pelleg" />
+                                            </div>
+                                            <h3 class="title">Yaara Pelleg</h3>  
+                                            <span class="role"><em>Archimedes Semester Project</em><br> Summer 2024</span>
+                                        </div>
+
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/Yair_Davidson.jpg" alt="Yair Davidson" />
+                                            </div>
+                                            <h3 class="title">Yair Davidson</h3>  
+                                            <span class="role"><em>BSc Semester Project (With Computer Science)</em><br> March 2024-March 2025</span>
+                                        </div>
+
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/Aviad Philipp.jpg" alt="Aviad Philipp" />
+                                            </div>
+                                            <h3 class="title">Aviad Philipp</h3>  
+                                            <span class="role"><em>BSc Semester Project (with Computer Science)</em><br> March 2024-March 2025</span>
+                                        </div>
+
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/SaharSagy.jpg" alt="Sahar Sagy" />
+                                            </div>
+                                            <h3 class="title">Sahar Sagy</h3>  
+                                            <span class="role"><em>BSc Thesis (Excellence Program)</em><br> October 2021-December 2023</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 										
                         </div>
                         <!--//content-->
