@@ -40,34 +40,115 @@
 	<script type="text/javascript" src="js/counter.js"> </script>
     
     <style>
+        /* Section containers with header banners */
+        .position-section {
+            background: #fff;
+            border: 3px solid #64b92c;
+            border-radius: 12px;
+            margin: 35px 0;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .position-section:hover {
+            box-shadow: 0 4px 16px rgba(100, 185, 44, 0.15);
+        }
+        
+        /* Header banner for each section */
+        .position-header {
+            background: #64b92c;
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 1.6em;
+            font-weight: bold;
+            margin: 0;
+            border-bottom: 2px solid #5aa526;
+        }
+        
+        /* Content area inside the box */
+        .position-content {
+            padding: 30px;
+            background: #fafafa;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(100, 185, 44, 0.01) 10px,
+                    rgba(100, 185, 44, 0.01) 20px
+                );
+        }
+        
+        /* Two-column layout for smaller groups */
+        .position-row {
+            display: flex;
+            gap: 25px;
+            margin: 35px 0;
+        }
+        
+        .position-row .position-section {
+            flex: 1;
+            margin: 0;
+        }
+        
+        /* PI section special styling */
+        .pi-section {
+            max-width: 600px;
+            margin: 35px auto;
+        }
+        
+        .pi-section .members-grid {
+            justify-content: center;
+        }
+        
+        .pi-section .member-card {
+            flex: 0 1 100%;
+            max-width: 400px;
+        }
+        
+        /* Members grid */
         .members-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 30px;
+            gap: 25px;
+            margin: 0;
+            justify-content: center;
         }
         
-		.member-card {
-			flex: 0 0 calc(33.333% - 20px);
-			background: #fff;
-			border: 4px solid #64b92c;  /* Changed from 1px #e8e8e8 */
-			border-radius: 8px;
-			padding: 20px;
-			text-align: center;
-			transition: box-shadow 0.3s ease, border-color 0.3s ease;  /* Updated transition */
-		}
+        /* Member cards in different section widths */
+        .position-section.full-width .member-card {
+            flex: 0 0 calc(20% - 20px);  /* 5 per row for postdocs */
+        }
+        
+        .position-row .member-card {
+            flex: 0 0 calc(100% - 0px);  /* 1 per row in half-width sections */
+            max-width: 300px;
+        }
+        
+        .member-card {
+            background: #fff;
+            border: 3px solid #64b92c;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
 
-		.member-card:hover {
-			box-shadow: 0 4px 12px rgba(100, 185, 44, 0.3);  /* Changed hover effect */
-			border-color: #5aa526;  /* Added border color change on hover */
-		}
+        .member-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(100, 185, 44, 0.25);
+            border-color: #5aa526;
+        }
         
         .member-image-wrapper {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             margin: 0 auto 15px;
             overflow: hidden;
             border-radius: 8px;
+            border: 2px solid #e8e8e8;
         }
         
         .member-image-wrapper img {
@@ -78,14 +159,14 @@
         
         .member-card h3 {
             margin: 15px 0 10px;
-            font-size: 1.3em;
+            font-size: 1.1em;
             color: #333;
         }
         
         .member-card .role {
             display: block;
             color: #666;
-            font-size: 0.95em;
+            font-size: 0.9em;
             line-height: 1.6;
         }
         
@@ -93,17 +174,18 @@
             display: block;
             margin-top: 10px;
             color: #888;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
         
         .member-card .more {
             display: block;
-            margin-top: 10px;
-            font-size: 0.9em;
+            margin-top: 8px;
+            color: #64b92c;
+            font-size: 0.85em;
         }
         
         .member-card .more a {
-            color: #3498db;
+            color: #64b92c;
             text-decoration: none;
         }
         
@@ -111,40 +193,90 @@
             text-decoration: underline;
         }
         
-        @media (max-width: 992px) {
-            .member-card {
-                flex: 0 0 calc(50% - 15px);
+        /* Join us card special styling */
+        .member-card.join-us {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-style: dashed;
+        }
+        
+        .member-card.join-us:hover {
+            background: linear-gradient(135deg, #f0f8ed 0%, #ffffff 100%);
+        }
+        
+        /* Member count badge */
+        .member-count {
+            float: right;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.55em;
+            font-weight: normal;
+            margin-top: 1px;
+        }
+        
+        @media (max-width: 1200px) {
+            .position-section.full-width .member-card {
+                flex: 0 0 calc(25% - 19px);  /* 4 per row */
             }
         }
         
-        .member-card.join-us {
-            flex: 0 0 calc(50% - 15px);
-            margin: 0 auto;
-        }
-        
-        .member-card.join-us .member-image-wrapper {
-            width: 100%;
-            height: 300px;
-        }
-        
-        .member-card.join-us .member-image-wrapper img {
-            object-fit: contain;
-            height: 100%;
-        }
-        
         @media (max-width: 992px) {
-            .member-card.join-us {
-                flex: 0 0 calc(66.666% - 20px);
+            .position-row {
+                flex-direction: column;
+                gap: 35px;
+            }
+            
+            .position-section.full-width .member-card {
+                flex: 0 0 calc(33.333% - 17px);  /* 3 per row */
+            }
+            
+            .member-image-wrapper {
+                width: 180px;
+                height: 180px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .member-card,
+            .position-row .member-card,
+            .position-section.full-width .member-card {
+                flex: 0 0 calc(50% - 12.5px);  /* 2 per row */
+                max-width: none;
+            }
+            
+            .pi-section {
+                max-width: 100%;
+            }
+            
+            .position-header {
+                font-size: 1.4em;
+                padding: 10px 15px;
+            }
+            
+            .member-count {
+                display: none;
             }
         }
         
         @media (max-width: 576px) {
-            .member-card {
-                flex: 0 0 100%;
+            .member-card,
+            .position-row .member-card,
+            .position-section.full-width .member-card {
+                flex: 0 0 100%;  /* 1 per row */
             }
             
-            .member-card.join-us {
-                flex: 0 0 100%;
+            .position-header {
+                font-size: 1.2em;
+                padding: 10px 12px;
+            }
+            
+            .position-content {
+                padding: 20px;
+            }
+            
+            .member-image-wrapper {
+                width: 200px;
+                height: 200px;
             }
         }
     </style>
@@ -242,88 +374,149 @@
                 <div class="section-inner">
                     <h2 class="heading">Current Group Members</h2>
 
-                    <div class="members-grid">
-                        <div class="member-card">
-                            <div class="member-image-wrapper">
-                                <img src="assets/images/people/Renana Poranne.png" alt="Renana Gershoni Poranne" />
+                    <!-- PI SECTION (CENTERED, NARROWER) -->
+                    <div class="position-section pi-section">
+                        <h3 class="position-header">
+                            Principal Investigator
+                        </h3>
+                        <div class="position-content">
+                            <div class="members-grid">
+                                <div class="member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="assets/images/people/Renana Poranne.png" alt="Renana Gershoni Poranne" />
+                                    </div>
+                                    <h3 class="title">Renana Gershoni Poranne</h3>  
+                                    <span class="role"><em>Principal Investigator</em></span>
+                                    <span class="email">Email: rporanne @ technion.ac.il</span>
+                                    <span class="more">To read more about Renana, click <a href="rgp.html">here</a></span>
+                                </div>
                             </div>
-                            <h3 class="title">Renana Gershoni Poranne</h3>  
-                            <span class="role"><em>Principal Investigator</em></span>
-                            <span class="email">Email: rporanne @ technion.ac.il</span>
-                            <span class="more">To read more about Renana, click <a href="rgp.html">here</a></span>
+                        </div>
+                    </div>
+
+                    <!-- POSTDOCS SECTION (FULL WIDTH) -->
+                    <div class="position-section full-width">
+                        <h3 class="position-header">
+                            Postdoctoral Researchers
+                            <span class="member-count">4 Members</span>
+                        </h3>
+                        <div class="position-content">
+                            <div class="members-grid">
+                                
+                                <div class="member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="assets/images/people/Sabyasachi Chakraborty.png" alt="Dr. Sabyasachi Chakraborty" />
+                                    </div>
+                                    <h3 class="title">Dr. Sabyasachi Chakraborty</h3>  
+                                    <span class="role"><em>Postdoctoral Researcher</em><br> November 2022-current</span>
+                                </div>
+                                
+                                <div class="member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="assets/images/people/Amrita_Gogoi.jpg" alt="Dr. Amrita Gogoi" />
+                                    </div>
+                                    <h3 class="title">Dr. Amrita Gogoi</h3>  
+                                    <span class="role"><em>Maggie Kaplan Postdoctoral Fellow</em><br> November 2024-current</span>
+                                </div>
+
+                                <div class="member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="assets/images/people/Ajeet_Singh.jpg" alt="Dr. Ajeet Singh" />
+                                    </div>
+                                    <h3 class="title">Dr. Ajeet Kumar Singh</h3>  
+                                    <span class="role"><em>Postdoctoral Researcher</em><br> September 2025-current</span>
+                                </div>
+
+                                <div class="member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="assets/images/people/Pallavi_Sarkar.jpg" alt="Dr. Pallavi Sarkar" />
+                                    </div>
+                                    <h3 class="title">Dr. Pallavi Sarkar</h3>  
+                                    <span class="role"><em>Lady Davis Postdoctoral Fellow</em><br> October 2025-current</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GRADUATE STUDENTS ROW (PHD AND MSC SIDE BY SIDE) -->
+                    <div class="position-row">
+                        <!-- PHD SECTION (LEFT) -->
+                        <div class="position-section">
+                            <h3 class="position-header">
+                                PhD Students
+                                <span class="member-count">1 Member</span>
+                            </h3>
+                            <div class="position-content">
+                                <div class="members-grid">
+                                    <div class="member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="assets/images/people/Fatimah Khaleel.png" alt="Fatimah Khaleel" />
+                                        </div>
+                                        <h3 class="title">Fatimah Khaleel</h3>  
+                                        <span class="role"><em>MSc Student</em><br> November 2022-September 2024</span>
+                                        <span class="role"><em>PhD Student</em><br> October 2024-current</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="member-card">
-                            <div class="member-image-wrapper">
-                                <img src="assets/images/people/Kasia Pienko.png" alt="Dr. Katarzyna Młodzikowska-Pienko" />
+                        <!-- MSC SECTION (RIGHT) -->
+                        <div class="position-section">
+                            <h3 class="position-header">
+                                MSc Students
+                                <span class="member-count">1 Member</span>
+                            </h3>
+                            <div class="position-content">
+                                <div class="members-grid">
+                                    <div class="member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="assets/images/people/Itay Almog.png" alt="Itay Almog" />
+                                        </div>
+                                        <h3 class="title">Itay Almog</h3>  
+                                        <span class="role"><em>MSc Student</em><br> March 2023-current</span>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="title">Dr. Katarzyna Młodzikowska-Pienko</h3>  
-                            <span class="role"><em>Azrieli Postdoctoral Fellow</em><br> March 2022-current</span>
                         </div>
-                        
-                        <div class="member-card">
-                            <div class="member-image-wrapper">
-                                <img src="assets/images/people/Sabyasachi Chakraborty.png" alt="Dr. Sabyasachi Chakraborty" />
+                    </div>
+
+                    <!-- UNDERGRADUATE AND JOIN US ROW -->
+                    <div class="position-row">
+                        <!-- BSC SECTION (LEFT) -->
+                        <div class="position-section">
+                            <h3 class="position-header">
+                                BSc Students
+                                <span class="member-count">1 Member</span>
+                            </h3>
+                            <div class="position-content">
+                                <div class="members-grid">
+                                    <div class="member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="assets/images/people/Ruth Ascoli Abbina.jpeg" alt="Ruth Ascoli Abbina" />
+                                        </div>
+                                        <h3 class="title">Ruth Ascoli Abbina</h3>  
+                                        <span class="role"><em>BSc Semester Project</em><br> November 2025-current</span>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="title">Dr. Sabyasachi Chakraborty</h3>  
-                            <span class="role"><em>Postdoctoral Researcher</em><br> November 2022-current</span>
-                        </div>
-                        
-                        <div class="member-card">
-                            <div class="member-image-wrapper">
-                                <img src="assets/images/people/Amrita_Gogoi.jpg" alt="Dr. Amrita Gogoi" />
-                            </div>
-                            <h3 class="title">Dr. Amrita Gogoi</h3>  
-                            <span class="role"><em>Maggie Kaplan Postdoctoral Fellow</em><br> November 2024-current</span>
                         </div>
 
-                        <div class="member-card">
-                            <div class="member-image-wrapper">
-                                <img src="assets/images/people/Ajeet_Singh.jpg" alt="Dr. Ajeet Singh" />
+                        <!-- JOIN US SECTION (RIGHT) -->
+                        <div class="position-section">
+                            <h3 class="position-header">
+                                Join Our Team!
+                            </h3>
+                            <div class="position-content">
+                                <div class="members-grid">
+                                    <div class="member-card join-us">
+                                        <div class="member-image-wrapper">
+                                            <img src="assets/images/people/JOIN US.JPG" alt="Join Us" />
+                                        </div>
+                                        <h3 class="title">This Could Be You!</h3>  
+                                        <span class="role"><em>Join us! We are looking for MSc, PhD, and postdoctoral applicants!</em></span>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="title">Dr. Ajeet Kumar Singh</h3>  
-                            <span class="role"><em>Postdoctoral Researcher</em><br> September 2025-current</span>
-                        </div>
-
-                        <div class="member-card">
-                            <div class="member-image-wrapper">
-                                <img src="assets/images/people/Pallavi_Sarkar.jpg" alt="Dr. Pallavi Sarkar" />
-                            </div>
-                            <h3 class="title">Dr. Pallavi Sarkar</h3>  
-                            <span class="role"><em>Lady Davis Postdoctoral Fellow</em><br> October 2025-current</span>
-                        </div>
-                        
-                        <div class="member-card">
-                            <div class="member-image-wrapper">
-                                <img src="assets/images/people/Fatimah Khaleel.png" alt="Fatimah Khaleel" />
-                            </div>
-                            <h3 class="title">Fatimah Khaleel</h3>  
-                            <span class="role"><em>MSc Student</em><br> November 2022-September 2024</span>
-                            <span class="role"><em>PhD Student</em><br> October 2024-current</span>
-                        </div>
-                        
-                        <div class="member-card">
-                            <div class="member-image-wrapper">
-                                <img src="assets/images/people/Itay Almog.png" alt="Itay Almog" />
-                            </div>
-                            <h3 class="title">Itay Almog</h3>  
-                            <span class="role"><em>MSc Student</em><br> March 2023-current</span>
-                        </div>
-
-                        <div class="member-card">
-                            <div class="member-image-wrapper">
-                                <img src="assets/images/people/Ruth Ascoli Abbina.jpeg" alt="Ruth Ascoli Abbina" />
-                            </div>
-                            <h3 class="title">Ruth Ascoli Abbina</h3>  
-                            <span class="role"><em>BSc Semester Project</em><br> November 2025-current</span>
-                        </div>
-
-                        <div class="member-card join-us">
-                            <div class="member-image-wrapper">
-                                <img src="assets/images/people/JOIN US.JPG" alt="Join Us" />
-                            </div>
-                            <h3 class="title">This Could Be You!</h3>  
-                            <span class="role"><em>Join us! We are looking for MSc, PhD, and postdoctoral applicants!</em></span>
                         </div>
                     </div>
 

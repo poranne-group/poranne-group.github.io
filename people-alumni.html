@@ -31,6 +31,18 @@
 	<script type="text/javascript" src="js/counter.js"> </script>
     
     <style>
+        /* Two-column layout for first row */
+        .degree-row {
+            display: flex;
+            gap: 25px;
+            margin: 35px 0;
+        }
+        
+        .degree-row .degree-section {
+            flex: 1;
+            margin: 0;
+        }
+        
         /* Section containers with header banners */
         .degree-section {
             background: #fff;
@@ -62,6 +74,12 @@
         .degree-content {
             padding: 30px;
             background: #fafafa;
+            min-height: 280px; /* Ensure consistent height for side-by-side sections */
+        }
+        
+        /* Adjust content padding for half-width sections */
+        .degree-row .degree-content {
+            padding: 25px;
         }
         
         .alumni-grid {
@@ -69,10 +87,27 @@
             flex-wrap: wrap;
             gap: 25px;
             margin: 0;
+            justify-content: center; /* Center single cards in half-width sections */
+        }
+        
+        /* Alumni cards in half-width sections */
+        .degree-row .alumni-card {
+            flex: 0 0 calc(100% - 0px);  /* Full width when only 1 alumni in half-width section */
+            max-width: 250px; /* Limit card width when alone */
+        }
+        
+        /* If there are 2 alumni in a half-width section */
+        .degree-row .alumni-grid:has(.alumni-card:nth-child(2)) .alumni-card {
+            flex: 0 0 calc(50% - 12.5px);
+            max-width: none;
+        }
+        
+        /* Alumni cards in full-width sections */
+        .degree-section.full-width .alumni-card {
+            flex: 0 0 calc(20% - 20px);  /* 5 per row in full-width sections */
         }
         
         .alumni-card {
-            flex: 0 0 calc(20% - 20px);  /* 5 per row */
             background: #fff;
             border: 3px solid #64b92c;
             border-radius: 8px;
@@ -88,7 +123,7 @@
         }
         
         .alumni-image-wrapper {
-            width: 120px;  /* Smaller for 5 columns */
+            width: 120px;
             height: 120px;
             margin: 0 auto 12px;
             overflow: hidden;
@@ -153,7 +188,7 @@
                 );
         }
         
-        /* Stats badge (optional enhancement) */
+        /* Stats badge */
         .alumni-count {
             float: right;
             background: rgba(255, 255, 255, 0.2);
@@ -165,7 +200,7 @@
         }
         
         @media (max-width: 1200px) {
-            .alumni-card {
+            .degree-section.full-width .alumni-card {
                 flex: 0 0 calc(25% - 19px);  /* 4 per row on large tablets */
             }
             
@@ -176,7 +211,18 @@
         }
         
         @media (max-width: 992px) {
-            .alumni-card {
+            /* Stack the first row on tablets */
+            .degree-row {
+                flex-direction: column;
+                gap: 35px;
+            }
+            
+            .degree-row .alumni-card {
+                flex: 0 0 calc(33.333% - 17px);  /* 3 per row when stacked */
+                max-width: none;
+            }
+            
+            .degree-section.full-width .alumni-card {
                 flex: 0 0 calc(33.333% - 17px);  /* 3 per row on tablets */
             }
             
@@ -187,11 +233,14 @@
             
             .degree-content {
                 padding: 20px;
+                min-height: auto;
             }
         }
         
         @media (max-width: 768px) {
-            .alumni-card {
+            .alumni-card,
+            .degree-row .alumni-card,
+            .degree-section.full-width .alumni-card {
                 flex: 0 0 calc(50% - 12.5px);  /* 2 per row on small screens */
             }
             
@@ -211,8 +260,11 @@
         }
         
         @media (max-width: 576px) {
-            .alumni-card {
+            .alumni-card,
+            .degree-row .alumni-card,
+            .degree-section.full-width .alumni-card {
                 flex: 0 0 100%;  /* 1 per row on mobile */
+                max-width: none;
             }
             
             .alumni-image-wrapper {
@@ -225,7 +277,8 @@
                 padding: 10px 12px;
             }
             
-            .degree-content {
+            .degree-content,
+            .degree-row .degree-content {
                 padding: 15px;
             }
         }
@@ -308,63 +361,63 @@
                         <h2 class="heading">Poranne Group Alumni</h2>
 						<div class="content">
 
-                            <!-- POSTDOC SECTION -->
-                            <div class="degree-section">
-                                <h3 class="degree-header">
-                                    Postdoctoral Researchers
-                                    <span class="alumni-count">1 Alumni</span>
-                                </h3>
-                                <div class="degree-content">
-									<div class="alumni-grid">
-										
-										<div class="alumni-card">
-                                            <div class="alumni-image-wrapper">
-                                                <img src="assets/images/people/Kasia Pienko.png" alt="Dr. Katarzyna Młodzikowska-Pienko" />
+                            <!-- FIRST ROW: POSTDOC AND PHD SIDE BY SIDE -->
+                            <div class="degree-row">
+                                <!-- POSTDOC SECTION (LEFT) -->
+                                <div class="degree-section">
+                                    <h3 class="degree-header">
+                                        Postdoctoral Researchers
+                                        <span class="alumni-count">1 Alumna</span>
+                                    </h3>
+                                    <div class="degree-content">
+                                        <div class="alumni-grid">
+                                            <div class="alumni-card">
+                                                <div class="alumni-image-wrapper">
+                                                    <img src="assets/images/people/Kasia Pienko.png" alt="Dr. Katarzyna Młodzikowska-Pienko" />
+                                                </div>
+                                                <h3 class="title">Dr. Katarzyna Młodzikowska-Pienko</h3>  
+                                                <span class="role"><em>Azrieli Postdoctoral Fellow</em><br> March 2022-October 2025</span>
                                             </div>
-                                            <h3 class="title">Dr. Katarzyna Młodzikowska-Pienko</h3>  
-                                            <span class="role"><em>Azrieli Postdoctoral Fellow</em><br> March 2022-October 2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- PHD SECTION (RIGHT) -->
+                                <div class="degree-section">
+                                    <h3 class="degree-header">
+                                        PhD Students
+                                        <span class="alumni-count">1 Alumna</span>
+                                    </h3>
+                                    <div class="degree-content">
+                                        <div class="alumni-grid">
+                                            <div class="alumni-card">
+                                                <div class="alumni-image-wrapper">
+                                                    <img src="assets/images/people/AlexandraWahab-resized.jpeg" alt="Alexandra Wahab" />
+                                                </div>
+                                                <h3 class="title">Alexandra Wahab</h3>  
+                                                <span class="role"><em>PhD Candidate</em><br> September 2019-September 2024</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- PHD SECTION -->
-                            <div class="degree-section">
-                                <h3 class="degree-header">
-                                    PhD Students
-                                    <span class="alumni-count">1 Alumna</span>
-                                </h3>
-                                <div class="degree-content">
-                                    <div class="alumni-grid">
-            
-                                        <div class="alumni-card">
-                                            <div class="alumni-image-wrapper">
-                                                <img src="assets/images/people/AlexandraWahab-resized.jpeg" alt="Alexandra Wahab" />
-                                            </div>
-                                            <h3 class="title">Alexandra Wahab</h3>  
-                                            <span class="role"><em>PhD Candidate</em><br> September 2019-September 2024</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- MSC SECTION -->
-                            <div class="degree-section">
+                            <!-- MSC SECTION (FULL WIDTH) -->
+                            <div class="degree-section full-width">
                                 <h3 class="degree-header">
                                     MSc Students
                                     <span class="alumni-count">7 Alumni</span>
                                 </h3>
                                 <div class="degree-content">
                                     <div class="alumni-grid">
-									
-										<div class="alumni-card">
+                                        <div class="alumni-card">
                                             <div class="alumni-image-wrapper">
                                                 <img src="assets/images/people/Shany Erez.png" alt="Shany Erez" />
                                             </div>
                                             <h3 class="title">Shany Erez</h3>  
                                             <span class="role"><em>MSc Exploratory Research</em><br> October 2021-October 2024</span>
                                         </div>					
-									
+                                        
                                         <div class="alumni-card">
                                             <div class="alumni-image-wrapper">
                                                 <img src="assets/images/people/Eduardo Mayo.png" alt="Eduardo Mayo" />
@@ -424,8 +477,8 @@
                                 </div>
                             </div>
 
-                            <!-- BSC SECTION -->
-                            <div class="degree-section">
+                            <!-- BSC SECTION (FULL WIDTH) -->
+                            <div class="degree-section full-width">
                                 <h3 class="degree-header">
                                     BSc Students
                                     <span class="alumni-count">5 Alumni</span>
