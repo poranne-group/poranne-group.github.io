@@ -122,6 +122,12 @@
             flex: 0 0 calc(20% - 20px);  /* 5 per row for postdocs */
         }
         
+        /* BSc section - display cards centered */
+        .bsc-section .member-card {
+            flex: 0 0 calc(33.33% - 20px);
+            max-width: 300px;
+        }
+        
         .position-row .member-card {
             flex: 0 0 calc(100% - 0px);  /* 1 per row in half-width sections */
             max-width: 300px;
@@ -178,7 +184,7 @@
         }
         
         /* Special styling for Join Us image to show full width */
-        .position-row .join-us {
+        .join-us {
             max-width: none;
             flex: 0 0 auto;
         }
@@ -496,10 +502,9 @@
                         </div>
                     </div>
 
-                    <!-- UNDERGRADUATE AND JOIN US ROW -->
-                    <div class="position-row">
-                        <!-- BSC SECTION (LEFT) -->
-                        <div class="position-section">
+                    <!-- BSC SECTION (FULL WIDTH) -->
+                        <!--  -->
+                        <div class="position-section full-width bsc-section">
                             <h3 class="position-header">
                                 BSc Students
                                 <span class="member-count">2 members</span>
@@ -526,8 +531,8 @@
                             </div>
                         </div>
 
-                        <!-- JOIN US SECTION (RIGHT) -->
-                        <div class="position-section">
+                        <!-- JOIN US SECTION (FULL WIDTH) -->
+                        <div class="position-section full-width">
                             <h3 class="position-header">
                                 Join Our Team!
                             </h3>
@@ -543,7 +548,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                 </div>
             </section>
