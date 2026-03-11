@@ -30,8 +30,35 @@
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
 
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=3">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        .section .heading { color: #29B6D4; font-size: 28px; }
+        .sections-wrapper { font-size: 19px; }
+        .content-card {
+            background: #fff;
+            border: 3px solid #29B6D4;
+            border-radius: 14px;
+            padding: 28px 32px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+        }
+        .page-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            font-weight: 700;
+            color: #fff !important;
+            background: #29B6D4;
+            text-decoration: none !important;
+            letter-spacing: 0.3px;
+            margin: 4px 6px;
+            border: none;
+            transition: opacity 0.2s;
+        }
+        .page-btn:hover { opacity: 0.85; }
+    </style>
 </head>
 
 <body>
@@ -54,14 +81,13 @@
 
      <!-- ******HEADER****** -->
     <header class="header">
-        <div class="container"> <h1 class="name" style="color:#464646;">Poranne Research Group</h1>
-            </div>
-            <!--//profile-->
-            
-        <!--//container-->
+        <div class="container text-center">
+            <h1 class="name">Poranne Research Group</h1>
+            <p class="header-subtitle">Computational Physical Organic Chemistry &nbsp;·&nbsp; Technion — Israel Institute of Technology</p>
+        </div>
     </header>
     <!--//header-->
-	
+
 <div id="wrapper">
 		<!-- start header -->
 		<header>
@@ -84,6 +110,7 @@
 								<ul class="dropdown-menu">
 									<li><a href="people.html">The Poranne Group</a></li>
 									<li><a href="rgp.html">Renana Gershoni Poranne</a></li>
+									<li><a href="people-alumni.html">Former Group Members</a></li>
 								</ul>
 							<li><a href="research.html"><h4 class="name">Research Projects</h4></a></li>
 							<li class="dropdown">
@@ -101,20 +128,41 @@
 				</div>
 			</div>
 		</div>
-		
+
+    <!-- *** INFO BAR *** -->
+    <div class="info-bar">
+        <div class="container">
+            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#29B6D4;" target="_blank">
+                <i class="fa fa-paper-plane"></i> Contact Us
+            </a>
+            <span class="info-item">
+                <i class="fa fa-map-marker" style="color:#29B6D4;"></i> Schulich Faculty of Chemistry, Technion, Israel
+            </span>
+            <span class="info-item">
+                <i class="fa fa-envelope-o" style="color:#29B6D4;"></i>
+                <a href="mailto:porannegroup@technion.ac.il">porannegroup@technion.ac.il</a>
+            </span>
+            <span class="info-item">
+                <i class="fa fa-twitter" style="color:#29B6D4;"></i>
+                <a href="https://twitter.com/PoranneG" target="_blank">@PoranneG</a>
+            </span>
+        </div>
+    </div>
+
     <div class="container sections-wrapper">
         <div class="row">
                 <section class="about section">
                     <div class="section-inner">
-                        <div class="content">
+                        <h2 class="heading">Predi-XY</h2>
+                        <div class="content-card">
 							<p align="center"><b><u>30 September 2020 - Completely redesigned version of Predi-XY is here!&nbsp;</b></u><br>
 								
 								<br><p align=justify><b>To read about Predi-XY and how it works, you can access the version of record in <em>Electronic Structure</em> or see the preprint on <em>ChemRxiv</em>. To download or clone the program, please visit our GitLab repository or use pip ("pip install predixy").</b> 
 						
 							<br><p align="center">
-						<br><a onclick="ga('send', 'event', 'download Predi-XY', 'Predi-XY-paper');" class="btn btn-cta-primary pull center" href="https://iopscience.iop.org/article/10.1088/2516-1075/abd081">To Predi-XY Paper</a>
-						<a onclick="ga('send', 'event', 'download Predi-XY', 'Predi-XY');" class="btn btn-cta-primary pull center" href="https://gitlab.com/porannegroup/predixy/-/releases">To Predi-XY Code</a>
-						<a onclick="ga('send', 'event', 'Predi-XY Preprint', 'Manual');" class="btn btn-cta-primary pull center" href="https://chemrxiv.org/articles/preprint/Predi-XY_A_Python_Program_for_Automated_Generation_of_NICS-XY-Scans_Based_on_an_Additivity_Scheme/13019591">To Predi-XY Preprint</a>
+						<br><a onclick="ga('send', 'event', 'download Predi-XY', 'Predi-XY-paper');" class="page-btn" href="https://iopscience.iop.org/article/10.1088/2516-1075/abd081">To Predi-XY Paper</a>
+						<a onclick="ga('send', 'event', 'download Predi-XY', 'Predi-XY');" class="page-btn" href="https://gitlab.com/porannegroup/predixy/-/releases">To Predi-XY Code</a>
+						<a onclick="ga('send', 'event', 'Predi-XY Preprint', 'Manual');" class="page-btn" href="https://chemrxiv.org/articles/preprint/Predi-XY_A_Python_Program_for_Automated_Generation_of_NICS-XY-Scans_Based_on_an_Additivity_Scheme/13019591">To Predi-XY Preprint</a>
 						
 								
                             <br><br><p align="justify">Predi-XY is a homemade utility written in Python 3 for generating predicted <a href="https://onlinelibrary.wiley.com/doi/10.1002/chem.201304307/full">NICS-XY-Scans</a> of <i>cata</i>-condensed systems polycyclic aromatic systems, 
@@ -146,7 +194,7 @@
 							
 
                         </div>
-                        <!--//content-->
+                        <!--//content-card-->
                     </div>
                     <!--//section-inner-->
                 </section>

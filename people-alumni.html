@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
 
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=4">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
 						<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -31,257 +31,112 @@
 	<script type="text/javascript" src="js/counter.js"> </script>
     
     <style>
-        /* Two-column layout for first row */
+        /* ---- Degree group sections ---- */
+        .degree-section {
+            margin: 40px 0;
+        }
+
         .degree-row {
             display: flex;
-            gap: 25px;
-            margin: 35px 0;
+            gap: 40px;
+            margin: 40px 0;
         }
-        
+
         .degree-row .degree-section {
             flex: 1;
             margin: 0;
         }
-        
-        /* Section containers with header banners */
-        .degree-section {
-            background: #fff;
-            border: 3px solid #64b92c;
-            border-radius: 12px;
-            margin: 35px 0;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: box-shadow 0.3s ease;
-        }
-        
-        .degree-section:hover {
-            box-shadow: 0 4px 16px rgba(100, 185, 44, 0.15);
-        }
-        
-        /* Header banner for each section */
+
+        /* Simple underlined heading (no banner) */
         .degree-header {
-            background: #64b92c;
-            color: white;
-            text-align: center;
-            padding: 12px 20px;
-            font-size: 1.6em;
-            font-weight: bold;
-            margin: 0;
-            border-bottom: 2px solid #5aa526;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #4472C4;
+            border-bottom: 2px solid #4472C4;
+            padding-bottom: 8px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        
-        /* Content area inside the box */
+
         .degree-content {
-            padding: 30px;
-            background: #fafafa;
-            min-height: 280px; /* Ensure consistent height for side-by-side sections */
+            padding: 0;
         }
-        
-        /* Adjust content padding for half-width sections */
-        .degree-row .degree-content {
-            padding: 25px;
-        }
-        
+
         .alumni-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 25px;
-            margin: 0;
-            justify-content: center; /* Center single cards in half-width sections */
+            gap: 24px;
+            justify-content: center;
         }
-        
-        /* Alumni cards in half-width sections */
-        .degree-row .alumni-card {
-            flex: 0 0 calc(100% - 0px);  /* Full width when only 1 alumni in half-width section */
-            max-width: 250px; /* Limit card width when alone */
-        }
-        
-        /* If there are 2 alumni in a half-width section */
-        .degree-row .alumni-grid:has(.alumni-card:nth-child(2)) .alumni-card {
-            flex: 0 0 calc(50% - 12.5px);
-            max-width: none;
-        }
-        
-        /* Alumni cards in full-width sections */
-        .degree-section.full-width .alumni-card {
-            flex: 0 0 calc(20% - 20px);  /* 5 per row in full-width sections */
-        }
-        
+
+        /* Alumni cards — no border, shadow only */
         .alumni-card {
             background: #fff;
-            border: 3px solid #64b92c;
-            border-radius: 8px;
-            padding: 15px;
+            border-radius: 10px;
+            padding: 20px 16px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            flex: 0 0 210px;
         }
-        
+
         .alumni-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(100, 185, 44, 0.25);
-            border-color: #5aa526;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(68, 114, 196, 0.22);
         }
-        
+
+        /* Circular profile photo */
         .alumni-image-wrapper {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 12px;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 14px;
             overflow: hidden;
-            border-radius: 8px;
-            border: 2px solid #e8e8e8;
+            border-radius: 50%;
+            border: 3px solid #4472C4;
         }
-        
+
         .alumni-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .alumni-card h3 {
-            margin: 12px 0 8px;
+            margin: 0 0 6px;
             font-size: 1em;
             color: #2c3e50;
         }
-        
+
         .alumni-card .role {
             display: block;
-            color: #7f8c8d;
-            font-size: 0.85em;
-            line-height: 1.4;
+            color: #777;
+            font-size: 0.82em;
+            line-height: 1.5;
         }
-        
-        .alumni-card .now {
-            display: block;
-            margin-top: 8px;
-            color: #888;
-            font-size: 0.8em;
-            font-style: italic;
-        }
-        
-        /* Empty state message */
-        .empty-section {
-            text-align: center;
-            color: #7f8c8d;
-            font-style: italic;
-            padding: 40px 20px;
-            background: white;
-            border-radius: 8px;
-            border: 2px dashed #e0e0e0;
-        }
-        
-        .empty-section i {
-            font-size: 3em;
-            color: #d0d0d0;
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        /* Optional: Add subtle pattern to section backgrounds */
-        .degree-content {
-            background-image: 
-                repeating-linear-gradient(
-                    45deg,
-                    transparent,
-                    transparent 10px,
-                    rgba(100, 185, 44, 0.01) 10px,
-                    rgba(100, 185, 44, 0.01) 20px
-                );
-        }
-        
-        /* Stats badge */
+
+        /* Member count — small gray inline text */
         .alumni-count {
-            float: right;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.55em;
-            font-weight: normal;
-            margin-top: 1px;
+            font-size: 0.7em;
+            font-weight: 400;
+            color: #aaa;
         }
-        
-        @media (max-width: 1200px) {
-            .degree-section.full-width .alumni-card {
-                flex: 0 0 calc(25% - 19px);  /* 4 per row on large tablets */
-            }
-            
-            .alumni-image-wrapper {
-                width: 140px;
-                height: 140px;
-            }
-        }
-        
+
         @media (max-width: 992px) {
-            /* Stack the first row on tablets */
-            .degree-row {
-                flex-direction: column;
-                gap: 35px;
-            }
-            
-            .degree-row .alumni-card {
-                flex: 0 0 calc(33.333% - 17px);  /* 3 per row when stacked */
-                max-width: none;
-            }
-            
-            .degree-section.full-width .alumni-card {
-                flex: 0 0 calc(33.333% - 17px);  /* 3 per row on tablets */
-            }
-            
-            .alumni-image-wrapper {
-                width: 160px;
-                height: 160px;
-            }
-            
-            .degree-content {
-                padding: 20px;
-                min-height: auto;
-            }
+            .degree-row { flex-direction: column; gap: 40px; }
+            .alumni-card { flex: 0 0 calc(33% - 16px); }
         }
-        
+
         @media (max-width: 768px) {
-            .alumni-card,
-            .degree-row .alumni-card,
-            .degree-section.full-width .alumni-card {
-                flex: 0 0 calc(50% - 12.5px);  /* 2 per row on small screens */
-            }
-            
-            .alumni-image-wrapper {
-                width: 180px;
-                height: 180px;
-            }
-            
-            .degree-header {
-                font-size: 1.4em;
-                padding: 10px 15px;
-            }
-            
-            .alumni-count {
-                display: none;  /* Hide count on mobile for cleaner look */
-            }
+            .alumni-card { flex: 0 0 calc(50% - 12px); }
         }
-        
+
         @media (max-width: 576px) {
-            .alumni-card,
-            .degree-row .alumni-card,
-            .degree-section.full-width .alumni-card {
-                flex: 0 0 100%;  /* 1 per row on mobile */
-                max-width: none;
-            }
-            
-            .alumni-image-wrapper {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .degree-header {
-                font-size: 1.2em;
-                padding: 10px 12px;
-            }
-            
-            .degree-content,
-            .degree-row .degree-content {
-                padding: 15px;
-            }
+            .alumni-card { flex: 0 0 100%; }
         }
+        .sections-wrapper { font-size: 19px; }
+        .section .heading { font-size: 28px; }
     </style>
 </head>
 
@@ -305,14 +160,13 @@
 
     <!-- ******HEADER****** -->
     <header class="header">
-        <div class="container">
-                <h1 class="name" style="color:#464646;">Poranne Research Group</h1>
-            </div>
-            <!--//profile-->
-        <!--//container-->
+        <div class="container text-center">
+            <h1 class="name">Poranne Research Group</h1>
+            <p class="header-subtitle">Computational Physical Organic Chemistry &nbsp;·&nbsp; Technion — Israel Institute of Technology</p>
+        </div>
     </header>
     <!--//header-->
-	
+
 	<div id="wrapper">
 		<!-- start header -->
 		<header>
@@ -325,40 +179,62 @@
 							<span class="icon-bar"></span>
 						</button>
 					</div>
-					<div class="navbar-collapse collapse ">
+					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="index.html"><h4 class="name">Home</h4></a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">The Group </h4><b class=" icon-angle-down"></b></a>
+							<li class="active dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">People</h4><b class="icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="people-currentmembers.html">Current Members</a></li>
-									<li><a href="people-alumni.html">Alumni</a></li>
+									<li><a href="people.html">The Poranne Group</a></li>
+									<li><a href="rgp.html">Renana Gershoni Poranne</a></li>
+									<li><a href="people-alumni.html">Former Group Members</a></li>
 								</ul>
 							</li>
-							<li><a href="publications.html"><h4 class="name">Publications</h4></a></li>
-							<li><a href="research.html"><h4 class="name">Research</h4></a></li>
-							<li><a href="news.html"><h4 class="name">News</h4></a></li>
+							<li><a href="research.html"><h4 class="name">Research Projects</h4></a></li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Gallery </h4><b class=" icon-angle-down"></b></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Publications</h4><b class="icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="gallery.html">Photo Gallery</a></li>
+									<li><a href="publications.html">Papers</a></li>
 									<li><a href="covers.html">Cover Gallery</a></li>
 								</ul>
+							</li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Software </h4><b class=" icon-angle-down"></b></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Software</h4><b class="icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="predi-xy.html">Predi-XY</a></li>
-								</ul>	
-							</div>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
-		
+		</header>
+
+    <!-- *** INFO BAR *** -->
+    <div class="info-bar">
+        <div class="container">
+            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#4472C4;" target="_blank">
+                <i class="fa fa-paper-plane"></i> Contact Us
+            </a>
+            <span class="info-item">
+                <i class="fa fa-map-marker" style="color:#4472C4;"></i> Schulich Faculty of Chemistry, Technion, Israel
+            </span>
+            <span class="info-item">
+                <i class="fa fa-envelope-o" style="color:#4472C4;"></i>
+                <a href="mailto:porannegroup@technion.ac.il">porannegroup@technion.ac.il</a>
+            </span>
+            <span class="info-item">
+                <i class="fa fa-twitter" style="color:#4472C4;"></i>
+                <a href="https://twitter.com/PoranneG" target="_blank">@PoranneG</a>
+            </span>
+        </div>
+    </div>
+
     <div class="container sections-wrapper">
         <div class="row">
                 <section class="latest section">
                     <div class="section-inner">
-                        <h2 class="heading">Poranne Group Alumni</h2>
+                        <h2 class="heading" style="color:#4472C4;">Poranne Group Alumni</h2>
 						<div class="content">
 
                             <!-- FIRST ROW: POSTDOC AND PHD SIDE BY SIDE -->
@@ -406,10 +282,17 @@
                             <div class="degree-section full-width">
                                 <h3 class="degree-header">
                                     MSc Students
-                                    <span class="alumni-count">7 Alumni</span>
+                                    <span class="alumni-count">8 Alumni</span>
                                 </h3>
                                 <div class="degree-content">
                                     <div class="alumni-grid">
+                                        <div class="alumni-card">
+                                            <div class="alumni-image-wrapper">
+                                                <img src="assets/images/people/Itay Almog.png" alt="Itay Almog" />
+                                            </div>
+                                            <h3 class="title">Itay Almog</h3>
+                                            <span class="role"><em>MSc Student</em><br> March 2023–2026</span>
+                                        </div>
                                         <div class="alumni-card">
                                             <div class="alumni-image-wrapper">
                                                 <img src="assets/images/people/Shany Erez.png" alt="Shany Erez" />
