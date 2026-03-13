@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poranne Research Group - Home</title>
+    
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=4">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+
+<style>
+    :root {
+        --hex-width: 180px;
+        --hex-height: 208px; /* Width * 1.1547 */
+        --gap: 12px;
+        --p-color: #4C81C7; /* Brand Blue */
+        --s-color: #729fcf; /* Software Soft Blue */
+        --pub-color: #355a8a; /* Deep Publication Blue */
+    }
+
+    .honeycomb-area {
+        background: #f4f7f9;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+        perspective: 1000px;
+    }
+
+    .hex-grid {
+        display: grid;
+        grid-template-columns: repeat(3, var(--hex-width));
+        grid-auto-rows: calc(var(--hex-height) * 0.75 + var(--gap));
+        gap: var(--gap);
+        width: fit-content;
+    }
+
+    .hex-link {
+        width: var(--hex-width);
+        height: var(--hex-height);
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none !important;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        position: relative;
+        cursor: pointer;
+    }
+
+    /* Interlocking Hex Logic */
+    .hex-link:nth-child(even) {
+        transform: translate(calc(var(--hex-width) / -2 - var(--gap) / 2), 0);
+    }
+    .hex-link:nth-child(n+3) {
+        margin-top: calc(var(--hex-height) * -0.25);
+    }
+
+    /* Styling & Depth */
+    .hex-link span {
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        z-index: 2;
+    }
+
+    /* 3D "Lift" on Hover */
+    .hex-link:hover {
+        transform: scale(1.1) translateZ(20px);
+        filter: brightness(1.1);
+        z-index: 10;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    /* Color Palette */
+    .p-hex { background: linear-gradient(135deg, #4C81C7, #355a8a); }
+    .r-hex { background: #ffffff; border: 2px solid #4C81C7; }
+    .r-hex span { color: #4C81C7; }
+    .pub-hex { background: linear-gradient(135deg, #355a8a, #203552); }
+    .cov-hex { background: #e0e8f2; }
+    .cov-hex span { color: #355a8a; }
+    .sof-hex { background: linear-gradient(135deg, #729fcf, #4C81C7); }
+    .con-hex { background: #ffffff; border: 2px solid #355a8a; }
+    .con-hex span { color: #355a8a; }
+
+    /* Fixed Publication Styling */
+    .latest .publication-item {
+        border-radius: 12px;
+        border-left: 8px solid #4C81C7;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        padding: 25px;
+        margin-bottom: 25px;
+        background: white;
+    }
+</style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container text-center">
+            <h1 class="name">Poranne Research Group</h1>
+            <p class="header-subtitle">Computational Physical Organic Chemistry &nbsp;·&nbsp; Technion</p>
+        </div>
+    </header>
+
+<div id="wrapper">
+    <div class="honeycomb-area">
+        <div class="hex-grid">
+            <a href="people.html" class="hex-link p-hex"><span>People</span></a>
+            <a href="research.html" class="hex-link r-hex"><span>Research</span></a>
+            <a href="publications.html" class="hex-link pub-hex"><span>Publications</span></a>
+            <a href="covers.html" class="hex-link cov-hex"><span>Covers</span></a>
+            <a href="predi-xy.html" class="hex-link sof-hex"><span>Software</span></a>
+            <a href="mailto:porannegroup@technion.ac.il" class="hex-link con-hex"><span>Contact</span></a>
+        </div>
+    </div>
+
+    <div class="container sections-wrapper">
+        <div class="row">
+            <div class="primary col-md-12">
+                <section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading">About</h2>
+                        <div class="content" style="text-align: justify;">
+                            <img src="assets/images/Poranne_group_2023.jpg" style="float:right; width:55%; margin: 0 0 20px 30px; border-radius:15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                            <p>The Poranne Group works in the field of computational physical organic chemistry at the Technion—Israel Institute of Technology.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="latest section">
+                    <div class="section-inner">
+                        <h2 class="heading">Recent Publications</h2>
+                        <div class="content">
+                            </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('publications.html')
+        .then(response => response.text())
+        .then(html => {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(html, 'text/html');
+            var publications = doc.querySelectorAll('.publication-item');
+            var contentDiv = document.querySelector('.latest .content');
+            contentDiv.innerHTML = '';
+            for (var i = 0; i < Math.min(6, publications.length); i++) {
+                var pub = publications[i].cloneNode(true);
+                var pubNumber = pub.querySelector('.publication-number');
+                if (pubNumber) pubNumber.remove();
+                pub.querySelectorAll('.cat-badge').forEach(b => b.remove());
+                contentDiv.appendChild(pub);
+            }
+        });
+});
+</script>
+</body>
+</html>

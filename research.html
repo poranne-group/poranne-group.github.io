@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favico-benz.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap&display=swap" rel="stylesheet" type="text/css">
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Plugins CSS -->
@@ -34,24 +34,27 @@
     <style>
         .research-card {
             background: #fff;
-            border: 3px solid #29B6D4;
+            border: 3px solid #4AB7D4;
             border-radius: 8px;
             padding: 20px 24px;
             margin-bottom: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(74, 183, 212, 0.35);
         }
-        .research-card.data   { border-color: #4472C4; }
-        .research-card.cat    { border-color: #C06BA8; }
-        .research-card.hiring { border-color: #5E67BC; background: #f0f1f9; }
+        .research-card.data   { border-color: #4472C4; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(68, 114, 196, 0.35); }
+        .research-card.cat    { border-color: #C06BA8; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(192, 107, 168, 0.35); }
+        .research-card.hiring { border-color: #4A95CD; background: #f0f1f9; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(74, 149, 205, 0.35); }
         .research-card h4 {
             margin-top: 0;
             font-size: 1.05em;
             color: #2c3e50;
         }
-        .research-card img { margin-top: 14px; }
-        .research-card { position: relative; }
-        .section .heading { color: #5E67BC; font-size: 28px; }
+        .research-card { position: relative; display: flex; flex-direction: column; }
+        .research-card .card-body { flex: 1; }
+        .research-card img { display: block; padding-top: 14px; }
+        .section .heading { color: #4A95CD; font-size: 28px; font-weight: 700; }
         .sections-wrapper { font-size: 19px; }
+        .btn-info-contact { background: #4A95CD !important; }
+        .btn-info-contact:hover { background: #2f7ab0 !important; }
         .cat-badge {
             position: absolute;
             top: 10px;
@@ -149,18 +152,18 @@
     <!-- *** INFO BAR *** -->
     <div class="info-bar">
         <div class="container">
-            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#5E67BC;" target="_blank">
+            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#4A95CD;" target="_blank">
                 <i class="fa fa-paper-plane"></i> Contact Us
             </a>
             <span class="info-item">
-                <i class="fa fa-map-marker" style="color:#5E67BC;"></i> Schulich Faculty of Chemistry, Technion, Israel
+                <i class="fa fa-map-marker" style="color:#4A95CD;"></i> Schulich Faculty of Chemistry, Technion, Israel
             </span>
             <span class="info-item">
-                <i class="fa fa-envelope-o" style="color:#5E67BC;"></i>
+                <i class="fa fa-envelope-o" style="color:#4A95CD;"></i>
                 <a href="mailto:porannegroup@technion.ac.il">porannegroup@technion.ac.il</a>
             </span>
             <span class="info-item">
-                <i class="fa fa-twitter" style="color:#5E67BC;"></i>
+                <i class="fa fa-twitter" style="color:#4A95CD;"></i>
                 <a href="https://twitter.com/PoranneG" target="_blank">@PoranneG</a>
             </span>
         </div>
@@ -175,48 +178,53 @@
                                     <p>Aromaticity is a fundamental concept in chemistry, yet it is not clearly defined and, therefore, not fully understood. At the same time, aromatic molecules are among the most prevalent classes of compounds and play key roles in various functionalities. The work in our group is aimed at providing a deeper understanding of this concept and how it can be harnessed for design of new molecules.</p>
 
                     <div class="research-card hiring">
-                        <h4><strong>We Are Hiring!</strong></h4>
-                        Fully-funded PhD and Postdoctoral positions are available in our group. To apply, send your letter of motivation and CV to our group email, or click on the contact button.
-                        <br><br>
-                        <center><img src="assets/images/Recruitment_space.png" width="60%" class="img-responsive project-image" /></center>
+                        <div class="card-body">
+                            <h4><strong>We Are Hiring!</strong></h4>
+                            Fully-funded PhD and Postdoctoral positions are available in our group. To apply, send your letter of motivation and CV to our group email, or click on the contact button.
+                        </div>
+                        <center><img src="assets/images/Recruitment_space.png" width="60%" class="img-responsive project-image" style="padding-bottom: 14px;" /></center>
                     </div>
 
                     <div style="display:flex; flex-wrap:wrap; gap:24px; margin-bottom:8px;">
 
                         <div class="research-card arom" style="flex:1 1 calc(50% - 12px); min-width:280px; margin-bottom:0;">
-                            <span class="cat-badge cat-badge-aromaticity">Aromaticity</span>
-                            <h4><strong>Making Sense of Aromaticity</strong></h4>
-                            Our group studies the relationship between various manifestations of aromaticity (e.g., energetic, geometric, magnetic) and other molecular properties (e.g., HOMO-LUMO gap, spin density). The uncovered structure-property relationships can advance rational design of molecules with targeted properties. In addition, we develop models and methods for visualization, interpretation, and prediction, which enable other chemists to gain chemical insight into their molecules of interest.
-                            <br>
+                            <div class="card-body">
+                                <span class="cat-badge cat-badge-aromaticity">Aromaticity</span>
+                                <h4><strong>Making Sense of Aromaticity</strong></h4>
+                                Our group studies the relationship between various manifestations of aromaticity (e.g., energetic, geometric, magnetic) and other molecular properties (e.g., HOMO-LUMO gap, spin density). The uncovered structure-property relationships can advance rational design of molecules with targeted properties. In addition, we develop models and methods for visualization, interpretation, and prediction, which enable other chemists to gain chemical insight into their molecules of interest.
+                            </div>
                             <img src="assets/images/Pillar1-STGaps.PNG" width="100%" class="img-responsive project-image" />
                         </div>
 
                         <div class="research-card data" style="flex:1 1 calc(50% - 12px); min-width:280px; margin-bottom:0;">
-                            <span class="cat-badge cat-badge-data">Data &amp; AI</span>
-                            <h4><strong>The COMPAS Project</strong></h4>
-                            The chemical space of aromatic molecules is vast and diverse, which presents an opportunity for data-driven investigation. To facilitate this, our group has established The COMPAS Project: the first COMputational database of Polycyclic Aromatic Systems. We are actively expanding this chemical database in a methodical manner using high-throughput computational chemistry methods.
-                            <br>
+                            <div class="card-body">
+                                <span class="cat-badge cat-badge-data">Data &amp; AI</span>
+                                <h4><strong>The COMPAS Project</strong></h4>
+                                The chemical space of aromatic molecules is vast and diverse, which presents an opportunity for data-driven investigation. To facilitate this, our group has established The COMPAS Project: the first COMputational database of Polycyclic Aromatic Systems. We are actively expanding this chemical database in a methodical manner using high-throughput computational chemistry methods.
+                            </div>
                             <img src="assets/images/Pillar2-Data.PNG" width="100%" class="img-responsive project-image" />
                         </div>
 
                         <div class="research-card data" style="flex:1 1 calc(50% - 12px); min-width:280px; margin-bottom:0;">
-                            <span class="cat-badge cat-badge-data">Data &amp; AI</span>
-                            <h4><strong>Data-Driven Molecular Design</strong></h4>
-                            Polycyclic aromatic systems are well-known for being the workhorses of organic electronics. Our group is interested in using Machine Learning and Deep Learning models to enable the design and/or identification of new polycyclic aromatic molecules that can provide improved performance and stability.<br>
-                            The COMPAS Project is one component of this avenue of investigation; the second is the development of new chemical representations that are amenable to interpretation, and which allow exploration of the data for structure-property relationships.
-                            <br>
+                            <div class="card-body">
+                                <span class="cat-badge cat-badge-data">Data &amp; AI</span>
+                                <h4><strong>Data-Driven Molecular Design</strong></h4>
+                                Polycyclic aromatic systems are well-known for being the workhorses of organic electronics. Our group is interested in using Machine Learning and Deep Learning models to enable the design and/or identification of new polycyclic aromatic molecules that can provide improved performance and stability.<br>
+                                The COMPAS Project is one component of this avenue of investigation; the second is the development of new chemical representations that are amenable to interpretation, and which allow exploration of the data for structure-property relationships.
+                            </div>
                             <img src="assets/images/Pillar2-DL.PNG" width="100%" class="img-responsive project-image" />
                         </div>
 
                         <div class="research-card cat" style="flex:1 1 calc(50% - 12px); min-width:280px; margin-bottom:0;">
-                            <span class="cat-badge cat-badge-catalysis">Reaction Mechanisms &amp; Catalysis</span>
-                            <h4><strong>Reactivity and Mechanisms</strong></h4>
-                            Together with our experimental collaborators, we are studying the relationship between the aromaticity of molecules and their reactivity. Among our active areas of investigation:
-                            <br>&#x2022; Ligand non-innocence in organometallic catalysts (<em>with the de Ruiter Group, Technion</em>)
-                            <br>&#x2022; Novel helical structures containing five-membered rings (<em>with the Alabugin Group, Florida State University</em>)
-                            <br>&#x2022; The interplay between charge and aromaticity in aromatic-alkali metal complexes (<em>with the Petrukhina Group, SUNY Albany</em>)
-                            <br>&#x2022; Rational design of indenofluorenes with enhanced antiaromaticity (<em>with the Haley Group, University of Oregon</em>)
-                            <br>
+                            <div class="card-body">
+                                <span class="cat-badge cat-badge-catalysis">Reaction Mechanisms &amp; Catalysis</span>
+                                <h4><strong>Reactivity and Mechanisms</strong></h4>
+                                Together with our experimental collaborators, we are studying the relationship between the aromaticity of molecules and their reactivity. Among our active areas of investigation:
+                                <br>&#x2022; Ligand non-innocence in organometallic catalysts (<em>with the de Ruiter Group, Technion</em>)
+                                <br>&#x2022; Novel helical structures containing five-membered rings (<em>with the Alabugin Group, Florida State University</em>)
+                                <br>&#x2022; The interplay between charge and aromaticity in aromatic-alkali metal complexes (<em>with the Petrukhina Group, SUNY Albany</em>)
+                                <br>&#x2022; Rational design of indenofluorenes with enhanced antiaromaticity (<em>with the Haley Group, University of Oregon</em>)
+                            </div>
                             <img src="assets/images/Pillar3.PNG" width="100%" class="img-responsive project-image" />
                         </div>
 
@@ -260,7 +268,7 @@
     <footer class="footer">
         <div class="container text-center">
             <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small> </div>
+             </div>
         <!--//container-->
     </footer>
     <!--//footer-->

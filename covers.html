@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favico-benz.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap&display=swap" rel="stylesheet" type="text/css">
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Plugins CSS -->
@@ -50,7 +50,7 @@
         .carousel-stage {
             position: relative;
             width: 100%;
-            height: 740px;
+            height: 620px;
             perspective: 1500px;
             overflow: hidden;
         }
@@ -78,7 +78,7 @@
 
         .c-item img {
             width: 100%;
-            height: 590px;
+            height: 560px;
             object-fit: cover;
             display: block;
         }
@@ -122,7 +122,7 @@
             top: 50%;
             transform: translateY(-50%);
             z-index: 20;
-            background: rgba(123, 82, 174, 0.82);
+            background: rgba(166,99,171,0.82);
             color: #fff;
             border: none;
             border-radius: 50%;
@@ -137,7 +137,7 @@
             box-shadow: 0 4px 14px rgba(0,0,0,0.28);
         }
         .carousel-btn:hover {
-            background: rgba(123, 82, 174, 1);
+            background: rgba(166,99,171,1);
             transform: translateY(-50%) scale(1.08);
         }
         .carousel-btn-prev { left: 16px; }
@@ -146,7 +146,7 @@
         /* Dots */
         .carousel-dots {
             text-align: center;
-            margin-top: 18px;
+            margin-top: 22px;
         }
         .c-dot {
             display: inline-block;
@@ -159,14 +159,14 @@
             transition: background 0.25s, transform 0.25s;
         }
         .c-dot.active {
-            background: #7B52AE;
+            background: #A663AB;
             transform: scale(1.3);
         }
 
         /* Caption */
         .carousel-caption {
             text-align: center;
-            margin-top: 14px;
+            margin-top: 10px;
             font-size: 1em;
             color: #555;
             font-weight: 500;
@@ -180,7 +180,9 @@
             color: #999;
         }
         .sections-wrapper { font-size: 19px; }
-        .section .heading { font-size: 28px; }
+        .section .heading { font-size: 28px; font-weight: 700; color: #A663AB; }
+        .btn-info-contact { background: #A663AB !important; }
+        .btn-info-contact:hover { background: #8a4a8e !important; }
     </style>
 </head>
 
@@ -255,18 +257,18 @@
     <!-- *** INFO BAR *** -->
     <div class="info-bar">
         <div class="container">
-            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#7B52AE;" target="_blank">
+            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#A663AB;" target="_blank">
                 <i class="fa fa-paper-plane"></i> Contact Us
             </a>
             <span class="info-item">
-                <i class="fa fa-map-marker" style="color:#7B52AE;"></i> Schulich Faculty of Chemistry, Technion, Israel
+                <i class="fa fa-map-marker" style="color:#A663AB;"></i> Schulich Faculty of Chemistry, Technion, Israel
             </span>
             <span class="info-item">
-                <i class="fa fa-envelope-o" style="color:#7B52AE;"></i>
+                <i class="fa fa-envelope-o" style="color:#A663AB;"></i>
                 <a href="mailto:porannegroup@technion.ac.il">porannegroup@technion.ac.il</a>
             </span>
             <span class="info-item">
-                <i class="fa fa-twitter" style="color:#7B52AE;"></i>
+                <i class="fa fa-twitter" style="color:#A663AB;"></i>
                 <a href="https://twitter.com/PoranneG" target="_blank">@PoranneG</a>
             </span>
         </div>
@@ -288,8 +290,8 @@
                                 <i class="fa fa-chevron-right"></i>
                             </button>
                         </div>
-                        <div class="carousel-dots" id="carouselDots"></div>
                         <div class="carousel-caption" id="carouselCaption"></div>
+                        <div class="carousel-dots" id="carouselDots"></div>
                         <div class="carousel-counter" id="carouselCounter"></div>
                     </div>
                     <!--//content-->
@@ -307,7 +309,7 @@
     <footer class="footer">
         <div class="container text-center">
             <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small> </div>
+             </div>
         <!--//container-->
     </footer>
     <!--//footer-->

@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favico-benz.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap&display=swap" rel="stylesheet" type="text/css">
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Plugins CSS -->
@@ -47,7 +47,11 @@
 
         .section .heading {
             font-size: 28px;
+            font-weight: 700;
+            color: #4E73C4;
         }
+        .btn-info-contact { background: #4E73C4 !important; }
+        .btn-info-contact:hover { background: #3558a8 !important; }
 
 		h3.title {
 			font-size: 1.1em;  /* Relative to body font size */
@@ -58,7 +62,8 @@
 	
         .publication-item {
             background: #fff;
-            border: 4px solid #29B6D4;
+            border: 3px solid #4E73C4;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(78,115,196,0.35);
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 25px;
@@ -68,7 +73,7 @@
 			        }
         
         .publication-item:hover {
-            box-shadow: 0 4px 12px rgba(123, 82, 174, 0.25);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.10), 0 0 16px rgba(78,115,196,0.45);
             border-color: inherit;
         }
         
@@ -76,25 +81,25 @@
         .pub-cat-data        .publication-number { background: #4472C4; }
         .pub-cat-catalysis   .publication-number { background: #C06BA8; }
         .pub-cat-other       .publication-number { background: #9B9BAA; }
-        .pub-cat-bonding     .publication-number { background: #D896C0; }
+        .pub-cat-bonding     .publication-number { background: #7A54AF; }
 
         .publication-number {
             position: absolute;
             top: 50%;
             left: -20px;
             transform: translateY(-50%);
-            background: #29B6D4;
+            background: #4E73C4;
             color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+            width: 42px;
+            height: 49px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             font-size: 1.1em;
             z-index: 10;
-            border: 3px solid white;
+            filter: drop-shadow(0 0 0 3px white);
         }
         
         .publication-item .item.row {
@@ -121,7 +126,7 @@
         }
         
         .publication-item h3.title a:hover {
-            color: #8B5CC8;
+            color: #4E73C4;
         }
         
         .publication-item .publication {
@@ -140,7 +145,7 @@
         }
         
 		.publication-item {
-			padding: 38px 10px 20px 20px;  /* Extra top padding for badge */
+			padding: 38px 10px 20px 32px;  /* Extra top padding for badge, left for hex */
 		}
 
 		.publication-item .desc {
@@ -186,8 +191,8 @@
 		.year-divider {
 			font-size: 1.3em;
 			font-weight: 700;
-			color: #7B52AE;
-			border-bottom: 2px solid #7B52AE;
+			color: #4E73C4;
+			border-bottom: 2px solid #4E73C4;
 			padding-bottom: 8px;
 			margin: 40px 0 24px 0;
 			background: none;
@@ -195,17 +200,17 @@
 		
 
         /* ---- Category color coding ---- */
-        .pub-cat-aromaticity { border-color: #29B6D4 !important; }
-        .pub-cat-data        { border-color: #4472C4 !important; }
-        .pub-cat-catalysis   { border-color: #C06BA8 !important; }
-        .pub-cat-other       { border-color: #9B9BAA !important; }
-        .pub-cat-bonding     { border-color: #D896C0 !important; }
+        .pub-cat-aromaticity { border-color: #29B6D4 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(41,182,212,0.35) !important; }
+        .pub-cat-data        { border-color: #4472C4 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(68,114,196,0.35) !important; }
+        .pub-cat-catalysis   { border-color: #C06BA8 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(192,107,168,0.35) !important; }
+        .pub-cat-other       { border-color: #9B9BAA !important; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(155,155,170,0.35) !important; }
+        .pub-cat-bonding     { border-color: #7A54AF !important; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(122,84,175,0.35) !important; }
 
-        .pub-cat-aromaticity:hover { box-shadow: 0 4px 14px rgba(41,182,212,0.28) !important; }
-        .pub-cat-data:hover        { box-shadow: 0 4px 14px rgba(68,114,196,0.28) !important; }
-        .pub-cat-catalysis:hover   { box-shadow: 0 4px 14px rgba(192,107,168,0.25) !important; }
-        .pub-cat-other:hover       { box-shadow: 0 4px 14px rgba(155,155,170,0.28) !important; }
-        .pub-cat-bonding:hover     { box-shadow: 0 4px 14px rgba(216,150,192,0.28) !important; }
+        .pub-cat-aromaticity:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.10), 0 0 16px rgba(41,182,212,0.50) !important; }
+        .pub-cat-data:hover        { box-shadow: 0 4px 14px rgba(0,0,0,0.10), 0 0 16px rgba(68,114,196,0.50) !important; }
+        .pub-cat-catalysis:hover   { box-shadow: 0 4px 14px rgba(0,0,0,0.10), 0 0 16px rgba(192,107,168,0.50) !important; }
+        .pub-cat-other:hover       { box-shadow: 0 4px 14px rgba(0,0,0,0.10), 0 0 16px rgba(155,155,170,0.50) !important; }
+        .pub-cat-bonding:hover     { box-shadow: 0 4px 14px rgba(0,0,0,0.10), 0 0 16px rgba(122,84,175,0.50) !important; }
 
         .badge-container {
             position: absolute;
@@ -228,7 +233,7 @@
         .cat-badge-data        { background:#E3F0FF; color:#1E3A8A; }
         .cat-badge-catalysis   { background:#FAE8F5; color:#7B2D6B; }
         .cat-badge-other       { background:#F0F0F4; color:#6B7280; }
-        .cat-badge-bonding     { background:#FAE8F5; color:#8B2D6B; }
+        .cat-badge-bonding     { background:#EDE7F6; color:#4A2D80; }
 
         /* ---- Preprint button ---- */
         .preprint-btn {
@@ -250,7 +255,7 @@
         .pub-cat-data .preprint-btn        { background:#4472C4; }
         .pub-cat-catalysis .preprint-btn   { background:#C06BA8; }
         .pub-cat-other .preprint-btn       { background:#9B9BAA; }
-        .pub-cat-bonding .preprint-btn     { background:#D896C0; }
+        .pub-cat-bonding .preprint-btn     { background:#7A54AF; }
 
         /* ---- Filter bar ---- */
         .filter-bar {
@@ -275,7 +280,7 @@
             color: #2d3748;
             transition: border-color 0.15s;
         }
-        .filter-bar input[type=text]:focus { border-color: #7B52AE; }
+        .filter-bar input[type=text]:focus { border-color: #4E73C4; }
         .filter-bar select {
             border: 1.5px solid #cbd5e0;
             border-radius: 20px;
@@ -287,7 +292,7 @@
             cursor: pointer;
             transition: border-color 0.15s;
         }
-        .filter-bar select:focus { border-color: #7B52AE; }
+        .filter-bar select:focus { border-color: #4E73C4; }
         .filter-count {
             font-size: 0.82em;
             color: #888;
@@ -396,7 +401,7 @@
     <!-- *** INFO BAR *** -->
     <div class="info-bar">
         <div class="container">
-            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#7B52AE;" target="_blank">
+            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#4E73C4;" target="_blank">
                 <i class="fa fa-paper-plane"></i> Contact Us
             </a>
             <span class="info-item">
@@ -459,7 +464,7 @@
                                 <div class="item row">
                                     <a class="col-sm-3 col-sm-20"> <img src="assets/images/three_wrongs.png" width="500" height="330" class="img-responsive project-image" /> </a>
                                     <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                        <h3 class="title"><a href="https://pubs.rsc.org/en/content/articlelanding/2026/sc/d5sc07395b" target="_blank">Three Wrongs Can Make a Right: Concealing Antiaromaticity in π-Expanded [4n]–[4n]–[4n] Frameworks</a></h3>
+                                        <h3 class="title"><a href="https://pubs.rsc.org/en/content/articlelanding/2026/sc/d5sc07395b" target="_blank">Three Wrongs Can Make a Right: a Computational Investigation of [4n]–[4n]–[4n] Fused π-Systems</a></h3>
                                         
                                         Muhammad Usama Gul Khan, Katarzyna Młodzikowska-Pieńko, Renana Gershoni-Poranne,* and Judy I. Wu*<span><br>
                                         <span class="publication">Chemical Science, 2026</span>
@@ -1245,7 +1250,7 @@
     <!-- ******FOOTER****** -->
     <footer class="footer">
         <div class="container text-center">
-            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+            
         </div>
     </footer>
 

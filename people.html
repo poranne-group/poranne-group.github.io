@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favico-benz.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap&display=swap" rel="stylesheet" type="text/css">
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Plugins CSS -->
@@ -47,9 +47,9 @@
 
         .position-header {
             font-size: 1.3em;
-            font-weight: 700;
-            color: #29B6D4;
-            border-bottom: 2px solid #29B6D4;
+            font-weight: 400;
+            color: #6B5EB6;
+            border-bottom: 2px solid #6B5EB6;
             padding-bottom: 8px;
             margin-bottom: 24px;
             display: flex;
@@ -83,34 +83,36 @@
 
         /* Member cards */
         .member-card {
-            background: #fff;
-            border-radius: 10px;
-            padding: 24px 16px 20px;
+            background: transparent;
+            padding: 8px 16px 20px;
             text-align: center;
-            transition: all 0.25s ease;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            transition: transform 0.25s ease;
             flex: 0 0 210px;
         }
 
         .member-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(41, 182, 212, 0.22);
         }
 
-        /* Circular profile photo */
+        /* Hexagonal profile photo */
         .member-image-wrapper {
             width: 160px;
-            height: 160px;
+            height: 185px;
             margin: 0 auto 14px;
-            overflow: hidden;
-            border-radius: 50%;
-            border: 3px solid #29B6D4;
+            background: #6B5EB6;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(107, 94, 182, 0.28);
         }
 
         .member-image-wrapper img {
-            width: 100%;
-            height: 100%;
+            width: 148px;
+            height: 171px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             object-fit: cover;
+            display: block;
         }
 
         .member-card h3 {
@@ -140,7 +142,7 @@
         }
 
         .member-card .more a {
-            color: #29B6D4;
+            color: #6B5EB6;
             text-decoration: none;
         }
 
@@ -157,24 +159,23 @@
 
         /* Join us card */
         .member-card.join-us {
-            border: 2px dashed #29B6D4;
-            box-shadow: none;
             flex: 0 0 220px;
         }
 
-        .member-card.join-us:hover {
-            background: #f0fcff;
-            box-shadow: 0 4px 14px rgba(41,182,212,0.18);
-        }
-
         .join-us .member-image-wrapper {
+            clip-path: none;
+            border-radius: 50%;
+            background: transparent;
+            border: 3px solid #6B5EB6;
+            box-shadow: none;
             width: 160px;
             height: 160px;
-            border-radius: 10px;
-            border-color: #29B6D4;
         }
 
         .join-us .member-image-wrapper img {
+            clip-path: none;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
         }
 
@@ -192,7 +193,9 @@
             .member-card { flex: 0 0 100%; }
         }
         .sections-wrapper { font-size: 19px; }
-        .section .heading { font-size: 28px; }
+        .section .heading { font-size: 28px; font-weight: 700; }
+        .btn-info-contact { background: #6B5EB6 !important; }
+        .btn-info-contact:hover { background: #5548a0 !important; }
     </style>
 </head>
 
@@ -289,7 +292,7 @@
         <div class="row">
             <section class="about section">
                 <div class="section-inner">
-                    <h2 class="heading" style="color:#29B6D4;">Meet The Poranne Group</h2>
+                    <h2 class="heading" style="color:#6B5EB6;">Meet The Poranne Group</h2>
                     <div class="content">
                         <p>Hi! Thanks for checking out our group website and getting to know more about the awesome people behind the science. Drop us an email if you are interested in learning more about joining the group. <br><br>
                         Current group members are listed below. Former group members can be found <a href="https://poranne-group.github.io/people-alumni.html">here.</a></p> <br>
@@ -304,7 +307,7 @@
             
             <section class="latest section">
                 <div class="section-inner">
-                    <h2 class="heading" style="color:#29B6D4;">Current Group Members</h2>
+                    <h2 class="heading" style="color:#6B5EB6;">Current Group Members</h2>
 
                     <!-- PI + POSTDOCS ROW -->
                     <div class="position-row" style="align-items:flex-start;">
@@ -400,7 +403,7 @@
                     <div class="position-section">
                         <h3 class="position-header">Join Our Team!</h3>
                         <div class="member-card join-us" style="flex:none;width:100%;max-width:100%;padding:24px;">
-                            <div class="member-image-wrapper" style="width:40%;height:auto;border-radius:8px;border:2px dashed #29B6D4;margin:0 auto;">
+                            <div class="member-image-wrapper" style="width:40%;height:auto;border-radius:8px;border:2px dashed #6B5EB6;margin:0 auto;">
                                 <img src="assets/images/people/JOIN US.JPG" alt="Join Us" style="width:100%;height:auto;object-fit:contain;" />
                             </div>
                             <h3 class="title" style="margin-top:16px;">This Could Be You!</h3>
@@ -417,7 +420,7 @@
     <footer class="footer">
         <div class="container text-center">
             <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small> </div>
+             </div>
         <!--//container-->
     </footer>
     <!--//footer-->

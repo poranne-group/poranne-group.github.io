@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favico-benz.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap&display=swap" rel="stylesheet" type="text/css">
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Plugins CSS -->
@@ -34,14 +34,18 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <style>
-        .section .heading { color: #29B6D4; font-size: 28px; }
+        .section .heading { color: #C06BA8; font-size: 28px; font-weight: 700; }
         .sections-wrapper { font-size: 19px; }
+        .content-card a:not(.page-btn) { color: #C06BA8; }
+        .content-card a:not(.page-btn):hover { color: #a0568c; }
+        .btn-info-contact { background: #C06BA8 !important; }
+        .btn-info-contact:hover { background: #a0568c !important; }
         .content-card {
             background: #fff;
-            border: 3px solid #29B6D4;
+            border: 3px solid #C06BA8;
             border-radius: 14px;
             padding: 28px 32px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(192,107,168,0.35);
         }
         .page-btn {
             display: inline-block;
@@ -50,7 +54,7 @@
             font-size: 0.9em;
             font-weight: 700;
             color: #fff !important;
-            background: #29B6D4;
+            background: #C06BA8;
             text-decoration: none !important;
             letter-spacing: 0.3px;
             margin: 4px 6px;
@@ -132,18 +136,18 @@
     <!-- *** INFO BAR *** -->
     <div class="info-bar">
         <div class="container">
-            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#29B6D4;" target="_blank">
+            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#C06BA8;" target="_blank">
                 <i class="fa fa-paper-plane"></i> Contact Us
             </a>
             <span class="info-item">
-                <i class="fa fa-map-marker" style="color:#29B6D4;"></i> Schulich Faculty of Chemistry, Technion, Israel
+                <i class="fa fa-map-marker" style="color:#C06BA8;"></i> Schulich Faculty of Chemistry, Technion, Israel
             </span>
             <span class="info-item">
-                <i class="fa fa-envelope-o" style="color:#29B6D4;"></i>
+                <i class="fa fa-envelope-o" style="color:#C06BA8;"></i>
                 <a href="mailto:porannegroup@technion.ac.il">porannegroup@technion.ac.il</a>
             </span>
             <span class="info-item">
-                <i class="fa fa-twitter" style="color:#29B6D4;"></i>
+                <i class="fa fa-twitter" style="color:#C06BA8;"></i>
                 <a href="https://twitter.com/PoranneG" target="_blank">@PoranneG</a>
             </span>
         </div>
@@ -153,45 +157,46 @@
         <div class="row">
                 <section class="about section">
                     <div class="section-inner">
-                        <h2 class="heading">Predi-XY</h2>
                         <div class="content-card">
-							<p align="center"><b><u>30 September 2020 - Completely redesigned version of Predi-XY is here!&nbsp;</b></u><br>
-								
-								<br><p align=justify><b>To read about Predi-XY and how it works, you can access the version of record in <em>Electronic Structure</em> or see the preprint on <em>ChemRxiv</em>. To download or clone the program, please visit our GitLab repository or use pip ("pip install predixy").</b> 
-						
-							<br><p align="center">
-						<br><a onclick="ga('send', 'event', 'download Predi-XY', 'Predi-XY-paper');" class="page-btn" href="https://iopscience.iop.org/article/10.1088/2516-1075/abd081">To Predi-XY Paper</a>
-						<a onclick="ga('send', 'event', 'download Predi-XY', 'Predi-XY');" class="page-btn" href="https://gitlab.com/porannegroup/predixy/-/releases">To Predi-XY Code</a>
-						<a onclick="ga('send', 'event', 'Predi-XY Preprint', 'Manual');" class="page-btn" href="https://chemrxiv.org/articles/preprint/Predi-XY_A_Python_Program_for_Automated_Generation_of_NICS-XY-Scans_Based_on_an_Additivity_Scheme/13019591">To Predi-XY Preprint</a>
-						
-								
-                            <br><br><p align="justify">Predi-XY is a homemade utility written in Python 3 for generating predicted <a href="https://onlinelibrary.wiley.com/doi/10.1002/chem.201304307/full">NICS-XY-Scans</a> of <i>cata</i>-condensed systems polycyclic aromatic systems, 
-                            using a novel additivity scheme, which was described and expanded on in:&nbsp; &nbsp;&nbsp;</p>
-                            <p align="justify"> 1) <a href="https://onlinelibrary.wiley.com/doi/10.1002/chem.201705407/full">Piecing it Together: An Additivity Scheme for Aromaticity using NICS-XY-Scans</a>. <br>
-                              2) <a href="https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/cphc.201900128">An Additivity Scheme for Aromaticity: The Heteroatom Case</a>&nbsp;</p>
-                            <p align="justify">
-                              <br>Using its onboard library and the principles of additivity, Predi-XY generates NICS-XY-Scans for unbranched <i>cata</i>-condensed molecules composed of the building blocks below within seconds (or less), without the need for a quantum-mechanical calculation.
-								<p align=center><img class="centerImage" height="80" width="500" src="assets/images/buildingblocks.png" /> </a>
-						<br> <p align=justify>Main features of Predi-XY:<br>
-						<li> Requires only XYZ coordinates of the molecule </li>
-						<li> Automated path-finding through the system </li>
-						<li> Can be looped over multiple molecules at a time </li>
-						<li> Automatic plotting of the resulting NICS-XY-Scan </li>
-						<li> Modifiable building block library </li>
-						<li> Automatic generation of ".arm" files for Aroma input</li>
-					
-                            
-							
-							
-							</p>
-						
-							<br><br>If you use Predi-XY, please cite the following:
-							<br><p style="text-indent: 5em;"></p>&emsp;1.&emsp; A. Wahab, F. Fleckenstein, S. Feusi and R. Gershoni-Poranne <em>Electronic Structure</em> <strong>2020</strong>,  <em>2</em>, 047002.
-							<br><p style="text-indent: 5em;"></p>&emsp;2.&emsp; R. Gershoni-Poranne and A. Stanger,&nbsp<i> Chem. Eur. J.</i> &nbsp<b>2014</b>,<i> 20</i>, 5673-5688.
-							<br><p style="text-indent: 5em;"></p>&emsp;3.&emsp; R. Gershoni-Poranne, &nbsp<i>Chem. Eur. J.</i> &nbsp<b>2018</b>, <i> 15</i>, 4165-4172.
-							<br><p style="text-indent: 5em;"></p>&emsp;3.&emsp; P. Finkelstein and R. Gershoni-Poranne, &nbsp<i>ChemPhysChem</i> &nbsp<b>2019</b>, <i> 20</i>, 1508-1520.							
-							<br><br><p align=center>
-							
+                            <h2 class="heading">Predi-XY</h2>
+
+                            <p style="text-align:center;"><b><u>30 September 2020 &mdash; Completely redesigned version of Predi-XY is here!</u></b></p>
+
+                            <p style="text-align:justify;"><b>To read about Predi-XY and how it works, you can access the version of record in <em>Electronic Structure</em> or see the preprint on <em>ChemRxiv</em>. To download or clone the program, please visit our GitLab repository or use pip (<code>pip install predixy</code>).</b></p>
+
+                            <p style="text-align:center;">
+                                <a onclick="ga('send', 'event', 'download Predi-XY', 'Predi-XY-paper');" class="page-btn" href="https://iopscience.iop.org/article/10.1088/2516-1075/abd081">To Predi-XY Paper</a>
+                                <a onclick="ga('send', 'event', 'download Predi-XY', 'Predi-XY');" class="page-btn" href="https://gitlab.com/porannegroup/predixy/-/releases">To Predi-XY Code</a>
+                                <a onclick="ga('send', 'event', 'Predi-XY Preprint', 'Manual');" class="page-btn" href="https://chemrxiv.org/articles/preprint/Predi-XY_A_Python_Program_for_Automated_Generation_of_NICS-XY-Scans_Based_on_an_Additivity_Scheme/13019591">To Predi-XY Preprint</a>
+                            </p>
+
+                            <p style="text-align:justify;">Predi-XY is a homemade utility written in Python 3 for generating predicted <a href="https://onlinelibrary.wiley.com/doi/10.1002/chem.201304307/full">NICS-XY-Scans</a> of <i>cata</i>-condensed polycyclic aromatic systems, using a novel additivity scheme, which was described and expanded on in:</p>
+                            <ol style="text-align:justify; padding-left:2em;">
+                                <li><a href="https://onlinelibrary.wiley.com/doi/10.1002/chem.201705407/full">Piecing it Together: An Additivity Scheme for Aromaticity using NICS-XY-Scans</a></li>
+                                <li><a href="https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/cphc.201900128">An Additivity Scheme for Aromaticity: The Heteroatom Case</a></li>
+                            </ol>
+
+                            <p style="text-align:justify;">Using its onboard library and the principles of additivity, Predi-XY generates NICS-XY-Scans for unbranched <i>cata</i>-condensed molecules composed of the building blocks below within seconds (or less), without the need for a quantum-mechanical calculation.</p>
+
+                            <p style="text-align:center;"><img class="centerImage" src="assets/images/buildingblocks.png" style="max-width:700px; width:90%; height:auto;" /></p>
+
+                            <p style="text-align:justify;"><b>Main features of Predi-XY:</b></p>
+                            <ul style="padding-left:2em; text-align:justify;">
+                                <li>Requires only XYZ coordinates of the molecule</li>
+                                <li>Automated path-finding through the system</li>
+                                <li>Can be looped over multiple molecules at a time</li>
+                                <li>Automatic plotting of the resulting NICS-XY-Scan</li>
+                                <li>Modifiable building block library</li>
+                                <li>Automatic generation of <code>.arm</code> files for Aroma input</li>
+                            </ul>
+
+                            <p style="text-align:justify;"><b>If you use Predi-XY, please cite the following:</b></p>
+                            <ol style="padding-left:2em; text-align:justify;">
+                                <li>A. Wahab, F. Fleckenstein, S. Feusi and R. Gershoni-Poranne, <em>Electronic Structure</em> <strong>2020</strong>, <em>2</em>, 047002.</li>
+                                <li>R. Gershoni-Poranne and A. Stanger, <i>Chem. Eur. J.</i> <b>2014</b>, <i>20</i>, 5673&ndash;5688.</li>
+                                <li>R. Gershoni-Poranne, <i>Chem. Eur. J.</i> <b>2018</b>, <i>15</i>, 4165&ndash;4172.</li>
+                                <li>P. Finkelstein and R. Gershoni-Poranne, <i>ChemPhysChem</i> <b>2019</b>, <i>20</i>, 1508&ndash;1520.</li>
+                            </ol>
 
                         </div>
                         <!--//content-card-->
@@ -210,7 +215,7 @@
     <footer class="footer">
         <div class="container text-center">
             <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small> </div>
+             </div>
         <!--//container-->
     </footer>
     <!--//footer-->

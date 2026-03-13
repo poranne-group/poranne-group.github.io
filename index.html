@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favico-benz.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap&display=swap" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=4">
@@ -66,6 +66,274 @@
     }
     .sections-wrapper { font-size: 19px; }
     .section .heading { font-size: 28px; color: #4C81C7; }
+
+    /* ===== Hex Navigation Section ===== */
+    .hex-nav-section {
+        padding: 55px 20px 65px;
+        background: linear-gradient(180deg, #e8eeff 0%, #F4F4F8 100%);
+        overflow: hidden;
+    }
+
+    .hex-nav-eyebrow {
+        text-align: center;
+        color: #7B52AE;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+        margin-bottom: 44px;
+        opacity: 0.65;
+    }
+
+    .hex-grid-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hex-grid {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hex-row {
+        display: flex;
+        margin-top: -40px; /* dy = (W+gap)*√3/2 = 168*0.866 = 145.5; mt = 145.5-185 = -39.5 */
+    }
+
+    .hex-row:first-child {
+        margin-top: 0;
+    }
+
+    .hex-row.offset {
+        margin-left: 84px; /* = (W+gap)/2 = 168/2 */
+    }
+
+    /* Each hex-cell is sized so that 160x185px gives a near-regular pointy-top hex */
+    .hex-cell {
+        position: relative;
+        width: 160px;
+        height: 185px;
+        margin: 0 4px; /* 4px each side = 8px uniform gap between all hex faces */
+        text-decoration: none !important;
+        flex-shrink: 0;
+        cursor: default;
+    }
+
+    .hex-cell.nav {
+        cursor: pointer;
+    }
+
+    /* Empty spacer — invisible, keeps grid spacing */
+    .hex-cell.null {
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    /* 3D depth layer — offset dark hex behind the face */
+    .hex-shadow {
+        position: absolute;
+        top: 8px;
+        left: 7px;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        z-index: 0;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .hex-cell.nav .hex-shadow {
+        background: rgba(0, 0, 0, 0.22);
+    }
+
+    .hex-cell.decor .hex-shadow {
+        background: rgba(0, 0, 0, 0.07);
+    }
+
+    /* Main hex face */
+    .hex-face {
+        position: absolute;
+        inset: 0;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        transition: transform 0.25s ease, filter 0.25s ease;
+    }
+
+    .hex-cell.decor .hex-face {
+        background: #ffffff;
+    }
+
+    /* Text + icon inside nav hex */
+    .hex-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 9px;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 13.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.9px;
+        text-align: center;
+        padding: 0 18px;
+        line-height: 1.25;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    }
+
+    .hex-content .fa {
+        font-size: 36px;
+        margin-bottom: 2px;
+        opacity: 0.95;
+    }
+
+    /* Hover: lift the face up, shadow stays down */
+    .hex-cell.nav:hover .hex-face {
+        transform: translateY(-7px);
+        filter: brightness(1.12) saturate(1.1);
+    }
+
+    .hex-cell.nav:hover .hex-shadow {
+        transform: translateY(-3px);
+        opacity: 0.6;
+    }
+
+    /* Mobile: shrink hex grid — margin-top = (W+8)*√3/2 - H; offset = (W+8)/2 */
+    @media (max-width: 900px) {
+        .hex-cell { width: 110px; height: 127px; }
+        .hex-row { margin-top: -25px; } /* (118*0.866=102.2) - 127 = -24.8 */
+        .hex-row.offset { margin-left: 59px; }
+        .hex-content .fa { font-size: 22px; }
+        .hex-content { font-size: 9.5px; gap: 6px; padding: 0 12px; }
+    }
+
+    @media (max-width: 560px) {
+        .hex-cell { width: 82px; height: 95px; }
+        .hex-row { margin-top: -17px; } /* (90*0.866=77.9) - 95 = -17.1 */
+        .hex-row.offset { margin-left: 45px; }
+        .hex-content .fa { font-size: 16px; }
+        .hex-content { font-size: 8px; gap: 4px; padding: 0 8px; letter-spacing: 0; }
+        .hex-shadow { top: 5px; left: 5px; }
+    }
+
+    /* ===== About Modal ===== */
+    #about-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(0,0,0,0.55);
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+    }
+    #about-modal.open { display: flex; }
+    #about-modal-box {
+        background: #fff;
+        border-radius: 20px;
+        max-width: 1300px;
+        width: 96%;
+        max-height: 92vh;
+        overflow-y: auto;
+        padding: 40px 48px 48px;
+        position: relative;
+        box-shadow: 0 12px 60px rgba(0,0,0,0.25);
+    }
+    #about-modal-close {
+        position: absolute;
+        top: 14px; right: 20px;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        color: #aaa;
+        line-height: 1;
+        z-index: 1;
+    }
+    #about-modal-close:hover { color: #49A6D0; }
+    #about-content-frame {
+        border: 5px solid #49A6D0;
+        border-radius: 28px;
+        padding: 36px 42px;
+        font-family: 'Lato', sans-serif;
+        font-size: 19px;
+        line-height: 1.8;
+        color: #333;
+        text-align: justify;
+    }
+    #about-content-frame h2 {
+        font-size: 34px;
+        color: #49A6D0;
+        margin-top: 0;
+        margin-bottom: 24px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+    }
+    #about-content-frame a { color: #49A6D0; }
+    #about-content-frame a:hover { color: #2e8ab0; }
+    #about-content-frame p { margin-bottom: 18px; }
+    #about-content-frame p:last-child { margin-bottom: 0; }
+    @media (max-width: 560px) {
+        #about-modal-box { padding: 32px 16px 24px; }
+        #about-content-frame { padding: 22px 18px; font-size: 16px; }
+    }
+
+    /* ===== Welcome Text ===== */
+    .hex-nav-section {
+        position: relative;
+    }
+    .hex-grid-wrapper {
+        position: relative;
+        z-index: 1;
+    }
+    .hex-welcome-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        color: #4C81C7;
+        pointer-events: none;
+        z-index: 0;
+        white-space: nowrap;
+        animation: welcomeFadeOut 1.0s ease forwards;
+        animation-delay: 0.5s;
+    }
+    .hex-welcome-text .line1 {
+        display: block;
+        font-size: 26px;
+        font-weight: 400;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        opacity: 0.6;
+        margin-bottom: 12px;
+    }
+    .hex-welcome-text .line2 {
+        display: block;
+        font-size: 56px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    @keyframes welcomeFadeOut {
+        from { opacity: 1; }
+        to   { opacity: 0; }
+    }
+
+    /* ===== Honeycomb Entrance Animation ===== */
+    .hex-cell:not(.null) {
+        opacity: 0;
+        transform: perspective(600px) rotateY(-90deg);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .hex-cell:not(.null).hex-revealed {
+        opacity: 1;
+        transform: perspective(600px) rotateY(0deg);
+    }
 </style>
 </head>
 
@@ -124,7 +392,7 @@
     <!-- *** INFO BAR *** -->
     <div class="info-bar">
         <div class="container">
-            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#4C81C7;" target="_blank">
+            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#49A6D0;" target="_blank">
                 <i class="fa fa-paper-plane"></i> Contact Us
             </a>
             <span class="info-item">
@@ -141,13 +409,144 @@
         </div>
     </div>
 
+    <!-- *** HEX NAVIGATION *** -->
+    <section class="hex-nav-section">
+        <div class="hex-welcome-text">
+            <span class="line1">Welcome to the</span>
+            <span class="line2">Poranne Research Group</span>
+        </div>
+        <div class="hex-grid-wrapper">
+            <div class="hex-grid">
+
+                <!--
+                    4-row organic honeycomb, 8 cells (no-offset) / 7 cells (offset).
+                    W = white decor, _ = null gap, letters = nav tiles.
+                    Nav tiles kept at j=1..6 to stay visible even on 1200px screens.
+
+                    Row 1 (no-offset, 8): W  | AboutUs | _  | Research | Publications | W  | null | CoverGallery
+                    Row 2 (offset,    7): W  | W  | W  | _  | W  | W  | W
+                    Row 3 (no-offset, 8): null | W | W | People | W | _ | Software | W
+                    Row 4 (offset,    8): PI  | W  | W  | Alumni | W  | W  | W  | Contact
+                -->
+
+                <!-- Row 1: About Us col1, Research col3, Publications col4, CoverGallery col7 -->
+                <div class="hex-row">
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <a href="#" onclick="document.getElementById('about-modal').classList.add('open');return false;" class="hex-cell nav">
+                        <div class="hex-shadow"></div>
+                        <div class="hex-face" style="background: #49A6D0;">
+                            <div class="hex-content"><i class="fa fa-home"></i><span>About Us</span></div>
+                        </div>
+                    </a>
+                    <div class="hex-cell null"></div>
+                    <a href="research.html" class="hex-cell nav">
+                        <div class="hex-shadow"></div>
+                        <div class="hex-face" style="background: #4A95CD;">
+                            <div class="hex-content"><i class="fa fa-flask"></i><span>Research</span></div>
+                        </div>
+                    </a>
+                    <a href="publications.html" class="hex-cell nav">
+                        <div class="hex-shadow"></div>
+                        <div class="hex-face" style="background: #4E73C4;">
+                            <div class="hex-content"><i class="fa fa-book"></i><span>Publications</span></div>
+                        </div>
+                    </a>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <div class="hex-cell null"></div>
+                    <a href="predi-xy.html" class="hex-cell nav">
+                        <div class="hex-shadow"></div>
+                        <div class="hex-face" style="background: #C06BA8;">
+                            <div class="hex-content"><i class="fa fa-laptop"></i><span>Software</span></div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Row 2: 2 nav at j=1,4 — teal→purple, purple→blue -->
+                <div class="hex-row offset">
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <div class="hex-cell null"></div>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                </div>
+
+                <!-- Row 3: 2 nav at j=1,4 — purple→teal, blue→teal -->
+                <div class="hex-row">
+                    <div class="hex-cell null"></div>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <a href="people.html" class="hex-cell nav">
+                        <div class="hex-shadow"></div>
+                        <div class="hex-face" style="background: #6B5EB6;">
+                            <div class="hex-content"><i class="fa fa-users"></i><span>People</span></div>
+                        </div>
+                    </a>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <div class="hex-cell null"></div>
+                    <a href="covers.html" class="hex-cell nav">
+                        <div class="hex-shadow"></div>
+                        <div class="hex-face" style="background: #A663AB;">
+                            <div class="hex-content"><i class="fa fa-picture-o"></i><span>Cover Gallery</span></div>
+                        </div>
+                    </a>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                </div>
+
+                <!-- Row 4: PI, Software, W, W, W, Contact -->
+                <div class="hex-row offset">
+                    <a href="rgp.html" class="hex-cell nav">
+                        <div class="hex-shadow"></div>
+                        <div class="hex-face" style="background: #4AB7D4;">
+                            <div class="hex-content"><i class="fa fa-user"></i><span>PI</span></div>
+                        </div>
+                    </a>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <a href="people-alumni.html" class="hex-cell nav">
+                        <div class="hex-shadow"></div>
+                        <div class="hex-face" style="background: #7A54AF;">
+                            <div class="hex-content"><i class="fa fa-graduation-cap"></i><span>Alumni</span></div>
+                        </div>
+                    </a>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
+                    <a href="mailto:porannegroup@technion.ac.il" class="hex-cell nav">
+                        <div class="hex-shadow"></div>
+                        <div class="hex-face" style="background: #D896C0;">
+                            <div class="hex-content"><i class="fa fa-envelope"></i><span>Contact Us</span></div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- *** ABOUT MODAL *** -->
+    <div id="about-modal" onclick="if(event.target===this)this.classList.remove('open');">
+        <div id="about-modal-box">
+            <button id="about-modal-close" onclick="document.getElementById('about-modal').classList.remove('open');">&times;</button>
+            <div id="about-content-frame">
+                <h2>About Us</h2>
+                <img src="assets/images/Poranne_group_2023.jpg" style="float:right; width:58%; margin: 0 0 20px 32px; border-radius:14px; box-shadow: 0 4px 18px rgba(0,0,0,0.13);">
+                <p>The Poranne Group is a research group working in the field of computational physical organic chemistry. Since October 2021, our group is part of the <a href="https://chemistry.technion.ac.il/en/">Schulich Faculty of Chemistry</a> at the <a href="https://www.technion.ac.il/en/home-2/">Technion—Israel Institute of Technology</a>. We first started working in July 2017 as a sub-group within the laboratory of <a href="http://www.chen.ethz.ch/">Prof. Dr. Peter Chen</a> at the Laboratorium für Organische Chemie at the <a href="https://www.ethz.ch/">ETH Zürich</a>.</p>
+                <p>Our work focuses on the investigation of polycyclic aromatic systems and includes characterization of molecular properties, elucidation of structure-property relationships, and illumination of the connection between aromaticity and reactivity in organometallic catalysts. We uncover useful and intuitive connections between structural features and molecular properties, and develop user-friendly pipelines and methods that help connect these abstract properties to real-world synthetic strategies. The chemical insights that we uncover are leveraged to implement machine-learning and deep-learning models for data-driven molecular design and discovery.</p>
+                <p>In addition, we work closely with collaborators around the world to better understand the reactivity and behavior of polycyclic aromatic systems, and to harness their unique properties for various applications.</p>
+                <p>The group believes in an inclusive and collaborative culture, where team-work and mutual respect are top priorities. We are always open to receiving new members who are excited about learning and who are motivated to work towards advancing our understanding of chemistry and molecular design.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- *** MAIN CONTENT *** -->
     <div class="container sections-wrapper">
         <div class="row">
             <div class="primary col-md-12 col-sm-12 col-xs-12">
 
-                <!-- About -->
-                <section class="about section">
+                <!-- About (content moved to modal, triggered by About Us hex) -->
+                <section class="about section" style="display:none;">
                     <div class="section-inner">
 
                         <h2 class="heading">About</h2>
@@ -173,16 +572,6 @@
                 <!--//section-->
 
 
-                <!-- Recent Publications -->
-                <section class="latest section">
-                    <div class="section-inner">
-                        <h2 class="heading">Recent Publications</h2>
-                        <p>Clickable titles lead to the version of record. Feel free to email us for an author's version if you cannot access the publications. For all publications, see <a href="publications.html">the full list</a>.</p>
-                        <div class="content pub-grid">
-                            <!-- Publications loaded here by JS -->
-                        </div>
-                    </div>
-                </section>
 
             </div>
         </div>
@@ -193,7 +582,7 @@
     <!-- *** FOOTER *** -->
     <footer class="footer">
         <div class="container text-center">
-            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+            
         </div>
     </footer>
 
@@ -201,6 +590,21 @@
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
+
+<script type="text/javascript">
+// Honeycomb entrance animation — random reveal order
+(function() {
+    var cells = Array.from(document.querySelectorAll('.hex-cell:not(.null)'));
+    // Fisher-Yates shuffle
+    for (var i = cells.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = cells[i]; cells[i] = cells[j]; cells[j] = t;
+    }
+    cells.forEach(function(cell, idx) {
+        setTimeout(function() { cell.classList.add('hex-revealed'); }, 400 + idx * 90);
+    });
+})();
+</script>
 
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
