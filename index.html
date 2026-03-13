@@ -213,11 +213,26 @@
 
     @media (max-width: 560px) {
         .hex-cell { width: 82px; height: 95px; }
-        .hex-row { margin-top: -17px; } /* (90*0.866=77.9) - 95 = -17.1 */
+        .hex-row { margin-top: -17px; }
         .hex-row.offset { margin-left: 45px; }
-        .hex-content .fa { font-size: 16px; }
-        .hex-content { font-size: 8px; gap: 4px; padding: 0 8px; letter-spacing: 0; }
+        .hex-content .fa { font-size: 20px; } /* slightly bigger — will scale down */
+        .hex-content { font-size: 9px; gap: 4px; padding: 0 8px; letter-spacing: 0; }
         .hex-shadow { top: 5px; left: 5px; }
+
+        /* Scale entire grid to fit phone width.
+           8 cells × 90px = 720px; phone content ~360px → scale 0.5
+           Grid height ≈ 329px → visual 165px → compensate with margin */
+        .hex-grid {
+            transform: scale(0.5);
+            transform-origin: top center;
+            margin-bottom: -165px;
+        }
+        .hex-nav-section {
+            padding: 28px 0 28px;
+        }
+        /* Welcome text: shrink so it doesn't overflow */
+        .hex-welcome-text .line1 { font-size: 13px; letter-spacing: 2px; }
+        .hex-welcome-text .line2 { font-size: 26px; }
     }
 
     /* ===== About Modal ===== */
