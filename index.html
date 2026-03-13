@@ -211,28 +211,29 @@
         .hex-content { font-size: 9.5px; gap: 6px; padding: 0 12px; }
     }
 
-    @media (max-width: 560px) {
-        .hex-cell { width: 82px; height: 95px; }
-        .hex-row { margin-top: -17px; }
-        .hex-row.offset { margin-left: 45px; }
-        .hex-content .fa { font-size: 20px; } /* slightly bigger — will scale down */
-        .hex-content { font-size: 9px; gap: 4px; padding: 0 8px; letter-spacing: 0; }
-        .hex-shadow { top: 5px; left: 5px; }
+    /* Mobile: hide desktop grid, show compact 3-col grid */
+    .hex-grid-mobile { display: none; }
 
-        /* Scale entire grid to fit phone width.
-           8 cells × 90px = 720px; phone content ~360px → scale 0.5
-           Grid height ≈ 329px → visual 165px → compensate with margin */
-        .hex-grid {
-            transform: scale(0.5);
-            transform-origin: top center;
-            margin-bottom: -165px;
+    @media (max-width: 560px) {
+        .hex-grid { display: none; }
+        .hex-grid-mobile {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
-        .hex-nav-section {
-            padding: 28px 0 28px;
-        }
-        /* Welcome text: shrink so it doesn't overflow */
-        .hex-welcome-text .line1 { font-size: 13px; letter-spacing: 2px; }
-        .hex-welcome-text .line2 { font-size: 26px; }
+        /* W=100px H=116px; pitch=108px; dy=108*0.866=93.5; mt=93.5-116=-22.5 */
+        .hex-grid-mobile .hex-row { margin-top: -23px; }
+        .hex-grid-mobile .hex-row:first-child { margin-top: 0; }
+        .hex-grid-mobile .hex-row.offset { margin-left: 54px; }
+        .hex-grid-mobile .hex-cell { width: 100px; height: 116px; }
+        .hex-grid-mobile .hex-shadow { top: 5px; left: 5px; }
+        .hex-grid-mobile .hex-content { font-size: 9.5px; gap: 6px; padding: 0 10px; letter-spacing: 0.3px; }
+        .hex-grid-mobile .hex-content .fa { font-size: 22px; }
+        .hex-nav-section { padding: 32px 0 36px; }
+        /* Welcome text on mobile */
+        .hex-welcome-text { white-space: normal; width: 90vw; }
+        .hex-welcome-text .line1 { font-size: 12px; letter-spacing: 2px; }
+        .hex-welcome-text .line2 { font-size: 22px; }
     }
 
     /* ===== About Modal ===== */
@@ -537,6 +538,53 @@
                 </div>
 
             </div>
+
+                <!-- MOBILE ONLY: compact 3-column nav grid -->
+                <div class="hex-grid-mobile">
+                    <div class="hex-row">
+                        <a href="#" onclick="document.getElementById('about-modal').classList.add('open');return false;" class="hex-cell nav">
+                            <div class="hex-shadow"></div>
+                            <div class="hex-face" style="background:#49A6D0;"><div class="hex-content"><i class="fa fa-home"></i><span>About Us</span></div></div>
+                        </a>
+                        <a href="research.html" class="hex-cell nav">
+                            <div class="hex-shadow"></div>
+                            <div class="hex-face" style="background:#4A95CD;"><div class="hex-content"><i class="fa fa-flask"></i><span>Research</span></div></div>
+                        </a>
+                        <a href="publications.html" class="hex-cell nav">
+                            <div class="hex-shadow"></div>
+                            <div class="hex-face" style="background:#4E73C4;"><div class="hex-content"><i class="fa fa-book"></i><span>Publications</span></div></div>
+                        </a>
+                    </div>
+                    <div class="hex-row offset">
+                        <a href="people.html" class="hex-cell nav">
+                            <div class="hex-shadow"></div>
+                            <div class="hex-face" style="background:#6B5EB6;"><div class="hex-content"><i class="fa fa-users"></i><span>People</span></div></div>
+                        </a>
+                        <a href="covers.html" class="hex-cell nav">
+                            <div class="hex-shadow"></div>
+                            <div class="hex-face" style="background:#A663AB;"><div class="hex-content"><i class="fa fa-picture-o"></i><span>Cover Gallery</span></div></div>
+                        </a>
+                        <a href="rgp.html" class="hex-cell nav">
+                            <div class="hex-shadow"></div>
+                            <div class="hex-face" style="background:#4AB7D4;"><div class="hex-content"><i class="fa fa-user"></i><span>PI</span></div></div>
+                        </a>
+                    </div>
+                    <div class="hex-row">
+                        <a href="people-alumni.html" class="hex-cell nav">
+                            <div class="hex-shadow"></div>
+                            <div class="hex-face" style="background:#7A54AF;"><div class="hex-content"><i class="fa fa-graduation-cap"></i><span>Alumni</span></div></div>
+                        </a>
+                        <a href="predi-xy.html" class="hex-cell nav">
+                            <div class="hex-shadow"></div>
+                            <div class="hex-face" style="background:#C06BA8;"><div class="hex-content"><i class="fa fa-laptop"></i><span>Software</span></div></div>
+                        </a>
+                        <a href="mailto:porannegroup@technion.ac.il" class="hex-cell nav">
+                            <div class="hex-shadow"></div>
+                            <div class="hex-face" style="background:#D896C0;"><div class="hex-content"><i class="fa fa-envelope"></i><span>Contact Us</span></div></div>
+                        </a>
+                    </div>
+                </div>
+
         </div>
     </section>
 
@@ -609,7 +657,9 @@
 <script type="text/javascript">
 // Honeycomb entrance animation — random reveal order
 (function() {
-    var cells = Array.from(document.querySelectorAll('.hex-cell:not(.null)'));
+    var isMobile = window.innerWidth <= 560;
+    var grid = isMobile ? '.hex-grid-mobile' : '.hex-grid';
+    var cells = Array.from(document.querySelectorAll(grid + ' .hex-cell:not(.null)'));
     // Fisher-Yates shuffle
     for (var i = cells.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));

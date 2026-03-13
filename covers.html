@@ -187,14 +187,20 @@
         @media (max-width: 700px) {
             /* Abandon 3D positioning — use simple static layout */
             .carousel-stage {
-                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                height: auto !important;
                 perspective: none;
                 overflow: visible;
             }
             .carousel-track {
+                flex: 0 0 100%;
                 position: static;
                 height: auto;
                 transform-style: flat;
+                width: 100%;
             }
             /* Hide all items by default */
             .c-item {
@@ -217,26 +223,18 @@
                 object-fit: contain;
                 display: block;
             }
-            /* Move arrows to below the image, side by side */
+            /* Arrows flow below image in a row */
             .carousel-btn {
-                position: static;
-                transform: none;
+                position: static !important;
+                transform: none !important;
+                flex: 0 0 auto;
                 width: 44px;
                 height: 44px;
                 font-size: 16px;
-                margin: 12px 8px 0;
+                margin: 10px 8px 0;
             }
             .carousel-btn:hover {
-                transform: scale(1.08);
-            }
-            /* Group arrows in a row centered below the image */
-            .carousel-stage {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .carousel-track {
-                width: 100%;
+                transform: scale(1.08) !important;
             }
         }
     </style>

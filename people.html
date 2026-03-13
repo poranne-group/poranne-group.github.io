@@ -187,8 +187,20 @@
         @media (max-width: 768px) {
             .member-card { flex: 0 0 calc(50% - 12px); }
             .pi-section { max-width: 100%; }
-            .position-row > .position-section { flex: 1 1 100% !important; width: 100% !important; }
+            .position-row {
+                flex-direction: column !important;
+                align-items: center !important;
+                width: 100%;
+            }
+            .position-row > .position-section {
+                flex: 0 0 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                text-align: center;
+            }
             .members-grid { justify-content: center; }
+            .position-header { justify-content: center; }
         }
 
         @media (max-width: 480px) {
