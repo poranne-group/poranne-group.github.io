@@ -115,7 +115,7 @@ iframe {
 */
 /* ======= Navbar ======= */
 .navbar-default {
-  background: linear-gradient(90deg, #29B6D4 0%, #4472C4 40%, #7B52AE 70%, #C06BA8 85%, #D896C0 100%) !important;
+  background: linear-gradient(90deg, #4AB7D4 0%, #4E73C4 40%, #7A54AF 70%, #C06BA8 85%, #D896C0 100%) !important;
   border-color: transparent !important;
   margin-bottom: 0;
 }
@@ -168,7 +168,7 @@ iframe {
 /* ======= Header ======= */
 .header {
   padding: 50px 0 40px;
-  background: linear-gradient(90deg, #29B6D4 0%, #4472C4 40%, #7B52AE 70%, #C06BA8 85%, #D896C0 100%);
+  background: linear-gradient(90deg, #4AB7D4 0%, #4E73C4 40%, #7A54AF 70%, #C06BA8 85%, #D896C0 100%);
   border-top: none;
   text-align: center;
 }
