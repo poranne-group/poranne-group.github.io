@@ -210,6 +210,192 @@
         .section .heading { font-size: 28px; font-weight: 700; }
         .btn-info-contact { background: #6B5EB6 !important; }
         .btn-info-contact:hover { background: #5548a0 !important; }
+
+        /* ===== People Honeycomb Section ===== */
+        .people-hex-section {
+            padding: 50px 20px 60px;
+            background: linear-gradient(180deg, #e8eeff 0%, #F4F4F8 100%);
+            overflow: hidden;
+        }
+
+        .people-hex-grid-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .people-hex-grid {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .phex-row {
+            display: flex;
+            margin-top: -40px;
+        }
+        .phex-row:first-child { margin-top: 0; }
+        .phex-row.offset { margin-left: 84px; }
+
+        .phex-cell {
+            position: relative;
+            width: 160px;
+            height: 185px;
+            margin: 0 4px;
+            flex-shrink: 0;
+        }
+
+        .phex-cell.null {
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .phex-shadow {
+            position: absolute;
+            top: 8px; left: 7px;
+            width: 100%; height: 100%;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            z-index: 0;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+        .phex-cell.decor .phex-shadow { background: rgba(0,0,0,0.07); }
+        .phex-cell:not(.decor):not(.null) .phex-shadow { background: rgba(0,0,0,0.20); }
+
+        .phex-face {
+            position: absolute;
+            inset: 0;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            overflow: hidden;
+            transition: transform 0.25s ease, filter 0.25s ease;
+        }
+        .phex-cell.decor .phex-face { background: #ffffff; }
+
+        .phex-face img {
+            width: 148px;
+            height: 171px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            object-fit: cover;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        /* Role frame colors */
+        .phex-pi .phex-face      { background: #4AB7D4; }
+        .phex-postdoc .phex-face { background: #4A95CD; }
+        .phex-phd .phex-face     { background: #6B5EB6; }
+        .phex-bsc .phex-face     { background: #D896C0; }
+
+        /* Hover: cell scales up and pops in front (applied only post-reveal) */
+        .phex-cell:not(.decor):not(.null):hover .phex-face {
+            filter: brightness(1.08) saturate(1.1);
+        }
+        .phex-cell:not(.decor):not(.null):hover .phex-shadow {
+            opacity: 0.65;
+        }
+
+        /* Info overlay on hover — sits inside .phex-face, clipped by hex shape */
+        .phex-info-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 20, 50, 0.86); /* default fallback */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 22px 18px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.2s ease 0.15s;
+            pointer-events: none;
+        }
+        .phex-cell:not(.decor):not(.null):hover .phex-info-overlay { opacity: 1; }
+        .phex-pi .phex-info-overlay      { background: rgba(74, 183, 212, 0.9); }
+        .phex-postdoc .phex-info-overlay { background: rgba(74, 149, 205, 0.9); }
+        .phex-phd .phex-info-overlay     { background: rgba(107, 94, 182, 0.9); }
+        .phex-bsc .phex-info-overlay     { background: rgba(216, 150, 192, 0.9); }
+
+        .phex-info-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            color: #fff;
+            line-height: 1.3;
+        }
+        .phex-info-role {
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
+            font-style: italic;
+            color: rgba(255,255,255,0.92);
+            line-height: 1.45;
+        }
+        @media (max-width: 900px) {
+            .phex-info-name { font-size: 9.5px; }
+            .phex-info-role { font-size: 9px; }
+            .phex-info-overlay { padding: 14px 10px; gap: 3px; }
+        }
+        @media (max-width: 560px) {
+            .phex-info-name { font-size: 7px; }
+            .phex-info-role { font-size: 6.5px; }
+            .phex-info-overlay { padding: 10px 8px; gap: 2px; }
+        }
+
+        /* Legend */
+        .phex-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 28px;
+            margin: 48px 0 0;
+        }
+        .phex-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-family: 'Montserrat', sans-serif;
+            color: #555;
+        }
+        .phex-legend-hex {
+            width: 18px; height: 21px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            flex-shrink: 0;
+        }
+
+        /* Entrance animation */
+        .phex-cell:not(.null) {
+            opacity: 0;
+            transform: perspective(600px) rotateY(-90deg);
+            transition: opacity 0.45s ease, transform 0.45s ease;
+        }
+        .phex-cell:not(.null).phex-revealed {
+            opacity: 1;
+            transform: perspective(600px) rotateY(0deg);
+            transition: opacity 0.45s ease, transform 0.3s ease, z-index 0s;
+        }
+        .phex-cell:not(.decor):not(.null).phex-revealed:hover {
+            transform: scale(1.45);
+            z-index: 10;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .phex-cell { width: 110px; height: 127px; }
+            .phex-row { margin-top: -25px; }
+            .phex-row.offset { margin-left: 59px; }
+            .phex-face img { width: 100px; height: 116px; }
+        }
+        @media (max-width: 560px) {
+            .phex-cell { width: 86px; height: 99px; }
+            .phex-row { margin-top: -18px; }
+            .phex-row.offset { margin-left: 47px; }
+            .phex-face img { width: 78px; height: 90px; }
+            .phex-legend { gap: 8px 16px; }
+            .phex-legend-item { font-size: 11px; }
+        }
     </style>
 </head>
 
@@ -302,6 +488,172 @@
         </div>
     </div>
 
+    <!-- *** PEOPLE HONEYCOMB *** -->
+    <!--
+        4 rows, max 8 wide. 2 people per row, well spaced. 4 nulls at alternating corners.
+        Renana top-left corner. Color frames indicate role; no spatial clustering.
+
+        Row 1 (no-offset, 8): Renana★ | D  | D  | null | D  | Sabyasachi● | D  | D
+        Row 2 (offset,    7): D       | D  | Amrita● | D  | null | D  | Ajeet●
+        Row 3 (no-offset, 8): Pallavi● | D  | null | D  | Fatimah▲ | D  | D  | null
+        Row 4 (offset,    7): null    | D  | Ruth■  | D  | D  | Taqwa■  | D
+
+        Adjacency verification — no two people share an edge:
+          Renana(R1[0])    → below: R2[−1]=edge, R2[0]=D ✓
+          Sabyasachi(R1[5])→ below: R2[4]=null, R2[5]=D ✓
+          Amrita(R2[2])    → below: R3[2]=null, R3[3]=D ✓
+          Ajeet(R2[6])     → below: R3[6]=D, R3[7]=null ✓
+          Pallavi(R3[0])   → below: R4[−1]=edge, R4[0]=null ✓
+          Fatimah(R3[4])   → below: R4[3]=D, R4[4]=D ✓
+          Ruth(R4[2])      → above: R3[2]=null, R3[3]=D ✓
+          Taqwa(R4[5])     → above: R3[5]=D, R3[6]=D ✓
+    -->
+    <section class="people-hex-section">
+        <div class="people-hex-grid-wrapper">
+            <div class="people-hex-grid">
+
+                <!-- Row 1: Renana top-left, null in middle, Sabyasachi right-of-center -->
+                <div class="phex-row">
+                    <div class="phex-cell phex-pi">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Renana Poranne.png" alt="Renana Gershoni Poranne">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Assoc. Prof. Renana Gershoni Poranne</span>
+                                <span class="phex-info-role">Principal Investigator</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell null"></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell phex-postdoc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Sabyasachi Chakraborty.png" alt="Dr. Sabyasachi Chakraborty">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Dr. Sabyasachi Chakraborty</span>
+                                <span class="phex-info-role">Postdoctoral Researcher<br>Nov 2022–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                </div>
+
+                <!-- Row 2 (offset): Amrita center-left, null in middle, Ajeet far right -->
+                <div class="phex-row offset">
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell phex-postdoc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Amrita_Gogoi.jpg" alt="Dr. Amrita Gogoi">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Dr. Amrita Gogoi</span>
+                                <span class="phex-info-role">Maggie Kaplan Postdoctoral Fellow<br>Nov 2024–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell null"></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell phex-postdoc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Ajeet_Singh.jpg" alt="Dr. Ajeet Kumar Singh">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Dr. Ajeet Kumar Singh</span>
+                                <span class="phex-info-role">Postdoctoral Researcher<br>Sep 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Pallavi far left, null in middle, Fatimah center-right -->
+                <div class="phex-row">
+                    <div class="phex-cell phex-postdoc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Pallavi_Sarkar.jpg" alt="Dr. Pallavi Sarkar">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Dr. Pallavi Sarkar</span>
+                                <span class="phex-info-role">Lady Davis Postdoctoral Fellow<br>Oct 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell null"></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell phex-phd">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Fatimah Khaleel.png" alt="Fatimah Khaleel">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Fatimah Khaleel</span>
+                                <span class="phex-info-role">PhD Student<br>MSc Nov 2022–Sep 2024<br>PhD Oct 2024–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell null"></div>
+                </div>
+
+                <!-- Row 4 (offset): null far left, Ruth center-left, Taqwa center-right -->
+                <div class="phex-row offset">
+                    <div class="phex-cell null"></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell phex-bsc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Ruth Ascoli Abbina.jpeg" alt="Ruth Ascoli Abbina">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Ruth Ascoli Abbina</span>
+                                <span class="phex-info-role">BSc Semester Project<br>Nov 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell phex-bsc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Taqwa_Ghanayem.jpeg" alt="Taqwa Ghanayem">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Taqwa Ghanayem</span>
+                                <span class="phex-info-role">BSc Semester Project<br>Nov 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="phex-legend">
+            <div class="phex-legend-item">
+                <div class="phex-legend-hex" style="background:#4AB7D4;"></div>
+                <span>Group Leader</span>
+            </div>
+            <div class="phex-legend-item">
+                <div class="phex-legend-hex" style="background:#4A95CD;"></div>
+                <span>Postdoctoral Researchers</span>
+            </div>
+            <div class="phex-legend-item">
+                <div class="phex-legend-hex" style="background:#6B5EB6;"></div>
+                <span>PhD Students</span>
+            </div>
+            <div class="phex-legend-item">
+                <div class="phex-legend-hex" style="background:#D896C0;"></div>
+                <span>BSc Students</span>
+            </div>
+        </div>
+    </section>
+
     <div class="container sections-wrapper">
         <div class="row">
             <section class="about section">
@@ -309,16 +661,14 @@
                     <h2 class="heading" style="color:#6B5EB6;">Meet The Poranne Group</h2>
                     <div class="content">
                         <p>Hi! Thanks for checking out our group website and getting to know more about the awesome people behind the science. Drop us an email if you are interested in learning more about joining the group. <br><br>
-                        Current group members are listed below. Former group members can be found <a href="https://poranne-group.github.io/people-alumni.html">here.</a></p> <br>
-                        
-                        <a> <img src="assets/images/people/group-photo.jpg" width="100%"  class="img-responsive project-image" /> </a>
+                        Current group members are listed below. Former group members can be found <a href="https://poranne-group.github.io/people-alumni.html">here.</a></p>
                     </div>
                     <!--//content-->
                 </div>
                 <!--//section-inner-->
             </section>
-            <!--//section-->					
-            
+            <!--//section-->
+
             <section class="latest section">
                 <div class="section-inner">
                     <h2 class="heading" style="color:#6B5EB6;">Current Group Members</h2>
@@ -333,7 +683,7 @@
                                     <div class="member-image-wrapper">
                                         <img src="assets/images/people/Renana Poranne.png" alt="Renana Gershoni Poranne" />
                                     </div>
-                                    <h3 class="title">Renana Gershoni Poranne</h3>
+                                    <h3 class="title">Assoc. Prof. Renana Gershoni Poranne</h3>
                                     <span class="role"><em>Principal Investigator</em></span>
                                     <span class="email">rporanne @ technion.ac.il</span>
                                     <span class="more"><a href="rgp.html">Read more →</a></span>
@@ -445,6 +795,20 @@
     <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="assets/js/main.js"></script>
+
+<script type="text/javascript">
+// People honeycomb entrance animation — random reveal order
+(function() {
+    var cells = Array.from(document.querySelectorAll('.people-hex-grid .phex-cell:not(.null)'));
+    for (var i = cells.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = cells[i]; cells[i] = cells[j]; cells[j] = t;
+    }
+    cells.forEach(function(cell, idx) {
+        setTimeout(function() { cell.classList.add('phex-revealed'); }, 300 + idx * 90);
+    });
+})();
+</script>
 </body>
 
 </html>
