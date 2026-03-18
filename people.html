@@ -381,44 +381,39 @@
             z-index: 10;
         }
 
-        /* Responsive — cell sizes */
+        /* Responsive — cell sizes (desktop + tablet) */
         @media (max-width: 900px) {
             .phex-cell { width: 110px; height: 127px; }
             .phex-row { margin-top: -25px; }
             .phex-row.offset { margin-left: 59px; }
             .phex-face img { width: 100px; height: 116px; }
         }
+
+        /* Mobile: hide 8-wide desktop grid, show compact 3-col grid */
+        .people-hex-grid-mobile { display: none; }
+
         @media (max-width: 560px) {
-            .phex-cell { width: 86px; height: 99px; }
-            .phex-row { margin-top: -18px; }
-            .phex-row.offset { margin-left: 47px; }
-            .phex-face img { width: 78px; height: 90px; }
+            .people-hex-grid { display: none; }
+            .people-hex-grid-mobile {
+                display: inline-flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            /* W=100px H=116px; pitch=108*0.866=93.5; mt=93.5-116=-22.5 */
+            .people-hex-grid-mobile .phex-row { margin-top: -23px; }
+            .people-hex-grid-mobile .phex-row:first-child { margin-top: 0; }
+            .people-hex-grid-mobile .phex-row.offset { margin-left: 54px; }
+            .people-hex-grid-mobile .phex-cell { width: 100px; height: 116px; }
+            .people-hex-grid-mobile .phex-shadow { top: 5px; left: 5px; }
+            .people-hex-grid-mobile .phex-face img { width: 92px; height: 107px; }
             .phex-legend { gap: 8px 16px; }
             .phex-legend-item { font-size: 11px; }
+            .people-hex-section { padding: 32px 20px 40px; }
         }
 
-        /* Responsive — zoom grid to fit viewport width */
-        /* At 900px breakpoint cells are 110px → grid ~944px wide */
-        @media (max-width: 750px) { .people-hex-grid { zoom: 0.76; } }
-        /* At 560px breakpoint cells are 86px → grid ~752px wide */
-        @media (max-width: 560px) { .people-hex-grid { zoom: 1; } }
-        @media (max-width: 500px) { .people-hex-grid { zoom: 0.64; } }
-        @media (max-width: 420px) { .people-hex-grid { zoom: 0.52; } }
-        @media (max-width: 360px) { .people-hex-grid { zoom: 0.46; } }
-
-        /* Touch devices — disable hover, use tap instead */
-        @media (hover: none) {
-            .phex-cell:not(.decor):not(.null).phex-revealed:hover {
-                transform: none;
-                z-index: 1;
-            }
-            .phex-cell:not(.decor):not(.null):hover .phex-info-overlay { opacity: 0; }
-            .phex-cell:not(.decor):not(.null).phex-touched {
-                transform: scale(1.45);
-                z-index: 10;
-            }
-            .phex-cell:not(.decor):not(.null).phex-touched .phex-info-overlay { opacity: 1; }
-        }
+        /* Touch devices: tap to reveal overlay */
+        .phex-cell:not(.decor):not(.null).phex-touched { transform: scale(1.45); z-index: 10; }
+        .phex-cell:not(.decor):not(.null).phex-touched .phex-info-overlay { opacity: 1; }
     </style>
 </head>
 
@@ -654,6 +649,130 @@
                 </div>
 
             </div>
+
+            <!-- Mobile: compact 3-column grid (hidden on desktop) -->
+            <div class="people-hex-grid-mobile">
+
+                <!-- Row 1: Renana | decor | Sabyasachi -->
+                <div class="phex-row">
+                    <div class="phex-cell phex-pi">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Renana Poranne.png" alt="Assoc. Prof. Renana Gershoni Poranne">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Assoc. Prof. Renana Gershoni Poranne</span>
+                                <span class="phex-info-role">Principal Investigator</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell phex-postdoc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Sabyasachi Chakraborty.png" alt="Dr. Sabyasachi Chakraborty">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Dr. Sabyasachi Chakraborty</span>
+                                <span class="phex-info-role">Postdoctoral Researcher<br>Nov 2022–current</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 (offset, spacer) -->
+                <div class="phex-row offset">
+                    <div class="phex-cell null"></div>
+                    <div class="phex-cell null"></div>
+                </div>
+
+                <!-- Row 3: Amrita | decor | Pallavi -->
+                <div class="phex-row">
+                    <div class="phex-cell phex-postdoc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Amrita_Gogoi.jpg" alt="Dr. Amrita Gogoi">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Dr. Amrita Gogoi</span>
+                                <span class="phex-info-role">Maggie Kaplan Postdoctoral Fellow<br>Nov 2024–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell phex-postdoc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Pallavi_Sarkar.jpg" alt="Dr. Pallavi Sarkar">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Dr. Pallavi Sarkar</span>
+                                <span class="phex-info-role">Lady Davis Postdoctoral Fellow<br>Oct 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4 (offset, spacer) -->
+                <div class="phex-row offset">
+                    <div class="phex-cell null"></div>
+                    <div class="phex-cell null"></div>
+                </div>
+
+                <!-- Row 5: Ajeet | decor | Fatimah -->
+                <div class="phex-row">
+                    <div class="phex-cell phex-postdoc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Ajeet_Singh.jpg" alt="Dr. Ajeet Kumar Singh">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Dr. Ajeet Kumar Singh</span>
+                                <span class="phex-info-role">Postdoctoral Researcher<br>Sep 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell phex-phd">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Fatimah Khaleel.png" alt="Fatimah Khaleel">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Fatimah Khaleel</span>
+                                <span class="phex-info-role">PhD Student<br>MSc Nov 2022–Sep 2024<br>PhD Oct 2024–current</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 6 (offset, spacer) -->
+                <div class="phex-row offset">
+                    <div class="phex-cell null"></div>
+                    <div class="phex-cell null"></div>
+                </div>
+
+                <!-- Row 7: Ruth | decor | Taqwa -->
+                <div class="phex-row">
+                    <div class="phex-cell phex-bsc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Ruth Ascoli Abbina.jpeg" alt="Ruth Ascoli Abbina">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Ruth Ascoli Abbina</span>
+                                <span class="phex-info-role">BSc Semester Project<br>Nov 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell phex-bsc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Taqwa_Ghanayem.jpeg" alt="Taqwa Ghanayem">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Taqwa Ghanayem</span>
+                                <span class="phex-info-role">BSc Semester Project<br>Nov 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end .people-hex-grid-mobile -->
+
         </div>
 
         <!-- Legend -->
@@ -822,7 +941,9 @@
 <script type="text/javascript">
 // People honeycomb entrance animation — random reveal order
 (function() {
-    var cells = Array.from(document.querySelectorAll('.people-hex-grid .phex-cell:not(.null)'));
+    var isMobile = window.innerWidth <= 560;
+    var grid = isMobile ? '.people-hex-grid-mobile' : '.people-hex-grid';
+    var cells = Array.from(document.querySelectorAll(grid + ' .phex-cell:not(.null)'));
     for (var i = cells.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var t = cells[i]; cells[i] = cells[j]; cells[j] = t;
@@ -834,14 +955,13 @@
 
 // Touch devices: tap to toggle info overlay
 if (window.matchMedia('(hover: none)').matches) {
-    document.querySelectorAll('.people-hex-grid .phex-cell:not(.decor):not(.null)').forEach(function(cell) {
+    document.querySelectorAll('.phex-cell:not(.decor):not(.null)').forEach(function(cell) {
         cell.addEventListener('click', function() {
             var isActive = cell.classList.contains('phex-touched');
             document.querySelectorAll('.phex-touched').forEach(function(c) { c.classList.remove('phex-touched'); });
             if (!isActive) cell.classList.add('phex-touched');
         });
     });
-    // Tap outside to dismiss
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.phex-cell')) {
             document.querySelectorAll('.phex-touched').forEach(function(c) { c.classList.remove('phex-touched'); });
