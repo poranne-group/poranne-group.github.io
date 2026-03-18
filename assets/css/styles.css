@@ -613,10 +613,10 @@ h1.name {
 }
 /* ======= Footer ======= */
 .footer {
-  background: #1E1B3A;
+  background: transparent;
   color: #fff;
-  padding: 10px 0;
-  border-top: 4px solid;
+  padding: 0;
+  border-top: 10px solid;
   border-image: linear-gradient(90deg, #29B6D4, #4472C4, #7B52AE, #C06BA8, #D896C0) 1;
 }
 .footer .copyright {
