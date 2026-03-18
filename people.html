@@ -381,7 +381,7 @@
             z-index: 10;
         }
 
-        /* Responsive */
+        /* Responsive — cell sizes */
         @media (max-width: 900px) {
             .phex-cell { width: 110px; height: 127px; }
             .phex-row { margin-top: -25px; }
@@ -395,6 +395,29 @@
             .phex-face img { width: 78px; height: 90px; }
             .phex-legend { gap: 8px 16px; }
             .phex-legend-item { font-size: 11px; }
+        }
+
+        /* Responsive — zoom grid to fit viewport width */
+        /* At 900px breakpoint cells are 110px → grid ~944px wide */
+        @media (max-width: 750px) { .people-hex-grid { zoom: 0.76; } }
+        /* At 560px breakpoint cells are 86px → grid ~752px wide */
+        @media (max-width: 560px) { .people-hex-grid { zoom: 1; } }
+        @media (max-width: 500px) { .people-hex-grid { zoom: 0.64; } }
+        @media (max-width: 420px) { .people-hex-grid { zoom: 0.52; } }
+        @media (max-width: 360px) { .people-hex-grid { zoom: 0.46; } }
+
+        /* Touch devices — disable hover, use tap instead */
+        @media (hover: none) {
+            .phex-cell:not(.decor):not(.null).phex-revealed:hover {
+                transform: none;
+                z-index: 1;
+            }
+            .phex-cell:not(.decor):not(.null):hover .phex-info-overlay { opacity: 0; }
+            .phex-cell:not(.decor):not(.null).phex-touched {
+                transform: scale(1.45);
+                z-index: 10;
+            }
+            .phex-cell:not(.decor):not(.null).phex-touched .phex-info-overlay { opacity: 1; }
         }
     </style>
 </head>
@@ -808,6 +831,23 @@
         setTimeout(function() { cell.classList.add('phex-revealed'); }, 300 + idx * 90);
     });
 })();
+
+// Touch devices: tap to toggle info overlay
+if (window.matchMedia('(hover: none)').matches) {
+    document.querySelectorAll('.people-hex-grid .phex-cell:not(.decor):not(.null)').forEach(function(cell) {
+        cell.addEventListener('click', function() {
+            var isActive = cell.classList.contains('phex-touched');
+            document.querySelectorAll('.phex-touched').forEach(function(c) { c.classList.remove('phex-touched'); });
+            if (!isActive) cell.classList.add('phex-touched');
+        });
+    });
+    // Tap outside to dismiss
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.phex-cell')) {
+            document.querySelectorAll('.phex-touched').forEach(function(c) { c.classList.remove('phex-touched'); });
+        }
+    });
+}
 </script>
 </body>
 
