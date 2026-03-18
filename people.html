@@ -399,13 +399,13 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-            /* W=100px H=116px; pitch=108*0.866=93.5; mt=93.5-116=-22.5 */
-            .people-hex-grid-mobile .phex-row { margin-top: -23px; }
+            /* W=90px H=104px; pitch=98*0.866=84.9; mt=84.9-104=-19 */
+            .people-hex-grid-mobile .phex-row { margin-top: -19px; }
             .people-hex-grid-mobile .phex-row:first-child { margin-top: 0; }
-            .people-hex-grid-mobile .phex-row.offset { margin-left: 54px; }
-            .people-hex-grid-mobile .phex-cell { width: 100px; height: 116px; }
+            .people-hex-grid-mobile .phex-row.offset { margin-left: 49px; }
+            .people-hex-grid-mobile .phex-cell { width: 90px; height: 104px; }
             .people-hex-grid-mobile .phex-shadow { top: 5px; left: 5px; }
-            .people-hex-grid-mobile .phex-face img { width: 92px; height: 107px; }
+            .people-hex-grid-mobile .phex-face img { width: 83px; height: 96px; }
             .phex-legend { gap: 8px 16px; }
             .phex-legend-item { font-size: 11px; }
             .people-hex-section { padding: 32px 20px 40px; }
@@ -650,10 +650,10 @@
 
             </div>
 
-            <!-- Mobile: compact 3-column grid (hidden on desktop) -->
+            <!-- Mobile: compact grid, max 3 per row, 4 rows (hidden on desktop) -->
             <div class="people-hex-grid-mobile">
 
-                <!-- Row 1: Renana | decor | Sabyasachi -->
+                <!-- Row 1: Renana | Sabyasachi | Amrita -->
                 <div class="phex-row">
                     <div class="phex-cell phex-pi">
                         <div class="phex-shadow"></div>
@@ -665,7 +665,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
                     <div class="phex-cell phex-postdoc">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
@@ -676,16 +675,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Row 2 (offset, spacer) -->
-                <div class="phex-row offset">
-                    <div class="phex-cell null"></div>
-                    <div class="phex-cell null"></div>
-                </div>
-
-                <!-- Row 3: Amrita | decor | Pallavi -->
-                <div class="phex-row">
                     <div class="phex-cell phex-postdoc">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
@@ -696,7 +685,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                </div>
+
+                <!-- Row 2 (offset): Pallavi | Ajeet -->
+                <div class="phex-row offset">
                     <div class="phex-cell phex-postdoc">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
@@ -707,16 +699,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Row 4 (offset, spacer) -->
-                <div class="phex-row offset">
-                    <div class="phex-cell null"></div>
-                    <div class="phex-cell null"></div>
-                </div>
-
-                <!-- Row 5: Ajeet | decor | Fatimah -->
-                <div class="phex-row">
                     <div class="phex-cell phex-postdoc">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
@@ -727,7 +709,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                </div>
+
+                <!-- Row 3: Fatimah | Ruth -->
+                <div class="phex-row">
                     <div class="phex-cell phex-phd">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
@@ -738,16 +723,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Row 6 (offset, spacer) -->
-                <div class="phex-row offset">
-                    <div class="phex-cell null"></div>
-                    <div class="phex-cell null"></div>
-                </div>
-
-                <!-- Row 7: Ruth | decor | Taqwa -->
-                <div class="phex-row">
                     <div class="phex-cell phex-bsc">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
@@ -758,7 +733,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                </div>
+
+                <!-- Row 4 (offset): Taqwa | decor -->
+                <div class="phex-row offset">
                     <div class="phex-cell phex-bsc">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
@@ -769,6 +747,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
                 </div>
 
             </div><!-- end .people-hex-grid-mobile -->
