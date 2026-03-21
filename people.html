@@ -515,6 +515,7 @@
         Row 2 (offset,    7): D       | D  | Amrita● | D  | null | D  | Ajeet●
         Row 3 (no-offset, 8): Pallavi● | D  | null | D  | Fatimah▲ | D  | D  | null
         Row 4 (offset,    7): null    | D  | Ruth■  | D  | D  | Taqwa■  | D
+        Row 5 (no-offset, 8): Maisam■ | D  | D  | null | Maayan■ | D  | D  | null
 
         Adjacency verification — no two people share an edge:
           Renana(R1[0])    → below: R2[−1]=edge, R2[0]=D ✓
@@ -525,6 +526,8 @@
           Fatimah(R3[4])   → below: R4[3]=D, R4[4]=D ✓
           Ruth(R4[2])      → above: R3[2]=null, R3[3]=D ✓
           Taqwa(R4[5])     → above: R3[5]=D, R3[6]=D ✓
+          Maisam(R5[0])    → above: R4[−1]=edge, R4[0]=null ✓
+          Maayan(R5[4])    → above: R4[3]=D, R4[4]=D ✓
     -->
     <section class="people-hex-section">
         <div class="people-hex-grid-wrapper">
@@ -648,6 +651,36 @@
                     <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
                 </div>
 
+                <!-- Row 5: Maisam far left, Maayan center-right -->
+                <div class="phex-row">
+                    <div class="phex-cell phex-bsc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Maisam Halabi.jpeg" alt="Maisam Halabi">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Maisam Halabi</span>
+                                <span class="phex-info-role">BSc Semester Project<br>(With Computer Science)<br>Oct 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell null"></div>
+                    <div class="phex-cell phex-bsc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Maayan Farkash.jpeg" alt="Maayan Farkash">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Maayan Farkash</span>
+                                <span class="phex-info-role">BSc Semester Project<br>(With Computer Science)<br>Oct 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell null"></div>
+                </div>
+
             </div>
 
             <!-- Mobile: compact grid, max 3 per row, 4 rows (hidden on desktop) -->
@@ -740,6 +773,30 @@
                             <div class="phex-info-overlay">
                                 <span class="phex-info-name">Taqwa Ghanayem</span>
                                 <span class="phex-info-role">BSc Semester Project<br>Nov 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4 (offset): Maisam | Maayan -->
+                <div class="phex-row offset">
+                    <div class="phex-cell phex-bsc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Maisam Halabi.jpeg" alt="Maisam Halabi">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Maisam Halabi</span>
+                                <span class="phex-info-role">BSc Semester Project<br>(With Computer Science)<br>Oct 2025–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell phex-bsc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Maayan Farkash.jpeg" alt="Maayan Farkash">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Maayan Farkash</span>
+                                <span class="phex-info-role">BSc Semester Project<br>(With Computer Science)<br>Oct 2025–current</span>
                             </div>
                         </div>
                     </div>
@@ -874,6 +931,20 @@
                                     </div>
                                     <h3 class="title">Taqwa Ghanayem</h3>
                                     <span class="role"><em>BSc Semester Project</em><br>Nov 2025–current</span>
+                                </div>
+                                <div class="member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="assets/images/people/Maisam Halabi.jpeg" alt="Maisam Halabi" />
+                                    </div>
+                                    <h3 class="title">Maisam Halabi</h3>
+                                    <span class="role"><em>BSc Semester Project<br>(With Computer Science)</em><br>Oct 2025–current</span>
+                                </div>
+                                <div class="member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="assets/images/people/Maayan Farkash.jpeg" alt="Maayan Farkash" />
+                                    </div>
+                                    <h3 class="title">Maayan Farkash</h3>
+                                    <span class="role"><em>BSc Semester Project<br>(With Computer Science)</em><br>Oct 2025–current</span>
                                 </div>
                             </div>
                         </div>
