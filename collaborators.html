@@ -281,7 +281,7 @@
                                     <span class="legend-dot" style="background:#4472C4;"></span> Data &amp; AI
                                 </span>
                                 <span class="legend-item">
-                                    <span class="legend-dot" style="background:#C06BA8;"></span> Catalysis
+                                    <span class="legend-dot" style="background:#C06BA8;"></span> Catalysis &amp; Mechanisms
                                 </span>
                                 <span class="legend-item">
                                     <span class="legend-dot" style="background:#7A54AF;"></span> Bonding
@@ -318,11 +318,12 @@
     (function () {
 
         var catColors = {
-            aromaticity: { pin: '#4AB7D4', label: 'Aromaticity', badgeBg: '#E0F7FA', badgeText: '#006064' },
-            data:        { pin: '#4472C4', label: 'Data & AI',   badgeBg: '#E3F0FF', badgeText: '#1E3A8A' },
-            catalysis:   { pin: '#C06BA8', label: 'Catalysis',   badgeBg: '#FAE8F5', badgeText: '#7B2D6B' },
-            bonding:     { pin: '#7A54AF', label: 'Bonding',     badgeBg: '#EDE7F6', badgeText: '#4527A0' },
-            other:       { pin: '#9B9BAA', label: 'Other',       badgeBg: '#F5F5F5', badgeText: '#616161' }
+            aromaticity: { pin: '#4AB7D4', label: 'Aromaticity',         badgeBg: '#E0F7FA', badgeText: '#006064' },
+            data:        { pin: '#4472C4', label: 'Data & AI',            badgeBg: '#E3F0FF', badgeText: '#1E3A8A' },
+            catalysis:   { pin: '#C06BA8', label: 'Catalysis',            badgeBg: '#FAE8F5', badgeText: '#7B2D6B' },
+            bonding:     { pin: '#7A54AF', label: 'Bonding',              badgeBg: '#EDE7F6', badgeText: '#4527A0' },
+            mechanisms:  { pin: '#C06BA8', label: 'Reaction Mechanisms',  badgeBg: '#FAE8F5', badgeText: '#7B2D6B' },
+            other:       { pin: '#9B9BAA', label: 'Other',                badgeBg: '#F5F5F5', badgeText: '#616161' }
         };
 
         var collaborators = [
@@ -331,7 +332,14 @@
                 institution: 'Technion',
                 location: 'Haifa, Israel',
                 lat: 32.785, lng: 35.010,
-                categories: ['catalysis', 'bonding']
+                categories: ['catalysis', 'mechanisms']
+            },
+            {
+                name: 'Igor Alabugin',
+                institution: 'Florida State University',
+                location: 'Tallahassee, FL, USA',
+                lat: 30.442, lng: -84.298,
+                categories: ['aromaticity', 'bonding']
             },
             {
                 name: 'Michal M. Haley',
@@ -377,27 +385,38 @@
             }
         ];
 
-        function makePinBg(cats) {
-            if (cats.length === 1) {
-                return catColors[cats[0]].pin;
-            }
-            var stops = cats.map(function (c, i) {
-                var pct = 100 / cats.length;
-                return catColors[c].pin + ' ' + (i * pct) + '% ' + ((i + 1) * pct) + '%';
-            }).join(', ');
-            return 'conic-gradient(' + stops + ')';
-        }
-
         function makePinIcon(cats) {
-            var size = 22;
+            var w = 24, h = 34;
+            var defs = '';
+            var fill;
+
+            if (cats.length === 1) {
+                fill = catColors[cats[0]].pin;
+            } else {
+                var gradId = 'pg_' + cats.join('_');
+                var stops = cats.map(function (c, i) {
+                    var pct = 100 / cats.length;
+                    return '<stop offset="' + (i * pct) + '%" stop-color="' + catColors[c].pin + '"/>' +
+                           '<stop offset="' + ((i + 1) * pct) + '%" stop-color="' + catColors[c].pin + '"/>';
+                }).join('');
+                defs = '<defs><linearGradient id="' + gradId + '" x1="0" y1="0" x2="1" y2="0">' + stops + '</linearGradient></defs>';
+                fill = 'url(#' + gradId + ')';
+            }
+
+            /* pushpin: coloured ball on top, thin silver needle below */
+            var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 34" width="' + w + '" height="' + h + '" style="overflow:visible;">' +
+                      defs +
+                      '<line x1="12" y1="18" x2="12" y2="32" stroke="#ABABBA" stroke-width="2" stroke-linecap="round" style="filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.2));"/>' +
+                      '<circle cx="12" cy="10" r="9" fill="' + fill + '" style="filter:drop-shadow(0 2px 5px rgba(0,0,0,0.4));"/>' +
+                      '<ellipse cx="9" cy="7" rx="3" ry="2.5" fill="white" fill-opacity="0.38"/>' +
+                      '</svg>';
+
             return L.divIcon({
-                html: '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;' +
-                      'background:' + makePinBg(cats) + ';border:2.5px solid white;' +
-                      'box-shadow:0 2px 7px rgba(0,0,0,0.35);cursor:pointer;"></div>',
+                html: svg,
                 className: '',
-                iconSize: [size, size],
-                iconAnchor: [size / 2, size / 2],
-                tooltipAnchor: [0, -(size / 2) - 4]
+                iconSize: [w, h],
+                iconAnchor: [w / 2, h],
+                tooltipAnchor: [0, -h]
             });
         }
 
