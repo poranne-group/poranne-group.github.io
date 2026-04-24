@@ -331,7 +331,7 @@
                 name: 'Graham de Ruiter',
                 institution: 'Technion',
                 location: 'Haifa, Israel',
-                lat: 32.785, lng: 35.010,
+                lat: 32.777, lng: 35.021,
                 categories: ['catalysis', 'mechanisms']
             },
             {
@@ -373,7 +373,7 @@
                 name: 'Ori Green',
                 institution: 'Technion',
                 location: 'Haifa, Israel',
-                lat: 32.768, lng: 35.032,
+                lat: 32.777, lng: 35.021,
                 categories: ['catalysis', 'aromaticity']
             },
             {
@@ -385,34 +385,27 @@
             }
         ];
 
-        function makePinIcon(cats) {
+        function makePinIcon(cats, rotation) {
             var w = 24, h = 34;
-            var defs = '';
+            rotation = rotation || 0;
             var fill;
 
-            if (cats.length === 1) {
-                fill = catColors[cats[0]].pin;
-            } else {
-                var gradId = 'pg_' + cats.join('_');
-                var stops = cats.map(function (c, i) {
-                    var pct = 100 / cats.length;
-                    return '<stop offset="' + (i * pct) + '%" stop-color="' + catColors[c].pin + '"/>' +
-                           '<stop offset="' + ((i + 1) * pct) + '%" stop-color="' + catColors[c].pin + '"/>';
-                }).join('');
-                defs = '<defs><linearGradient id="' + gradId + '" x1="0" y1="0" x2="1" y2="0">' + stops + '</linearGradient></defs>';
-                fill = 'url(#' + gradId + ')';
-            }
+            var chosenCat = cats[Math.floor(Math.random() * cats.length)];
+            fill = catColors[chosenCat].pin;
 
             /* pushpin: coloured ball on top, thin silver needle below */
             var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 34" width="' + w + '" height="' + h + '" style="overflow:visible;">' +
-                      defs +
                       '<line x1="12" y1="18" x2="12" y2="32" stroke="#ABABBA" stroke-width="2" stroke-linecap="round" style="filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.2));"/>' +
                       '<circle cx="12" cy="10" r="9" fill="' + fill + '" style="filter:drop-shadow(0 2px 5px rgba(0,0,0,0.4));"/>' +
                       '<ellipse cx="9" cy="7" rx="3" ry="2.5" fill="white" fill-opacity="0.38"/>' +
                       '</svg>';
 
+            var html = rotation !== 0
+                ? '<div style="transform:rotate(' + rotation + 'deg);transform-origin:50% 100%;display:inline-block;">' + svg + '</div>'
+                : svg;
+
             return L.divIcon({
-                html: svg,
+                html: html,
                 className: '',
                 iconSize: [w, h],
                 iconAnchor: [w / 2, h],
@@ -454,8 +447,23 @@
             maxZoom: 16
         }).addTo(map);
 
+        /* Assign lean angles to pins that share the same location */
+        var locGroups = {};
         collaborators.forEach(function (c) {
-            var marker = L.marker([c.lat, c.lng], { icon: makePinIcon(c.categories) }).addTo(map);
+            var key = c.lat + ',' + c.lng;
+            if (!locGroups[key]) locGroups[key] = [];
+            locGroups[key].push(c);
+        });
+        Object.keys(locGroups).forEach(function (key) {
+            var group = locGroups[key];
+            if (group.length < 2) return;
+            group.forEach(function (c, i) {
+                c._rotation = (i - (group.length - 1) / 2) * 22;
+            });
+        });
+
+        collaborators.forEach(function (c) {
+            var marker = L.marker([c.lat, c.lng], { icon: makePinIcon(c.categories, c._rotation || 0) }).addTo(map);
             marker.bindTooltip(makeTooltipHTML(c), {
                 className: 'hex-tooltip-outer',
                 direction: 'top',
