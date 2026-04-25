@@ -385,6 +385,20 @@
                 location: 'Beer Sheva, Israel',
                 lat: 31.262, lng: 34.802,
                 categories: ['bonding']
+            },
+            {
+                name: 'Martin Peeks',
+                institution: 'University of New South Wales',
+                location: 'Sydney, Australia',
+                lat: -33.917, lng: 151.231,
+                categories: ['aromaticity']
+            },
+            {
+                name: 'Yuri Tulchinsky',
+                institution: 'Hebrew University',
+                location: 'Jerusalem, Israel',
+                lat: 31.774, lng: 35.194,
+                categories: ['bonding']
             }
         ];
 
@@ -393,14 +407,14 @@
             rotation = rotation || 0;
             var fill;
 
-            var chosenCat = cats[Math.floor(Math.random() * cats.length)];
+            var chosenCat = cats[strHash(cats.join('')) % cats.length];
             fill = catColors[chosenCat].pin;
 
             /* pushpin: coloured ball on top, thin silver needle below */
             var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 34" width="' + w + '" height="' + h + '" style="overflow:visible;">' +
-                      '<line x1="12" y1="18" x2="12" y2="32" stroke="#ABABBA" stroke-width="2" stroke-linecap="round" style="filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.2));"/>' +
-                      '<circle cx="12" cy="10" r="9" fill="' + fill + '" style="filter:drop-shadow(0 2px 5px rgba(0,0,0,0.4));"/>' +
-                      '<ellipse cx="9" cy="7" rx="3" ry="2.5" fill="white" fill-opacity="0.38"/>' +
+                      '<line x1="12" y1="14" x2="12" y2="32" stroke="#ABABBA" stroke-width="1.8" stroke-linecap="round" style="filter:drop-shadow(1px 1px 1px rgba(0,0,0,0.2));"/>' +
+                      '<circle cx="12" cy="8" r="6" fill="' + fill + '" style="filter:drop-shadow(0 2px 5px rgba(0,0,0,0.4));"/>' +
+                      '<ellipse cx="10" cy="6" rx="2.2" ry="1.7" fill="white" fill-opacity="0.38"/>' +
                       '</svg>';
 
             var html = rotation !== 0
@@ -450,7 +464,19 @@
             maxZoom: 16
         }).addTo(map);
 
-        /* Assign lean angles to pins that share the same location */
+        /* Deterministic integer hash of a string */
+        function strHash(s) {
+            var h = 0;
+            for (var i = 0; i < s.length; i++) {
+                h = (h * 31 + s.charCodeAt(i)) | 0;
+            }
+            return (h >>> 0); // unsigned
+        }
+
+        collaborators.forEach(function (c) {
+            c._rotation = (strHash(c.name) % 48) - 24;
+        });
+
         var locGroups = {};
         collaborators.forEach(function (c) {
             var key = c.lat + ',' + c.lng;
@@ -461,7 +487,7 @@
             var group = locGroups[key];
             if (group.length < 2) return;
             group.forEach(function (c, i) {
-                c._rotation = (i - (group.length - 1) / 2) * 22;
+                c._rotation = (i - (group.length - 1) / 2) * 28;
             });
         });
 
