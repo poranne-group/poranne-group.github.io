@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
@@ -12,11 +12,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
      gtag('js', new Date());
-
-    gtag('config', 'G-X6BLZH0DN4');
+     gtag('config', 'G-X6BLZH0DN4');
     </script>
-    
-	<title>Poranne Research Group - Predi-XY</title>
+
+	<title>Poranne Research Group - NICS Tools</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta https-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +27,6 @@
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=5">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -46,6 +44,7 @@
             border-radius: 14px;
             padding: 28px 32px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(192,107,168,0.35);
+            margin-bottom: 30px;
         }
         .page-btn {
             display: inline-block;
@@ -133,7 +132,7 @@
 								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Software </h4><b class=" icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="predi-xy.html">Predi-XY</a></li>
-								<li><a href="nics-tools.html">NICS Tools</a></li>
+									<li><a href="nics-tools.html">NICS Tools</a></li>
 								</ul>
 							</div>
 				</div>
@@ -164,65 +163,60 @@
         <div class="row">
                 <section class="about section">
                     <div class="section-inner">
+
+                        <!-- NICS-Visualizer -->
                         <div class="content-card">
-                            <h2 class="heading">Predi-XY</h2>
+                            <h2 class="heading">NICS-Visualizer</h2>
 
-                            <p style="text-align:center;"><b><u>30 September 2020 &mdash; Completely redesigned version of Predi-XY is here!</u></b></p>
+                            <p style="text-align:justify;">NICS-Visualizer is a local web application for the interactive visualization of NICS-XY-Scan results computed with <a href="http://gaussian.com" target="_blank">Gaussian</a>. It reads <code>.armdat</code> files produced by the <a href="https://gitlab.com/porannegroup/aroma" target="_blank">Aroma</a> package and displays per-ring NICS profiles, an interactive 2D structure panel showing which ring corresponds to which scan center, and a 3D molecular viewer with ghost-atom positions highlighted.</p>
 
-                            <p style="text-align:justify;"><b>To read about Predi-XY and how it works, you can access the version of record in <em>Electronic Structure</em> or see the preprint on <em>ChemRxiv</em>. To download or clone the program, please visit our GitLab repository or use pip (<code>pip install predixy</code>).</b></p>
-
-                            <p style="text-align:center;">
-                                <a onclick="ga('send', 'event', 'download Predi-XY', 'Predi-XY-paper');" class="page-btn" href="https://iopscience.iop.org/article/10.1088/2516-1075/abd081">To Predi-XY Paper</a>
-                                <a onclick="ga('send', 'event', 'download Predi-XY', 'Predi-XY');" class="page-btn" href="https://gitlab.com/porannegroup/predixy/-/releases">To Predi-XY Code</a>
-                                <a onclick="ga('send', 'event', 'Predi-XY Preprint', 'Manual');" class="page-btn" href="https://chemrxiv.org/articles/preprint/Predi-XY_A_Python_Program_for_Automated_Generation_of_NICS-XY-Scans_Based_on_an_Additivity_Scheme/13019591">To Predi-XY Preprint</a>
-                            </p>
-
-                            <p style="text-align:justify;">Predi-XY is a homemade utility written in Python 3 for generating predicted <a href="https://onlinelibrary.wiley.com/doi/10.1002/chem.201304307/full">NICS-XY-Scans</a> of <i>cata</i>-condensed polycyclic aromatic systems, using a novel additivity scheme, which was described and expanded on in:</p>
-                            <ol style="text-align:justify; padding-left:2em;">
-                                <li><a href="https://onlinelibrary.wiley.com/doi/10.1002/chem.201705407/full">Piecing it Together: An Additivity Scheme for Aromaticity using NICS-XY-Scans</a></li>
-                                <li><a href="https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/cphc.201900128">An Additivity Scheme for Aromaticity: The Heteroatom Case</a></li>
-                            </ol>
-
-                            <p style="text-align:justify;">Using its onboard library and the principles of additivity, Predi-XY generates NICS-XY-Scans for unbranched <i>cata</i>-condensed molecules composed of the building blocks below within seconds (or less), without the need for a quantum-mechanical calculation.</p>
-
-                            <p style="text-align:center;"><img class="centerImage" src="assets/images/buildingblocks.png" style="max-width:700px; width:90%; height:auto;" /></p>
-
-                            <p style="text-align:justify;"><b>Main features of Predi-XY:</b></p>
+                            <p style="text-align:justify;"><b>Main features:</b></p>
                             <ul style="padding-left:2em; text-align:justify;">
-                                <li>Requires only XYZ coordinates of the molecule</li>
-                                <li>Automated path-finding through the system</li>
-                                <li>Can be looped over multiple molecules at a time</li>
-                                <li>Automatic plotting of the resulting NICS-XY-Scan</li>
-                                <li>Modifiable building block library</li>
-                                <li>Automatic generation of <code>.arm</code> files for Aroma input</li>
+                                <li>Interactive per-ring NICS-XY-Scan plots (NICS<sub>zz</sub>, NICS<sub>&pi;zz</sub>, 3&Delta;iso)</li>
+                                <li>Clickable 2D molecular structure — each ring linked to its scan center</li>
+                                <li>View the Gaussian log file for any individual scan center</li>
+                                <li>3D molecular viewer with ghost atom (Bq) positions and sigma-center tabs</li>
+                                <li>Reads center log files directly from zip archives</li>
                             </ul>
 
-                            <p style="text-align:justify;"><b>If you use Predi-XY, please cite the following:</b></p>
-                            <ol style="padding-left:2em; text-align:justify;">
-                                <li>A. Wahab, F. Fleckenstein, S. Feusi and R. Gershoni-Poranne, <em>Electronic Structure</em> <strong>2020</strong>, <em>2</em>, 047002.</li>
-                                <li>R. Gershoni-Poranne and A. Stanger, <i>Chem. Eur. J.</i> <b>2014</b>, <i>20</i>, 5673&ndash;5688.</li>
-                                <li>R. Gershoni-Poranne, <i>Chem. Eur. J.</i> <b>2018</b>, <i>15</i>, 4165&ndash;4172.</li>
-                                <li>P. Finkelstein and R. Gershoni-Poranne, <i>ChemPhysChem</i> <b>2019</b>, <i>20</i>, 1508&ndash;1520.</li>
-                            </ol>
-
+                            <p style="text-align:center;">
+                                <a class="page-btn" href="https://github.com/poranne-group/poranne-group-tools" target="_blank">Download from GitHub</a>
+                            </p>
                         </div>
-                        <!--//content-card-->
+
+                        <!-- NICS-Plotter -->
+                        <div class="content-card">
+                            <h2 class="heading">NICS-Plotter</h2>
+
+                            <p style="text-align:justify;">NICS-Plotter is a local web application for plotting and comparing NICS-XY-Scan results across multiple molecules and ring centers. It reads <code>.armdat</code> files produced by <a href="https://gitlab.com/porannegroup/aroma" target="_blank">Aroma</a> and provides an interactive, publication-ready plotting interface.</p>
+
+                            <p style="text-align:justify;"><b>Main features:</b></p>
+                            <ul style="padding-left:2em; text-align:justify;">
+                                <li>Load entire directories of <code>.armdat</code> files at once</li>
+                                <li>Select molecules and ring centers to overlay on a single plot</li>
+                                <li>Customize colors, line styles, font, and plot dimensions</li>
+                                <li>Export publication-quality SVG/PNG figures</li>
+                                <li>Interactive 2D molecular structure panel with clickable rings</li>
+                                <li>3D molecular viewer and log file viewer per ring center</li>
+                            </ul>
+
+                            <p style="text-align:center;">
+                                <a class="page-btn" href="https://github.com/poranne-group/poranne-group-tools" target="_blank">Download from GitHub</a>
+                            </p>
+                        </div>
+
                     </div>
                     <!--//section-inner-->
                 </section>
                 <!--//section-->
 
-
-
-            </div>
         </div>
     </div>
 
     <!-- ******FOOTER****** -->
     <footer class="footer">
         <div class="container text-center">
-            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-             </div>
+        </div>
         <!--//container-->
     </footer>
     <!--//footer-->
@@ -233,7 +227,6 @@
     <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="assets/js/main.js"></script>
-bed and expanded on in:    
 </body>
 
 </html>
