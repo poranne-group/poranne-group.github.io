@@ -401,20 +401,23 @@
             text-transform: uppercase;
             letter-spacing: 0.4px;
         }
-        .stats-chart-canvas-wrap { position: relative; }
-        .stats-donut-wrap { display: flex; align-items: center; gap: 18px; }
-        .stats-donut-canvas-box { position: relative; width: 150px; height: 150px; flex-shrink: 0; }
+        .stats-chart-canvas-wrap { position: relative; height: 300px; }
+        .stats-donut-wrap { display: flex; flex-direction: column; align-items: center; height: 300px; }
+        .stats-donut-canvas-box { position: relative; flex: 1 1 auto; width: 100%; min-height: 0; }
         .stats-donut-center {
             position: absolute; inset: 0;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             pointer-events: none;
         }
-        .stats-donut-center .val { font-size: 1.5rem; font-weight: 700; color: #274690; line-height: 1; }
-        .stats-donut-center .lbl { font-size: 0.72rem; color: #6B7280; margin-top: 2px; }
+        .stats-donut-center .val { font-size: 2rem; font-weight: 700; color: #274690; line-height: 1; }
+        .stats-donut-center .lbl { font-size: 0.8rem; color: #6B7280; margin-top: 4px; }
         .stats-legend {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 16px;
+            flex-shrink: 0;
+            padding-top: 10px;
         }
         .stats-legend-item {
             display: flex;
@@ -540,9 +543,9 @@
                         <div id="statsPanel" class="stats-panel" hidden>
                             <div class="stats-grid">
                                 <div class="stats-card">
-                                    <h3 class="stats-card-title">Papers per Year</h3>
-                                    <div class="stats-chart-canvas-wrap" style="height:220px;">
-                                        <canvas id="statChartYear"></canvas>
+                                    <h3 class="stats-card-title">Top Journals</h3>
+                                    <div class="stats-chart-canvas-wrap" id="statChartJournalsWrap">
+                                        <canvas id="statChartJournals"></canvas>
                                     </div>
                                 </div>
                                 <div class="stats-card">
@@ -559,9 +562,9 @@
                                     </div>
                                 </div>
                                 <div class="stats-card stats-card-wide">
-                                    <h3 class="stats-card-title">Top Journals</h3>
-                                    <div class="stats-chart-canvas-wrap" id="statChartJournalsWrap">
-                                        <canvas id="statChartJournals"></canvas>
+                                    <h3 class="stats-card-title">Papers per Year</h3>
+                                    <div class="stats-chart-canvas-wrap" style="height:260px;">
+                                        <canvas id="statChartYear"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1576,8 +1579,8 @@
                     }
                 },
                 scales: {
-                    x: { grid: { display: false }, ticks: { font: { size: 10 } } },
-                    y: { beginAtZero: true, ticks: { stepSize: 1, precision: 0 }, grid: { color: '#f0f4f8' } }
+                    x: { grid: { display: false }, ticks: { font: { size: 13 } } },
+                    y: { beginAtZero: true, ticks: { stepSize: 1, precision: 0, font: { size: 13 } }, grid: { color: '#f0f4f8' } }
                 },
                 responsive: true,
                 maintainAspectRatio: false,
@@ -1645,8 +1648,6 @@
         }
         var jColors = entries.map(function(_, i) { return jGradColor(entries.length > 1 ? i / (entries.length - 1) : 0); });
 
-        document.getElementById('statChartJournalsWrap').style.height = (entries.length * 32 + 20) + 'px';
-
         new Chart(document.getElementById('statChartJournals'), {
             type: 'bar',
             data: {
@@ -1664,8 +1665,8 @@
                     }
                 },
                 scales: {
-                    x: { beginAtZero: true, ticks: { stepSize: 1, precision: 0 }, grid: { color: '#f0f4f8' } },
-                    y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+                    x: { beginAtZero: true, ticks: { stepSize: 1, precision: 0, font: { size: 13 } }, grid: { color: '#f0f4f8' } },
+                    y: { grid: { display: false }, ticks: { font: { size: 13 } } }
                 },
                 responsive: true,
                 maintainAspectRatio: false,
