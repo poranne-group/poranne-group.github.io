@@ -442,6 +442,7 @@
             max-width: 190px;
             box-sizing: border-box;
         }
+        .stats-minicard[title] { cursor: help; }
         .stats-minicard .val { font-size: 2.8rem; font-weight: 700; color: #274690; line-height: 1; }
         .stats-minicard .lbl {
             font-size: 1rem;
@@ -606,15 +607,15 @@
                                             <span class="val" id="statCountPapers"></span>
                                             <span class="lbl">Research Articles</span>
                                         </div>
-                                        <div class="stats-minicard" style="border-top-color:#29B6D4;">
+                                        <div class="stats-minicard" id="statTileReviews" style="border-top-color:#29B6D4;">
                                             <span class="val" id="statCountReviews"></span>
                                             <span class="lbl">Review Articles</span>
                                         </div>
-                                        <div class="stats-minicard" style="border-top-color:#7A54AF;">
+                                        <div class="stats-minicard" id="statTileChapters" style="border-top-color:#7A54AF;">
                                             <span class="val" id="statCountChapters"></span>
                                             <span class="lbl">Book Chapters</span>
                                         </div>
-                                        <div class="stats-minicard" style="border-top-color:#C06BA8;">
+                                        <div class="stats-minicard" id="statTileJournals" style="border-top-color:#C06BA8;">
                                             <span class="val" id="statCountJournals"></span>
                                             <span class="lbl">Unique Journals</span>
                                         </div>
@@ -1593,6 +1594,9 @@
         var perCategory = {};
         var perJournal = {};
         var perType = {};
+        var journalNames = {};
+        var reviewNumbers = [];
+        var chapterNumbers = [];
 
         items.forEach(function(item) {
             var year = item.getAttribute('data-year');
@@ -1607,13 +1611,25 @@
             }
 
             var journal = item.getAttribute('data-journal');
-            if (journal) perJournal[journal] = (perJournal[journal] || 0) + 1;
+            if (journal) { perJournal[journal] = (perJournal[journal] || 0) + 1; journalNames[journal] = true; }
 
             var type = item.getAttribute('data-type');
             if (type) perType[type] = (perType[type] || 0) + 1;
+
+            var numEl = item.querySelector('.publication-number');
+            var num = numEl ? numEl.textContent.trim() : null;
+            if (num) {
+                if (type === 'review') reviewNumbers.push(num);
+                if (type === 'chapter') chapterNumbers.push(num);
+            }
         });
 
-        return { perYear: perYear, perCategory: perCategory, perJournal: perJournal, perType: perType, total: items.length };
+        return {
+            perYear: perYear, perCategory: perCategory, perJournal: perJournal, perType: perType, total: items.length,
+            journalNames: Object.keys(journalNames).sort(),
+            reviewNumbers: reviewNumbers.sort(function(a, b) { return a - b; }),
+            chapterNumbers: chapterNumbers.sort(function(a, b) { return a - b; })
+        };
     }
 
     function renderYearChart(perYear) {
@@ -1732,11 +1748,20 @@
         });
     }
 
-    function renderOverviewTiles(perType, perJournal) {
-        document.getElementById('statCountPapers').textContent = perType.paper || 0;
-        document.getElementById('statCountReviews').textContent = perType.review || 0;
-        document.getElementById('statCountChapters').textContent = perType.chapter || 0;
-        document.getElementById('statCountJournals').textContent = Object.keys(perJournal).length;
+    function setTooltip(id, text) {
+        var el = document.getElementById(id);
+        if (text) el.title = text; else el.removeAttribute('title');
+    }
+
+    function renderOverviewTiles(stats) {
+        document.getElementById('statCountPapers').textContent = stats.perType.paper || 0;
+        document.getElementById('statCountReviews').textContent = stats.perType.review || 0;
+        document.getElementById('statCountChapters').textContent = stats.perType.chapter || 0;
+        document.getElementById('statCountJournals').textContent = stats.journalNames.length;
+
+        setTooltip('statTileJournals', stats.journalNames.join('\n'));
+        setTooltip('statTileReviews', stats.reviewNumbers.length ? 'Publication #' + stats.reviewNumbers.join(', #') : '');
+        setTooltip('statTileChapters', stats.chapterNumbers.length ? 'Publication #' + stats.chapterNumbers.join(', #') : '');
     }
 
     function buildCharts() {
@@ -1746,7 +1771,7 @@
         renderYearChart(stats.perYear);
         renderCategoryChart(stats.perCategory, stats.total);
         renderJournalsChart(stats.perJournal);
-        renderOverviewTiles(stats.perType, stats.perJournal);
+        renderOverviewTiles(stats);
     }
 
     var teaser = document.getElementById('statsTeaser');
