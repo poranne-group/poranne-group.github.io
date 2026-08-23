@@ -1637,7 +1637,7 @@
         entries.sort(function(a, b) { return b[1] - a[1]; });
         entries = entries.slice(0, 10);
 
-        var jPalette = [[68, 115, 196], [122, 84, 175], [192, 107, 168], [235, 104, 52]];
+        var jPalette = [[41, 182, 212], [68, 114, 196], [122, 84, 175], [192, 107, 168]];
         function jGradColor(t) {
             var s = t * (jPalette.length - 1), lo = Math.floor(s), hi = Math.min(lo + 1, jPalette.length - 1), f = s - lo;
             var rgb = jPalette[lo].map(function(v, k) { return Math.round(v + f * (jPalette[hi][k] - v)); });
