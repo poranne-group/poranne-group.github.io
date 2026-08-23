@@ -372,58 +372,55 @@
         .stats-teaser-link:hover { color: #274690; border-color: #274690; }
 
         .stats-panel {
-            background: #fff;
-            border: 3px solid #4E73C4;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(78,115,196,0.35);
-            border-radius: 8px;
-            padding: 24px;
+            background: #f4f6fb;
+            border-radius: 14px;
+            padding: 26px;
             margin: 18px 0 30px 0;
         }
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 20px;
         }
         .stats-card-wide { grid-column: 1 / -1; }
         @media (max-width: 700px) {
             .stats-grid { grid-template-columns: 1fr; }
         }
-        .stats-card-title {
-            font-size: 0.95em;
-            font-weight: 700;
-            color: #274690;
-            margin: 0 0 14px 0;
-            text-align: center;
+        .stats-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 22px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            border-top: 4px solid #4E73C4;
         }
-        .stats-chart { position: relative; width: 100%; }
-        .stats-chart svg { width: 100%; height: auto; display: block; overflow: visible; }
-
-        .stat-bar { fill: #274690; }
-        .stat-bar:hover, .stat-bar.stat-bar-hover { fill: #1c3568; }
-        .stat-bar-journals { fill: #eb6834; }
-        .stat-bar-journals:hover, .stat-bar-journals.stat-bar-hover { fill: #c85824; }
-        .stat-gridline { stroke: #e3e6ec; stroke-width: 1; }
-        .stat-axis-text { fill: #6B7280; font-size: 10px; }
-        .stat-value-label { fill: #274690; font-size: 11px; font-weight: 700; }
-        .stat-value-label-journals { fill: #c85824; font-size: 11px; font-weight: 700; }
-
-        .stat-donut-seg { stroke: #fff; stroke-width: 2; cursor: pointer; }
-        .stat-donut-seg:hover, .stat-donut-seg.stat-donut-hover { opacity: 0.85; }
-        .stat-donut-center-value { fill: #274690; font-size: 22px; font-weight: 700; }
-        .stat-donut-center-label { fill: #6B7280; font-size: 11px; }
-
+        .stats-card-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin: 0 0 14px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .stats-chart-canvas-wrap { position: relative; }
+        .stats-donut-wrap { display: flex; align-items: center; gap: 18px; }
+        .stats-donut-canvas-box { position: relative; width: 150px; height: 150px; flex-shrink: 0; }
+        .stats-donut-center {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            pointer-events: none;
+        }
+        .stats-donut-center .val { font-size: 1.5rem; font-weight: 700; color: #274690; line-height: 1; }
+        .stats-donut-center .lbl { font-size: 0.72rem; color: #6B7280; margin-top: 2px; }
         .stats-legend {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px 18px;
-            margin-top: 14px;
+            flex-direction: column;
+            gap: 8px;
         }
         .stats-legend-item {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.82em;
+            gap: 8px;
+            font-size: 0.85em;
             color: #4a5568;
         }
         .stats-legend-swatch {
@@ -433,23 +430,6 @@
             flex-shrink: 0;
         }
         .stats-legend-item b { color: #274690; }
-
-        .stats-tooltip {
-            position: absolute;
-            pointer-events: none;
-            background: #274690;
-            color: #fff;
-            font-size: 0.78em;
-            padding: 5px 10px;
-            border-radius: 6px;
-            white-space: nowrap;
-            transform: translate(-50%, -120%);
-            opacity: 0;
-            transition: opacity 0.12s ease;
-            z-index: 5;
-        }
-        .stats-tooltip.visible { opacity: 1; }
-        .stats-tooltip strong { font-weight: 700; }
     </style>
 </head>
 
@@ -561,15 +541,28 @@
                             <div class="stats-grid">
                                 <div class="stats-card">
                                     <h3 class="stats-card-title">Papers per Year</h3>
-                                    <div id="statChartYear" class="stats-chart"></div>
+                                    <div class="stats-chart-canvas-wrap" style="height:220px;">
+                                        <canvas id="statChartYear"></canvas>
+                                    </div>
                                 </div>
                                 <div class="stats-card">
                                     <h3 class="stats-card-title">Research Categories</h3>
-                                    <div id="statChartCategories" class="stats-chart"></div>
+                                    <div class="stats-donut-wrap">
+                                        <div class="stats-donut-canvas-box">
+                                            <canvas id="statChartCategories"></canvas>
+                                            <div class="stats-donut-center">
+                                                <span class="val" id="statDonutTotal"></span>
+                                                <span class="lbl">papers</span>
+                                            </div>
+                                        </div>
+                                        <div class="stats-legend" id="statCategoryLegend"></div>
+                                    </div>
                                 </div>
                                 <div class="stats-card stats-card-wide">
                                     <h3 class="stats-card-title">Top Journals</h3>
-                                    <div id="statChartJournals" class="stats-chart"></div>
+                                    <div class="stats-chart-canvas-wrap" id="statChartJournalsWrap">
+                                        <canvas id="statChartJournals"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1515,6 +1508,7 @@
 })();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
     // Keys match the exact data-category / data-categories values rendered in the DOM.
@@ -1533,58 +1527,8 @@
         'Chemical Bonding':                'Chemical Bonding',
         'Other':                           'Other'
     };
-    var NS = 'http://www.w3.org/2000/svg';
 
-    function svgEl(tag, attrs) {
-        var el = document.createElementNS(NS, tag);
-        for (var k in attrs) el.setAttribute(k, attrs[k]);
-        return el;
-    }
-
-    function niceMax(v) {
-        if (v <= 5) return 5;
-        var mag = Math.pow(10, Math.floor(Math.log10(v)));
-        var n = v / mag;
-        var step = n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10;
-        return step * mag;
-    }
-
-    function roundedTopRectPath(x, y, w, h, r) {
-        r = Math.min(r, w / 2, h);
-        var yBase = y + h;
-        return 'M' + x + ',' + yBase +
-               ' L' + x + ',' + (y + r) +
-               ' Q' + x + ',' + y + ' ' + (x + r) + ',' + y +
-               ' L' + (x + w - r) + ',' + y +
-               ' Q' + (x + w) + ',' + y + ' ' + (x + w) + ',' + (y + r) +
-               ' L' + (x + w) + ',' + yBase + ' Z';
-    }
-
-    function roundedRightRectPath(x, y, w, h, r) {
-        r = Math.min(r, h / 2, w);
-        return 'M' + x + ',' + y +
-               ' L' + (x + w - r) + ',' + y +
-               ' Q' + (x + w) + ',' + y + ' ' + (x + w) + ',' + (y + r) +
-               ' L' + (x + w) + ',' + (y + h - r) +
-               ' Q' + (x + w) + ',' + (y + h) + ' ' + (x + w - r) + ',' + (y + h) +
-               ' L' + x + ',' + (y + h) + ' Z';
-    }
-
-    function makeTooltip(container) {
-        var tip = document.createElement('div');
-        tip.className = 'stats-tooltip';
-        container.appendChild(tip);
-        return {
-            show: function(evt, html) {
-                tip.innerHTML = html;
-                var rect = container.getBoundingClientRect();
-                tip.style.left = (evt.clientX - rect.left) + 'px';
-                tip.style.top = (evt.clientY - rect.top) + 'px';
-                tip.classList.add('visible');
-            },
-            hide: function() { tip.classList.remove('visible'); }
-        };
-    }
+    var chartsBuilt = false;
 
     // ---- aggregate data from the published entries already on the page ----
     function collectStats() {
@@ -1612,104 +1556,64 @@
         return { perYear: perYear, perCategory: perCategory, perJournal: perJournal, total: items.length };
     }
 
-    // ---- chart: papers per year (vertical bars) ----
     function renderYearChart(perYear) {
         var years = Object.keys(perYear).sort();
         var counts = years.map(function(y) { return perYear[y]; });
-        var maxCount = Math.max.apply(null, counts);
-        var maxTick = niceMax(maxCount);
 
-        var W = 480, H = 260, ML = 30, MR = 8, MT = 20, MB = 30;
-        var innerW = W - ML - MR, innerH = H - MT - MB;
-        var slot = innerW / years.length;
-        var barW = Math.min(22, slot * 0.62);
-
-        var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, preserveAspectRatio: 'xMidYMid meet' });
-        var ticks = 4;
-        for (var t = 0; t <= ticks; t++) {
-            var val = Math.round(maxTick * t / ticks);
-            var gy = MT + innerH - (innerH * val / maxTick);
-            svg.appendChild(svgEl('line', { x1: ML, x2: ML + innerW, y1: gy, y2: gy, class: 'stat-gridline' }));
-            var lbl = svgEl('text', { x: ML - 6, y: gy + 3, class: 'stat-axis-text', 'text-anchor': 'end' });
-            lbl.textContent = val;
-            svg.appendChild(lbl);
-        }
-
-        var maxIdx = counts.indexOf(maxCount);
-        years.forEach(function(year, i) {
-            var count = counts[i];
-            var barH = innerH * count / maxTick;
-            var x = ML + i * slot + (slot - barW) / 2;
-            var y = MT + innerH - barH;
-            var bar = svgEl('path', { d: roundedTopRectPath(x, y, barW, Math.max(barH, 1), 3), class: 'stat-bar' });
-            svg.appendChild(bar);
-
-            if (i === maxIdx) {
-                var vlbl = svgEl('text', { x: x + barW / 2, y: y - 5, class: 'stat-value-label', 'text-anchor': 'middle' });
-                vlbl.textContent = count;
-                svg.appendChild(vlbl);
+        new Chart(document.getElementById('statChartYear'), {
+            type: 'bar',
+            data: {
+                labels: years,
+                datasets: [{ data: counts, backgroundColor: '#4E73C4', borderRadius: 4, borderSkipped: false }]
+            },
+            options: {
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) { return ctx.parsed.y + ' paper' + (ctx.parsed.y === 1 ? '' : 's'); }
+                        }
+                    }
+                },
+                scales: {
+                    x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+                    y: { beginAtZero: true, ticks: { stepSize: 1, precision: 0 }, grid: { color: '#f0f4f8' } }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                devicePixelRatio: window.devicePixelRatio || 2
             }
-
-            var showEvery = years.length > 14 ? 2 : 1;
-            if (i % showEvery === 0) {
-                var xlbl = svgEl('text', { x: x + barW / 2, y: H - MB + 14, class: 'stat-axis-text', 'text-anchor': 'middle' });
-                xlbl.textContent = year;
-                svg.appendChild(xlbl);
-            }
-
-            bar.addEventListener('pointerenter', function() { bar.classList.add('stat-bar-hover'); });
-            bar.addEventListener('pointerleave', function() { bar.classList.remove('stat-bar-hover'); tooltip.hide(); });
-            bar.addEventListener('pointermove', function(evt) {
-                tooltip.show(evt, '<strong>' + count + '</strong> paper' + (count === 1 ? '' : 's') + ' &middot; ' + year);
-            });
         });
-
-        var container = document.getElementById('statChartYear');
-        container.appendChild(svg);
-        var tooltip = makeTooltip(container);
     }
 
-    // ---- chart: research categories (donut) ----
     function renderCategoryChart(perCategory, paperTotal) {
         var cats = CAT_ORDER.filter(function(c) { return perCategory[c]; });
-        // Slice size reflects each category's share of all category tags — a paper
-        // with two categories (e.g. Aromaticity + Chemical Bonding) counts in both,
-        // so this sum can exceed the true paper count below.
-        var tagTotal = cats.reduce(function(s, c) { return s + perCategory[c]; }, 0);
+        var counts = cats.map(function(c) { return perCategory[c]; });
+        var colors = cats.map(function(c) { return CAT_COLOR[c]; });
+        var labels = cats.map(function(c) { return CAT_LABEL[c]; });
 
-        var size = 220, cx = size / 2, cy = size / 2, rOuter = 95, rInner = 58;
-        var svg = svgEl('svg', { viewBox: '0 0 ' + size + ' ' + size, preserveAspectRatio: 'xMidYMid meet' });
+        document.getElementById('statDonutTotal').textContent = paperTotal;
 
-        var angle = -90;
-        cats.forEach(function(cat) {
-            var count = perCategory[cat];
-            var sweep = (count / tagTotal) * 360;
-            var a0 = angle, a1 = angle + sweep;
-            var seg = describeDonutSegment(cx, cy, rOuter, rInner, a0, a1);
-            var path = svgEl('path', { d: seg, fill: CAT_COLOR[cat], class: 'stat-donut-seg' });
-            svg.appendChild(path);
-
-            path.addEventListener('pointerenter', function() { path.classList.add('stat-donut-hover'); });
-            path.addEventListener('pointerleave', function() { path.classList.remove('stat-donut-hover'); tooltip.hide(); });
-            path.addEventListener('pointermove', function(evt) {
-                tooltip.show(evt, '<strong>' + CAT_LABEL[cat] + '</strong><br>' + count + ' paper' + (count === 1 ? '' : 's'));
-            });
-            angle = a1;
+        new Chart(document.getElementById('statChartCategories'), {
+            type: 'doughnut',
+            data: { labels: labels, datasets: [{ data: counts, backgroundColor: colors, borderWidth: 2, borderColor: '#fff' }] },
+            options: {
+                cutout: '68%',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) { return ctx.label + ': ' + ctx.parsed + ' paper' + (ctx.parsed === 1 ? '' : 's'); }
+                        }
+                    }
+                },
+                devicePixelRatio: window.devicePixelRatio || 2
+            }
         });
 
-        var centerVal = svgEl('text', { x: cx, y: cy - 3, class: 'stat-donut-center-value', 'text-anchor': 'middle' });
-        centerVal.textContent = paperTotal;
-        svg.appendChild(centerVal);
-        var centerLbl = svgEl('text', { x: cx, y: cy + 15, class: 'stat-donut-center-label', 'text-anchor': 'middle' });
-        centerLbl.textContent = 'papers';
-        svg.appendChild(centerLbl);
-
-        var container = document.getElementById('statChartCategories');
-        container.appendChild(svg);
-        var tooltip = makeTooltip(container);
-
-        var legend = document.createElement('div');
-        legend.className = 'stats-legend';
+        var legend = document.getElementById('statCategoryLegend');
         cats.forEach(function(cat) {
             var item = document.createElement('span');
             item.className = 'stats-legend-item';
@@ -1726,80 +1630,58 @@
             item.appendChild(label);
             legend.appendChild(item);
         });
-        container.parentNode.appendChild(legend);
     }
 
-    function polarToXY(cx, cy, r, angleDeg) {
-        var rad = (angleDeg) * Math.PI / 180;
-        return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
-    }
-
-    function describeDonutSegment(cx, cy, rOuter, rInner, a0, a1) {
-        var gap = 1.2; // degrees, creates the surface-color gap between segments
-        a0 += gap / 2; a1 -= gap / 2;
-        var large = (a1 - a0) > 180 ? 1 : 0;
-        var p0 = polarToXY(cx, cy, rOuter, a0);
-        var p1 = polarToXY(cx, cy, rOuter, a1);
-        var p2 = polarToXY(cx, cy, rInner, a1);
-        var p3 = polarToXY(cx, cy, rInner, a0);
-        return 'M' + p0.x + ',' + p0.y +
-               ' A' + rOuter + ',' + rOuter + ' 0 ' + large + ' 1 ' + p1.x + ',' + p1.y +
-               ' L' + p2.x + ',' + p2.y +
-               ' A' + rInner + ',' + rInner + ' 0 ' + large + ' 0 ' + p3.x + ',' + p3.y + ' Z';
-    }
-
-    // ---- chart: top journals (horizontal bars) ----
     function renderJournalsChart(perJournal) {
         var entries = Object.keys(perJournal).map(function(j) { return [j, perJournal[j]]; });
         entries.sort(function(a, b) { return b[1] - a[1]; });
         entries = entries.slice(0, 10);
 
-        var W = 480, rowH = 26, ML = 130, MR = 26, MT = 6, MB = 6;
-        var H = entries.length * rowH + MT + MB;
-        var innerW = W - ML - MR;
-        var maxCount = entries[0][1];
+        var jPalette = [[68, 115, 196], [122, 84, 175], [192, 107, 168], [235, 104, 52]];
+        function jGradColor(t) {
+            var s = t * (jPalette.length - 1), lo = Math.floor(s), hi = Math.min(lo + 1, jPalette.length - 1), f = s - lo;
+            var rgb = jPalette[lo].map(function(v, k) { return Math.round(v + f * (jPalette[hi][k] - v)); });
+            return 'rgb(' + rgb.join(',') + ')';
+        }
+        var jColors = entries.map(function(_, i) { return jGradColor(entries.length > 1 ? i / (entries.length - 1) : 0); });
 
-        var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, preserveAspectRatio: 'xMidYMid meet' });
+        document.getElementById('statChartJournalsWrap').style.height = (entries.length * 32 + 20) + 'px';
 
-        entries.forEach(function(entry, i) {
-            var journal = entry[0], count = entry[1];
-            var y = MT + i * rowH + rowH * 0.18;
-            var barH = rowH * 0.64;
-            var barW = Math.max((innerW * count / maxCount), 2);
-
-            var label = svgEl('text', {
-                x: ML - 8, y: y + barH / 2 + 4, class: 'stat-axis-text', 'text-anchor': 'end'
-            });
-            label.textContent = journal;
-            svg.appendChild(label);
-
-            var bar = svgEl('path', {
-                d: roundedRightRectPath(ML, y, barW, barH, 3), class: 'stat-bar-journals'
-            });
-            svg.appendChild(bar);
-
-            var vlbl = svgEl('text', {
-                x: ML + barW + 6, y: y + barH / 2 + 4, class: 'stat-value-label-journals'
-            });
-            vlbl.textContent = count;
-            svg.appendChild(vlbl);
-
-            bar.addEventListener('pointerenter', function() { bar.classList.add('stat-bar-hover'); });
-            bar.addEventListener('pointerleave', function() { bar.classList.remove('stat-bar-hover'); tooltip.hide(); });
-            bar.addEventListener('pointermove', function(evt) {
-                tooltip.show(evt, '<strong>' + count + '</strong> paper' + (count === 1 ? '' : 's') + ' &middot; ' + journal);
-            });
+        new Chart(document.getElementById('statChartJournals'), {
+            type: 'bar',
+            data: {
+                labels: entries.map(function(e) { return e[0]; }),
+                datasets: [{ data: entries.map(function(e) { return e[1]; }), backgroundColor: jColors, borderRadius: 4, borderSkipped: false }]
+            },
+            options: {
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) { return ctx.parsed.x + ' paper' + (ctx.parsed.x === 1 ? '' : 's'); }
+                        }
+                    }
+                },
+                scales: {
+                    x: { beginAtZero: true, ticks: { stepSize: 1, precision: 0 }, grid: { color: '#f0f4f8' } },
+                    y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                devicePixelRatio: window.devicePixelRatio || 2
+            }
         });
-
-        var container = document.getElementById('statChartJournals');
-        container.appendChild(svg);
-        var tooltip = makeTooltip(container);
     }
 
-    var stats = collectStats();
-    renderYearChart(stats.perYear);
-    renderCategoryChart(stats.perCategory, stats.total);
-    renderJournalsChart(stats.perJournal);
+    function buildCharts() {
+        if (chartsBuilt) return;
+        chartsBuilt = true;
+        var stats = collectStats();
+        renderYearChart(stats.perYear);
+        renderCategoryChart(stats.perCategory, stats.total);
+        renderJournalsChart(stats.perJournal);
+    }
 
     var teaser = document.getElementById('statsTeaser');
     var panel = document.getElementById('statsPanel');
@@ -1810,7 +1692,10 @@
         var willShow = panel.hasAttribute('hidden');
         panel.toggleAttribute('hidden', !willShow);
         teaser.textContent = willShow ? closeText : openText;
-        if (willShow) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (willShow) {
+            buildCharts();
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
     });
 })();
 </script>
