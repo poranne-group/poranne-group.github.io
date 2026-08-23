@@ -576,9 +576,24 @@
                         <div id="statsPanel" class="stats-panel" hidden>
                             <div class="stats-grid">
                                 <div class="stats-card">
-                                    <h3 class="stats-card-title">Top Journals</h3>
-                                    <div class="stats-chart-canvas-wrap" id="statChartJournalsWrap">
-                                        <canvas id="statChartJournals"></canvas>
+                                    <h3 class="stats-card-title">At a Glance</h3>
+                                    <div class="stats-minicard-grid">
+                                        <div class="stats-minicard" style="border-top-color:#4E73C4;">
+                                            <span class="val" id="statCountPapers"></span>
+                                            <span class="lbl">Research Articles</span>
+                                        </div>
+                                        <div class="stats-minicard" id="statTileReviews" style="border-top-color:#29B6D4;">
+                                            <span class="val" id="statCountReviews"></span>
+                                            <span class="lbl">Review Articles</span>
+                                        </div>
+                                        <div class="stats-minicard" id="statTileChapters" style="border-top-color:#7A54AF;">
+                                            <span class="val" id="statCountChapters"></span>
+                                            <span class="lbl">Book Chapters</span>
+                                        </div>
+                                        <div class="stats-minicard" id="statTileJournals" style="border-top-color:#C06BA8;">
+                                            <span class="val" id="statCountJournals"></span>
+                                            <span class="lbl">Unique Journals</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="stats-card">
@@ -601,24 +616,9 @@
                                     </div>
                                 </div>
                                 <div class="stats-card">
-                                    <h3 class="stats-card-title">At a Glance</h3>
-                                    <div class="stats-minicard-grid">
-                                        <div class="stats-minicard" style="border-top-color:#4E73C4;">
-                                            <span class="val" id="statCountPapers"></span>
-                                            <span class="lbl">Research Articles</span>
-                                        </div>
-                                        <div class="stats-minicard" id="statTileReviews" style="border-top-color:#29B6D4;">
-                                            <span class="val" id="statCountReviews"></span>
-                                            <span class="lbl">Review Articles</span>
-                                        </div>
-                                        <div class="stats-minicard" id="statTileChapters" style="border-top-color:#7A54AF;">
-                                            <span class="val" id="statCountChapters"></span>
-                                            <span class="lbl">Book Chapters</span>
-                                        </div>
-                                        <div class="stats-minicard" id="statTileJournals" style="border-top-color:#C06BA8;">
-                                            <span class="val" id="statCountJournals"></span>
-                                            <span class="lbl">Unique Journals</span>
-                                        </div>
+                                    <h3 class="stats-card-title">Top Journals</h3>
+                                    <div class="stats-chart-canvas-wrap" id="statChartJournalsWrap">
+                                        <canvas id="statChartJournals"></canvas>
                                     </div>
                                 </div>
                             </div>
