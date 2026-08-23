@@ -419,6 +419,32 @@
             flex-shrink: 0;
             padding-top: 10px;
         }
+        .stats-minicard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            height: 260px;
+            align-content: center;
+        }
+        .stats-minicard {
+            background: #f8f9fc;
+            border-radius: 10px;
+            border-top: 4px solid #4E73C4;
+            padding: 16px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .stats-minicard .val { font-size: 2.1rem; font-weight: 700; color: #274690; line-height: 1; }
+        .stats-minicard .lbl {
+            font-size: 0.78rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-top: 8px;
+        }
         .stats-legend-item {
             display: flex;
             align-items: center;
@@ -561,10 +587,31 @@
                                         <div class="stats-legend" id="statCategoryLegend"></div>
                                     </div>
                                 </div>
-                                <div class="stats-card stats-card-wide">
+                                <div class="stats-card">
                                     <h3 class="stats-card-title">Papers per Year</h3>
                                     <div class="stats-chart-canvas-wrap" style="height:260px;">
                                         <canvas id="statChartYear"></canvas>
+                                    </div>
+                                </div>
+                                <div class="stats-card">
+                                    <h3 class="stats-card-title">At a Glance</h3>
+                                    <div class="stats-minicard-grid">
+                                        <div class="stats-minicard" style="border-top-color:#4E73C4;">
+                                            <span class="val" id="statCountPapers"></span>
+                                            <span class="lbl">Research Articles</span>
+                                        </div>
+                                        <div class="stats-minicard" style="border-top-color:#29B6D4;">
+                                            <span class="val" id="statCountReviews"></span>
+                                            <span class="lbl">Review Articles</span>
+                                        </div>
+                                        <div class="stats-minicard" style="border-top-color:#7A54AF;">
+                                            <span class="val" id="statCountChapters"></span>
+                                            <span class="lbl">Book Chapters</span>
+                                        </div>
+                                        <div class="stats-minicard" style="border-top-color:#9B9BAA;">
+                                            <span class="val" id="statCountJournals"></span>
+                                            <span class="lbl">Unique Journals</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1539,6 +1586,7 @@
         var perYear = {};
         var perCategory = {};
         var perJournal = {};
+        var perType = {};
 
         items.forEach(function(item) {
             var year = item.getAttribute('data-year');
@@ -1554,9 +1602,12 @@
 
             var journal = item.getAttribute('data-journal');
             if (journal) perJournal[journal] = (perJournal[journal] || 0) + 1;
+
+            var type = item.getAttribute('data-type');
+            if (type) perType[type] = (perType[type] || 0) + 1;
         });
 
-        return { perYear: perYear, perCategory: perCategory, perJournal: perJournal, total: items.length };
+        return { perYear: perYear, perCategory: perCategory, perJournal: perJournal, perType: perType, total: items.length };
     }
 
     function renderYearChart(perYear) {
@@ -1675,6 +1726,13 @@
         });
     }
 
+    function renderOverviewTiles(perType, perJournal) {
+        document.getElementById('statCountPapers').textContent = perType.paper || 0;
+        document.getElementById('statCountReviews').textContent = perType.review || 0;
+        document.getElementById('statCountChapters').textContent = perType.chapter || 0;
+        document.getElementById('statCountJournals').textContent = Object.keys(perJournal).length;
+    }
+
     function buildCharts() {
         if (chartsBuilt) return;
         chartsBuilt = true;
@@ -1682,6 +1740,7 @@
         renderYearChart(stats.perYear);
         renderCategoryChart(stats.perCategory, stats.total);
         renderJournalsChart(stats.perJournal);
+        renderOverviewTiles(stats.perType, stats.perJournal);
     }
 
     var teaser = document.getElementById('statsTeaser');
