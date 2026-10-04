@@ -120,41 +120,148 @@ def write_details(entries):
     ws.auto_filter.ref = ws.dimensions
     try:
         wb.save(DETAILS)
+        return True
     except PermissionError:
-        print("!! photo_details.xlsx is open in Excel -- close it and run again to add new rows.")
+        print("!! photo_details.xlsx is open in Excel -- close it and run again.")
+        return False
 
 
 # ---------------------------------------------------------------- contact sheet (local only)
+EDITS_NAME = "photo_details_edits.json"
+DOWNLOADS = Path.home() / "Downloads"
+
+SHEET_CSS = """
+body { font-family: Lato, Arial, sans-serif; margin: 0; color: #333; background: #f6f5fb; }
+header { position: sticky; top: 0; z-index: 5; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.08); padding: 14px 24px; }
+h1 { color: #6B5EB6; margin: 0; font-size: 22px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 8px; font-size: 14px; }
+.bar button { background: #6B5EB6; color: #fff; border: none; border-radius: 16px; padding: 7px 18px; font-size: 14px; cursor: pointer; }
+.bar button:disabled { background: #bbb; cursor: default; }
+.bar label { color: #555; }
+#status { color: #2e7d32; font-weight: bold; }
+main { padding: 8px 24px 40px; }
+p.help { max-width: 1000px; font-size: 14px; color: #555; }
+h2 { color: #6B5EB6; margin: 28px 0 10px; } small { color: #888; font-weight: normal; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+figure { margin: 0; background: #fff; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+figure.todo { outline: 2px dashed #d9a6cb; }
+figure.edited { outline: 2px solid #6B5EB6; }
+figure img { width: 100%; height: 170px; object-fit: cover; display: block; }
+.n { position: absolute; top: 6px; left: 6px; background: #6B5EB6; color: #fff; font-weight: bold; padding: 2px 8px; border-radius: 10px; font-size: 14px; }
+figcaption { padding: 8px 10px 10px; font-size: 13px; }
+.f { color: #999; font-size: 11px; word-break: break-all; margin-bottom: 5px; }
+figcaption input { width: 100%; box-sizing: border-box; margin: 2px 0; padding: 4px 6px; border: 1px solid #ddd; border-radius: 4px; font: inherit; }
+figcaption input:focus { outline: none; border-color: #6B5EB6; }
+body.hide-done figure:not(.todo):not(.edited) { display: none; }
+"""
+
+SHEET_JS = r"""
+var KEY = 'gallery-photo-drafts';
+var drafts = {};
+try { drafts = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+var FIELDS = ['event', 'date', 'place', 'people', 'note'];
+var cards = document.querySelectorAll('figure[data-photo]');
+
+function orig(card, f) { return card.querySelector('[name=' + f + ']').dataset.orig; }
+function changed(card) {
+    return FIELDS.some(function (f) { return card.querySelector('[name=' + f + ']').value.trim() !== orig(card, f); });
+}
+function refresh() {
+    var n = 0;
+    cards.forEach(function (c) { var ch = changed(c); c.classList.toggle('edited', ch); if (ch) n++; });
+    document.getElementById('count').textContent = n ? n + ' photo' + (n > 1 ? 's' : '') + ' with changes' : 'no changes yet';
+    document.getElementById('save').disabled = !n;
+}
+cards.forEach(function (card) {
+    var name = card.dataset.photo, d = drafts[name];
+    if (d) {   // restore what was typed earlier (unless it has since made it into the spreadsheet)
+        FIELDS.forEach(function (f) { if (d[f] !== undefined) card.querySelector('[name=' + f + ']').value = d[f]; });
+        if (!changed(card)) delete drafts[name];
+    }
+    card.addEventListener('input', function () {
+        var rec = {};
+        FIELDS.forEach(function (f) { rec[f] = card.querySelector('[name=' + f + ']').value.trim(); });
+        if (changed(card)) drafts[name] = rec; else delete drafts[name];
+        try { localStorage.setItem(KEY, JSON.stringify(drafts)); } catch (e) {}
+        document.getElementById('status').textContent = '';
+        refresh();
+    });
+});
+try { localStorage.setItem(KEY, JSON.stringify(drafts)); } catch (e) {}
+refresh();
+
+document.getElementById('hide').onchange = function () { document.body.classList.toggle('hide-done', this.checked); };
+
+document.getElementById('save').onclick = async function () {
+    var out = {};
+    cards.forEach(function (card) {
+        if (!changed(card)) return;
+        var rec = {};
+        FIELDS.forEach(function (f) { rec[f] = card.querySelector('[name=' + f + ']').value.trim(); });
+        out[card.dataset.photo] = rec;
+    });
+    var text = JSON.stringify(out, null, 2);
+    var n = Object.keys(out).length;
+    try {
+        if (window.showSaveFilePicker) {
+            var h = await window.showSaveFilePicker({ suggestedName: 'photo_details_edits.json',
+                types: [{ description: 'Photo details', accept: { 'application/json': ['.json'] } }] });
+            var w = await h.createWritable(); await w.write(text); await w.close();
+        } else { throw 'no picker'; }
+    } catch (e) {
+        if (e && e.name === 'AbortError') return;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+        a.download = 'photo_details_edits.json'; a.click();
+    }
+    document.getElementById('status').textContent = 'Saved ' + n + ' photo' + (n > 1 ? 's' : '') +
+        ' \u2014 tell Claude "I added photo details" to put them on the website.';
+};
+"""
+
+
 def write_contact_sheet(albums_out):
     parts = []
     for a in albums_out:
         cards = []
         for i, p in enumerate(a["photos"], 1):
             d = p["details"]
-            info = "".join(f"<div><b>{k.title()}:</b> {html.escape(d[k])}</div>" for k in FIELDS if d.get(k))
-            todo = "" if d.get("event") else ' class="todo"'
-            cards.append(f'<figure{todo}><span class="n">{a["code"]} {i}</span>'
+            todo = "" if d.get("event") else " todo"
+            inputs = "".join(
+                f'<input name="{k}" placeholder="{ph}" value="{html.escape(d.get(k, ""), quote=True)}" '
+                f'data-orig="{html.escape(d.get(k, ""), quote=True)}">'
+                for k, ph in [("event", "Event (e.g. Lab hike, ISNA 2025)"), ("date", "Date (e.g. July 2025)"),
+                              ("place", "Place"), ("people", "People (e.g. Itay, Shany)"), ("note", "Note")])
+            cards.append(f'<figure class="{todo.strip()}" data-photo="{html.escape(p["name"], quote=True)}">'
+                         f'<span class="n">{a["code"]} {i}</span>'
                          f'<a href="{p["web"]}" target="_blank"><img src="{p["web"]}" loading="lazy"></a>'
-                         f'<figcaption><div class="f">{html.escape(p["name"])}</div>{info or "<i>no details yet</i>"}</figcaption></figure>')
+                         f'<figcaption><div class="f">{html.escape(p["name"])}</div>{inputs}</figcaption></figure>')
         parts.append(f'<h2>{html.escape(a["title"])} <small>({a["code"]} 1&ndash;{len(a["photos"])})</small></h2>'
                      f'<div class="grid">{"".join(cards)}</div>')
-    SHEET.write_text(f"""<!doctype html><html><head><meta charset="utf-8"><title>Gallery contact sheet</title>
-<style>
-body {{ font-family: Lato, Arial, sans-serif; margin: 24px; color: #333; background: #f6f5fb; }}
-h1 {{ color: #6B5EB6; margin: 0 0 4px; }} h2 {{ color: #6B5EB6; margin: 32px 0 10px; }} small {{ color: #888; font-weight: normal; }}
-p.help {{ max-width: 900px; }}
-.grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; }}
-figure {{ margin: 0; background: #fff; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 1px 4px rgba(0,0,0,.1); }}
-figure.todo {{ outline: 2px dashed #d9a6cb; }}
-figure img {{ width: 100%; height: 150px; object-fit: cover; display: block; }}
-.n {{ position: absolute; top: 6px; left: 6px; background: #6B5EB6; color: #fff; font-weight: bold; padding: 2px 8px; border-radius: 10px; font-size: 14px; }}
-figcaption {{ padding: 8px 10px; font-size: 13px; line-height: 1.4; }} .f {{ color: #999; font-size: 11px; word-break: break-all; margin-bottom: 3px; }}
-</style></head><body>
-<h1>Gallery contact sheet</h1>
-<p class="help">Every photo in the gallery, numbered. Dashed frames have no event yet. To add details, tell Claude e.g.
-<i>"Blast 3: lab dinner after Shany's defense, Haifa, with Shany, Itay and Pallavi"</i> &mdash; or edit
-<b>photo_details.xlsx</b> directly. Click a photo to see it larger. (This page is only on your computer.)</p>
-{''.join(parts)}</body></html>""", encoding="utf8")
+    SHEET.write_text(f"""<!doctype html><html><head><meta charset="utf-8"><title>Gallery photo details</title>
+<style>{SHEET_CSS}</style></head><body>
+<header><h1>Gallery photo details</h1>
+<div class="bar"><button id="save" disabled>Save my changes</button><span id="count"></span><span id="status"></span>
+<label><input type="checkbox" id="hide"> show only photos that still need details</label></div></header>
+<main><p class="help">Type into the boxes under any photo &mdash; leave blank what you don't know. Your typing is kept in
+this browser automatically, so you can stop and come back later. When you're ready, click <b>Save my changes</b>
+(save the file in the <b>photo_gallery</b> folder or in Downloads) and tell Claude <i>"I added photo details"</i>.
+Dashed frames have no event yet; purple frames have unsaved changes. This page is only on your computer.</p>
+{''.join(parts)}</main><script>{SHEET_JS}</script></body></html>""", encoding="utf8")
+
+
+def read_edits():
+    """Edits saved from the contact sheet (photo_gallery/ or Downloads), oldest first."""
+    found = [GAL / EDITS_NAME] + sorted(DOWNLOADS.glob("photo_details_edits*.json"), key=lambda f: f.stat().st_mtime)
+    files = [f for f in found if f.exists()]
+    edits = {}
+    for f in files:
+        try:
+            edits.update(json.loads(f.read_text(encoding="utf8")))
+            print(f"Applying {len(json.loads(f.read_text(encoding='utf8')))} photo edits from {f}")
+        except ValueError:
+            print(f"!! could not read {f}")
+    return edits, files
 
 
 def main():
@@ -173,6 +280,9 @@ def main():
     CONFIG.write_text(json.dumps(cfg, indent=4, ensure_ascii=False) + "\n", encoding="utf8")
 
     details = read_details()
+    edits, edit_files = read_edits()
+    for name, rec in edits.items():                       # edits from the contact sheet win
+        details[name] = {k: str(rec.get(k, details.get(name, {}).get(k, ""))).strip() for k in FIELDS}
     entries, data, sheet = [], [], []
     for a in albums:
         files = [(f, p) for f in folders_of(a) for p in photos_in(GAL / f)]
@@ -198,7 +308,9 @@ def main():
         code = a.get("code") or a["title"].split()[-1].strip("!")
         sheet.append({"title": a["title"], "code": code, "photos": sheet_photos})
 
-    write_details(entries)
+    if write_details(entries):
+        for f in edit_files:                              # now safely in the spreadsheet
+            f.unlink()
     write_contact_sheet(sheet)
 
     # remove web copies whose original is gone (and folders left empty)
