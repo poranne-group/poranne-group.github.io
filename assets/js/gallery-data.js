@@ -444,42 +444,63 @@ window.GALLERY_ALBUMS = [
                 "event": "WATOC 2022",
                 "date": "July 2022",
                 "place": "Vancouver, Canada",
-                "people": "Renana, Anya"
+                "people": "Renana, Anya Grynova"
             },
             {
                 "file": "photo_gallery/web/with_our_friends/20220702_120019.jpg",
                 "event": "WATOC 2022",
                 "date": "July 2022",
-                "place": "Vancouver, Canada"
+                "place": "Vancouver, Canada",
+                "people": "ORCA"
             },
             {
                 "file": "photo_gallery/web/with_our_friends/20250709_170226.jpg",
-                "date": "July 2025"
+                "event": "Peter Chen Symposium",
+                "date": "July 2025",
+                "place": "ETH Zurich",
+                "people": "Renana, Peter Schreiner"
             },
             {
                 "file": "photo_gallery/web/with_our_friends/20250710_093403.jpg",
-                "date": "July 2025"
+                "event": "Peter Chen Symposium",
+                "date": "July 2025",
+                "place": "ETH Zurich",
+                "people": "Renana, Peter Chen, Peter Schreiner"
             },
             {
                 "file": "photo_gallery/web/with_our_friends/20250710_200322.jpg",
-                "date": "July 2025"
+                "event": "Peter Chen Symposium",
+                "date": "July 2025",
+                "place": "Zurich",
+                "people": "Alexandra Tsybizova, Renana"
             },
             {
                 "file": "photo_gallery/web/with_our_friends/pxl_20250910_063029882.mp.jpg",
-                "date": "September 2025"
+                "event": "ESOR 2025",
+                "date": "September 2025",
+                "place": "Padova",
+                "people": "Renana, Amnon Stanger, Roy Shenhar"
             },
             {
                 "file": "photo_gallery/web/with_our_friends/pxl_20251013_175543692.mp.jpg",
-                "date": "October 2025"
+                "event": "Liebig Lectureship Tour",
+                "date": "October 2025",
+                "place": "Freiburg",
+                "people": "Renana, Babis Pappas, Daniel Werz"
             },
             {
                 "file": "photo_gallery/web/with_our_friends/pxl_20251210_075901835.jpg",
-                "date": "December 2025"
+                "event": "Solvay Workshop",
+                "date": "December 2025",
+                "place": "Brussels",
+                "people": "Irena Stara, Judy Wu, Renana"
             },
             {
                 "file": "photo_gallery/web/with_our_friends/whatsapp-image-2026-09-10-at-9.46.57-am.jpg",
+                "event": "CBOND 2026",
                 "date": "September 2026",
-                "place": "Brussels, Belgium"
+                "place": "Brussels, Belgium",
+                "people": "Ephrath Solel, Renana, Ajeet"
             }
         ]
     }
