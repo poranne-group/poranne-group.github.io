@@ -4,7 +4,8 @@
         albums.json           album titles, descriptions, order; the album marked "banner": true
                               is the big strip at the top; "flip" lists photos to mirror left-right
         photo_details.xlsx    one row per photo: event, date, place, people, note (fill in any time)
-        contact_sheet.html    numbered overview of all photos and their details -- local only
+        contact_sheet.html    numbered form for filling in details / removing photos -- local only
+        removed_photos/       photos taken out of the gallery from the contact sheet (not deleted)
         <album folder>/       original photos (any size) -- not published
         web/<album folder>/   web-sized copies made by this script -- published
 
@@ -128,6 +129,7 @@ def write_details(entries):
 
 # ---------------------------------------------------------------- contact sheet (local only)
 EDITS_NAME = "photo_details_edits.json"
+REMOVED = GAL / "removed_photos"
 DOWNLOADS = Path.home() / "Downloads"
 
 SHEET_CSS = """
@@ -153,6 +155,13 @@ figcaption { padding: 8px 10px 10px; font-size: 13px; }
 figcaption input { width: 100%; box-sizing: border-box; margin: 2px 0; padding: 4px 6px; border: 1px solid #ddd; border-radius: 4px; font: inherit; }
 figcaption input:focus { outline: none; border-color: #6B5EB6; }
 body.hide-done figure:not(.todo):not(.edited) { display: none; }
+.rm { position: absolute; top: 6px; right: 6px; background: rgba(255,255,255,.92); color: #b3261e; border: none;
+      border-radius: 10px; padding: 2px 9px; font-size: 13px; cursor: pointer; }
+.rm:hover { background: #b3261e; color: #fff; }
+figure.removed { outline: 2px solid #b3261e; }
+figure.removed img { opacity: .3; filter: grayscale(1); }
+figure.removed figcaption input { display: none; }
+figure.removed figcaption::after { content: "Will be removed from the gallery (click Undo to keep it)"; color: #b3261e; font-weight: bold; }
 """
 
 SHEET_JS = r"""
@@ -164,6 +173,7 @@ var cards = document.querySelectorAll('figure[data-photo]');
 
 function orig(card, f) { return card.querySelector('[name=' + f + ']').dataset.orig; }
 function changed(card) {
+    if (card.classList.contains('removed')) return true;
     return FIELDS.some(function (f) { return card.querySelector('[name=' + f + ']').value.trim() !== orig(card, f); });
 }
 function refresh() {
@@ -174,13 +184,18 @@ function refresh() {
 }
 cards.forEach(function (card) {
     var name = card.dataset.photo, d = drafts[name];
+    var rm = card.querySelector('.rm');
+    function setRemoved(on) { card.classList.toggle('removed', on); rm.textContent = on ? 'Undo' : '\u2715 Remove'; }
     if (d) {   // restore what was typed earlier (unless it has since made it into the spreadsheet)
         FIELDS.forEach(function (f) { if (d[f] !== undefined) card.querySelector('[name=' + f + ']').value = d[f]; });
+        if (d.remove) setRemoved(true);
         if (!changed(card)) delete drafts[name];
     }
+    rm.onclick = function () { setRemoved(!card.classList.contains('removed')); card.dispatchEvent(new Event('input')); };
     card.addEventListener('input', function () {
         var rec = {};
         FIELDS.forEach(function (f) { rec[f] = card.querySelector('[name=' + f + ']').value.trim(); });
+        if (card.classList.contains('removed')) rec.remove = true;
         if (changed(card)) drafts[name] = rec; else delete drafts[name];
         try { localStorage.setItem(KEY, JSON.stringify(drafts)); } catch (e) {}
         document.getElementById('status').textContent = '';
@@ -198,6 +213,7 @@ document.getElementById('save').onclick = async function () {
         if (!changed(card)) return;
         var rec = {};
         FIELDS.forEach(function (f) { rec[f] = card.querySelector('[name=' + f + ']').value.trim(); });
+        if (card.classList.contains('removed')) rec.remove = true;
         out[card.dataset.photo] = rec;
     });
     var text = JSON.stringify(out, null, 2);
@@ -233,7 +249,7 @@ def write_contact_sheet(albums_out):
                 for k, ph in [("event", "Event (e.g. Lab hike, ISNA 2025)"), ("date", "Date (e.g. July 2025)"),
                               ("place", "Place"), ("people", "People (e.g. Itay, Shany)"), ("note", "Note")])
             cards.append(f'<figure class="{todo.strip()}" data-photo="{html.escape(p["name"], quote=True)}">'
-                         f'<span class="n">{a["code"]} {i}</span>'
+                         f'<span class="n">{a["code"]} {i}</span><button class="rm" type="button">&#10005; Remove</button>'
                          f'<a href="{p["web"]}" target="_blank"><img src="{p["web"]}" loading="lazy"></a>'
                          f'<figcaption><div class="f">{html.escape(p["name"])}</div>{inputs}</figcaption></figure>')
         parts.append(f'<h2>{html.escape(a["title"])} <small>({a["code"]} 1&ndash;{len(a["photos"])})</small></h2>'
@@ -246,6 +262,7 @@ def write_contact_sheet(albums_out):
 <main><p class="help">Type into the boxes under any photo &mdash; leave blank what you don't know. Your typing is kept in
 this browser automatically, so you can stop and come back later. When you're ready, click <b>Save my changes</b>
 (save the file in the <b>photo_gallery</b> folder or in Downloads) and tell Claude <i>"I added photo details"</i>.
+Click <b>&#10005; Remove</b> to take a photo out of the gallery (it is moved to the <b>removed_photos</b> folder, not deleted).
 Dashed frames have no event yet; purple frames have unsaved changes. This page is only on your computer.</p>
 {''.join(parts)}</main><script>{SHEET_JS}</script></body></html>""", encoding="utf8")
 
@@ -272,7 +289,7 @@ def main():
         return a.get("folders") or [a["folder"]]
 
     known = {f for a in albums for f in folders_of(a)}
-    for folder in sorted(p for p in GAL.iterdir() if p.is_dir() and p.name != "web"):
+    for folder in sorted(p for p in GAL.iterdir() if p.is_dir() and p.name not in ("web", REMOVED.name)):
         if folder.name not in known and photos_in(folder):
             albums.append({"folder": folder.name, "title": folder.name.replace("_", " ").replace("-", " ").title(),
                            "date": "", "description": ""})
@@ -282,6 +299,16 @@ def main():
     details = read_details()
     edits, edit_files = read_edits()
     for name, rec in edits.items():                       # edits from the contact sheet win
+        if rec.get("remove"):                             # "Remove" clicked: move the original aside
+            for a in albums:
+                for f in folders_of(a):
+                    src = GAL / f / name
+                    if src.exists():
+                        (REMOVED / f).mkdir(parents=True, exist_ok=True)
+                        src.rename(REMOVED / f / name)
+                        print(f"  removed {f}/{name} -> removed_photos/{f}/")
+            details.pop(name, None)
+            continue
         details[name] = {k: str(rec.get(k, details.get(name, {}).get(k, ""))).strip() for k in FIELDS}
     entries, data, sheet = [], [], []
     for a in albums:
@@ -315,7 +342,7 @@ def main():
 
     # remove web copies whose original is gone (and folders left empty)
     # web folder names are lower case (web servers are case-sensitive, Windows is not)
-    originals = {p.name.lower(): p for p in GAL.iterdir() if p.is_dir() and p.name != "web"}
+    originals = {p.name.lower(): p for p in GAL.iterdir() if p.is_dir() and p.name not in ("web", REMOVED.name)}
     for folder in list(WEB.iterdir()) if WEB.exists() else []:
         src = originals.get(folder.name.lower())
         keep = {web_name(p) for p in photos_in(src)} if src else set()
