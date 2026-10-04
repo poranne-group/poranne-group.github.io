@@ -65,6 +65,7 @@ TALKS = [
     ("2026-03", "Invited", "George A. Olah Award in Hydrocarbon Chemistry Symposium, ACS Spring Meeting", "Atlanta, GA, USA"),
     ("2026-06", "Invited", "Reaction Mechanisms Conference", "Michigan, USA"),
     ("2026-09", "Invited", "CBOND 2026 – 5th European Symposium on Chemical Bonding", "Brussels, Belgium"),
+    ("2026-11", "Invited", "AI Week 2026", "Tel Aviv University, Israel"),
     # invited department seminars (year only in CV)
     ("2019", "Seminar", "Vrije Universiteit Amsterdam", ""),
     ("2021", "Seminar", "Florida State University", "online"),

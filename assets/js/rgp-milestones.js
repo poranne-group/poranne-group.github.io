@@ -70,10 +70,13 @@
         });
         Object.keys(groups).forEach(function (k) {
             var g = groups[k];
-            g.forEach(function (d, i) { POS.set(d, d.start[0] + (i + 0.5) / g.length); });
+            // current year: spread only up to today, so nothing past is drawn as 'upcoming'
+            var w = g[0].start[0] === now.getFullYear() ? Math.max(NOW - g[0].start[0], 0.1) : 1;
+            g.forEach(function (d, i) { POS.set(d, d.start[0] + w * (i + 0.5) / g.length); });
         });
     })();
     function pos(d) { return POS.has(d) ? POS.get(d) : t(d.start); }
+    function isFuture(d) { return d.start[2] ? t(d.start) > NOW : d.start[0] > now.getFullYear(); }
 
     // ---------- DOM scaffold
     root.innerHTML =
@@ -195,7 +198,7 @@
             if (l.id === 'career') {
                 var bw = Math.min(36, colW - 10);
                 items.forEach(function (d) {
-                    var ya = sy(d.end ? t(d.end) : y1), yb = sy(t(d.start));
+                    var ya = sy(d.end ? t(d.end) : NOW), yb = sy(t(d.start));
                     var g = el('g', { class: 'ms-item', tabindex: 0 }, svg);
                     el('rect', { x: cx - bw / 2, y: ya + 1, width: bw, height: Math.max(yb - ya - 2, 2), rx: 7,
                         fill: d.end ? '#d4eef6' : '#2e9ab5', stroke: d.end ? '#9fd6e7' : 'none' }, g);
@@ -221,9 +224,11 @@
                     el('line', { x1: x, x2: x, y1: it.y, y2: sy(endT), stroke: c, 'stroke-width': 2.5,
                         'stroke-opacity': 0.3, 'stroke-linecap': 'round' }, g);
                 }
+                var future = isFuture(d);           // upcoming: light fill, dashed outline
                 el('circle', { cx: x, cy: it.y, r: it.r,
-                    fill: d.preprint ? '#fff' : c, 'fill-opacity': d.preprint ? 1 : 0.88,
-                    stroke: c, 'stroke-width': d.preprint ? 2 : 1 }, g);
+                    fill: d.preprint ? '#fff' : c, 'fill-opacity': d.preprint ? 1 : future ? 0.25 : 0.88,
+                    stroke: c, 'stroke-width': d.preprint || future ? 2 : 1,
+                    'stroke-dasharray': future ? '3 2' : 'none' }, g);
                 bind(g, d);
             });
         });
@@ -250,6 +255,7 @@
         var kind = d.lane === 'talks' ? (d.kind === 'Seminar' ? 'Invited seminar' : d.kind === 'Contributed' ? 'Talk' : d.kind + ' talk')
             : d.lane === 'papers' ? (d.preprint ? 'Preprint' : d.kind === 'review' ? 'Review' : d.kind === 'chapter' ? 'Book chapter' : 'Paper') + ' · ' + d.cat
             : LANE[d.lane].full;
+        if (isFuture(d)) kind = 'Upcoming · ' + kind;
         tip.innerHTML =
             '<div class="ms-tip-kind" style="color:' + LANE[d.lane].color + '">' + esc(kind) + '</div>' +
             '<div class="ms-tip-title">' + esc(d.title) + '</div>' +

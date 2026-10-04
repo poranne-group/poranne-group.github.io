@@ -1293,6 +1293,17 @@ window.RGP_MILESTONES = [
  {
   "lane": "talks",
   "start": [
+   2026,
+   11,
+   true
+  ],
+  "kind": "Invited",
+  "title": "AI Week 2026",
+  "detail": "Tel Aviv University, Israel"
+ },
+ {
+  "lane": "talks",
+  "start": [
    2019,
    7,
    false
