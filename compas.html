@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6BLZH0DN4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+    gtag('config', 'G-X6BLZH0DN4');
+    </script>
+    
+	<title>Poranne Research Group - COMPAS</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta https-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favico-benz.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap&display=swap" rel="stylesheet" type="text/css">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=5">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        .section .heading { color: #C06BA8; font-size: 28px; font-weight: 700; }
+        .sections-wrapper { font-size: 19px; }
+        .content-card a:not(.page-btn) { color: #C06BA8; }
+        .content-card a:not(.page-btn):hover { color: #a0568c; }
+        .btn-info-contact { background: #C06BA8 !important; }
+        .btn-info-contact:hover { background: #a0568c !important; }
+        .page-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            font-weight: 700;
+            color: #fff !important;
+            background: #C06BA8;
+            text-decoration: none !important;
+            margin: 4px 6px;
+            transition: opacity 0.2s;
+        }
+        .page-btn:hover { opacity: 0.85; }
+        .section-inner a:not(.page-btn) { color: #C06BA8; }
+        .section-inner a:not(.page-btn):hover { color: #a0568c; }
+
+        /* card look shared with the Research / Publications pages */
+        .coming-soon {
+            border: 3px solid #C06BA8;
+            border-radius: 8px;
+            background: #faf0f7;
+            padding: 16px 24px;
+            margin: 6px 0 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(192,107,168,0.35);
+        }
+        .coming-soon h4 { margin: 0 0 4px; font-size: 1.05em; color: #2c3e50; }
+        .coming-soon p { margin: 0; }
+
+        .ds-divider {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #C06BA8;
+            border-bottom: 2px solid #C06BA8;
+            padding-bottom: 6px;
+            margin: 30px 0 22px;
+        }
+        .ds-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: #fff;
+            border: 3px solid #C06BA8;
+            border-radius: 8px;
+            padding: 20px 20px 20px 36px;
+            margin: 0 0 25px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(192,107,168,0.35);
+            transition: box-shadow 0.3s ease;
+        }
+        .ds-item:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.10), 0 0 16px rgba(192,107,168,0.45); }
+        .ds-hex {
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 49px;
+            background: #C06BA8;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .ds-img { flex: 0 0 25%; display: flex; align-items: center; justify-content: center; }
+        .ds-img img { width: 100%; max-height: 160px; object-fit: contain; display: block; }
+        .ds-text { flex: 1 1 auto; min-width: 0; }
+        .ds-text h3 { margin: 0 0 8px; font-size: 0.95em; font-weight: 700; color: #2c3e50; line-height: 1.35; }
+        .ds-text .ds-paper { margin: 0; }
+        .ds-text .ds-also { margin: 14px 0 0; }
+        .ds-text .ds-journal { display: block; color: #7f8c8d; font-style: italic; margin-top: 10px; }
+        /* upcoming datasets */
+        .ds-item.ds-soon {
+            border-style: dashed;
+            border-color: #d9a6cb;
+            background: #fdf8fb;
+            box-shadow: none;
+        }
+        .ds-soon .ds-hex { background: #d9a6cb; }
+        .ds-soon .ds-text h3 { color: #6b5a66; }
+        .ds-construction {
+            flex: 0 0 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #C06BA8;
+            font-size: 0.75em;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .ds-construction-hex {
+            width: 74px;
+            height: 84px;
+            background: #C06BA8;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        .ds-construction-hex span {
+            width: 68px;
+            height: 78px;
+            background: repeating-linear-gradient(-45deg, #fdf8fb 0 8px, #f3dcec 8px 16px);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ds-construction-hex .fa { font-size: 30px; color: #C06BA8; }
+        @media (max-width: 767px) {
+            .ds-item { flex-direction: column; align-items: stretch; padding-left: 30px; }
+            .ds-hex { top: 24px; transform: none; }
+            .ds-img { flex-basis: auto; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ******HEADER****** -->
+    <header class="header">
+        <div class="container text-center">
+            <h1 class="name">Poranne Research Group</h1>
+            <p class="header-subtitle">Computational Physical Organic Chemistry &nbsp;·&nbsp; Technion — Israel Institute of Technology</p>
+        </div>
+    </header>
+    <!--//header-->
+
+<div id="wrapper">
+    <header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html"><h4 class="name">Home</h4></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">People</h4><b class="icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="people.html">The Poranne Group</a></li>
+                                <li><a href="rgp.html">Renana Gershoni-Poranne</a></li>
+                                <li><a href="people-alumni.html">Former Group Members</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Research</h4><b class="icon-angle-down"></b></a>
+                        	<ul class="dropdown-menu">
+                        		<li><a href="research.html">Research Projects</a></li>
+                        		<li><a href="collaborators.html">Our Collaborators</a></li>
+                        	</ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Publications</h4><b class="icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="publications.html">Papers</a></li>
+                                <li><a href="covers.html">Cover Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li class="active dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Data &amp; Software</h4><b class="icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="compas.html">COMPAS</a></li>
+                                <li><a href="predi-xy.html">Predi-XY</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- *** INFO BAR *** -->
+    <div class="info-bar">
+        <div class="container">
+            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#C06BA8;" target="_blank">
+                <i class="fa fa-paper-plane"></i> Contact Us
+            </a>
+            <span class="info-item">
+                <i class="fa fa-map-marker" style="color:#C06BA8;"></i> Schulich Faculty of Chemistry, Technion, Israel
+            </span>
+            <span class="info-item">
+                <i class="fa fa-envelope-o" style="color:#C06BA8;"></i>
+                <a href="mailto:porannegroup@technion.ac.il">porannegroup@technion.ac.il</a>
+            </span>
+            <span class="info-item">
+                <i class="fa fa-twitter" style="color:#C06BA8;"></i>
+                <a href="https://twitter.com/PoranneG" target="_blank">@PoranneG</a>
+            </span>
+        </div>
+    </div>
+
+    <div class="container sections-wrapper">
+        <div class="row">
+            <section class="about section">
+                <div class="section-inner">
+                    <h2 class="heading">The COMPAS Project</h2>
+                    <div class="content">
+                        <p>The chemical space of aromatic molecules is vast and diverse, which presents an opportunity for data-driven investigation. To facilitate this, our group has established <b>The COMPAS Project</b>: the first <b>COM</b>putational database of <b>P</b>olycyclic <b>A</b>romatic <b>S</b>ystems. We are actively expanding this chemical database in a methodical manner using high-throughput computational chemistry methods, and use it to train machine-learning and deep-learning models for the design of new polycyclic aromatic molecules and the discovery of structure-property relationships.</p>
+
+                        <!-- Placeholder: replace this block with the COMPAS interface -->
+                        <div class="coming-soon" id="compas-app">
+                            <h4><i class="fa fa-cubes" style="color:#C06BA8;"></i> Coming Soon</h4>
+                            <p>An interactive interface for exploring the COMPAS datasets will be available on this page.</p>
+                        </div>
+
+                        <h3 class="ds-divider">The COMPAS Datasets</h3>
+                        <div class="ds-item">
+                            <div class="ds-hex">1</div>
+                            <a class="ds-img" href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.2c00503" target="_blank"><img src="assets/images/COMPAS.png" alt="COMPAS-1" /></a>
+                            <div class="ds-text">
+                                <h3>COMPAS-1: <i>cata</i>-Condensed polybenzenoid hydrocarbons</h3>
+                                <p class="ds-paper"><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.2c00503" target="_blank">The COMPAS Project: A Computational Database of Polycyclic Aromatic Systems. Phase 1: <i>cata</i>-Condensed Polybenzenoid Hydrocarbons</a></p>
+                                <span class="ds-journal">Journal of Chemical Information and Modeling, 2022</span>
+                            </div>
+                        </div>
+                        <div class="ds-item">
+                            <div class="ds-hex">2</div>
+                            <a class="ds-img" href="https://www.nature.com/articles/s41597-024-02927-8" target="_blank"><img src="assets/images/COMPAS-2-data.png" alt="COMPAS-2" /></a>
+                            <div class="ds-text">
+                                <h3>COMPAS-2: <i>cata</i>-Condensed hetero-polycyclic aromatic systems</h3>
+                                <p class="ds-paper"><a href="https://www.nature.com/articles/s41597-024-02927-8" target="_blank">COMPAS-2: a Dataset of <i>cata</i>-Condensed Hetero-Polycyclic Aromatic Systems</a></p>
+                                <span class="ds-journal">Scientific Data, 2024</span>
+                                <p class="ds-also"><b>Analysis:</b> <a href="https://www.beilstein-journals.org/bjoc/articles/20/160" target="_blank">Hetero-Polycyclic Aromatic Systems: A Data-Driven Investigation of Structure&ndash;Property Relationships</a></p>
+                                <span class="ds-journal">Beilstein Journal of Organic Chemistry, 2024</span>
+                            </div>
+                        </div>
+                        <div class="ds-item">
+                            <div class="ds-hex">3</div>
+                            <a class="ds-img" href="https://pubs.rsc.org/en/Content/ArticleLanding/2024/CP/D4CP01027B" target="_blank"><img src="assets/images/COMPAS-3.png" alt="COMPAS-3" /></a>
+                            <div class="ds-text">
+                                <h3>COMPAS-3: <i>peri</i>-Condensed polybenzenoid hydrocarbons</h3>
+                                <p class="ds-paper"><a href="https://pubs.rsc.org/en/Content/ArticleLanding/2024/CP/D4CP01027B" target="_blank">COMPAS-3: a Dataset of <i>peri</i>-Condensed Polybenzenoid Hydrocarbons</a></p>
+                                <span class="ds-journal">Physical Chemistry Chemical Physics, 2024</span>
+                            </div>
+                        </div>
+                        <div class="ds-item">
+                            <div class="ds-hex">4</div>
+                            <a class="ds-img" href="https://pubs.acs.org/doi/10.1021/acs.jcim.5c00608" target="_blank"><img src="assets/images/BN-PBH.png" alt="COMPAS-4" /></a>
+                            <div class="ds-text">
+                                <h3>COMPAS-4: (BN)<sub>1</sub>-Substituted <i>cata</i>-condensed polybenzenoid hydrocarbons</h3>
+                                <p class="ds-paper"><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.5c00608" target="_blank">COMPAS-4: A Data Set of (BN)<sub>1</sub> Substituted <i>Cata</i>-Condensed Polybenzenoid Hydrocarbons&mdash;Data Analysis and Feature Engineering</a></p>
+                                <span class="ds-journal">Journal of Chemical Information and Modeling, 2025</span>
+                            </div>
+                        </div>
+
+                        <div class="ds-item ds-soon">
+                            <div class="ds-hex">5</div>
+                            <div class="ds-construction">
+                                <div class="ds-construction-hex"><span><i class="fa fa-wrench"></i></span></div>
+                                Under construction
+                            </div>
+                            <div class="ds-text">
+                                <h3>COMPAS-5: Mono-substituted polybenzenoid hydrocarbons</h3>
+                                <span class="ds-journal">Coming soon</span>
+                            </div>
+                        </div>
+                        <div class="ds-item ds-soon">
+                            <div class="ds-hex">6</div>
+                            <div class="ds-construction">
+                                <div class="ds-construction-hex"><span><i class="fa fa-wrench"></i></span></div>
+                                Under construction
+                            </div>
+                            <div class="ds-text">
+                                <h3>COMPAS-6: Di-substituted polybenzenoid hydrocarbons</h3>
+                                <span class="ds-journal">Coming soon</span>
+                            </div>
+                        </div>
+
+
+                        <p style="text-align:center;">
+                            <a class="page-btn" href="research.html">Our Research</a>
+                            <a class="page-btn" href="publications.html">All Publications</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="container text-center">
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+</html>
