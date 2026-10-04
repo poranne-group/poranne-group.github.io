@@ -182,13 +182,17 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0013.jpg",
-                "event": "Faculty Day",
+                "event": "Chemistry @ Sete",
                 "date": "2023",
-                "place": "Schulich Faculty of Chemistry, Technion"
+                "place": "France",
+                "people": "Kasia"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/20250715_135739.jpg",
-                "date": "July 2025"
+                "event": "Chemistry @ Sete",
+                "date": "2023",
+                "place": "France",
+                "people": "Kasia, Renana"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/20250715_135812.jpg",
