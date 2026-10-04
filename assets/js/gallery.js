@@ -17,6 +17,12 @@
         return;
     }
 
+    // one line for the strip: event (or note) and place; falls back to date / place
+    function shortCaption(p) {
+        var main = p.event || p.note;
+        return main ? [main, p.place].filter(Boolean).join(' · ') : [p.place, p.date].filter(Boolean).join(' · ');
+    }
+
     function esc(s) {
         return String(s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
     }
@@ -80,8 +86,9 @@
             var b = document.createElement('button');
             b.type = 'button';
             b.className = 'gal-tile';
-            b.innerHTML = '<img src="' + album.folder + p.file + '" alt="' + esc(p.caption) + '" loading="lazy">' +
-                (p.caption ? '<span class="gal-cap">' + esc(p.caption) + '</span>' : '');
+            var cap = shortCaption(p);
+            b.innerHTML = '<img src="' + album.folder + p.file + '" alt="' + esc(cap) + '" loading="lazy">' +
+                (cap ? '<span class="gal-cap">' + esc(cap) + '</span>' : '');
             b.onclick = function () { openLightbox(album, i); };
             return b;
         }
@@ -186,8 +193,14 @@
         cur.i = (i + n) % n;
         var p = cur.album.photos[cur.i];
         lbImg.src = cur.album.folder + p.file;
-        lbImg.alt = p.caption || '';
-        lbCap.innerHTML = '<b>' + esc(cur.album.title) + '</b>' + (p.caption ? ' &middot; ' + esc(p.caption) : '');
+        lbImg.alt = shortCaption(p);
+        var when = [p.date, p.place].filter(Boolean).join(' &middot; ');
+        lbCap.innerHTML =
+            '<span class="gal-lb-album">' + esc(cur.album.title) + '</span>' +
+            (p.event ? '<span class="gal-lb-event">' + esc(p.event) + '</span>' : '') +
+            (when ? '<span class="gal-lb-when">' + when.split(' &middot; ').map(esc).join(' &middot; ') + '</span>' : '') +
+            (p.people ? '<span class="gal-lb-people">With: ' + esc(p.people) + '</span>' : '') +
+            (p.note ? '<span class="gal-lb-note">' + esc(p.note) + '</span>' : '');
         lbCount.textContent = (cur.i + 1) + ' / ' + n;
         lb.classList.toggle('single', n === 1);
     }

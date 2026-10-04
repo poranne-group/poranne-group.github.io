@@ -1,29 +1,41 @@
 """Build the photo gallery (gallery.html) from photo_gallery/.
 
     photo_gallery/
-        albums.json          titles, dates, descriptions, captions, album order;
-                             the album marked "banner": true is the rotating banner at the top
-        <album folder>/      original photos (any size) -- not published
-        web/<album folder>/  web-sized copies made by this script -- published
+        albums.json           album titles, descriptions, order; the album marked "banner": true
+                              is the big strip at the top; "flip" lists photos to mirror left-right
+        photo_details.xlsx    one row per photo: event, date, place, people, note (fill in any time)
+        contact_sheet.html    numbered overview of all photos and their details -- local only
+        <album folder>/       original photos (any size) -- not published
+        web/<album folder>/   web-sized copies made by this script -- published
 
 Add photos to an album folder (or make a new folder), then run:
     python tools/build_gallery.py
-New folders that are not yet in albums.json are added to it automatically
-(with the folder name as title), so you only need to fill in the details.
+New photos get a row in photo_details.xlsx (with the date filled in when the photo or its
+file name tells it), and new folders get an album entry in albums.json.
 """
+import html
 import json
 import re
+from datetime import datetime
 from pathlib import Path
 
+from openpyxl import Workbook, load_workbook
+from openpyxl.styles import Alignment, Font, PatternFill
 from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
 GAL = ROOT / "photo_gallery"
 WEB = GAL / "web"
 CONFIG = GAL / "albums.json"
+DETAILS = GAL / "photo_details.xlsx"
+SHEET = GAL / "contact_sheet.html"
 OUT = ROOT / "assets" / "js" / "gallery-data.js"
 EXTS = {".jpg", ".jpeg", ".png", ".webp", ".heic"}
 LONG_SIDE = 1800
+COLUMNS = ["Album", "Photo", "Event", "Date", "Place", "People", "Note"]
+FIELDS = ["event", "date", "place", "people", "note"]          # the columns you fill in
+MONTHS = ["January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December"]
 
 
 def photos_in(folder):
@@ -34,8 +46,7 @@ def photos_in(folder):
 
 
 def web_name(src):
-    """Web-safe file name: lower case, no spaces."""
-    # no leading "_" or ".": GitHub Pages hides such files
+    """Web-safe file name: lower case, no spaces, no leading "_" or "." (GitHub Pages hides those)."""
     return re.sub(r"[^a-z0-9._-]+", "-", src.stem.lower()).strip("-_.") + ".jpg"
 
 
@@ -54,6 +65,98 @@ def web_copy(src, album, flip=False):
     return dst.name
 
 
+def guess_date(src):
+    """'Month YYYY' from the camera data, or from the file name; '' if unknown."""
+    try:
+        exif = Image.open(src).getexif()
+        stamp = exif.get_ifd(0x8769).get(36867) or exif.get(306)      # DateTimeOriginal / DateTime
+        if stamp:
+            d = datetime.strptime(str(stamp)[:10], "%Y:%m:%d")
+            return f"{MONTHS[d.month - 1]} {d.year}"
+    except Exception:
+        pass
+    name = src.name
+    if re.match(r"IMG-\d{8}-WA", name):          # WhatsApp save date, not when the photo was taken
+        return ""
+    m = re.search(r"(20\d\d)[-_]?([01]\d)[-_]?([0-3]\d)", name)
+    if m and 1 <= int(m.group(2)) <= 12:
+        return f"{MONTHS[int(m.group(2)) - 1]} {m.group(1)}"
+    return ""
+
+
+# ---------------------------------------------------------------- photo details spreadsheet
+def read_details():
+    if not DETAILS.exists():
+        return {}
+    ws = load_workbook(DETAILS).active
+    rows = {}
+    for r in ws.iter_rows(min_row=2, values_only=True):
+        if not r or not r[1]:
+            continue
+        rows[str(r[1]).strip()] = {f: ("" if v is None else str(v).strip()) for f, v in zip(FIELDS, r[2:7])}
+    return rows
+
+
+def write_details(entries):
+    """entries: list of (album folder, photo name, fields) in page order."""
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Photo details"
+    ws.append(COLUMNS)
+    for album, name, d in entries:
+        ws.append([album, name] + [d.get(f, "") for f in FIELDS])
+        ws.cell(ws.max_row, 2).hyperlink = f"{album}/{name}"       # click to open the photo
+        ws.cell(ws.max_row, 2).font = Font(color="0563C1", underline="single")
+    for c in ws[1]:
+        c.font = Font(bold=True, color="FFFFFF")
+        c.fill = PatternFill("solid", fgColor="6B5EB6")
+    for col, w in zip("ABCDEFG", [20, 34, 34, 16, 24, 34, 40]):
+        ws.column_dimensions[col].width = w
+    for row in ws.iter_rows(min_row=2):
+        for c in row:
+            c.number_format = "@"                                    # keep dates as typed text
+            c.alignment = Alignment(vertical="top", wrap_text=True)
+    ws.freeze_panes = "C2"
+    ws.auto_filter.ref = ws.dimensions
+    try:
+        wb.save(DETAILS)
+    except PermissionError:
+        print("!! photo_details.xlsx is open in Excel -- close it and run again to add new rows.")
+
+
+# ---------------------------------------------------------------- contact sheet (local only)
+def write_contact_sheet(albums_out):
+    parts = []
+    for a in albums_out:
+        cards = []
+        for i, p in enumerate(a["photos"], 1):
+            d = p["details"]
+            info = "".join(f"<div><b>{k.title()}:</b> {html.escape(d[k])}</div>" for k in FIELDS if d.get(k))
+            todo = "" if d.get("event") else ' class="todo"'
+            cards.append(f'<figure{todo}><span class="n">{a["code"]} {i}</span>'
+                         f'<a href="{p["web"]}" target="_blank"><img src="{p["web"]}" loading="lazy"></a>'
+                         f'<figcaption><div class="f">{html.escape(p["name"])}</div>{info or "<i>no details yet</i>"}</figcaption></figure>')
+        parts.append(f'<h2>{html.escape(a["title"])} <small>({a["code"]} 1&ndash;{len(a["photos"])})</small></h2>'
+                     f'<div class="grid">{"".join(cards)}</div>')
+    SHEET.write_text(f"""<!doctype html><html><head><meta charset="utf-8"><title>Gallery contact sheet</title>
+<style>
+body {{ font-family: Lato, Arial, sans-serif; margin: 24px; color: #333; background: #f6f5fb; }}
+h1 {{ color: #6B5EB6; margin: 0 0 4px; }} h2 {{ color: #6B5EB6; margin: 32px 0 10px; }} small {{ color: #888; font-weight: normal; }}
+p.help {{ max-width: 900px; }}
+.grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; }}
+figure {{ margin: 0; background: #fff; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 1px 4px rgba(0,0,0,.1); }}
+figure.todo {{ outline: 2px dashed #d9a6cb; }}
+figure img {{ width: 100%; height: 150px; object-fit: cover; display: block; }}
+.n {{ position: absolute; top: 6px; left: 6px; background: #6B5EB6; color: #fff; font-weight: bold; padding: 2px 8px; border-radius: 10px; font-size: 14px; }}
+figcaption {{ padding: 8px 10px; font-size: 13px; line-height: 1.4; }} .f {{ color: #999; font-size: 11px; word-break: break-all; margin-bottom: 3px; }}
+</style></head><body>
+<h1>Gallery contact sheet</h1>
+<p class="help">Every photo in the gallery, numbered. Dashed frames have no event yet. To add details, tell Claude e.g.
+<i>"Blast 3: lab dinner after Shany's defense, Haifa, with Shany, Itay and Pallavi"</i> &mdash; or edit
+<b>photo_details.xlsx</b> directly. Click a photo to see it larger. (This page is only on your computer.)</p>
+{''.join(parts)}</body></html>""", encoding="utf8")
+
+
 def main():
     cfg = json.loads(CONFIG.read_text(encoding="utf8"))
     albums = cfg.setdefault("albums", [])
@@ -62,20 +165,15 @@ def main():
         return a.get("folders") or [a["folder"]]
 
     known = {f for a in albums for f in folders_of(a)}
-
-    # new folders -> new albums (at the end; move them in albums.json to reorder)
     for folder in sorted(p for p in GAL.iterdir() if p.is_dir() and p.name != "web"):
         if folder.name not in known and photos_in(folder):
             albums.append({"folder": folder.name, "title": folder.name.replace("_", " ").replace("-", " ").title(),
-                           "date": "", "description": "", "captions": {}})
-            print(f"New album '{folder.name}' added to albums.json -- fill in its title, date and description.")
+                           "date": "", "description": ""})
+            print(f"New album '{folder.name}' added to albums.json -- fill in its title and description.")
     CONFIG.write_text(json.dumps(cfg, indent=4, ensure_ascii=False) + "\n", encoding="utf8")
 
-    # captions are looked up in the photo's own album first, then in any album
-    # (so a caption follows a photo that was moved to another folder)
-    all_captions = {k: v for a in albums for k, v in a.get("captions", {}).items()}
-
-    data = []
+    details = read_details()
+    entries, data, sheet = [], [], []
     for a in albums:
         files = [(f, p) for f in folders_of(a) for p in photos_in(GAL / f)]
         if not files:
@@ -85,10 +183,23 @@ def main():
         files.sort(key=lambda fp: (order.index(fp[1].name) if fp[1].name in order else len(order), fp[0], fp[1].name))
         print(f"{a['title']}: {len(files)} photos")
         flips = set(a.get("flip", []))
-        photos = [{"file": f"photo_gallery/web/{f.lower()}/{web_copy(p, f, p.name in flips)}", "caption": a.get("captions", {}).get(p.name, all_captions.get(p.name, ""))}
-                  for f, p in files]
+        photos, sheet_photos = [], []
+        for f, p in files:
+            d = details.get(p.name)
+            if d is None:                                    # new photo: start its row
+                d = {k: "" for k in FIELDS}
+                d["date"] = guess_date(p)
+            entries.append((f, p.name, d))
+            web = f"photo_gallery/web/{f.lower()}/{web_copy(p, f, p.name in flips)}"
+            photos.append(dict({"file": web}, **{k: d[k] for k in FIELDS if d.get(k)}))
+            sheet_photos.append({"name": p.name, "web": web[len("photo_gallery/"):], "details": d})
         data.append({"title": a["title"], "date": a.get("date", ""), "description": a.get("description", ""),
                      "banner": bool(a.get("banner")), "folder": "", "photos": photos})
+        code = a.get("code") or a["title"].split()[-1].strip("!")
+        sheet.append({"title": a["title"], "code": code, "photos": sheet_photos})
+
+    write_details(entries)
+    write_contact_sheet(sheet)
 
     # remove web copies whose original is gone (and folders left empty)
     # web folder names are lower case (web servers are case-sensitive, Windows is not)
@@ -103,16 +214,17 @@ def main():
         if not any(folder.iterdir()):
             folder.rmdir()
 
-    OUT.write_text("// Generated by tools/build_gallery.py from photo_gallery/albums.json -- edit that, not this file.\n"
+    OUT.write_text("// Generated by tools/build_gallery.py from photo_gallery/ -- edit albums.json and "
+                   "photo_details.xlsx, not this file.\n"
                    "window.GALLERY_ALBUMS = " + json.dumps(data, indent=4, ensure_ascii=False) + ";\n", encoding="utf8")
-    print(f"Wrote {OUT.relative_to(ROOT)}")
+    print(f"Wrote {OUT.relative_to(ROOT)}, photo_details.xlsx and contact_sheet.html")
 
     # bump the version stamp on the data file in gallery.html so browsers don't show a cached copy
     page = ROOT / "gallery.html"
-    html = page.read_text(encoding="utf8")
+    text = page.read_text(encoding="utf8")
     stamp = str(int(OUT.stat().st_mtime))
-    html = re.sub(r'assets/js/gallery-data\.js(\?v=\d+)?"', f'assets/js/gallery-data.js?v={stamp}"', html)
-    page.write_text(html, encoding="utf8")
+    text = re.sub(r'assets/js/gallery-data\.js(\?v=\d+)?"', f'assets/js/gallery-data.js?v={stamp}"', text)
+    page.write_text(text, encoding="utf8")
 
 
 if __name__ == "__main__":

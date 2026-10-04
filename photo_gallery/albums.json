@@ -20,17 +20,7 @@
                 "IMG_5537.JPG",
                 "WhatsApp Image 2022-03-29 at 4.35.41 PM.jpg"
             ],
-            "captions": {
-                "Group_photo_2025.jpeg": "The group, 2025",
-                "_DSC0194.jpg": "In front of the Schulich Faculty of Chemistry",
-                "_DSC0195.jpg": "In front of the Schulich Faculty of Chemistry",
-                "group_photo_june2023.jpg": "The group, June 2023",
-                "IMG_5515.JPG": "June 2023",
-                "IMG_5521.JPG": "June 2023",
-                "IMG_5536.JPG": "June 2023",
-                "IMG_5537.JPG": "June 2023",
-                "WhatsApp Image 2022-03-29 at 4.35.41 PM.jpg": "March 2022"
-            }
+            "code": "Group"
         },
         {
             "folder": "we_love_our_science",
@@ -57,35 +47,7 @@
                 "Shany poster2.jpg",
                 "IMG-20250101-WA0013.jpg"
             ],
-            "captions": {
-                "ICS_1_2026.jpg": "ICS Annual Meeting, Tel Aviv 2026",
-                "ICS_2_2026.jpg": "ICS Annual Meeting, Tel Aviv 2026",
-                "ICS_3_2026.jpg": "ICS Annual Meeting, Tel Aviv 2026",
-                "ICS_4_2026.jpg": "ICS Annual Meeting, Tel Aviv 2026",
-                "ICS_5_2026.jpg": "ICS Annual Meeting, Tel Aviv 2026",
-                "fatimah poster.jpg": "Fatimah · ICESAA3, Croatia 2024",
-                "IMG-20250101-WA0012.jpg": "Fatimah · ICESAA3, Croatia 2024",
-                "IMG-20250101-WA0005.jpg": "ICESAA3, Croatia 2024",
-                "IMG-20250101-WA0008.jpg": "ICESAA3, Croatia 2024",
-                "IMG-20250101-WA0010.jpg": "ICESAA3, Croatia 2024",
-                "fatimah poster2.jpg": "Fatimah and her poster",
-                "Eduardo poster.jpg": "Eduardo · Faculty Day 2023",
-                "Itay poster.jpg": "Itay · Faculty Day 2023",
-                "Shabu and Itay poster.jpg": "Shabu and Itay · Faculty Day 2023",
-                "Shabu poster.jpg": "Shabu · Faculty Day 2023",
-                "Shany Poster.jpg": "Shany · Faculty Day 2023",
-                "Shany poster2.jpg": "Shany · Faculty Day 2023",
-                "IMG-20250101-WA0013.jpg": "Faculty Day 2023",
-                "WhatsApp Image 2026-09-10 at 9.47.53 AM.jpeg": "September 2026",
-                "IMG-20250101-WA0004.jpg": "Talk at ICESAA3, Croatia 2024",
-                "IMG-20250101-WA0006.jpg": "Talk at ICESAA3, Croatia 2024",
-                "IMG-20250101-WA0007.jpg": "Talk at ICESAA3, Croatia 2024",
-                "20250715_135739.jpg": "July 2025",
-                "20250715_135812.jpg": "July 2025",
-                "20250715_135833.jpg": "July 2025",
-                "20250715_140001.jpg": "July 2025",
-                "20250715_140013.jpg": "July 2025"
-            }
+            "code": "Science"
         },
         {
             "folder": "our_milestones",
@@ -104,47 +66,28 @@
                 "20220615_124230.jpg",
                 "20220615_124701.jpg"
             ],
-            "captions": {
-                "Eduardo Defense.jpg": "Eduardo's defense",
-                "WhatsApp Image 2026-09-11 at 2.16.39 PM.jpeg": "Ajeet with his poster award",
-                "WhatsApp Image 2026-09-11 at 1.47.55 PM.jpeg": "Poster award for Ajeet",
-                "WhatsApp Image 2026-09-06 at 5.37.55 PM.jpeg": "Itay's talk",
-                "WhatsApp Image 2026-09-06 at 5.37.56 PM.jpeg": "Itay's talk",
-                "WhatsApp Image 2026-09-06 at 5.37.56 PM (1).jpeg": "Itay's talk",
-                "WhatsApp Image 2026-09-11 at 2.30.10 PM.jpeg": "Ajeet with his poster award",
-                "20220615_124230.jpg": "Moving into our new office, June 2022",
-                "20220615_124701.jpg": "Moving into our new office, June 2022",
-                "20250323_102940.jpg": "Happy birthday, Fatimah!",
-                "20250323_103002.jpg": "Happy birthday, Kasia!",
-                "20250714_132616.jpg": "Happy birthday, Renana!"
-            }
+            "code": "Milestones"
         },
         {
             "folder": "having_a_blast",
             "title": "Having a Blast",
             "date": "",
             "description": "Group events (we do more than just science).",
-            "captions": {
-                "WhatsApp Image 2026-09-10 at 9.46.57 AM2.jpeg": "Brussels, September 2026"
-            },
             "flip": [
                 "WhatsApp Image 2026-09-16 at 8.53.29 PM.jpeg"
-            ]
+            ],
+            "code": "Blast"
         },
         {
             "folder": "with_our_friends",
             "title": "With Our Friends",
             "date": "",
             "description": "Always great to see our friends around the world.",
-            "captions": {
-                "Anya_WATOC_2022.jpg": "With Anya at WATOC 2022",
-                "20220702_120019.jpg": "Vancouver, WATOC 2022",
-                "WhatsApp Image 2026-09-10 at 9.46.57 AM.jpeg": "Brussels, September 2026"
-            },
             "order": [
                 "Anya_WATOC_2022.jpg",
                 "20220702_120019.jpg"
-            ]
+            ],
+            "code": "Friends"
         }
     ]
 }

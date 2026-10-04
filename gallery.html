@@ -101,9 +101,15 @@
         .gal-lightbox figure { margin: 0; max-width: 88vw; text-align: center; }
         .gal-lightbox img { max-width: 88vw; max-height: 80vh; border-radius: 6px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
         .gal-lightbox figcaption {
-            color: #eee; font-size: 16px; margin-top: 12px;
-            display: flex; justify-content: space-between; gap: 20px;
+            color: #eee; font-size: 16px; margin-top: 12px; text-align: left;
+            display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;
         }
+        .gal-lb-cap { display: flex; flex-direction: column; gap: 2px; }
+        .gal-lb-album { color: #b9b0e6; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+        .gal-lb-event { font-size: 18px; font-weight: 700; color: #fff; }
+        .gal-lb-when { color: #ddd; }
+        .gal-lb-people { color: #ddd; }
+        .gal-lb-note { color: #bbb; font-style: italic; }
         .gal-lb-count { color: #aaa; }
         .gal-lightbox button {
             position: absolute; border: none; background: rgba(255,255,255,0.12); color: #fff;
@@ -228,7 +234,7 @@
     <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/js/gallery-data.js?v=1791144255"></script>
+    <script type="text/javascript" src="assets/js/gallery-data.js?v=1791144639"></script>
     <script type="text/javascript" src="assets/js/gallery.js"></script>
 </body>
 

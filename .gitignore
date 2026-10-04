@@ -6,3 +6,4 @@ photo_gallery/*
 
 # Windows thumbnail caches
 Thumbs.db
+!photo_gallery/photo_details.xlsx
