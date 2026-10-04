@@ -1,5 +1,5 @@
 {
-    "_help": "One entry per album, in the order they appear on the page. The album with \"banner\": true is the big strip at the top. An album takes its photos from \"folder\" (or several \"folders\"); new photos are picked up automatically, captions are optional. Then run: python tools/build_gallery.py",
+    "_help": "One entry per album, in the order they appear on the page. The album with \"banner\": true is the big strip at the top. An album takes its photos from \"folder\" (or several \"folders\"); new photos are picked up automatically, captions are optional. Then run: python tools/build_gallery.py To mirror a photo left-right (e.g. a selfie), list its file name under \"flip\".",
     "albums": [
         {
             "folder": "through_the_years",
@@ -109,7 +109,10 @@
             "title": "Having a Blast",
             "date": "",
             "description": "Group social events and celebrations.",
-            "captions": {}
+            "captions": {},
+            "flip": [
+                "WhatsApp Image 2026-09-16 at 8.53.29 PM.jpeg"
+            ]
         }
     ]
 }

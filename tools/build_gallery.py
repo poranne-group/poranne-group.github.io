@@ -39,12 +39,16 @@ def web_name(src):
     return re.sub(r"[^a-z0-9._-]+", "-", src.stem.lower()).strip("-_.") + ".jpg"
 
 
-def web_copy(src, album):
+def web_copy(src, album, flip=False):
+    """Make the web-sized copy (mirrored left-right if flip) unless an up-to-date one exists."""
     dst = WEB / album.lower() / web_name(src)
-    if not dst.exists() or dst.stat().st_mtime < src.stat().st_mtime:
+    newest = max(src.stat().st_mtime, CONFIG.stat().st_mtime if flip else 0)
+    if not dst.exists() or dst.stat().st_mtime < newest:
         dst.parent.mkdir(parents=True, exist_ok=True)
         im = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
         im.thumbnail((LONG_SIDE, LONG_SIDE), Image.LANCZOS)
+        if flip:
+            im = ImageOps.mirror(im)
         im.save(dst, "JPEG", quality=82, optimize=True, progressive=True)
         print(f"  resized {src.name} -> web/{album.lower()}/{dst.name} ({dst.stat().st_size // 1024} KB)")
     return dst.name
@@ -76,7 +80,8 @@ def main():
         order = a.get("order", [])
         files.sort(key=lambda fp: (order.index(fp[1].name) if fp[1].name in order else len(order), fp[0], fp[1].name))
         print(f"{a['title']}: {len(files)} photos")
-        photos = [{"file": f"photo_gallery/web/{f.lower()}/{web_copy(p, f)}", "caption": a.get("captions", {}).get(p.name, "")}
+        flips = set(a.get("flip", []))
+        photos = [{"file": f"photo_gallery/web/{f.lower()}/{web_copy(p, f, p.name in flips)}", "caption": a.get("captions", {}).get(p.name, "")}
                   for f, p in files]
         data.append({"title": a["title"], "date": a.get("date", ""), "description": a.get("description", ""),
                      "banner": bool(a.get("banner")), "folder": "", "photos": photos})
