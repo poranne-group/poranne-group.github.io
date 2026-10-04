@@ -97,6 +97,13 @@ def main():
                    "window.GALLERY_ALBUMS = " + json.dumps(data, indent=4, ensure_ascii=False) + ";\n", encoding="utf8")
     print(f"Wrote {OUT.relative_to(ROOT)}")
 
+    # bump the version stamp on the data file in gallery.html so browsers don't show a cached copy
+    page = ROOT / "gallery.html"
+    html = page.read_text(encoding="utf8")
+    stamp = str(int(OUT.stat().st_mtime))
+    html = re.sub(r'assets/js/gallery-data\.js(\?v=\d+)?"', f'assets/js/gallery-data.js?v={stamp}"', html)
+    page.write_text(html, encoding="utf8")
+
 
 if __name__ == "__main__":
     main()
