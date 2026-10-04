@@ -54,86 +54,118 @@ window.GALLERY_ALBUMS = [
         ]
     },
     {
-        "title": "We Love Our Posters",
+        "title": "We Love Our Science",
         "date": "",
-        "description": "Group members presenting their work at poster sessions.",
+        "description": "Group members sharing their work at conferences, poster sessions and talks.",
         "banner": false,
         "folder": "",
         "photos": [
             {
-                "file": "photo_gallery/web/we_love_our_posters/ics_1_2026.jpg",
+                "file": "photo_gallery/web/we_love_our_science/ics_1_2026.jpg",
                 "caption": "ICS Annual Meeting, Tel Aviv 2026"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/ics_2_2026.jpg",
+                "file": "photo_gallery/web/we_love_our_science/ics_2_2026.jpg",
                 "caption": "ICS Annual Meeting, Tel Aviv 2026"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/ics_3_2026.jpg",
+                "file": "photo_gallery/web/we_love_our_science/ics_3_2026.jpg",
                 "caption": "ICS Annual Meeting, Tel Aviv 2026"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/ics_4_2026.jpg",
+                "file": "photo_gallery/web/we_love_our_science/ics_4_2026.jpg",
                 "caption": "ICS Annual Meeting, Tel Aviv 2026"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/ics_5_2026.jpg",
+                "file": "photo_gallery/web/we_love_our_science/ics_5_2026.jpg",
                 "caption": "ICS Annual Meeting, Tel Aviv 2026"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/fatimah-poster.jpg",
+                "file": "photo_gallery/web/we_love_our_science/fatimah-poster.jpg",
                 "caption": "Fatimah · ICESAA3, Croatia 2024"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/img-20250101-wa0012.jpg",
+                "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0012.jpg",
                 "caption": "Fatimah · ICESAA3, Croatia 2024"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/img-20250101-wa0005.jpg",
+                "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0005.jpg",
                 "caption": "ICESAA3, Croatia 2024"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/img-20250101-wa0008.jpg",
+                "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0008.jpg",
                 "caption": "ICESAA3, Croatia 2024"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/img-20250101-wa0010.jpg",
+                "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0010.jpg",
                 "caption": "ICESAA3, Croatia 2024"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/fatimah-poster2.jpg",
+                "file": "photo_gallery/web/we_love_our_science/fatimah-poster2.jpg",
                 "caption": "Fatimah and her poster"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/eduardo-poster.jpg",
+                "file": "photo_gallery/web/we_love_our_science/eduardo-poster.jpg",
                 "caption": "Eduardo · Faculty Day 2023"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/itay-poster.jpg",
+                "file": "photo_gallery/web/we_love_our_science/itay-poster.jpg",
                 "caption": "Itay · Faculty Day 2023"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/shabu-and-itay-poster.jpg",
+                "file": "photo_gallery/web/we_love_our_science/shabu-and-itay-poster.jpg",
                 "caption": "Shabu and Itay · Faculty Day 2023"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/shabu-poster.jpg",
+                "file": "photo_gallery/web/we_love_our_science/shabu-poster.jpg",
                 "caption": "Shabu · Faculty Day 2023"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/shany-poster.jpg",
+                "file": "photo_gallery/web/we_love_our_science/shany-poster.jpg",
                 "caption": "Shany · Faculty Day 2023"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/shany-poster2.jpg",
+                "file": "photo_gallery/web/we_love_our_science/shany-poster2.jpg",
                 "caption": "Shany · Faculty Day 2023"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/img-20250101-wa0013.jpg",
+                "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0013.jpg",
                 "caption": "Faculty Day 2023"
             },
             {
-                "file": "photo_gallery/web/we_love_our_posters/whatsapp-image-2026-09-10-at-9.47.53-am.jpg",
+                "file": "photo_gallery/web/we_love_our_science/20250715_135739.jpg",
+                "caption": "July 2025"
+            },
+            {
+                "file": "photo_gallery/web/we_love_our_science/20250715_135812.jpg",
+                "caption": "July 2025"
+            },
+            {
+                "file": "photo_gallery/web/we_love_our_science/20250715_135833.jpg",
+                "caption": "July 2025"
+            },
+            {
+                "file": "photo_gallery/web/we_love_our_science/20250715_140001.jpg",
+                "caption": "July 2025"
+            },
+            {
+                "file": "photo_gallery/web/we_love_our_science/20250715_140013.jpg",
+                "caption": "July 2025"
+            },
+            {
+                "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0004.jpg",
+                "caption": "Talk at ICESAA3, Croatia 2024"
+            },
+            {
+                "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0006.jpg",
+                "caption": "Talk at ICESAA3, Croatia 2024"
+            },
+            {
+                "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0007.jpg",
+                "caption": "Talk at ICESAA3, Croatia 2024"
+            },
+            {
+                "file": "photo_gallery/web/we_love_our_science/whatsapp-image-2026-09-10-at-9.47.53-am.jpg",
                 "caption": "September 2026"
             }
         ]
@@ -141,7 +173,7 @@ window.GALLERY_ALBUMS = [
     {
         "title": "Our Milestones!",
         "date": "",
-        "description": "Talks, seminars and thesis defenses: celebrating the big moments.",
+        "description": "Celebrating the big moments: thesis defenses, talks, awards, accepted papers and birthdays.",
         "banner": false,
         "folder": "",
         "photos": [
@@ -186,16 +218,16 @@ window.GALLERY_ALBUMS = [
                 "caption": "Moving into our new office, June 2022"
             },
             {
-                "file": "photo_gallery/web/our_milestones/img-20250101-wa0004.jpg",
-                "caption": "Talk at ICESAA3, Croatia 2024"
+                "file": "photo_gallery/web/our_milestones/20250323_102940.jpg",
+                "caption": "Happy birthday, Fatimah!"
             },
             {
-                "file": "photo_gallery/web/our_milestones/img-20250101-wa0006.jpg",
-                "caption": "Talk at ICESAA3, Croatia 2024"
+                "file": "photo_gallery/web/our_milestones/20250323_103002.jpg",
+                "caption": "Happy birthday, Kasia!"
             },
             {
-                "file": "photo_gallery/web/our_milestones/img-20250101-wa0007.jpg",
-                "caption": "Talk at ICESAA3, Croatia 2024"
+                "file": "photo_gallery/web/our_milestones/20250714_132616.jpg",
+                "caption": "Happy birthday, Renana!"
             },
             {
                 "file": "photo_gallery/web/our_milestones/img-20250101-wa0025.jpg",
@@ -212,6 +244,14 @@ window.GALLERY_ALBUMS = [
             {
                 "file": "photo_gallery/web/our_milestones/img-20250101-wa0028.jpg",
                 "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-08-30-at-10.52.54-am.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-08-30-at-10.53.10-am.jpg",
+                "caption": ""
             }
         ]
     },
@@ -227,20 +267,36 @@ window.GALLERY_ALBUMS = [
                 "caption": ""
             },
             {
+                "file": "photo_gallery/web/having_a_blast/20250714_155815.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/20250822_210225.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/pxl_20250904_111646408.portrait.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/pxl_20250911_190210657.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/pxl_20251010_111046551.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/pxl_20251010_111056036.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/pxl_20260129_090902476.jpg",
+                "caption": ""
+            },
+            {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2025-10-10-at-12.59.25-pm.jpg",
                 "caption": ""
-            },
-            {
-                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-08-30-at-10.52.54-am.jpg",
-                "caption": ""
-            },
-            {
-                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-08-30-at-10.53.10-am.jpg",
-                "caption": ""
-            },
-            {
-                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-10-at-9.46.57-am.jpg",
-                "caption": "Brussels, September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-10-at-9.46.57-am2.jpg",
@@ -290,6 +346,34 @@ window.GALLERY_ALBUMS = [
             {
                 "file": "photo_gallery/web/with_our_friends/20220702_120019.jpg",
                 "caption": "Vancouver, WATOC 2022"
+            },
+            {
+                "file": "photo_gallery/web/with_our_friends/20250709_170226.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/with_our_friends/20250710_093403.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/with_our_friends/20250710_200322.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/with_our_friends/pxl_20250910_063029882.mp.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/with_our_friends/pxl_20251013_175543692.mp.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/with_our_friends/pxl_20251210_075901835.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/with_our_friends/whatsapp-image-2026-09-10-at-9.46.57-am.jpg",
+                "caption": "Brussels, September 2026"
             }
         ]
     }

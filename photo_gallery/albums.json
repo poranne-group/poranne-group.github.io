@@ -33,10 +33,10 @@
             }
         },
         {
-            "folder": "we_love_our_posters",
-            "title": "We Love Our Posters",
+            "folder": "we_love_our_science",
+            "title": "We Love Our Science",
             "date": "",
-            "description": "Group members presenting their work at poster sessions.",
+            "description": "Group members sharing their work at conferences, poster sessions and talks.",
             "order": [
                 "ICS_1_2026.jpg",
                 "ICS_2_2026.jpg",
@@ -76,14 +76,22 @@
                 "Shany Poster.jpg": "Shany · Faculty Day 2023",
                 "Shany poster2.jpg": "Shany · Faculty Day 2023",
                 "IMG-20250101-WA0013.jpg": "Faculty Day 2023",
-                "WhatsApp Image 2026-09-10 at 9.47.53 AM.jpeg": "September 2026"
+                "WhatsApp Image 2026-09-10 at 9.47.53 AM.jpeg": "September 2026",
+                "IMG-20250101-WA0004.jpg": "Talk at ICESAA3, Croatia 2024",
+                "IMG-20250101-WA0006.jpg": "Talk at ICESAA3, Croatia 2024",
+                "IMG-20250101-WA0007.jpg": "Talk at ICESAA3, Croatia 2024",
+                "20250715_135739.jpg": "July 2025",
+                "20250715_135812.jpg": "July 2025",
+                "20250715_135833.jpg": "July 2025",
+                "20250715_140001.jpg": "July 2025",
+                "20250715_140013.jpg": "July 2025"
             }
         },
         {
             "folder": "our_milestones",
             "title": "Our Milestones!",
             "date": "",
-            "description": "Talks, seminars and thesis defenses: celebrating the big moments.",
+            "description": "Celebrating the big moments: thesis defenses, talks, awards, accepted papers and birthdays.",
             "order": [
                 "WhatsApp Image 2026-09-11 at 2.16.39 PM.jpeg",
                 "WhatsApp Image 2026-09-11 at 1.47.55 PM.jpeg",
@@ -98,9 +106,6 @@
             ],
             "captions": {
                 "Eduardo Defense.jpg": "Eduardo's defense",
-                "IMG-20250101-WA0004.jpg": "Talk at ICESAA3, Croatia 2024",
-                "IMG-20250101-WA0006.jpg": "Talk at ICESAA3, Croatia 2024",
-                "IMG-20250101-WA0007.jpg": "Talk at ICESAA3, Croatia 2024",
                 "WhatsApp Image 2026-09-11 at 2.16.39 PM.jpeg": "Ajeet with his poster award",
                 "WhatsApp Image 2026-09-11 at 1.47.55 PM.jpeg": "Poster award for Ajeet",
                 "WhatsApp Image 2026-09-06 at 5.37.55 PM.jpeg": "Itay's talk",
@@ -108,7 +113,10 @@
                 "WhatsApp Image 2026-09-06 at 5.37.56 PM (1).jpeg": "Itay's talk",
                 "WhatsApp Image 2026-09-11 at 2.30.10 PM.jpeg": "Ajeet with his poster award",
                 "20220615_124230.jpg": "Moving into our new office, June 2022",
-                "20220615_124701.jpg": "Moving into our new office, June 2022"
+                "20220615_124701.jpg": "Moving into our new office, June 2022",
+                "20250323_102940.jpg": "Happy birthday, Fatimah!",
+                "20250323_103002.jpg": "Happy birthday, Kasia!",
+                "20250714_132616.jpg": "Happy birthday, Renana!"
             }
         },
         {
@@ -117,7 +125,6 @@
             "date": "",
             "description": "Group social events and celebrations.",
             "captions": {
-                "WhatsApp Image 2026-09-10 at 9.46.57 AM.jpeg": "Brussels, September 2026",
                 "WhatsApp Image 2026-09-10 at 9.46.57 AM2.jpeg": "Brussels, September 2026"
             },
             "flip": [
@@ -131,7 +138,8 @@
             "description": "Catching up with friends and colleagues around the world.",
             "captions": {
                 "Anya_WATOC_2022.jpg": "With Anya at WATOC 2022",
-                "20220702_120019.jpg": "Vancouver, WATOC 2022"
+                "20220702_120019.jpg": "Vancouver, WATOC 2022",
+                "WhatsApp Image 2026-09-10 at 9.46.57 AM.jpeg": "Brussels, September 2026"
             },
             "order": [
                 "Anya_WATOC_2022.jpg",
