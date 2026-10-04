@@ -12,11 +12,11 @@ window.GALLERY_ALBUMS = [
                 "caption": "The group, 2025"
             },
             {
-                "file": "photo_gallery/web/through_the_years/_dsc0194.jpg",
+                "file": "photo_gallery/web/through_the_years/dsc0194.jpg",
                 "caption": "In front of the Schulich Faculty of Chemistry"
             },
             {
-                "file": "photo_gallery/web/through_the_years/_dsc0195.jpg",
+                "file": "photo_gallery/web/through_the_years/dsc0195.jpg",
                 "caption": "In front of the Schulich Faculty of Chemistry"
             },
             {

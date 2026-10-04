@@ -35,7 +35,8 @@ def photos_in(folder):
 
 def web_name(src):
     """Web-safe file name: lower case, no spaces."""
-    return re.sub(r"[^a-z0-9._-]+", "-", src.stem.lower()).strip("-") + ".jpg"
+    # no leading "_" or ".": GitHub Pages hides such files
+    return re.sub(r"[^a-z0-9._-]+", "-", src.stem.lower()).strip("-_.") + ".jpg"
 
 
 def web_copy(src, album):
