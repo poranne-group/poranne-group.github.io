@@ -75,7 +75,8 @@
                 "Shabu poster.jpg": "Shabu · Faculty Day 2023",
                 "Shany Poster.jpg": "Shany · Faculty Day 2023",
                 "Shany poster2.jpg": "Shany · Faculty Day 2023",
-                "IMG-20250101-WA0013.jpg": "Faculty Day 2023"
+                "IMG-20250101-WA0013.jpg": "Faculty Day 2023",
+                "WhatsApp Image 2026-09-10 at 9.47.53 AM.jpeg": "September 2026"
             }
         },
         {
@@ -86,11 +87,14 @@
             "order": [
                 "WhatsApp Image 2026-09-11 at 2.16.39 PM.jpeg",
                 "WhatsApp Image 2026-09-11 at 1.47.55 PM.jpeg",
+                "WhatsApp Image 2026-09-11 at 2.30.10 PM.jpeg",
                 "WhatsApp Image 2026-09-06 at 5.37.55 PM.jpeg",
                 "WhatsApp Image 2026-09-06 at 5.37.56 PM.jpeg",
                 "WhatsApp Image 2026-09-06 at 5.37.56 PM (1).jpeg",
                 "WhatsApp Image 2026-08-13 at 8.58.56 AM.jpeg",
-                "Eduardo Defense.jpg"
+                "Eduardo Defense.jpg",
+                "20220615_124230.jpg",
+                "20220615_124701.jpg"
             ],
             "captions": {
                 "Eduardo Defense.jpg": "Eduardo's defense",
@@ -101,7 +105,10 @@
                 "WhatsApp Image 2026-09-11 at 1.47.55 PM.jpeg": "Poster award for Ajeet",
                 "WhatsApp Image 2026-09-06 at 5.37.55 PM.jpeg": "Itay's talk",
                 "WhatsApp Image 2026-09-06 at 5.37.56 PM.jpeg": "Itay's talk",
-                "WhatsApp Image 2026-09-06 at 5.37.56 PM (1).jpeg": "Itay's talk"
+                "WhatsApp Image 2026-09-06 at 5.37.56 PM (1).jpeg": "Itay's talk",
+                "WhatsApp Image 2026-09-11 at 2.30.10 PM.jpeg": "Ajeet with his poster award",
+                "20220615_124230.jpg": "Moving into our new office, June 2022",
+                "20220615_124701.jpg": "Moving into our new office, June 2022"
             }
         },
         {
@@ -109,9 +116,26 @@
             "title": "Having a Blast",
             "date": "",
             "description": "Group social events and celebrations.",
-            "captions": {},
+            "captions": {
+                "WhatsApp Image 2026-09-10 at 9.46.57 AM.jpeg": "Brussels, September 2026",
+                "WhatsApp Image 2026-09-10 at 9.46.57 AM2.jpeg": "Brussels, September 2026"
+            },
             "flip": [
                 "WhatsApp Image 2026-09-16 at 8.53.29 PM.jpeg"
+            ]
+        },
+        {
+            "folder": "with_our_friends",
+            "title": "With Our Friends",
+            "date": "",
+            "description": "Catching up with friends and colleagues around the world.",
+            "captions": {
+                "Anya_WATOC_2022.jpg": "With Anya at WATOC 2022",
+                "20220702_120019.jpg": "Vancouver, WATOC 2022"
+            },
+            "order": [
+                "Anya_WATOC_2022.jpg",
+                "20220702_120019.jpg"
             ]
         }
     ]

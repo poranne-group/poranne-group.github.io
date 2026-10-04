@@ -131,6 +131,10 @@ window.GALLERY_ALBUMS = [
             {
                 "file": "photo_gallery/web/we_love_our_posters/img-20250101-wa0013.jpg",
                 "caption": "Faculty Day 2023"
+            },
+            {
+                "file": "photo_gallery/web/we_love_our_posters/whatsapp-image-2026-09-10-at-9.47.53-am.jpg",
+                "caption": "September 2026"
             }
         ]
     },
@@ -148,6 +152,10 @@ window.GALLERY_ALBUMS = [
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-11-at-1.47.55-pm.jpg",
                 "caption": "Poster award for Ajeet"
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-11-at-2.30.10-pm.jpg",
+                "caption": "Ajeet with his poster award"
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-06-at-5.37.55-pm.jpg",
@@ -168,6 +176,14 @@ window.GALLERY_ALBUMS = [
             {
                 "file": "photo_gallery/web/our_milestones/eduardo-defense.jpg",
                 "caption": "Eduardo's defense"
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/20220615_124230.jpg",
+                "caption": "Moving into our new office, June 2022"
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/20220615_124701.jpg",
+                "caption": "Moving into our new office, June 2022"
             },
             {
                 "file": "photo_gallery/web/our_milestones/img-20250101-wa0004.jpg",
@@ -207,6 +223,10 @@ window.GALLERY_ALBUMS = [
         "folder": "",
         "photos": [
             {
+                "file": "photo_gallery/web/having_a_blast/20220915_230425.jpg",
+                "caption": ""
+            },
+            {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2025-10-10-at-12.59.25-pm.jpg",
                 "caption": ""
             },
@@ -217,6 +237,14 @@ window.GALLERY_ALBUMS = [
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-08-30-at-10.53.10-am.jpg",
                 "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-10-at-9.46.57-am.jpg",
+                "caption": "Brussels, September 2026"
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-10-at-9.46.57-am2.jpg",
+                "caption": "Brussels, September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.53.29-pm.jpg",
@@ -245,6 +273,23 @@ window.GALLERY_ALBUMS = [
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.56-pm2.jpg",
                 "caption": ""
+            }
+        ]
+    },
+    {
+        "title": "With Our Friends",
+        "date": "",
+        "description": "Catching up with friends and colleagues around the world.",
+        "banner": false,
+        "folder": "",
+        "photos": [
+            {
+                "file": "photo_gallery/web/with_our_friends/anya_watoc_2022.jpg",
+                "caption": "With Anya at WATOC 2022"
+            },
+            {
+                "file": "photo_gallery/web/with_our_friends/20220702_120019.jpg",
+                "caption": "Vancouver, WATOC 2022"
             }
         ]
     }
