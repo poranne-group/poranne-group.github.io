@@ -102,832 +102,6 @@ window.RGP_MILESTONES = [
   "detail": "Schulich Faculty of Chemistry, Technion"
  },
  {
-  "lane": "papers",
-  "start": [
-   2026,
-   8,
-   true
-  ],
-  "title": "Linearly Expanded Azulenes in the S0, T1, and Qu1 States: A Unified View of Electronic Structure and Aromaticity",
-  "detail": "ChemRxiv preprint, August 2026",
-  "url": "https://doi.org/10.26434/chemrxiv.15006989/v1",
-  "cat": "Aromaticity",
-  "preprint": true,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2026,
-   8,
-   true
-  ],
-  "title": "Cationic Sulfonium‐Based Tripodal Ligand and Its Rh(I) Complexes",
-  "detail": "Chemistry – A European Journal, August 2026",
-  "url": "https://doi.org/10.1002/chem.71052",
-  "cat": "Chemical Bonding",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2026,
-   7,
-   true
-  ],
-  "title": "Defying Antiaromaticity - The Curious Case of Pentalenopentalenes",
-  "detail": "Chemical Science, July 2026",
-  "url": "https://doi.org/10.1039/d6sc02343f",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2026,
-   3,
-   true
-  ],
-  "title": "Iron Catalyzed Aryl–Aryl Kumada Cross-Coupling: A Mechanistic and Computational Investigation",
-  "detail": "Angewandte Chemie International Edition, March 2026",
-  "url": "https://onlinelibrary.wiley.com/doi/10.1002/anie.3094782",
-  "cat": "Reaction Mechanisms & Catalysis",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2026,
-   7,
-   true
-  ],
-  "title": "Three Wrongs Make a Right: a Computational Investigation of [4n]–[4n]–[4n] Fused π-Systems",
-  "detail": "Chemical Science, 2026",
-  "url": "https://pubs.rsc.org/en/content/articlelanding/2026/sc/d5sc07395b",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2025,
-   2,
-   true
-  ],
-  "title": "Aromaticity Switching by Quantum Tunnelling",
-  "detail": "Chemical Science, February 2025",
-  "url": "https://pubs.rsc.org/en/content/articlehtml/2025/sc/d5sc05717e",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2025,
-   9,
-   true
-  ],
-  "title": "Toward Iron-Catalyzed Alkene Metathesis: Mapping the Reactivity and Deactivation Pathways of an Iron Metallacyclobutane",
-  "detail": "Angewandte Chemie International Edition, September 2025",
-  "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202515731",
-  "cat": "Reaction Mechanisms & Catalysis",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2025,
-   8,
-   true
-  ],
-  "title": "From Rings to Properties: Understanding the Effect of Annelation on Pyrene",
-  "detail": "Journal of Organic Chemistry, August 2025",
-  "url": "https://pubs.acs.org/doi/10.1021/acs.joc.5c01401",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2025,
-   5,
-   true
-  ],
-  "title": "Photoexcited and Ground-State Diradical(oid) Character in a Triquino[3]radialene",
-  "detail": "Chemical Science, May 2025",
-  "url": "https://pubs.rsc.org/en/content/articlehtml/2025/sc/d5sc01676b",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2025,
-   5,
-   true
-  ],
-  "title": "COMPAS-4: A Data Set of (BN)1 Substituted Cata-Condensed Polybenzenoid Hydrocarbons—Data Analysis and Feature Engineering",
-  "detail": "Journal of Chemical Information and Modeling, May 2025",
-  "url": "https://pubs.acs.org/doi/full/10.1021/acs.jcim.5c00608?_gl=1*x9cue1*_gcl_au*MTk0NjQzOTYwMC4xNzQ3MDgwMjM4",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2025,
-   4,
-   true
-  ],
-  "title": "Metallaaromaticity Reimagined: Metallaaromatic Cobalt Macrocycles Through Metal-Ligand Coordination Chemistry",
-  "detail": "April 2025",
-  "url": null,
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2025,
-   4,
-   true
-  ],
-  "title": "How Local is 'Local'? Deep Learning Reveals Locality of the Induced Magnetic Field of Polycyclic Aromatic Hydrocarbons",
-  "detail": "Journal of Chemical Physics, April 2025",
-  "url": "https://pubs.aip.org/aip/jcp/article/162/14/144101/3342835/How-local-is-local-Deep-learning-reveals-locality",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2025,
-   2,
-   true
-  ],
-  "title": "Manganese-Ketenimine Intermediates as Active Catalysts in the Michael Addition of Unactivated Nitriles to α,β-Unsaturated Ketones",
-  "detail": "Angewandte Chemie International Edition, February 2025",
-  "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202423275",
-  "cat": "Reaction Mechanisms & Catalysis",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2025,
-   1,
-   true
-  ],
-  "title": "Stabilizing Contorted Doubly-Reduced Tetraphenylene with Heavy Alkali Metal Complexation: Crystallographic and Theoretical Evidence",
-  "detail": "Chemistry - An Asian Journal, January 2025",
-  "url": "https://aces.onlinelibrary.wiley.com/doi/full/10.1002/asia.202401498",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2025,
-   1,
-   true
-  ],
-  "title": "Polybenzenoid Hydrocarbons in the S1 State: Simple Structural Motifs Predict Electronic Properties and (Anti)Aromaticity",
-  "detail": "Journal of Physical Organic Chemistry, January 2025",
-  "url": "https://onlinelibrary.wiley.com/doi/10.1002/poc.70012",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2024,
-   11,
-   true
-  ],
-  "title": "Accelerated Diradical Character Assessment in Large Datasets of Polybenzenoid Hydrocarbons Using xTB Fractional Occupation",
-  "detail": "Physical Chemistry Chemical Physics, November 2024",
-  "url": "https://pubs.rsc.org/en/content/articlelanding/2024/cp/d4cp04059g",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2024,
-   11,
-   true
-  ],
-  "title": "Effects of Benzoheterocyclic Annelation on the s-Indacene Core: a Computational Analysis",
-  "detail": "Chemical Science, November 2024",
-  "url": "https://pubs.rsc.org/en/content/articlelanding/2024/sc/d4sc06812b",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2024,
-   9,
-   true
-  ],
-  "title": "N2 Dissociation vs Reversible 1,2-Methyl Migration in PCNHCP Cobalt(I) Complexes in the Stereoselective Isomerization (E/Z) of Allyl Ethers",
-  "detail": "JACS Au, September 2024",
-  "url": "https://pubs.acs.org/doi/full/10.1021/jacsau.4c00529",
-  "cat": "Reaction Mechanisms & Catalysis",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2024,
-   9,
-   true
-  ],
-  "title": "What a Difference an Electron Makes: Structural Response of Saddle-Shaped Tetraphenylene to One and Two Electron Uptake",
-  "detail": "ChemistryEurope, September 2024",
-  "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/ceur.202400055",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2024,
-   7,
-   true
-  ],
-  "title": "Hetero-Polycyclic Aromatic Systems: A Data-Driven Investigation of Structure–Property Relationships",
-  "detail": "Beilstein Journal of Organic Chemistry, July 2024",
-  "url": "https://www.beilstein-journals.org/bjoc/articles/20/160",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2024,
-   5,
-   true
-  ],
-  "title": "COMPAS-3: a Dataset of peri-Condensed Polybenzenoid Hydrocarbons",
-  "detail": "Physical Chemistry Chemical Physics, May 2024",
-  "url": "https://pubs.rsc.org/en/Content/ArticleLanding/2024/CP/D4CP01027B",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2024,
-   1,
-   true
-  ],
-  "title": "COMPAS-2: a Dataset of cata-Condensed Hetero-Polycyclic Aromatic Systems",
-  "detail": "Scientific Data, January 2024",
-  "url": "https://www.nature.com/articles/s41597-024-02927-8",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2024,
-   1,
-   true
-  ],
-  "title": "Modulating Paratropicity in Heteroarene-Fused Expanded Pentalenes",
-  "detail": "Organic Letters, January 2024",
-  "url": "https://pubs.acs.org/doi/full/10.1021/acs.orglett.4c00188",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2023,
-   12,
-   true
-  ],
-  "title": "Light-Triggered Enhancement of Fluorescence Efficiency in Organic Cages",
-  "detail": "Journal of Physical Chemistry Letters, December 2023",
-  "url": "https://pubs.acs.org/doi/full/10.1021/acs.jpclett.3c02667",
-  "cat": "Chemical Bonding",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2023,
-   10,
-   true
-  ],
-  "title": "Guided diffusion for Inverse Molecular Design",
-  "detail": "Nature Computational Science, October 2023",
-  "url": "https://www.nature.com/articles/s43588-023-00532-0",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2023,
-   9,
-   true
-  ],
-  "title": "Repercussions of Multi-Electron Uptake by a Twistacene: a Reduction-Induced Double Dehydrogenative Annulation",
-  "detail": "Organic Chemistry Frontiers, September 2023",
-  "url": "https://pubs.rsc.org/en/content/articlelanding/2023/qo/d3qo01282d/unauth",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2023,
-   5,
-   true
-  ],
-  "title": "A Crowning Achievement: The First Solution-Phase Synthesis of Circumcoronenes",
-  "detail": "Angewandte Chemie, May 2023",
-  "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.202305289",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2023,
-   2,
-   true
-  ],
-  "title": "Interplay of Charge and Aromaticity Upon Chemical Reduction of p-Quinquephenyl with Alkali Metals",
-  "detail": "Organometallics, February 2023",
-  "url": "https://pubs.acs.org/doi/full/10.1021/acs.organomet.2c00583",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2022,
-   12,
-   true
-  ],
-  "title": "Interpretable Deep-Learning Unveils Structure-Property Relationships in Polybenzenoid Hydrocarbons",
-  "detail": "The Journal of Organic Chemistry, December 2022",
-  "url": "https://pubs.acs.org/doi/full/10.1021/acs.joc.2c02381",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2022,
-   12,
-   true
-  ],
-  "title": "Text-based representations with interpretable machine learning reveal structure–property relationships of polybenzenoid hydrocarbons",
-  "detail": "The Journal of Physical Organic Chemistry, December 2022",
-  "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/poc.4458",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2022,
-   7,
-   true
-  ],
-  "title": "The COMPAS Project: A Computational Database of Polycyclic Aromatic Systems. Phase 1: cata-Condensed Polybenzenoid Hydrocarbons",
-  "detail": "Journal of Chemical Information and Modeling, July 2022",
-  "url": "https://pubs.acs.org/doi/full/10.1021/acs.jcim.2c00503",
-  "cat": "Data & AI",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2022,
-   6,
-   true
-  ],
-  "title": "Localized Antiaromaticity Hot-spot Drives Reductive Dehydrogenative Cyclizations in Bis- and Mono-Helicenes",
-  "detail": "Journal of the American Chemical Society, June 2022",
-  "url": "https://pubs.acs.org/doi/full/10.1021/jacs.2c03681",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2022,
-   1,
-   true
-  ],
-  "title": "Simple and Efficient Visualization of Aromaticity: Bond Currents Calculated from NICS Values",
-  "detail": "Phys. Chem. Chem. Phys., January 2022Highlighted in Chemistry World",
-  "url": "https://pubs.rsc.org/en/content/articlelanding/2022/CP/d1cp05757j",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2021,
-   11,
-   true
-  ],
-  "title": "Extensive Redox Non-Innocence in Iron Bipyridine-Diimine Complexes: a Combined Spectroscopic and Computational Study",
-  "detail": "Inorganic Chemistry, November 2021",
-  "url": "https://pubs.acs.org/doi/10.1021/acs.inorgchem.1c02925",
-  "cat": "Reaction Mechanisms & Catalysis",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2021,
-   9,
-   true
-  ],
-  "title": "Tuning Magnetic Interactions Between Triphenylene Radicals by Variation of Crystal Packing in Structures with Alkali Metal Counterions",
-  "detail": "Inorganic Chemistry, September 2021",
-  "url": "https://pubs.acs.org/doi/10.1021/acs.inorgchem.1c02139",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2021,
-   5,
-   true
-  ],
-  "title": "Chapter 4: NICS — Nucleus Independent Chemical Shift",
-  "detail": "Aromaticity: Modern Computational Methods and Applications, May 2021Edited by: Israel FernandezPublished by: Elsevier",
-  "url": "https://www.elsevier.com/books/aromaticity/fernandez/978-0-12-822723-7",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "chapter"
- },
- {
-  "lane": "papers",
-  "start": [
-   2021,
-   1,
-   true
-  ],
-  "title": "Prediction of Spin Density, Baird‐Antiaromaticity, and Singlet‐Triplet Energy Gap in Triplet‐State Polybenzenoid Systems from Simple Structural Motifs",
-  "detail": "Chemistry - A European Journal, January 2021",
-  "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/chem.202005248",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2021,
-   1,
-   true
-  ],
-  "title": "Predicting bond-currents in polybenzenoid hydrocarbons with an additivity scheme",
-  "detail": "The Journal of Chemical Physics, January 2021Invited contribution for the Issue Honoring Women in Physical Chemistry and Chemical Physics",
-  "url": "https://aip.scitation.org/doi/10.1063/5.0038292",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2021,
-   1,
-   true
-  ],
-  "title": "Peptide–Metal Frameworks with Metal Strings Guided by Dispersion Interactions",
-  "detail": "Journal of the American Chemical Society, January 2021",
-  "url": "https://pubs.acs.org/doi/abs/10.1021/jacs.0c11793",
-  "cat": "Chemical Bonding",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2020,
-   12,
-   true
-  ],
-  "title": "Predi-XY: A Python program for automated generation of NICS-XY-Scans based on an Additivity Scheme",
-  "detail": "Electronic Structure, December 2020Invited contribution for the Emerging Leaders issue",
-  "url": "https://iopscience.iop.org/article/10.1088/2516-1075/abd081",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2020,
-   10,
-   true
-  ],
-  "title": "Flat corannulene: when a transition state becomes a stable molecule",
-  "detail": "Chemical Science, October 2020",
-  "url": "https://pubs.rsc.org/en/content/articlelanding/2020/sc/d0sc04566g#!divAbstract",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2020,
-   5,
-   true
-  ],
-  "title": "Ring-fused cyclobutanes via cycloisomerization of alkylidenecyclopropane acylsilanes",
-  "detail": "Chemical Science, May 2020",
-  "url": "https://pubs.rsc.org/en/content/articlehtml/2020/sc/d0sc02224a",
-  "cat": "Reaction Mechanisms & Catalysis",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2020,
-   1,
-   true
-  ],
-  "title": "Supramolecular Modulation of Hybrid Perovskite Solar Cells via Bifunctional Halogen Bonding Revealed by Two-Dimensional 19F Solid-State NMR Spectroscopy",
-  "detail": "Journal of the American Chemical Society, January 2020",
-  "url": "https://pubs.acs.org/doi/abs/10.1021/jacs.9b13701",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2019,
-   11,
-   true
-  ],
-  "title": "Negative charge as a lens for concentrating antiaromaticity in twisted polyaromatics: taking advantage of a pentagonal \"defect\" and helicene strain for reductive annulation",
-  "detail": "Angewandte Chemie, November 2019",
-  "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.201911319",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2019,
-   5,
-   true
-  ],
-  "title": "Mechanistic Studies on the Nickel-Catalyzed Cyclopropanation with Lithiomethyltrimethylammonium Triflate",
-  "detail": "Organometallics, May 2019",
-  "url": "https://pubs.acs.org/doi/10.1021/acs.organomet.9b00027",
-  "cat": "Reaction Mechanisms & Catalysis",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2019,
-   2,
-   true
-  ],
-  "title": "An Additivity Scheme for Aromaticity: The Heteroatom Case",
-  "detail": "ChemPhysChem, February 2019",
-  "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/cphc.201900128",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2018,
-   8,
-   true
-  ],
-  "title": "Light-Responsive Pyrazine-Based Systems: Probing Aromatic Diarylethene Photocyclization",
-  "detail": "Journal of Physical Chemistry C, August 2018",
-  "url": "https://pubs.acs.org/doi/ipdf/10.1021/acs.jpcc.8b05019",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2018,
-   5,
-   true
-  ],
-  "title": "The Predictive Power of Aromaticity: Quantitative Correlation between Aromaticity and Ionization Potentials and HOMO-LUMO Gaps in Oligomers of Benzene, Pyrrole, Furan, and Thiophene",
-  "detail": "Physical Chemistry Chemical Physics, May 2018",
-  "url": "http://pubs.rsc.org/en/content/articlelanding/2014/CP/C8CP02162G#!divAbstract",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2018,
-   1,
-   true
-  ],
-  "title": "Piecing it Together: An Additivity Scheme for Aromaticity using NICS-XY-Scans",
-  "detail": "Chemistry - A European Journal, January 2018",
-  "url": "https://doi.org/10.1002/chem.201705407",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2017,
-   12,
-   true
-  ],
-  "title": "Response to “Covalent Bonding and Charge Shift Bonds: Comment on ‘The Carbon–Nitrogen Bonds in Ammonium Compounds Are Charge Shift Bonds’”",
-  "detail": "Chemistry - A European Journal, December 2017",
-  "url": "https://onlinelibrary.wiley.com/doi/10.1002/chem.201705380/full",
-  "cat": "Chemical Bonding",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2017,
-   12,
-   true
-  ],
-  "title": "Trends in Metallophilic Bonding in Pd–Zn and Pd–Cu Complexes",
-  "detail": "Organometallics, December 2017",
-  "url": "https://pubs.acs.org/doi/10.1021/acs.organomet.7b00748",
-  "cat": "Chemical Bonding",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2017,
-   3,
-   true
-  ],
-  "title": "The Carbon–Nitrogen Bonds in Ammonium Compounds Are Charge Shift Bonds",
-  "detail": "Chemistry - A European Journal, March 2017",
-  "url": "https://onlinelibrary.wiley.com/doi/10.1002/chem.201605987/full",
-  "cat": "Chemical Bonding",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2015,
-   6,
-   true
-  ],
-  "title": "Magnetic Criteria of Aromaticity",
-  "detail": "Chemical Society Reviews, June 2015",
-  "url": "https://pubs.rsc.org/en/Content/ArticleLanding/2015/CS/C5CS00114E#!divAbstract",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "review"
- },
- {
-  "lane": "papers",
-  "start": [
-   2014,
-   11,
-   true
-  ],
-  "title": "Tetraazaacenes Containing Four-Membered Rings in Different Oxidation States. Are They Aromatic? A Computational Study",
-  "detail": "The Journal of Organic Chemistry, November 2014",
-  "url": "https://pubs.acs.org/doi/abs/10.1021/jo502297w",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2014,
-   3,
-   true
-  ],
-  "title": "The NICS-XY-Scan: Identification of Local and Global Ring Currents in Multi-Ring Systems",
-  "detail": "Chemistry - A European Journal, March 2014",
-  "url": "https://onlinelibrary.wiley.com/doi/10.1002/chem.201304307/full",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2013,
-   7,
-   true
-  ],
-  "title": "Concurrence between Current Density, Nucleus-Independent Chemical Shifts, and Aromatic Stabilization Energy: The Case of Isomeric [4]- and [5]Phenylenes",
-  "detail": "The Journal of Organic Chemistry, July 2013",
-  "url": "https://pubs.acs.org/doi/abs/10.1021/jo4011014",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2012,
-   6,
-   true
-  ],
-  "title": "An MO-Based Identification of Charge-Shift Bonds",
-  "detail": "ChemPhysChem, June 2012",
-  "url": "https://onlinelibrary.wiley.com/doi/10.1002/cphc.201200147/full",
-  "cat": "Chemical Bonding",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2011,
-   9,
-   true
-  ],
-  "title": "Evidence for Fully Conjugated Double-Stranded Cycles",
-  "detail": "Chemistry - A European Journal, September 2011",
-  "url": "https://onlinelibrary.wiley.com/doi/10.1002/chem.201100443/full",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
-  "lane": "papers",
-  "start": [
-   2009,
-   10,
-   true
-  ],
-  "title": "Corannulene Ethers via Ullmann Condensation",
-  "detail": "Organic Letters, October 2009",
-  "url": "https://pubs.acs.org/doi/abs/10.1021/ol902352k",
-  "cat": "Aromaticity",
-  "preprint": false,
-  "kind": "paper"
- },
- {
   "lane": "talks",
   "start": [
    2012,
@@ -1200,7 +374,8 @@ window.RGP_MILESTONES = [
   ],
   "kind": "Plenary",
   "title": "The 37th Molecular Modelling Workshop",
-  "detail": "Erlangen, Germany"
+  "detail": "Erlangen, Germany",
+  "short": "Plenary · MMWS 2025"
  },
  {
   "lane": "talks",
@@ -1211,7 +386,8 @@ window.RGP_MILESTONES = [
   ],
   "kind": "Award",
   "title": "Academic Young Investigator Award Symposium, ACS Fall Meeting",
-  "detail": "Washington, D.C., USA"
+  "detail": "Washington, D.C., USA",
+  "short": "ACS Award Symposium"
  },
  {
   "lane": "talks",
@@ -1244,7 +420,8 @@ window.RGP_MILESTONES = [
   ],
   "kind": "Invited",
   "title": "Solvay Meeting – Aromaticity: Celebrating Benzene 200 Years",
-  "detail": "Brussels, Belgium"
+  "detail": "Brussels, Belgium",
+  "short": "Solvay Meeting"
  },
  {
   "lane": "talks",
@@ -1255,7 +432,8 @@ window.RGP_MILESTONES = [
   ],
   "kind": "Plenary",
   "title": "Israel Chemical Society 2026 Meeting",
-  "detail": "Tel Aviv, Israel"
+  "detail": "Tel Aviv, Israel",
+  "short": "Plenary · ICS 2026"
  },
  {
   "lane": "talks",
@@ -1299,7 +477,8 @@ window.RGP_MILESTONES = [
   ],
   "kind": "Invited",
   "title": "AI Week 2026",
-  "detail": "Tel Aviv University, Israel"
+  "detail": "Tel Aviv University, Israel",
+  "short": "AI Week 2026"
  },
  {
   "lane": "talks",
@@ -1666,7 +845,8 @@ window.RGP_MILESTONES = [
   ],
   "title": "VATAT Fellowship for Excellent Female Postdoctoral Scholars",
   "detail": "Council for Higher Education, Israel",
-  "usd": 0
+  "usd": 0,
+  "short": "VATAT Fellowship"
  },
  {
   "lane": "funding",
@@ -1682,7 +862,8 @@ window.RGP_MILESTONES = [
   ],
   "title": "Branco Weiss Fellowship – Society in Science",
   "detail": "500,000 CHF",
-  "usd": 560000
+  "usd": 560000,
+  "short": "Branco Weiss Fellowship"
  },
  {
   "lane": "funding",
@@ -1722,7 +903,8 @@ window.RGP_MILESTONES = [
   ],
   "title": "Israel Science Foundation – Personal Research Grant",
   "detail": "1,080,000 NIS",
-  "usd": 290000
+  "usd": 290000,
+  "short": "ISF Grant"
  },
  {
   "lane": "funding",
@@ -1754,7 +936,8 @@ window.RGP_MILESTONES = [
   ],
   "title": "Petroleum Research Fund (ACS PRF)",
   "detail": "125,000 USD",
-  "usd": 125000
+  "usd": 125000,
+  "short": "ACS PRF"
  },
  {
   "lane": "funding",
@@ -1880,7 +1063,8 @@ window.RGP_MILESTONES = [
   ],
   "title": "Participant, 63rd Lindau Nobel Laureate Meeting (Chemistry)",
   "detail": "",
-  "major": false
+  "major": false,
+  "short": "Lindau"
  },
  {
   "lane": "awards",
@@ -1957,7 +1141,8 @@ window.RGP_MILESTONES = [
   ],
   "title": "Golden Owl Award for Excellence in Teaching",
   "detail": "OC4: Molecular Orbital Theory, ETH Zürich",
-  "major": true
+  "major": true,
+  "short": "Golden Owl"
  },
  {
   "lane": "awards",
@@ -2001,7 +1186,8 @@ window.RGP_MILESTONES = [
   ],
   "title": "Krill Prize for Excellence in Scientific Research",
   "detail": "Wolf Foundation",
-  "major": true
+  "major": true,
+  "short": "Krill Prize"
  },
  {
   "lane": "awards",
@@ -2012,7 +1198,8 @@ window.RGP_MILESTONES = [
   ],
   "title": "Academic Young Investigator Award",
   "detail": "Division of Organic Chemistry, ACS and EuChemS",
-  "major": true
+  "major": true,
+  "short": "ACS Young Investigator"
  },
  {
   "lane": "awards",
@@ -2023,7 +1210,8 @@ window.RGP_MILESTONES = [
   ],
   "title": "Liebig Lectureship Award",
   "detail": "Organic Chemistry Division, GDCh",
-  "major": true
+  "major": true,
+  "short": "Liebig Lectureship"
  },
  {
   "lane": "awards",
@@ -2034,7 +1222,8 @@ window.RGP_MILESTONES = [
   ],
   "title": "Outstanding Young Scientist Award",
   "detail": "Israel Chemical Society",
-  "major": true
+  "major": true,
+  "short": "ICS Young Scientist"
  },
  {
   "lane": "awards",
@@ -2045,7 +1234,8 @@ window.RGP_MILESTONES = [
   ],
   "title": "Invited participant, Israeli-American Frontiers of Science Symposium",
   "detail": "Poster presentation · U.S. National Academy of Sciences and Israel Academy of Sciences and Humanities · Jerusalem",
-  "major": false
+  "major": false,
+  "short": "Frontiers of Science"
  },
  {
   "lane": "service",
@@ -2109,7 +1299,8 @@ window.RGP_MILESTONES = [
   "ongoing": false,
   "title": "Associate Editor, Journal of Physical Organic Chemistry",
   "detail": "",
-  "major": true
+  "major": true,
+  "short": "JPOC Assoc. Editor"
  },
  {
   "lane": "service",
@@ -2234,6 +1425,7 @@ window.RGP_MILESTONES = [
   "ongoing": true,
   "title": "Topic Editor, Journal of the American Chemical Society",
   "detail": "",
-  "major": true
+  "major": true,
+  "short": "JACS Topic Editor"
  }
 ];
