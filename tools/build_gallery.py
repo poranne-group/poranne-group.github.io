@@ -268,8 +268,10 @@ Dashed frames have no event yet; purple frames have unsaved changes. This page i
 
 
 def read_edits():
-    """Edits saved from the contact sheet (photo_gallery/ or Downloads), oldest first."""
-    found = [GAL / EDITS_NAME] + sorted(DOWNLOADS.glob("photo_details_edits*.json"), key=lambda f: f.stat().st_mtime)
+    """Edits saved from the contact sheet (photo_gallery/, Downloads, Documents or Desktop), oldest first."""
+    elsewhere = [f for d in (DOWNLOADS, Path.home() / "Documents", Path.home() / "Desktop")
+                 for f in d.glob("photo_details_edits*.json")]
+    found = [GAL / EDITS_NAME] + sorted(elsewhere, key=lambda f: f.stat().st_mtime)
     files = [f for f in found if f.exists()]
     edits = {}
     for f in files:

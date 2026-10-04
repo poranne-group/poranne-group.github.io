@@ -10,7 +10,8 @@ window.GALLERY_ALBUMS = [
             {
                 "file": "photo_gallery/web/through_the_years/group_photo_2025.jpg",
                 "event": "Group photo",
-                "date": "2025"
+                "date": "2025",
+                "place": "Faculty Day 2025"
             },
             {
                 "file": "photo_gallery/web/through_the_years/dsc0194.jpg",
@@ -259,8 +260,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-06-at-5.37.56-pm-1.jpg",
-                "event": "Itay's talk",
+                "event": "Itay receives his MSc!",
                 "date": "September 2026",
+                "place": "Technion",
                 "people": "Itay"
             },
             {
@@ -274,7 +276,7 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/20220615_124230.jpg",
-                "event": "Moving into our new office",
+                "event": "Moving into our new office!",
                 "date": "June 2022",
                 "place": "Technion"
             },
