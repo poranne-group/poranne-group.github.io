@@ -211,26 +211,18 @@ window.GALLERY_ALBUMS = [
                 "date": "July 2025"
             },
             {
-                "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0004.jpg",
-                "event": "Talk at ICESAA3",
-                "date": "July 2024",
-                "place": "Croatia"
-            },
-            {
-                "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0006.jpg",
-                "event": "Talk at ICESAA3",
-                "date": "July 2024",
-                "place": "Croatia"
-            },
-            {
                 "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0007.jpg",
                 "event": "Talk at ICESAA3",
                 "date": "July 2024",
-                "place": "Croatia"
+                "place": "Croatia",
+                "people": "Shabu"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/whatsapp-image-2026-09-10-at-9.47.53-am.jpg",
-                "date": "September 2026"
+                "event": "CBOND",
+                "date": "September 2026",
+                "place": "Brussels",
+                "people": "Ajeet, Renana"
             }
         ]
     },
@@ -271,7 +263,10 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-08-13-at-8.58.56-am.jpg",
-                "date": "August 2026"
+                "event": "Amrita's Chem Sci is published!!",
+                "date": "August 2026",
+                "place": "Technion",
+                "people": "Renana, Amrita"
             },
             {
                 "file": "photo_gallery/web/our_milestones/eduardo-defense.jpg",
@@ -309,16 +304,20 @@ window.GALLERY_ALBUMS = [
                 "people": "Renana"
             },
             {
-                "file": "photo_gallery/web/our_milestones/img-20250101-wa0025.jpg"
+                "file": "photo_gallery/web/our_milestones/img-20250101-wa0025.jpg",
+                "event": "Fatimah's MSc Seminar",
+                "place": "Technion",
+                "people": "Fatimah"
             },
             {
-                "file": "photo_gallery/web/our_milestones/img-20250101-wa0026.jpg"
+                "file": "photo_gallery/web/our_milestones/img-20250101-wa0026.jpg",
+                "event": "Fatimah's MSc Seminar",
+                "place": "Technion"
             },
             {
-                "file": "photo_gallery/web/our_milestones/img-20250101-wa0027.jpg"
-            },
-            {
-                "file": "photo_gallery/web/our_milestones/img-20250101-wa0028.jpg"
+                "file": "photo_gallery/web/our_milestones/img-20250101-wa0027.jpg",
+                "event": "Fatimah's MSc Seminar",
+                "place": "Technion"
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-08-30-at-10.52.54-am.jpg",
@@ -339,31 +338,46 @@ window.GALLERY_ALBUMS = [
         "photos": [
             {
                 "file": "photo_gallery/web/having_a_blast/20220915_230425.jpg",
-                "date": "September 2022"
+                "event": "Getting to see Greta in Cambridge!",
+                "date": "September 2022",
+                "place": "Cambridge, UK",
+                "people": "Greta, Renana"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/20250714_155815.jpg",
+                "event": "Renana's Birthday (we won't say how old)",
                 "date": "July 2025"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/20250822_210225.jpg",
-                "date": "August 2025"
+                "event": "Catching up with Alex!",
+                "date": "August 2025",
+                "people": "Alex W., Renana"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20250904_111646408.portrait.jpg",
-                "date": "September 2025"
+                "event": "Kasia's Birthday :-)",
+                "date": "September 2025",
+                "people": "Kasia"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20250911_190210657.jpg",
-                "date": "September 2025"
+                "event": "With Sasha at ESOR2025",
+                "date": "September 2025",
+                "place": "Padova",
+                "people": "Alexandra Tsybizova, Renana"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20251010_111046551.jpg",
-                "date": "October 2025"
+                "event": "Keren's Wedding!",
+                "date": "October 2025",
+                "people": "Ajeet, Itay"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20251010_111056036.jpg",
-                "date": "October 2025"
+                "event": "Keren's Wedding!",
+                "date": "October 2025",
+                "people": "Renana, Shabu"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20260129_090902476.jpg",
@@ -371,39 +385,49 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2025-10-10-at-12.59.25-pm.jpg",
-                "date": "October 2025"
+                "event": "Keren's Wedding!",
+                "date": "October 2025",
+                "people": "Renana, Ajeet, Shabu, Itay"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-10-at-9.46.57-am2.jpg",
+                "event": "CBOND 2026 gala night",
                 "date": "September 2026",
                 "place": "Brussels, Belgium"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.53.29-pm.jpg",
+                "event": "Paint by Numbers Night!!",
                 "date": "September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.29-pm.jpg",
+                "event": "Paint by Numbers Night!!",
                 "date": "September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.42-pm.jpg",
+                "event": "Paint by Numbers Night!!",
                 "date": "September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.52-pm.jpg",
+                "event": "Paint by Numbers Night!!",
                 "date": "September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.55-pm.jpg",
+                "event": "Paint by Numbers Night!!",
                 "date": "September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.56-pm.jpg",
+                "event": "Paint by Numbers Night!!",
                 "date": "September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.56-pm2.jpg",
+                "event": "Paint by Numbers Night!!",
                 "date": "September 2026"
             }
         ]
