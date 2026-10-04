@@ -1,0 +1,104 @@
+{
+    "_help": "One entry per album, in the order they appear on the page. The album with \"banner\": true is the big strip at the top. An album takes its photos from \"folder\" (or several \"folders\"); new photos are picked up automatically, captions are optional. Then run: python tools/build_gallery.py",
+    "albums": [
+        {
+            "folder": "through_the_years",
+            "banner": true,
+            "title": "Poranne Group Through the Years",
+            "date": "2022 – 2025",
+            "description": "",
+            "order": [
+                "Group_photo_2025.jpeg",
+                "_DSC0194.jpg",
+                "_DSC0195.jpg",
+                "lounge-smiling.jpg",
+                "lounge-discussion.jpg",
+                "group_photo_june2023.jpg",
+                "IMG_5515.JPG",
+                "IMG_5521.JPG",
+                "IMG_5536.JPG",
+                "IMG_5537.JPG",
+                "WhatsApp Image 2022-03-29 at 4.35.41 PM.jpg"
+            ],
+            "captions": {
+                "Group_photo_2025.jpeg": "The group, 2025",
+                "_DSC0194.jpg": "In front of the Schulich Faculty of Chemistry",
+                "_DSC0195.jpg": "In front of the Schulich Faculty of Chemistry",
+                "group_photo_june2023.jpg": "The group, June 2023",
+                "IMG_5515.JPG": "June 2023",
+                "IMG_5521.JPG": "June 2023",
+                "IMG_5536.JPG": "June 2023",
+                "IMG_5537.JPG": "June 2023",
+                "WhatsApp Image 2022-03-29 at 4.35.41 PM.jpg": "March 2022"
+            }
+        },
+        {
+            "folder": "we_love_our_posters",
+            "title": "We Love Our Posters",
+            "date": "",
+            "description": "Group members presenting their work at poster sessions.",
+            "order": [
+                "ICS_1_2026.jpg",
+                "ICS_2_2026.jpg",
+                "ICS_3_2026.jpg",
+                "ICS_4_2026.jpg",
+                "ICS_5_2026.jpg",
+                "fatimah poster.jpg",
+                "IMG-20250101-WA0012.jpg",
+                "IMG-20250101-WA0005.jpg",
+                "IMG-20250101-WA0008.jpg",
+                "IMG-20250101-WA0010.jpg",
+                "fatimah poster2.jpg",
+                "Eduardo poster.jpg",
+                "Itay poster.jpg",
+                "Shabu and Itay poster.jpg",
+                "Shabu poster.jpg",
+                "Shany Poster.jpg",
+                "Shany poster2.jpg",
+                "IMG-20250101-WA0013.jpg"
+            ],
+            "captions": {
+                "ICS_1_2026.jpg": "ICS Annual Meeting, Tel Aviv 2026",
+                "ICS_2_2026.jpg": "ICS Annual Meeting, Tel Aviv 2026",
+                "ICS_3_2026.jpg": "ICS Annual Meeting, Tel Aviv 2026",
+                "ICS_4_2026.jpg": "ICS Annual Meeting, Tel Aviv 2026",
+                "ICS_5_2026.jpg": "ICS Annual Meeting, Tel Aviv 2026",
+                "fatimah poster.jpg": "Fatimah · ICESAA3, Croatia 2024",
+                "IMG-20250101-WA0012.jpg": "Fatimah · ICESAA3, Croatia 2024",
+                "IMG-20250101-WA0005.jpg": "ICESAA3, Croatia 2024",
+                "IMG-20250101-WA0008.jpg": "ICESAA3, Croatia 2024",
+                "IMG-20250101-WA0010.jpg": "ICESAA3, Croatia 2024",
+                "fatimah poster2.jpg": "Fatimah and her poster",
+                "Eduardo poster.jpg": "Eduardo · Faculty Day 2023",
+                "Itay poster.jpg": "Itay · Faculty Day 2023",
+                "Shabu and Itay poster.jpg": "Shabu and Itay · Faculty Day 2023",
+                "Shabu poster.jpg": "Shabu · Faculty Day 2023",
+                "Shany Poster.jpg": "Shany · Faculty Day 2023",
+                "Shany poster2.jpg": "Shany · Faculty Day 2023",
+                "IMG-20250101-WA0013.jpg": "Faculty Day 2023"
+            }
+        },
+        {
+            "folder": "our_milestones",
+            "title": "Our Milestones!",
+            "date": "",
+            "description": "Talks, seminars and thesis defenses: celebrating the big moments.",
+            "order": [
+                "Eduardo Defense.jpg"
+            ],
+            "captions": {
+                "Eduardo Defense.jpg": "Eduardo's defense",
+                "IMG-20250101-WA0004.jpg": "Talk at ICESAA3, Croatia 2024",
+                "IMG-20250101-WA0006.jpg": "Talk at ICESAA3, Croatia 2024",
+                "IMG-20250101-WA0007.jpg": "Talk at ICESAA3, Croatia 2024"
+            }
+        },
+        {
+            "folder": "having_a_blast",
+            "title": "Having a Blast",
+            "date": "",
+            "description": "Group social events and celebrations.",
+            "captions": {}
+        }
+    ]
+}

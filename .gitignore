@@ -1,0 +1,5 @@
+
+# Photo gallery: publish only the web-sized copies and the album details, not the originals
+photo_gallery/*
+!photo_gallery/web/
+!photo_gallery/albums.json

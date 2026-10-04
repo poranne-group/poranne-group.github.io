@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6BLZH0DN4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+    gtag('config', 'G-X6BLZH0DN4');
+    </script>
+    
+	<title>Poranne Research Group - Photo Gallery</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta https-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favico-benz.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap&display=swap" rel="stylesheet" type="text/css">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=5">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        .section .heading { color: #6B5EB6; font-size: 28px; font-weight: 700; }
+        .sections-wrapper { font-size: 19px; }
+        .btn-info-contact { background: #6B5EB6 !important; }
+        .btn-info-contact:hover { background: #54489a !important; }
+
+        .gal-intro { margin-bottom: 18px; }
+
+        .gal-hero { margin: 0 0 6px; }
+        .gal-hero .gal-tile { height: 360px; }
+        .gal-hero .gal-cap { font-size: 15px; }
+        .gal-albums-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
+        .gal-albums-nav a {
+            border: 1px solid #d8d3ee; border-radius: 16px; padding: 5px 14px;
+            font-size: 15px; color: #6B5EB6; text-decoration: none;
+        }
+        .gal-albums-nav a:hover { background: #f3f1fb; }
+
+        .gal-album { margin: 34px 0 10px; }
+        .gal-head {
+            display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px;
+            border-bottom: 2px solid #6B5EB6; padding-bottom: 6px; margin-bottom: 10px;
+        }
+        .gal-head h3 { margin: 0; font-size: 1.3em; font-weight: 700; color: #6B5EB6; }
+        .gal-meta { color: #888; font-size: 0.8em; }
+        .gal-desc { color: #555; font-size: 0.9em; margin: 0 0 14px; }
+
+        .gal-strip { position: relative; }
+        .gal-viewport {
+            overflow: hidden;
+            border-radius: 10px;
+            -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+                    mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+        }
+        .gal-track { display: flex; width: max-content; will-change: transform; }
+        .gal-set { display: flex; gap: 14px; padding-right: 14px; }
+        .gal-tile {
+            position: relative; flex: 0 0 auto; height: 260px; padding: 0; border: none;
+            background: #eee; border-radius: 10px; overflow: hidden; cursor: zoom-in;
+        }
+        .gal-tile img { height: 100%; width: auto; display: block; transition: transform 0.4s ease; }
+        .gal-tile:hover img { transform: scale(1.04); }
+        .gal-cap {
+            position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 12px 8px;
+            color: #fff; font-size: 14px; text-align: left;
+            background: linear-gradient(transparent, rgba(0,0,0,0.6));
+            opacity: 0; transition: opacity 0.25s;
+        }
+        .gal-tile:hover .gal-cap, .gal-tile:focus .gal-cap { opacity: 1; }
+        .gal-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+            width: 40px; height: 40px; border-radius: 50%; border: none;
+            background: rgba(255,255,255,0.9); color: #6B5EB6; font-size: 28px; line-height: 36px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2); cursor: pointer;
+        }
+        .gal-prev { left: 6px; }
+        .gal-next { right: 6px; }
+        .gal-static .gal-viewport { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+
+        .gal-lightbox {
+            position: fixed; inset: 0; z-index: 2000; display: none;
+            align-items: center; justify-content: center;
+            background: rgba(20, 16, 40, 0.92);
+        }
+        .gal-lightbox.on { display: flex; }
+        .gal-lightbox figure { margin: 0; max-width: 88vw; text-align: center; }
+        .gal-lightbox img { max-width: 88vw; max-height: 80vh; border-radius: 6px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .gal-lightbox figcaption {
+            color: #eee; font-size: 16px; margin-top: 12px;
+            display: flex; justify-content: space-between; gap: 20px;
+        }
+        .gal-lb-count { color: #aaa; }
+        .gal-lightbox button {
+            position: absolute; border: none; background: rgba(255,255,255,0.12); color: #fff;
+            border-radius: 50%; width: 48px; height: 48px; font-size: 34px; line-height: 44px; cursor: pointer;
+        }
+        .gal-lightbox button:hover { background: rgba(255,255,255,0.25); }
+        .gal-lb-close { top: 18px; right: 18px; }
+        .gal-lb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+        .gal-lb-next { right: 18px; top: 50%; transform: translateY(-50%); }
+        .gal-lightbox.single .gal-lb-prev, .gal-lightbox.single .gal-lb-next { display: none; }
+
+        @media (max-width: 600px) {
+            .gal-tile { height: 190px; }
+            .gal-arrow { display: none; }
+            .gal-lightbox button.gal-lb-prev, .gal-lightbox button.gal-lb-next { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ******HEADER****** -->
+    <header class="header">
+        <div class="container text-center">
+            <h1 class="name">Poranne Research Group</h1>
+            <p class="header-subtitle">Computational Physical Organic Chemistry &nbsp;·&nbsp; Technion — Israel Institute of Technology</p>
+        </div>
+    </header>
+    <!--//header-->
+
+<div id="wrapper">
+    <header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html"><h4 class="name">Home</h4></a></li>
+                        <li class="active dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">The Group</h4><b class="icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="people.html">Current Members</a></li>
+                                <li><a href="rgp.html">Renana Gershoni-Poranne</a></li>
+                                <li><a href="people-alumni.html">Former Group Members</a></li>
+                                <li><a href="gallery.html">Photo Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Research</h4><b class="icon-angle-down"></b></a>
+                        	<ul class="dropdown-menu">
+                        		<li><a href="research.html">Research Projects</a></li>
+                        		<li><a href="collaborators.html">Our Collaborators</a></li>
+                        	</ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Publications</h4><b class="icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="publications.html">Papers</a></li>
+                                <li><a href="covers.html">Cover Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Data &amp; Software</h4><b class="icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="compas.html">COMPAS</a></li>
+                                <li><a href="predi-xy.html">Predi-XY</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- *** INFO BAR *** -->
+    <div class="info-bar">
+        <div class="container">
+            <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#6B5EB6;" target="_blank">
+                <i class="fa fa-paper-plane"></i> Contact Us
+            </a>
+            <span class="info-item">
+                <i class="fa fa-map-marker" style="color:#6B5EB6;"></i> Schulich Faculty of Chemistry, Technion, Israel
+            </span>
+            <span class="info-item">
+                <i class="fa fa-envelope-o" style="color:#6B5EB6;"></i>
+                <a href="mailto:porannegroup@technion.ac.il">porannegroup@technion.ac.il</a>
+            </span>
+            <span class="info-item">
+                <i class="fa fa-twitter" style="color:#6B5EB6;"></i>
+                <a href="https://twitter.com/PoranneG" target="_blank">@PoranneG</a>
+            </span>
+        </div>
+    </div>
+
+    <div class="container sections-wrapper">
+        <div class="row">
+            <section class="about section">
+                <div class="section-inner">
+                    <h2 class="heading">Photo Gallery</h2>
+                    <div class="content">
+                        <p class="gal-intro">Moments from life in the Poranne Group. Below the group photos you'll find albums from conferences and other events: hover over a strip to pause it, and click any photo to see it full size.</p>
+                        <!-- albums are built from assets/js/gallery-data.js -->
+                        <div id="gallery"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="container text-center">
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/gallery-data.js"></script>
+    <script type="text/javascript" src="assets/js/gallery.js"></script>
+</body>
+
+</html>
