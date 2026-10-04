@@ -3,3 +3,6 @@
 photo_gallery/*
 !photo_gallery/web/
 !photo_gallery/albums.json
+
+# Windows thumbnail caches
+Thumbs.db
