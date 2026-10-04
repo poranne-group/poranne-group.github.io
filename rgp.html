@@ -34,37 +34,49 @@
     <![endif]-->
 
     <style>
-        .rgp-photo {
-            float: left;
-            margin: 0 36px 20px 0;
-            text-align: center;
+        /* ---- Two-column layout: bio | milestones ---- */
+        .rgp-cols {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .rgp-left, .rgp-right {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+
+        .rgp-photo-row {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 24px;
         }
 
         .rgp-hex-frame {
-            width: 340px;
-            height: 393px; /* 340 / (√3/2) */
+            flex: 0 0 auto;
+            width: 230px;
+            height: 266px; /* 230 / (√3/2) */
             background: #4AB7D4;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 28px rgba(74, 183, 212, 0.35);
         }
 
         .rgp-hex-frame img {
-            width: 312px;
-            height: 361px;
+            width: 212px;
+            height: 245px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             object-fit: cover;
             display: block;
         }
 
         .rgp-btns {
+            flex: 1 1 auto;
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            margin-top: 20px;
-            width: 320px;
+            gap: 12px;
         }
 
         .rgp-btn {
@@ -76,7 +88,7 @@
             color: #fff !important;
             padding: 7px 14px;
             border-radius: 20px;
-            font-size: 0.84em;
+            font-size: 0.8em;
             text-decoration: none !important;
             transition: background 0.2s;
         }
@@ -91,7 +103,6 @@
 
         .rgp-bio {
             line-height: 1.7;
-            overflow: hidden;
         }
 
         .rgp-bio a {
@@ -102,11 +113,164 @@
             color: #2e9ab5;
         }
 
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
+        .rgp-ms-heading {
+            color: #4AB7D4;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 6px;
         }
+
+        .rgp-ms-intro {
+            color: #666;
+            font-size: 0.8em;
+            line-height: 1.5;
+            margin: 0 0 12px;
+        }
+
+        @media (max-width: 991px) {
+            .rgp-cols { flex-direction: column; }
+            .rgp-left, .rgp-right { width: 100%; }
+            .rgp-right { margin-top: 32px; }
+        }
+
+        @media (max-width: 520px) {
+            .rgp-photo-row { flex-direction: column; }
+            .rgp-btns { width: 100%; }
+        }
+
+        /* ---- Milestones chart ---- */
+        #rgp-milestones {
+            position: relative;
+            font-size: 15px;
+        }
+
+        .ms-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .ms-ranges, .ms-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        #rgp-milestones button {
+            border: 1px solid #d6e9ef;
+            background: #fff;
+            color: #333;
+            border-radius: 16px;
+            padding: 6px 16px;
+            font-size: 16px;
+            line-height: 1.4;
+            cursor: pointer;
+            transition: background 0.15s, opacity 0.15s;
+        }
+
+        #rgp-milestones button:hover {
+            background: #f0f9fc;
+        }
+
+        .ms-ranges button.active {
+            background: #4AB7D4 !important;
+            border-color: #4AB7D4 !important;
+            color: #fff !important;
+        }
+
+        .ms-legend {
+            margin-top: 12px;
+        }
+
+        #rgp-milestones .ms-legend button {
+            font-size: 15px;
+            padding: 5px 14px;
+        }
+
+        .ms-lane-btn.off {
+            opacity: 0.4;
+            text-decoration: line-through;
+        }
+
+        .ms-swatch {
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .ms-count {
+            color: #888;
+            font-size: 13px;
+        }
+
+        .ms-frame {
+            border: 1px solid #e6eff2;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .ms-head {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            display: flex;
+            background: #fff;
+            border-bottom: 1px solid #e6eff2;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .ms-head div {
+            min-width: 0;
+            padding: 10px 2px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .ms-svg {
+            display: block;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .ms-band { fill: #f7fafc; }
+        .ms-grid { stroke: #edf1f3; stroke-width: 1; }
+        .ms-grid-major { stroke: #d9e2e7; }
+        .ms-year { fill: #666; font-size: 13px; font-weight: 700; text-anchor: end; }
+        .ms-now { stroke: #b9b9b9; stroke-width: 1.5; stroke-dasharray: 4 3; }
+        .ms-now-label { fill: #888; font-size: 12px; text-anchor: end; }
+        .ms-bar-label { fill: #1d6478; font-size: 15px; font-weight: 400; letter-spacing: 0.02em; pointer-events: none; }
+        .ms-bar-current { fill: #fff; }
+        .ms-item { cursor: pointer; outline: none; }
+        .ms-item:hover circle, .ms-item:focus circle { stroke: #222; stroke-width: 2; }
+        .ms-item:hover rect, .ms-item:focus rect { filter: brightness(0.9); }
+
+        .ms-tip {
+            position: absolute;
+            z-index: 20;
+            max-width: 320px;
+            padding: 10px 12px;
+            background: #fff;
+            border: 1px solid #dde6ea;
+            border-radius: 8px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+            font-size: 14px;
+            line-height: 1.45;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.12s;
+        }
+
+        .ms-tip.on { opacity: 1; pointer-events: auto; }
+        .ms-tip-kind { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+        .ms-tip-title { font-weight: 700; color: #222; margin: 2px 0; }
+        .ms-tip-detail { color: #555; }
+        .ms-tip-when { color: #888; margin-top: 2px; }
+        .ms-tip-link { display: inline-block; margin-top: 4px; color: #4AB7D4; }
+
         .sections-wrapper { font-size: 19px; }
         .section .heading { font-size: 28px; font-weight: 700; }
     </style>
@@ -141,7 +305,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">People</h4><b class="icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="people.html">The Poranne Group</a></li>
-                                <li><a href="rgp.html">Renana Gershoni Poranne</a></li>
+                                <li><a href="rgp.html">Renana Gershoni-Poranne</a></li>
                                 <li><a href="people-alumni.html">Former Group Members</a></li>
                             </ul>
                         </li>
@@ -197,34 +361,38 @@
                 <div class="section-inner">
                     <h2 class="heading" style="color:#4AB7D4;">About Renana</h2>
                     <div class="content">
-                        <div class="clearfix">
-
-                            <!-- Photo + buttons floated left -->
-                            <div class="rgp-photo">
-                                <div class="rgp-hex-frame">
-                                    <img src="assets/images/people/RGP-hallway.jpg" alt="Renana Gershoni Poranne" />
+                        <div class="rgp-cols">
+                            <!-- Left: photo, links, bio -->
+                            <div class="rgp-left" id="rgp-left">
+                                <div class="rgp-photo-row">
+                                    <div class="rgp-hex-frame">
+                                        <img src="assets/images/people/RGP-hallway.jpg" alt="Renana Gershoni-Poranne" />
+                                    </div>
+                                    <div class="rgp-btns">
+                                        <a href="assets/RGP-CV.pdf" target="_blank" class="rgp-btn"><i class="fa fa-file-text-o"></i> Full CV</a>
+                                        <a href="assets/RGP-LOP.pdf" target="_blank" class="rgp-btn"><i class="fa fa-list"></i> Full List of Publications</a>
+                                        <a href="https://scholar.google.ch/citations?user=syZUYaEAAAAJ&hl=en" target="_blank" class="rgp-btn"><i class="fa fa-graduation-cap"></i> Google Scholar</a>
+                                        <a href="https://twitter.com/Aromaticist" target="_blank" class="rgp-btn"><i class="fa fa-twitter"></i> @Aromaticist</a>
+                                    </div>
                                 </div>
-                                <div class="rgp-btns">
-                                    <a href="assets/RGP-CV.pdf" target="_blank" class="rgp-btn"><i class="fa fa-file-text-o"></i> Full CV</a>
-                                    <a href="assets/RGP-LOP.pdf" target="_blank" class="rgp-btn"><i class="fa fa-list"></i> Full List of Publications</a>
-                                    <a href="https://scholar.google.ch/citations?user=syZUYaEAAAAJ&hl=en" target="_blank" class="rgp-btn"><i class="fa fa-graduation-cap"></i> Google Scholar</a>
-                                    <a href="https://twitter.com/Aromaticist" target="_blank" class="rgp-btn"><i class="fa fa-twitter"></i> @Aromaticist</a>
+                                <div class="rgp-bio">
+                                    <p>Renana Gershoni-Poranne is an Associate Professor of Computational Organic Chemistry at the <a href="https://chemistry.technion.ac.il/">Schulich Faculty of Chemistry</a> at the <a href="https://www.technion.ac.il/en/">Technion – Israel Institute of Technology</a>. Her group works in the field of computational physical organic chemistry, with a focus on polycyclic aromatic systems and the concept at their heart: aromaticity. The group studies how aromaticity relates to other molecular properties and to reactivity, and develops methods and tools for visualizing, interpreting, and predicting these properties. Much of the group's work is data-driven: the group established <a href="research.html">The COMPAS Project</a>, the first computational database of polycyclic aromatic systems, and uses machine-learning and deep-learning models to design new molecules and uncover structure-property relationships. Together with experimental <a href="collaborators.html">collaborators around the world</a>, the group also investigates reactivity and reaction mechanisms, from ligand non-innocence in organometallic catalysts to the rational design of antiaromatic indenofluorenes.
+                                    <br><br>
+                                    Renana completed her BSc, MSc, and PhD at the Schulich Faculty of Chemistry at the Technion. She received her MSc <i>Summa cum Laude</i> for her work on functionalization of corannulene in the group of <a href="https://www.ehudkeinan.com/">Prof. Ehud Keinan</a>, and her PhD under the supervision of <a href="https://chemistry.technion.ac.il/members/amnon-stanger/">Prof. Amnon Stanger</a>, where she worked on elucidating the properties of aromatic compounds and developed methods for identifying and quantifying aromaticity in polycyclic aromatic hydrocarbons. In 2015, she moved to the <a href="https://www.ethz.ch/">ETH Zürich</a> as a VATAT postdoctoral fellow in the group of <a href="http://www.chen.ethz.ch/">Prof. Peter Chen</a>, and in 2017 she was promoted to Senior Scientist (Group Leader), leading her own independent sub-group within the Chen laboratory. In 2019, she was awarded a <a href="https://brancoweissfellowship.org/">Branco Weiss Fellowship</a>. She returned to the Technion in October 2021 as an Assistant Professor, and was promoted to Associate Professor in 2025.
+                                    <br><br>
+                                    Renana's achievements have been recognized by national and international awards, including the Outstanding Young Scientist Award of the Israel Chemical Society (2026), the Liebig Lectureship Award of the Organic Chemistry Division of the GDCh (2025), the Academic Young Investigator Award of the Division of Organic Chemistry of the ACS and EuChemS (2025), and the Krill Prize for Excellence in Scientific Research from the Wolf Foundation (2024). She is also a Horev Fellow (Leaders in Science and Technology) and an Alon Scholar. Renana is a dedicated teacher, and her teaching has been recognized with the Golden Owl Award at ETH Zürich (2021) and with numerous teaching awards at the Technion.
+                                    <br><br>
+                                    On a personal note: Renana and her partner, Roi, are parents to two boys who were both born during Renana's PhD. She is a classically trained <em>soprano coloratura</em> and loves different types of music. You will often find her humming some opera or country music tune. Renana is a voracious reader, an avid puzzle-solver, and an enthusiastic cake and cupcake baker.</p>
                                 </div>
                             </div>
 
-                            <!-- Flowing bio -->
-                            <div class="rgp-bio">
-                                <p>Renana Gershoni Poranne is an Associate Professor of Computational Chemistry at the Schulich Faculty of Chemistry at the Technion-Israel Institute of Technology. She joined the faculty in October 2021 as an Assistant Professor and a <a href="https://brancoweissfellowship.org/">Branco Weiss Fellow</a>, Horev Fellow, and Alon Scholarship recipient.
-                                <br><br>
-                                Before joining the faculty at the Technion, Renana was a Senior Scientist (Group Leader) in the group of <a href="http://www.chen.ethz.ch/">Prof. Dr. Peter Chen</a> at the Laboratorium für Organische Chemie at the <a href="https://www.ethz.ch/">ETH Zürich</a>. Her promotion to Senior Scientist and Lecturer in July 2017 followed a two-year post-doctoral period (as a VATAT postdoctoral fellow) in the same group.
-                                She completed her PhD studies under the supervision of <a href="https://chemistry.technion.ac.il/members/amnon-stanger/">Prof. Amnon Stanger</a> in the <a href="https://chemistry.technion.ac.il/">Schulich Faculty of Chemistry</a> at the <a href="https://www.technion.ac.il/en/">Technion</a>,
-                                working on elucidation of the properties of aromatic compounds and developing methodologies for the identification and quantification of aromaticity in polycyclic aromatic hydrocarbons. Prior to that, she received her MSc <i>Summa cum Laude</i> for her work on functionalization of corannulene in the group of <a href="https://www.ehudkeinan.com/">Prof. Ehud Keinan</a>.
-                                <br><br>
-                                Renana's research interests lie in the field of computational physical organic chemistry, with particular emphasis on development of methods and tools for better understanding of the physical properties and reactivity of organic and organo-metallic compounds. The work in her group ranges from investigation of fundamental molecular properties and concepts — such as aromaticity, dispersion, metallophilic interactions, catalysis, and mechanism elucidation — to application of machine-learning and deep-learning models for molecular design of novel polycyclic aromatic systems and discovery of structure-property relationships.
-                                <br><br>
-                                On a personal note: Renana and her partner, Roi, are parents to two boys who were both born during Renana's PhD. She is a classically trained <em>soprano coloratura</em> and loves different types of music. You will often find her humming some opera or country music tune. Renana is a voracious reader, an avid puzzle-solver, and an enthusiastic cake and cupcake baker.</p>
+                            <!-- Right: milestones chart (data: assets/js/rgp-milestones-data.js) -->
+                            <div class="rgp-right">
+                                <h3 class="rgp-ms-heading">Milestones</h3>
+                                <p class="rgp-ms-intro">Hover over (or tap) any point for details; click a paper to open it. Use the buttons above to zoom in, and the ones below the chart to show or hide categories.</p>
+                                <div id="rgp-milestones"></div>
+                                <p class="rgp-ms-intro" style="margin-top:10px;">Larger dots mark plenary and award talks, major awards, major editorial roles, and larger grants. Hollow dots are preprints.</p>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -244,6 +412,8 @@
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/rgp-milestones-data.js"></script>
+    <script type="text/javascript" src="assets/js/rgp-milestones.js"></script>
 </body>
 
 </html>
