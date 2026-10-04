@@ -71,6 +71,10 @@ def main():
             print(f"New album '{folder.name}' added to albums.json -- fill in its title, date and description.")
     CONFIG.write_text(json.dumps(cfg, indent=4, ensure_ascii=False) + "\n", encoding="utf8")
 
+    # captions are looked up in the photo's own album first, then in any album
+    # (so a caption follows a photo that was moved to another folder)
+    all_captions = {k: v for a in albums for k, v in a.get("captions", {}).items()}
+
     data = []
     for a in albums:
         files = [(f, p) for f in folders_of(a) for p in photos_in(GAL / f)]
@@ -81,7 +85,7 @@ def main():
         files.sort(key=lambda fp: (order.index(fp[1].name) if fp[1].name in order else len(order), fp[0], fp[1].name))
         print(f"{a['title']}: {len(files)} photos")
         flips = set(a.get("flip", []))
-        photos = [{"file": f"photo_gallery/web/{f.lower()}/{web_copy(p, f, p.name in flips)}", "caption": a.get("captions", {}).get(p.name, "")}
+        photos = [{"file": f"photo_gallery/web/{f.lower()}/{web_copy(p, f, p.name in flips)}", "caption": a.get("captions", {}).get(p.name, all_captions.get(p.name, ""))}
                   for f, p in files]
         data.append({"title": a["title"], "date": a.get("date", ""), "description": a.get("description", ""),
                      "banner": bool(a.get("banner")), "folder": "", "photos": photos})

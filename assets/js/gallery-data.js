@@ -258,7 +258,7 @@ window.GALLERY_ALBUMS = [
     {
         "title": "Having a Blast",
         "date": "",
-        "description": "Group social events and celebrations.",
+        "description": "Group events (we do more than just science).",
         "banner": false,
         "folder": "",
         "photos": [
@@ -335,7 +335,7 @@ window.GALLERY_ALBUMS = [
     {
         "title": "With Our Friends",
         "date": "",
-        "description": "Catching up with friends and colleagues around the world.",
+        "description": "Always great to see our friends around the world.",
         "banner": false,
         "folder": "",
         "photos": [
