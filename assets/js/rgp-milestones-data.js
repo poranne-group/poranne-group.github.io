@@ -2044,7 +2044,7 @@ window.RGP_MILESTONES = [
    true
   ],
   "title": "Invited participant, Israeli-American Frontiers of Science Symposium",
-  "detail": "U.S. National Academy of Sciences and Israel Academy of Sciences and Humanities; Jerusalem",
+  "detail": "Poster presentation · U.S. National Academy of Sciences and Israel Academy of Sciences and Humanities · Jerusalem",
   "major": false
  },
  {

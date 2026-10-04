@@ -140,7 +140,7 @@ AWARDS = [
     ("2025", "Academic Young Investigator Award", "Division of Organic Chemistry, ACS and EuChemS", True),
     ("2025", "Liebig Lectureship Award", "Organic Chemistry Division, GDCh", True),
     ("2026", "Outstanding Young Scientist Award", "Israel Chemical Society", True),
-    ("2026-12", "Invited participant, Israeli-American Frontiers of Science Symposium", "U.S. National Academy of Sciences and Israel Academy of Sciences and Humanities; Jerusalem", False),
+    ("2026-12", "Invited participant, Israeli-American Frontiers of Science Symposium", "Poster presentation · U.S. National Academy of Sciences and Israel Academy of Sciences and Humanities · Jerusalem", False),
 ]
 
 # ---------------------------------------------------------------- editorial & community
