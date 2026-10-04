@@ -2037,6 +2037,17 @@ window.RGP_MILESTONES = [
   "major": true
  },
  {
+  "lane": "awards",
+  "start": [
+   2026,
+   12,
+   true
+  ],
+  "title": "Invited participant, Israeli-American Frontiers of Science Symposium",
+  "detail": "U.S. National Academy of Sciences and Israel Academy of Sciences and Humanities; Jerusalem",
+  "major": false
+ },
+ {
   "lane": "service",
   "start": [
    2020,
