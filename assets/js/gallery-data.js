@@ -142,6 +142,30 @@ window.GALLERY_ALBUMS = [
         "folder": "",
         "photos": [
             {
+                "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-11-at-2.16.39-pm.jpg",
+                "caption": "Ajeet with his poster award"
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-11-at-1.47.55-pm.jpg",
+                "caption": "Poster award for Ajeet"
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-06-at-5.37.55-pm.jpg",
+                "caption": "Itay's talk"
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-06-at-5.37.56-pm.jpg",
+                "caption": "Itay's talk"
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-06-at-5.37.56-pm-1.jpg",
+                "caption": "Itay's talk"
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-08-13-at-8.58.56-am.jpg",
+                "caption": ""
+            },
+            {
                 "file": "photo_gallery/web/our_milestones/eduardo-defense.jpg",
                 "caption": "Eduardo's defense"
             },
@@ -171,6 +195,55 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/img-20250101-wa0028.jpg",
+                "caption": ""
+            }
+        ]
+    },
+    {
+        "title": "Having a Blast",
+        "date": "",
+        "description": "Group social events and celebrations.",
+        "banner": false,
+        "folder": "",
+        "photos": [
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2025-10-10-at-12.59.25-pm.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-08-30-at-10.52.54-am.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-08-30-at-10.53.10-am.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.53.29-pm.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.29-pm.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.42-pm.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.52-pm.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.55-pm.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.56-pm.jpg",
+                "caption": ""
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.56-pm2.jpg",
                 "caption": ""
             }
         ]
