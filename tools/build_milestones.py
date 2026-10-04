@@ -104,7 +104,7 @@ FUNDING = [
     ("2012", "2014", "Schulich Fellowship for Excellence in Graduate Studies (PhD)", "Technion", 0),
     ("2016", "2018", "VATAT Fellowship for Excellent Female Postdoctoral Scholars", "Council for Higher Education, Israel", 0),
     ("2019-09", "2025", "Branco Weiss Fellowship – Society in Science", "500,000 CHF", 560000),
-    ("2021", None, "Horev Fellowship – Leaders in Science and Technology", "Technion", 0),
+    ("2021", None, "Horev Fellowship – Leaders in Science and Technology", "Technion", 125000),  # size only; amount not shown
     ("2022", None, "Alon Scholarship – Integration of Outstanding Faculty", "Council for Higher Education, Israel", 125000),  # size only; amount not shown
     ("2023", "2027", "Israel Science Foundation – Personal Research Grant", "1,080,000 NIS", 290000),
     ("2023", "2027", "Israel Science Foundation – New Faculty Equipment Grant", "750,000 NIS", 200000),
@@ -132,6 +132,7 @@ AWARDS = [
     ("2017-06", "Poster Award, GRC Physical Organic Chemistry", "Poster chosen for talk", False),
     ("2018", "Junior Scientist Participation Award, 53rd Bürgenstock Conference", "", False),
     ("2021", "Golden Owl Award for Excellence in Teaching", "OC4: Molecular Orbital Theory, ETH Zürich", True),
+    ("2021", "Horev Fellowship – Leaders in Science and Technology", "Technion", False),
     ("2022", "Alon Scholarship – Integration of Outstanding Faculty", "Council for Higher Education, Israel", False),
     ("2024", "Commendation for Excellence in Teaching", "Principles of Chemistry A, Technion", False),
     ("2024", "Krill Prize for Excellence in Scientific Research", "Wolf Foundation", True),

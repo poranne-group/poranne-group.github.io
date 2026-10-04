@@ -1683,7 +1683,7 @@ window.RGP_MILESTONES = [
   "end": null,
   "title": "Horev Fellowship – Leaders in Science and Technology",
   "detail": "Technion",
-  "usd": 0
+  "usd": 125000
  },
  {
   "lane": "funding",
@@ -1947,6 +1947,17 @@ window.RGP_MILESTONES = [
   "title": "Golden Owl Award for Excellence in Teaching",
   "detail": "OC4: Molecular Orbital Theory, ETH Zürich",
   "major": true
+ },
+ {
+  "lane": "awards",
+  "start": [
+   2021,
+   7,
+   false
+  ],
+  "title": "Horev Fellowship – Leaders in Science and Technology",
+  "detail": "Technion",
+  "major": false
  },
  {
   "lane": "awards",
