@@ -61,6 +61,38 @@ window.GALLERY_ALBUMS = [
                 "file": "photo_gallery/web/through_the_years/whatsapp-image-2022-03-29-at-4.35.41-pm.jpg",
                 "event": "Group photo",
                 "date": "March 2022"
+            },
+            {
+                "file": "photo_gallery/web/through_the_years/bvdz1484.jpg"
+            },
+            {
+                "file": "photo_gallery/web/through_the_years/ifbt2444.jpg"
+            },
+            {
+                "file": "photo_gallery/web/through_the_years/img_0401.jpg",
+                "date": "September 2026"
+            },
+            {
+                "file": "photo_gallery/web/through_the_years/img_0407.jpg",
+                "date": "September 2026"
+            },
+            {
+                "file": "photo_gallery/web/through_the_years/mccn1945.jpg"
+            },
+            {
+                "file": "photo_gallery/web/through_the_years/nyce6410.jpg"
+            },
+            {
+                "file": "photo_gallery/web/through_the_years/nitz.z-927316.jpg",
+                "date": "June 2026"
+            },
+            {
+                "file": "photo_gallery/web/through_the_years/nitz.z-927322.jpg",
+                "date": "June 2026"
+            },
+            {
+                "file": "photo_gallery/web/through_the_years/nitz.z-9309745.jpg",
+                "date": "June 2026"
             }
         ]
     },
@@ -79,12 +111,6 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/ics_2_2026.jpg",
-                "event": "ICS Annual Meeting",
-                "date": "February 2026",
-                "place": "Tel Aviv, Israel"
-            },
-            {
-                "file": "photo_gallery/web/we_love_our_science/ics_3_2026.jpg",
                 "event": "ICS Annual Meeting",
                 "date": "February 2026",
                 "place": "Tel Aviv, Israel"
@@ -218,6 +244,18 @@ window.GALLERY_ALBUMS = [
                 "people": "Shabu"
             },
             {
+                "file": "photo_gallery/web/we_love_our_science/nitz.z-927515.jpg",
+                "date": "June 2026"
+            },
+            {
+                "file": "photo_gallery/web/we_love_our_science/nitz.z-9309734.jpg",
+                "date": "June 2026"
+            },
+            {
+                "file": "photo_gallery/web/we_love_our_science/nitz.z-9309740.jpg",
+                "date": "June 2026"
+            },
+            {
                 "file": "photo_gallery/web/we_love_our_science/whatsapp-image-2026-09-10-at-9.47.53-am.jpg",
                 "event": "CBOND",
                 "date": "September 2026",
@@ -320,6 +358,21 @@ window.GALLERY_ALBUMS = [
                 "place": "Technion"
             },
             {
+                "file": "photo_gallery/web/our_milestones/img_0252.jpg",
+                "date": "September 2026"
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/img_0386.jpg",
+                "date": "September 2026"
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/img_0396.jpg",
+                "date": "September 2026"
+            },
+            {
+                "file": "photo_gallery/web/our_milestones/renana_birthday.jpg"
+            },
+            {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-08-30-at-10.52.54-am.jpg",
                 "date": "August 2026"
             },
@@ -353,6 +406,26 @@ window.GALLERY_ALBUMS = [
                 "event": "Catching up with Alex!",
                 "date": "August 2025",
                 "people": "Alex W., Renana"
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/img20260502111949.jpg",
+                "date": "May 2026"
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/img20260502111952.jpg",
+                "date": "May 2026"
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/img20260703105516.jpg",
+                "date": "July 2026"
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/img_0420.jpg",
+                "date": "September 2026"
+            },
+            {
+                "file": "photo_gallery/web/having_a_blast/img_0429.jpg",
+                "date": "September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20250904_111646408.portrait.jpg",
