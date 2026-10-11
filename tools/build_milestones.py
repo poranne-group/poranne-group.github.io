@@ -60,12 +60,14 @@ TALKS = [
     ("2025-08", "Award", "Academic Young Investigator Award Symposium, ACS Fall Meeting", "Washington, D.C., USA"),
     ("2025-09", "Invited", "ESOR 2025 – 20th European Symposium on Organic Reactivity", "Padova, Italy"),
     ("2025-09", "Invited", "Symposium on Frontiers in Organic Chemistry", "Coressia, Greece"),
-    ("2025-12", "Invited", "Solvay Meeting – Aromaticity: Celebrating Benzene 200 Years", "Brussels, Belgium"),
+    ("2025-12", "Invited", "Solvay Workshop – Aromaticity: Celebrating Benzene 200 Years", "Brussels, Belgium"),
     ("2026-02", "Plenary", "Israel Chemical Society 2026 Meeting", "Tel Aviv, Israel"),
     ("2026-03", "Invited", "George A. Olah Award in Hydrocarbon Chemistry Symposium, ACS Spring Meeting", "Atlanta, GA, USA"),
     ("2026-06", "Invited", "Reaction Mechanisms Conference", "Michigan, USA"),
+    ("2026-09", "Invited", "ICPOC27 – 27th International Conference on Physical Organic Chemistry", "Munich, Germany"),
     ("2026-09", "Invited", "CBOND 2026 – 5th European Symposium on Chemical Bonding", "Brussels, Belgium"),
     ("2026-11", "Invited", "AI Week 2026", "Tel Aviv University, Israel"),
+    ("2027-09", "Invited", "ICESAA 2027 – 5th International Conference on Excited-State Aromaticity and Antiaromaticity", "Osaka, Japan"),
     # invited department seminars (year only in CV)
     ("2019", "Seminar", "Vrije Universiteit Amsterdam", ""),
     ("2021", "Seminar", "Florida State University", "online"),
@@ -94,7 +96,6 @@ TALKS = [
     ("2025", "Seminar", "University of Regensburg (Liebig Lectureship Tour)", ""),
     ("2025", "Seminar", "Ludwig Maximilian University of Munich (Liebig Lectureship Tour)", ""),
     ("2025", "Seminar", "Tel Aviv University", ""),
-    ("2025", "Seminar", "Ariel University", ""),
     ("2026", "Seminar", "2nd Seminar of the European Committee of Chemical Bonding", "online"),
 ]
 
@@ -139,7 +140,7 @@ AWARDS = [
     ("2024", "Krill Prize for Excellence in Scientific Research", "Wolf Foundation", True),
     ("2025", "Academic Young Investigator Award", "Division of Organic Chemistry, ACS and EuChemS", True),
     ("2025", "Liebig Lectureship Award", "Organic Chemistry Division, GDCh", True),
-    ("2026", "Outstanding Young Scientist Award", "Israel Chemical Society", True),
+    ("2026", "Prize for Outstanding Young Investigator", "Israel Chemical Society", True),
     ("2026-12", "Invited participant, Israeli-American Frontiers of Science Symposium", "Poster presentation · U.S. National Academy of Sciences and Israel Academy of Sciences and Humanities · Jerusalem", False),
 ]
 
@@ -157,8 +158,8 @@ SERVICE = [
     ("2025-07", None, "Co-organizer, Symposium in Honor of Prof. Dr. Peter Chen", "Zurich, July 2025", False),
     ("2025", "now", "Editorial Advisory Board, Journal of Computational Chemistry", "", False),
     ("2025", "now", "International Standing Committee, European Symposium on Organic Reactivity (ESOR)", "", False),
-    ("2026", None, "Co-editor, Special Issue on Physical Organic Chemistry of Novel Aromatic Materials", "Beilstein Journal of Organic Chemistry", False),
-    ("2026", None, "Co-editor, Special Issue on Excited State Aromaticity and Antiaromaticity", "Photochemical & Photobiological Sciences", False),
+    ("2026", None, "Guest editor, Special Issue on Physical Organic Chemistry of Novel Aromatic Materials", "Beilstein Journal of Organic Chemistry", False),
+    ("2026", None, "Guest editor, Special Issue on Excited State Aromaticity and Antiaromaticity", "Photochemical & Photobiological Sciences", False),
     ("2026", "now", "Topic Editor, Journal of the American Chemical Society", "", True),
 ]
 
@@ -170,7 +171,7 @@ HIGHLIGHTS = {
     "The 37th Molecular Modelling Workshop": "Plenary · MMWS 2025",
     "Israel Chemical Society 2026 Meeting": "Plenary · ICS 2026",
     "Academic Young Investigator Award Symposium": "ACS Award Symposium",
-    "Solvay Meeting": "Solvay Meeting",
+    "Solvay Workshop": "Solvay Workshop",
     "AI Week 2026": "AI Week 2026",
     # funding
     "Branco Weiss Fellowship – Society": "Branco Weiss Fellowship",
@@ -181,7 +182,7 @@ HIGHLIGHTS = {
     "Krill Prize": "Krill Prize",
     "Liebig Lectureship Award": "Liebig Lectureship",
     "Academic Young Investigator Award": "ACS Young Investigator",
-    "Outstanding Young Scientist Award": "ICS Young Scientist",
+    "Outstanding Young Investigator": "ICS Young Investigator Prize",
     "Golden Owl": "Golden Owl",
     "Lindau": "Lindau",
     "Frontiers of Science": "Frontiers of Science",

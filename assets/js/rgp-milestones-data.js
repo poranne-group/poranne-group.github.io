@@ -419,9 +419,9 @@ window.RGP_MILESTONES = [
    true
   ],
   "kind": "Invited",
-  "title": "Solvay Meeting – Aromaticity: Celebrating Benzene 200 Years",
+  "title": "Solvay Workshop – Aromaticity: Celebrating Benzene 200 Years",
   "detail": "Brussels, Belgium",
-  "short": "Solvay Meeting"
+  "short": "Solvay Workshop"
  },
  {
   "lane": "talks",
@@ -465,6 +465,17 @@ window.RGP_MILESTONES = [
    true
   ],
   "kind": "Invited",
+  "title": "ICPOC27 – 27th International Conference on Physical Organic Chemistry",
+  "detail": "Munich, Germany"
+ },
+ {
+  "lane": "talks",
+  "start": [
+   2026,
+   9,
+   true
+  ],
+  "kind": "Invited",
   "title": "CBOND 2026 – 5th European Symposium on Chemical Bonding",
   "detail": "Brussels, Belgium"
  },
@@ -479,6 +490,17 @@ window.RGP_MILESTONES = [
   "title": "AI Week 2026",
   "detail": "Tel Aviv University, Israel",
   "short": "AI Week 2026"
+ },
+ {
+  "lane": "talks",
+  "start": [
+   2027,
+   9,
+   true
+  ],
+  "kind": "Invited",
+  "title": "ICESAA 2027 – 5th International Conference on Excited-State Aromaticity and Antiaromaticity",
+  "detail": "Osaka, Japan"
  },
  {
   "lane": "talks",
@@ -775,17 +797,6 @@ window.RGP_MILESTONES = [
   ],
   "kind": "Seminar",
   "title": "Tel Aviv University",
-  "detail": ""
- },
- {
-  "lane": "talks",
-  "start": [
-   2025,
-   7,
-   false
-  ],
-  "kind": "Seminar",
-  "title": "Ariel University",
   "detail": ""
  },
  {
@@ -1220,10 +1231,10 @@ window.RGP_MILESTONES = [
    7,
    false
   ],
-  "title": "Outstanding Young Scientist Award",
+  "title": "Prize for Outstanding Young Investigator",
   "detail": "Israel Chemical Society",
   "major": true,
-  "short": "ICS Young Scientist"
+  "short": "ICS Young Investigator Prize"
  },
  {
   "lane": "awards",
@@ -1397,7 +1408,7 @@ window.RGP_MILESTONES = [
   ],
   "end": null,
   "ongoing": false,
-  "title": "Co-editor, Special Issue on Physical Organic Chemistry of Novel Aromatic Materials",
+  "title": "Guest editor, Special Issue on Physical Organic Chemistry of Novel Aromatic Materials",
   "detail": "Beilstein Journal of Organic Chemistry",
   "major": false
  },
@@ -1410,7 +1421,7 @@ window.RGP_MILESTONES = [
   ],
   "end": null,
   "ongoing": false,
-  "title": "Co-editor, Special Issue on Excited State Aromaticity and Antiaromaticity",
+  "title": "Guest editor, Special Issue on Excited State Aromaticity and Antiaromaticity",
   "detail": "Photochemical & Photobiological Sciences",
   "major": false
  },
