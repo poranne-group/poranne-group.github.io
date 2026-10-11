@@ -16,22 +16,29 @@
     gtag('config', 'G-X6BLZH0DN4');
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/counter.js"> </script>
 	<title>Poranne Research Group - Home</title>
+    <!-- link preview / search -->
+    <meta name="description" content="The Poranne Research Group at the Technion – Israel Institute of Technology: computational physical organic chemistry, aromaticity, polycyclic aromatic systems and data-driven molecular design.">
+    <link rel="canonical" href="https://poranne-group.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Poranne Research Group">
+    <meta property="og:title" content="Poranne Research Group - Home">
+    <meta property="og:description" content="The Poranne Research Group at the Technion – Israel Institute of Technology: computational physical organic chemistry, aromaticity, polycyclic aromatic systems and data-driven molecular design.">
+    <meta property="og:url" content="https://poranne-group.github.io/">
+    <meta property="og:image" content="https://poranne-group.github.io/assets/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- //link preview -->
     <meta charset="utf-8">
-    <meta https-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favico-benz.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap&display=swap" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=5">
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=6">
 
 <style>
     /* Publication card internals */
@@ -449,7 +456,7 @@
                     W = white decor, _ = null gap, letters = nav tiles.
                     Nav tiles kept at j=1..6 to stay visible even on 1200px screens.
 
-                    Row 1 (no-offset, 8): W  | AboutUs | _  | Research | Publications | W  | null | CoverGallery
+                    Row 1 (no-offset, 8): W  | AboutUs | _  | Research | Publications | W  | null | Data&Software
                     Row 2 (offset,    7): W  | W  | W  | _  | W  | W  | W
                     Row 3 (no-offset, 8): null | W | W | People | PhotoGallery | _ | CoverGallery | W
                     Row 4 (offset,    8): PI  | W  | W  | Alumni | W  | W  | W  | Contact
@@ -479,10 +486,10 @@
                     </a>
                     <div class="hex-cell decor"><div class="hex-shadow"></div><div class="hex-face"></div></div>
                     <div class="hex-cell null"></div>
-                    <a href="predi-xy.html" class="hex-cell nav">
+                    <a href="compas.html" class="hex-cell nav">
                         <div class="hex-shadow"></div>
                         <div class="hex-face" style="background: #C06BA8;">
-                            <div class="hex-content"><i class="fa fa-laptop"></i><span>Software</span></div>
+                            <div class="hex-content"><i class="fa fa-database"></i><span>Data &amp; Software</span></div>
                         </div>
                     </a>
                 </div>
@@ -595,9 +602,9 @@
                         </a>
                     </div>
                     <div class="hex-row offset">
-                        <a href="predi-xy.html" class="hex-cell nav">
+                        <a href="compas.html" class="hex-cell nav">
                             <div class="hex-shadow"></div>
-                            <div class="hex-face" style="background:#C06BA8;"><div class="hex-content"><i class="fa fa-laptop"></i><span>Software</span></div></div>
+                            <div class="hex-face" style="background:#C06BA8;"><div class="hex-content"><i class="fa fa-database"></i><span>Data &amp; Software</span></div></div>
                         </a>
                         <a href="mailto:porannegroup@technion.ac.il" class="hex-cell nav">
                             <div class="hex-shadow"></div>
@@ -615,48 +622,12 @@
             <button id="about-modal-close" onclick="document.getElementById('about-modal').classList.remove('open');">&times;</button>
             <div id="about-content-frame">
                 <h2>About Us</h2>
-                <img src="assets/images/Poranne_group_2023.jpg" style="float:right; width:58%; margin: 0 0 20px 32px; border-radius:14px; box-shadow: 0 4px 18px rgba(0,0,0,0.13);">
-                <p>The Poranne Group is a research group working in the field of computational physical organic chemistry. Since October 2021, our group is part of the <a href="https://chemistry.technion.ac.il/en/">Schulich Faculty of Chemistry</a> at the <a href="https://www.technion.ac.il/en/home-2/">Technion—Israel Institute of Technology</a>. We first started working in July 2017 as a sub-group within the laboratory of <a href="http://www.chen.ethz.ch/">Prof. Dr. Peter Chen</a> at the Laboratorium für Organische Chemie at the <a href="https://www.ethz.ch/">ETH Zürich</a>.</p>
-                <p>Our work focuses on the investigation of polycyclic aromatic systems and includes characterization of molecular properties, elucidation of structure-property relationships, and illumination of the connection between aromaticity and reactivity in organometallic catalysts. We uncover useful and intuitive connections between structural features and molecular properties, and develop user-friendly pipelines and methods that help connect these abstract properties to real-world synthetic strategies. The chemical insights that we uncover are leveraged to implement machine-learning and deep-learning models for data-driven molecular design and discovery.</p>
-                <p>In addition, we work closely with collaborators around the world to better understand the reactivity and behavior of polycyclic aromatic systems, and to harness their unique properties for various applications.</p>
+                <img alt="The Poranne Group" src="assets/images/Poranne_group_2023.jpg" style="float:right; width:58%; margin: 0 0 20px 32px; border-radius:14px; box-shadow: 0 4px 18px rgba(0,0,0,0.13);">
+                <p>The Poranne Group is a computational physical organic chemistry group at the <a href="https://chemistry.technion.ac.il/en/">Schulich Faculty of Chemistry</a>, <a href="https://www.technion.ac.il/en/home-2/">Technion &ndash; Israel Institute of Technology</a>. We study polycyclic aromatic systems and the concept at their heart, aromaticity: how it relates to other molecular properties and to reactivity, and how it can be harnessed to design new molecules.</p>
+                <p>We develop intuitive methods and user-friendly tools for characterizing, interpreting and predicting molecular properties, and connect these abstract properties to real-world synthetic strategies. Much of our work is data-driven: we built <a href="compas.html">The COMPAS Project</a>, the first computational database of polycyclic aromatic systems, and use it with machine-learning and deep-learning models for molecular design and discovery.</p>
+                <p>Together with <a href="collaborators.html">collaborators around the world</a>, we also investigate reactivity and reaction mechanisms, from the role of aromaticity in organometallic catalysis to the rational design of new aromatic and antiaromatic materials.</p>
                 <p>The group believes in an inclusive and collaborative culture, where team-work and mutual respect are top priorities. We are always open to receiving new members who are excited about learning and who are motivated to work towards advancing our understanding of chemistry and molecular design.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- *** MAIN CONTENT *** -->
-    <div class="container sections-wrapper">
-        <div class="row">
-            <div class="primary col-md-12 col-sm-12 col-xs-12">
-
-                <!-- About (content moved to modal, triggered by About Us hex) -->
-                <section class="about section" style="display:none;">
-                    <div class="section-inner">
-
-                        <h2 class="heading">About</h2>
-                        <div class="content" style="text-align: justify;">
-                            <img src="assets/images/Poranne_group_2023.jpg" style="float:right; width:57%; margin: 0 0 18px 28px; border-radius:12px; box-shadow: 0 4px 16px rgba(0,0,0,0.13);">
-                            <p>The Poranne Group is a research group working in the field of computational physical organic chemistry. Since October 2021, our group is part of the <a href="https://chemistry.technion.ac.il/en/">Schulich Faculty of Chemistry</a> at the <a href="https://www.technion.ac.il/en/home-2/">Technion—Israel Institute of Technology</a>. We first started working in July 2017 as a sub-group within the laboratory of <a href="http://www.chen.ethz.ch/">Prof. Dr. Peter Chen</a> at the Laboratorium für Organische Chemie at the <a href="https://www.ethz.ch/">ETH Zürich</a>.</p>
-                            <p>Our work focuses on the investigation of polycyclic aromatic systems and includes characterization of molecular properties, elucidation of structure-property relationships, and illumination of the connection between aromaticity and reactivity in organometallic catalysts. We uncover useful and intuitive connections between structural features and molecular properties, and develop user-friendly pipelines and methods that help connect these abstract properties to real-world synthetic strategies. The chemical insights that we uncover are leveraged to implement machine-learning and deep-learning models for data-driven molecular design and discovery.</p>
-                            <p>In addition, we work closely with collaborators around the world to better understand the reactivity and behavior of polycyclic aromatic systems, and to harness their unique properties for various applications.</p>
-                            <p>The group believes in an inclusive and collaborative culture, where team-work and mutual respect are top priorities. We are always open to receiving new members who are excited about learning and who are motivated to work towards advancing our understanding of chemistry and molecular design.</p>
-                      </div>
-                        <!--//content-->
-                    </div>
-                    <!--//section-inner-->
-                </section>
-                <!--//section-->
-
-
-                
-<!--//content-->
-                  </div>
-                    <!--//section-inner-->
-                </section>
-                <!--//section-->
-
-
-
+                <p>The group started in 2017 as an independent sub-group at ETH Z&uuml;rich, and has been at the Technion since October 2021.</p>
             </div>
         </div>
     </div>
@@ -665,15 +636,23 @@
 
     <!-- *** FOOTER *** -->
     <footer class="footer">
-        <div class="container text-center">
-            
+        <div class="container text-center footer-inner">
+            <div class="footer-name">Poranne Research Group</div>
+            <div>Schulich Faculty of Chemistry &middot; Technion &ndash; Israel Institute of Technology &middot; Haifa, Israel</div>
+            <div class="footer-links">
+                <a href="mailto:porannegroup@technion.ac.il"><i class="fa fa-envelope-o"></i> porannegroup@technion.ac.il</a>
+                <a href="research.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="people.html">The Group</a>
+                <a href="compas.html">COMPAS</a>
+            </div>
+            <div class="copyright">&copy; <span class="footer-year">2026</span> Poranne Research Group</div>
         </div>
+        <script>document.querySelectorAll('.footer-year').forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
     </footer>
 
     <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
 
 <script type="text/javascript">
 // Honeycomb entrance animation — random reveal order
@@ -692,36 +671,6 @@
 })();
 </script>
 
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('publications.html')
-        .then(response => response.text())
-        .then(html => {
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(html, 'text/html');
-            var publications = doc.querySelectorAll('.publication-item');
-            var contentDiv = document.querySelector('.latest .content');
-            contentDiv.innerHTML = '';
-            for (var i = 0; i < Math.min(6, publications.length); i++) {
-                var pub = publications[i].cloneNode(true);
-                var pubNumber = pub.querySelector('.publication-number');
-                if (pubNumber) pubNumber.remove();
-                pub.querySelectorAll('.cat-badge').forEach(function(b) { b.remove(); });
-                pub.style.border = '4px solid #4472C4';
-                pub.style.borderRadius = '8px';
-                pub.style.padding = '16px';
-                pub.style.marginBottom = '0';
-                pub.style.background = '#fff';
-                pub.style.height = '100%';
-                contentDiv.appendChild(pub);
-            }
-        })
-        .catch(error => {
-            document.querySelector('.latest .content').innerHTML =
-                '<p>Unable to load recent publications. Please visit the <a href="publications.html">publications page</a>.</p>';
-        });
-});
-</script>
 
 </body>
 </html>

@@ -627,6 +627,34 @@ h1.name {
 .footer a {
   color: #fff;
 }
+/* Footer content (below the gradient bar) */
+.footer .footer-inner {
+  padding: 26px 15px 30px;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.footer .footer-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #6B5EB6;
+}
+.footer .footer-inner a {
+  color: #4E73C4;
+}
+.footer .footer-inner a:hover {
+  color: #7A54AF;
+}
+.footer .footer-links a {
+  display: inline-block;
+  margin: 0 10px;
+}
+.footer .footer-inner .copyright {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #9ca3af;
+}
 .footer .fa-heart {
   color: #fb866a;
 }
