@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://poranne-group.github.io/sitemap.xml

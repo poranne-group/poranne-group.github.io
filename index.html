@@ -30,6 +30,44 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <!-- //link preview -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ResearchOrganization",
+  "name": "Poranne Research Group",
+  "url": "https://poranne-group.github.io/",
+  "logo": "https://poranne-group.github.io/favico-benz.png",
+  "image": "https://poranne-group.github.io/assets/images/og-image.jpg",
+  "description": "Computational physical organic chemistry research group at the Schulich Faculty of Chemistry, Technion – Israel Institute of Technology.",
+  "email": "porannegroup@technion.ac.il",
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "Technion – Israel Institute of Technology",
+    "url": "https://www.technion.ac.il/en/"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Schulich Faculty of Chemistry, Technion",
+    "addressLocality": "Haifa",
+    "addressCountry": "IL"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Renana Gershoni-Poranne",
+    "url": "https://poranne-group.github.io/rgp.html"
+  },
+  "knowsAbout": [
+    "Aromaticity",
+    "Polycyclic aromatic hydrocarbons",
+    "Computational chemistry",
+    "Physical organic chemistry",
+    "Machine learning for molecular design"
+  ],
+  "sameAs": [
+    "https://x.com/PoranneG"
+  ]
+}
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap&display=swap" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=6">
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=25">
 
 <style>
     /* Publication card internals */
@@ -367,7 +405,7 @@
     <!-- *** HEADER *** -->
     <header class="header">
         <div class="container text-center">
-            <h1 class="name">Poranne Research Group</h1>
+            <h1 class="name"><a href="index.html" class="header-home" title="Home">Poranne Research Group</a></h1>
             <p class="header-subtitle">Computational Physical Organic Chemistry &nbsp;·&nbsp; Technion — Israel Institute of Technology</p>
         </div>
     </header>
@@ -393,6 +431,7 @@
                                 <li><a href="rgp.html">Renana Gershoni-Poranne</a></li>
                                 <li><a href="people-alumni.html">Former Group Members</a></li>
                                 <li><a href="gallery.html">Photo Gallery</a></li>
+                                <li><a href="join.html">Join Us</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -416,6 +455,7 @@
                                 <li><a href="predi-xy.html">Predi-XY</a></li>
                             </ul>
                         </li>
+                        <li><a href="teaching.html"><h4 class="name">Teaching</h4></a></li>
                     </ul>
                 </div>
             </div>
@@ -434,10 +474,6 @@
             <span class="info-item">
                 <i class="fa fa-envelope-o" style="color:#4C81C7;"></i>
                 <a href="mailto:porannegroup@technion.ac.il">porannegroup@technion.ac.il</a>
-            </span>
-            <span class="info-item">
-                <i class="fa fa-twitter" style="color:#4C81C7;"></i>
-                <a href="https://twitter.com/PoranneG" target="_blank">@PoranneG</a>
             </span>
         </div>
     </div>
@@ -616,14 +652,23 @@
         </div>
     </section>
 
+    <!-- *** LATEST NEWS (items in assets/js/news-data.js) *** -->
+    <section class="home-news">
+        <div class="container">
+            <h2>Latest News</h2>
+            <p class="hz-hint">Hover over or tap an event for the details.</p>
+            <div class="news-strip"></div>
+        </div>
+    </section>
+
     <!-- *** ABOUT MODAL *** -->
     <div id="about-modal" onclick="if(event.target===this)this.classList.remove('open');">
         <div id="about-modal-box">
             <button id="about-modal-close" onclick="document.getElementById('about-modal').classList.remove('open');">&times;</button>
             <div id="about-content-frame">
                 <h2>About Us</h2>
-                <img alt="The Poranne Group" src="assets/images/Poranne_group_2023.jpg" style="float:right; width:58%; margin: 0 0 20px 32px; border-radius:14px; box-shadow: 0 4px 18px rgba(0,0,0,0.13);">
-                <p>The Poranne Group is a computational physical organic chemistry group at the <a href="https://chemistry.technion.ac.il/en/">Schulich Faculty of Chemistry</a>, <a href="https://www.technion.ac.il/en/home-2/">Technion &ndash; Israel Institute of Technology</a>. We study polycyclic aromatic systems and the concept at their heart, aromaticity: how it relates to other molecular properties and to reactivity, and how it can be harnessed to design new molecules.</p>
+                <img loading="lazy" decoding="async" alt="The Poranne Group" src="assets/images/Poranne_group_2023.jpg" style="float:right; width:58%; margin: 0 0 20px 32px; border-radius:14px; box-shadow: 0 4px 18px rgba(0,0,0,0.13);">
+                <p>The Poranne Group is a computational physical organic chemistry group at the <a href="https://chemistry.technion.ac.il/en/">Schulich Faculty of Chemistry</a>, <a href="https://www.technion.ac.il/en/">Technion &ndash; Israel Institute of Technology</a>. We study polycyclic aromatic systems and the concept at their heart, aromaticity: how it relates to other molecular properties and to reactivity, and how it can be harnessed to design new molecules.</p>
                 <p>We develop intuitive methods and user-friendly tools for characterizing, interpreting and predicting molecular properties, and connect these abstract properties to real-world synthetic strategies. Much of our work is data-driven: we built <a href="compas.html">The COMPAS Project</a>, the first computational database of polycyclic aromatic systems, and use it with machine-learning and deep-learning models for molecular design and discovery.</p>
                 <p>Together with <a href="collaborators.html">collaborators around the world</a>, we also investigate reactivity and reaction mechanisms, from the role of aromaticity in organometallic catalysis to the rational design of new aromatic and antiaromatic materials.</p>
                 <p>The group believes in an inclusive and collaborative culture, where team-work and mutual respect are top priorities. We are always open to receiving new members who are excited about learning and who are motivated to work towards advancing our understanding of chemistry and molecular design.</p>
@@ -639,13 +684,7 @@
         <div class="container text-center footer-inner">
             <div class="footer-name">Poranne Research Group</div>
             <div>Schulich Faculty of Chemistry &middot; Technion &ndash; Israel Institute of Technology &middot; Haifa, Israel</div>
-            <div class="footer-links">
-                <a href="mailto:porannegroup@technion.ac.il"><i class="fa fa-envelope-o"></i> porannegroup@technion.ac.il</a>
-                <a href="research.html">Research</a>
-                <a href="publications.html">Publications</a>
-                <a href="people.html">The Group</a>
-                <a href="compas.html">COMPAS</a>
-            </div>
+            <div class="footer-social"><a href="https://x.com/PoranneG" target="_blank" rel="noopener" aria-label="The Poranne Group on X"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> @PoranneG</a></div>
             <div class="copyright">&copy; <span class="footer-year">2026</span> Poranne Research Group</div>
         </div>
         <script>document.querySelectorAll('.footer-year').forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
@@ -653,6 +692,8 @@
 
     <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/news-data.js"></script>
+    <script type="text/javascript" src="assets/js/news.js"></script>
 
 <script type="text/javascript">
 // Honeycomb entrance animation — random reveal order

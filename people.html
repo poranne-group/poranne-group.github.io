@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
 
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=6">
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=25">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 
     <style>
@@ -294,6 +294,7 @@
         .phex-postdoc .phex-face { background: #4A95CD; }
         .phex-phd .phex-face     { background: #6B5EB6; }
         .phex-bsc .phex-face     { background: #D896C0; }
+        .phex-staff .phex-face   { background: #C06BA8; }
 
         /* Hover: cell scales up and pops in front (applied only post-reveal) */
         .phex-cell:not(.decor):not(.null):hover .phex-face {
@@ -324,6 +325,7 @@
         .phex-postdoc .phex-info-overlay { background: rgba(74, 149, 205, 0.9); }
         .phex-phd .phex-info-overlay     { background: rgba(107, 94, 182, 0.9); }
         .phex-bsc .phex-info-overlay     { background: rgba(216, 150, 192, 0.9); }
+        .phex-staff .phex-info-overlay   { background: rgba(192, 107, 168, 0.9); }
 
         .phex-info-name {
             font-family: 'Montserrat', sans-serif;
@@ -429,7 +431,7 @@
     <!-- ******HEADER****** -->
     <header class="header">
         <div class="container text-center">
-            <h1 class="name">Poranne Research Group</h1>
+            <h1 class="name"><a href="index.html" class="header-home" title="Home">Poranne Research Group</a></h1>
             <p class="header-subtitle">Computational Physical Organic Chemistry &nbsp;·&nbsp; Technion — Israel Institute of Technology</p>
         </div>
     </header>
@@ -456,6 +458,7 @@
                                 <li><a href="rgp.html">Renana Gershoni-Poranne</a></li>
                                 <li><a href="people-alumni.html">Former Group Members</a></li>
                                 <li><a href="gallery.html">Photo Gallery</a></li>
+                                <li><a href="join.html">Join Us</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -479,6 +482,7 @@
                                 <li><a href="predi-xy.html">Predi-XY</a></li>
                             </ul>
                         </li>
+                        <li><a href="teaching.html"><h4 class="name">Teaching</h4></a></li>
                     </ul>
                 </div>
             </div>
@@ -498,10 +502,6 @@
                 <i class="fa fa-envelope-o"></i>
                 <a href="mailto:porannegroup@technion.ac.il">porannegroup@technion.ac.il</a>
             </span>
-            <span class="info-item">
-                <i class="fa fa-twitter"></i>
-                <a href="https://twitter.com/PoranneG" target="_blank">@PoranneG</a>
-            </span>
         </div>
     </div>
 
@@ -510,29 +510,22 @@
         4 rows, max 8 wide. 2 people per row, well spaced. 4 nulls at alternating corners.
         Renana top-left corner. Color frames indicate role; no spatial clustering.
 
-        Row 1 (no-offset, 8): Renana★ | D  | D  | null | D  | Sabyasachi● | D  | D
+        Row 1 (no-offset, 8): Renana★ | D  | D  | null | D  | D  | D  | D
         Row 2 (offset,    7): D       | D  | Amrita● | D  | null | D  | Ajeet●
         Row 3 (no-offset, 8): Pallavi● | D  | null | D  | Fatimah▲ | D  | D  | null
-        Row 4 (offset,    7): null    | D  | Ruth■  | D  | D  | Taqwa■  | D
-        Row 5 (no-offset, 8): Maisam■ | D  | D  | null | Maayan■ | D  | D  | null
 
         Adjacency verification — no two people share an edge:
           Renana(R1[0])    → below: R2[−1]=edge, R2[0]=D ✓
-          Sabyasachi(R1[5])→ below: R2[4]=null, R2[5]=D ✓
           Amrita(R2[2])    → below: R3[2]=null, R3[3]=D ✓
           Ajeet(R2[6])     → below: R3[6]=D, R3[7]=null ✓
           Pallavi(R3[0])   → below: R4[−1]=edge, R4[0]=null ✓
           Fatimah(R3[4])   → below: R4[3]=D, R4[4]=D ✓
-          Ruth(R4[2])      → above: R3[2]=null, R3[3]=D ✓
-          Taqwa(R4[5])     → above: R3[5]=D, R3[6]=D ✓
-          Maisam(R5[0])    → above: R4[−1]=edge, R4[0]=null ✓
-          Maayan(R5[4])    → above: R4[3]=D, R4[4]=D ✓
     -->
     <section class="people-hex-section">
         <div class="people-hex-grid-wrapper">
             <div class="people-hex-grid">
 
-                <!-- Row 1: Renana top-left, null in middle, Sabyasachi right-of-center -->
+                <!-- Row 1: Renana top-left, Elad right of centre -->
                 <div class="phex-row">
                     <div class="phex-cell phex-pi">
                         <div class="phex-shadow"></div>
@@ -548,13 +541,13 @@
                     <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
                     <div class="phex-cell null"></div>
                     <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
-                    <div class="phex-cell phex-postdoc">
+                    <div class="phex-cell phex-staff">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
-                            <img src="assets/images/people/Sabyasachi Chakraborty.png" alt="Dr. Sabyasachi Chakraborty">
+                            <img src="assets/images/people/Elad_Apel.jpg" alt="Elad Apel">
                             <div class="phex-info-overlay">
-                                <span class="phex-info-name">Dr. Sabyasachi Chakraborty</span>
-                                <span class="phex-info-role">Postdoctoral Researcher<br>Nov 2022–current</span>
+                                <span class="phex-info-name">Elad Apel</span>
+                                <span class="phex-info-role">Administrative Assistant<br>2024–current</span>
                             </div>
                         </div>
                     </div>
@@ -621,71 +614,12 @@
                     <div class="phex-cell null"></div>
                 </div>
 
-                <!-- Row 4 (offset): null far left, Ruth center-left, Taqwa center-right -->
-                <div class="phex-row offset">
-                    <div class="phex-cell null"></div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
-                    <div class="phex-cell phex-bsc">
-                        <div class="phex-shadow"></div>
-                        <div class="phex-face">
-                            <img src="assets/images/people/Ruth Ascoli Abbina.jpeg" alt="Ruth Ascoli Abbina">
-                            <div class="phex-info-overlay">
-                                <span class="phex-info-name">Ruth Ascoli Abbina</span>
-                                <span class="phex-info-role">BSc Semester Project<br>Nov 2025–current</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
-                    <div class="phex-cell phex-bsc">
-                        <div class="phex-shadow"></div>
-                        <div class="phex-face">
-                            <img src="assets/images/people/Taqwa_Ghanayem.jpeg" alt="Taqwa Ghanayem">
-                            <div class="phex-info-overlay">
-                                <span class="phex-info-name">Taqwa Ghanayem</span>
-                                <span class="phex-info-role">BSc Semester Project<br>Nov 2025–current</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
-                </div>
-
-                <!-- Row 5: Maisam far left, Maayan center-right -->
-                <div class="phex-row">
-                    <div class="phex-cell phex-bsc">
-                        <div class="phex-shadow"></div>
-                        <div class="phex-face">
-                            <img src="assets/images/people/Maisam Halabi.jpeg" alt="Maisam Halabi">
-                            <div class="phex-info-overlay">
-                                <span class="phex-info-name">Maisam Halabi</span>
-                                <span class="phex-info-role">BSc Semester Project<br>(With Computer Science)<br>Oct 2025–current</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
-                    <div class="phex-cell null"></div>
-                    <div class="phex-cell phex-bsc">
-                        <div class="phex-shadow"></div>
-                        <div class="phex-face">
-                            <img src="assets/images/people/Maayan Farkash.jpeg" alt="Maayan Farkash">
-                            <div class="phex-info-overlay">
-                                <span class="phex-info-name">Maayan Farkash</span>
-                                <span class="phex-info-role">BSc Semester Project<br>(With Computer Science)<br>Oct 2025–current</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
-                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
-                    <div class="phex-cell null"></div>
-                </div>
-
             </div>
 
             <!-- Mobile: compact grid, max 3 per row, 4 rows (hidden on desktop) -->
             <div class="people-hex-grid-mobile">
 
-                <!-- Row 1: Renana | Sabyasachi | Amrita -->
+                <!-- Row: Assoc. Prof. Renana Gershoni-Poranne | Dr. Amrita Gogoi | Dr. Pallavi Sarkar -->
                 <div class="phex-row">
                     <div class="phex-cell phex-pi">
                         <div class="phex-shadow"></div>
@@ -700,16 +634,6 @@
                     <div class="phex-cell phex-postdoc">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
-                            <img src="assets/images/people/Sabyasachi Chakraborty.png" alt="Dr. Sabyasachi Chakraborty">
-                            <div class="phex-info-overlay">
-                                <span class="phex-info-name">Dr. Sabyasachi Chakraborty</span>
-                                <span class="phex-info-role">Postdoctoral Researcher<br>Nov 2022–current</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="phex-cell phex-postdoc">
-                        <div class="phex-shadow"></div>
-                        <div class="phex-face">
                             <img src="assets/images/people/Amrita_Gogoi.jpg" alt="Dr. Amrita Gogoi">
                             <div class="phex-info-overlay">
                                 <span class="phex-info-name">Dr. Amrita Gogoi</span>
@@ -717,10 +641,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Row 2 (offset): Pallavi | Ajeet -->
-                <div class="phex-row offset">
                     <div class="phex-cell phex-postdoc">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
@@ -731,6 +651,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Row: Dr. Ajeet Kumar Singh | Fatimah Khaleel | Elad Apel -->
+                <div class="phex-row offset">
                     <div class="phex-cell phex-postdoc">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
@@ -741,10 +665,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Row 3: Fatimah | Ruth | Taqwa -->
-                <div class="phex-row">
                     <div class="phex-cell phex-phd">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
@@ -755,52 +675,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="phex-cell phex-bsc">
+                    <div class="phex-cell phex-staff">
                         <div class="phex-shadow"></div>
                         <div class="phex-face">
-                            <img src="assets/images/people/Ruth Ascoli Abbina.jpeg" alt="Ruth Ascoli Abbina">
+                            <img src="assets/images/people/Elad_Apel.jpg" alt="Elad Apel">
                             <div class="phex-info-overlay">
-                                <span class="phex-info-name">Ruth Ascoli Abbina</span>
-                                <span class="phex-info-role">BSc Semester Project<br>Nov 2025–current</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="phex-cell phex-bsc">
-                        <div class="phex-shadow"></div>
-                        <div class="phex-face">
-                            <img src="assets/images/people/Taqwa_Ghanayem.jpeg" alt="Taqwa Ghanayem">
-                            <div class="phex-info-overlay">
-                                <span class="phex-info-name">Taqwa Ghanayem</span>
-                                <span class="phex-info-role">BSc Semester Project<br>Nov 2025–current</span>
+                                <span class="phex-info-name">Elad Apel</span>
+                                <span class="phex-info-role">Administrative Assistant<br>2024–current</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Row 4 (offset): Maisam | Maayan -->
-                <div class="phex-row offset">
-                    <div class="phex-cell phex-bsc">
-                        <div class="phex-shadow"></div>
-                        <div class="phex-face">
-                            <img src="assets/images/people/Maisam Halabi.jpeg" alt="Maisam Halabi">
-                            <div class="phex-info-overlay">
-                                <span class="phex-info-name">Maisam Halabi</span>
-                                <span class="phex-info-role">BSc Semester Project<br>(With Computer Science)<br>Oct 2025–current</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="phex-cell phex-bsc">
-                        <div class="phex-shadow"></div>
-                        <div class="phex-face">
-                            <img src="assets/images/people/Maayan Farkash.jpeg" alt="Maayan Farkash">
-                            <div class="phex-info-overlay">
-                                <span class="phex-info-name">Maayan Farkash</span>
-                                <span class="phex-info-role">BSc Semester Project<br>(With Computer Science)<br>Oct 2025–current</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div><!-- end .people-hex-grid-mobile -->
 
         </div>
@@ -820,8 +705,8 @@
                 <span>PhD Students</span>
             </div>
             <div class="phex-legend-item">
-                <div class="phex-legend-hex" style="background:#D896C0;"></div>
-                <span>BSc Students</span>
+                <div class="phex-legend-hex" style="background:#C06BA8;"></div>
+                <span>Administrative Staff</span>
             </div>
         </div>
     </section>
@@ -853,7 +738,7 @@
                             <div class="members-grid">
                                 <div class="member-card">
                                     <div class="member-image-wrapper">
-                                        <img src="assets/images/people/Renana Poranne.png" alt="Renana Gershoni-Poranne" />
+                                        <img loading="lazy" decoding="async" src="assets/images/people/Renana Poranne.png" alt="Renana Gershoni-Poranne" />
                                     </div>
                                     <h3 class="title">Assoc. Prof. Renana Gershoni-Poranne</h3>
                                     <span class="role"><em>Principal Investigator</em></span>
@@ -869,28 +754,21 @@
                             <div class="members-grid">
                                 <div class="member-card">
                                     <div class="member-image-wrapper">
-                                        <img src="assets/images/people/Sabyasachi Chakraborty.png" alt="Dr. Sabyasachi Chakraborty" />
-                                    </div>
-                                    <h3 class="title">Dr. Sabyasachi Chakraborty</h3>
-                                    <span class="role"><em>Postdoctoral Researcher</em><br>Nov 2022–current</span>
-                                </div>
-                                <div class="member-card">
-                                    <div class="member-image-wrapper">
-                                        <img src="assets/images/people/Amrita_Gogoi.jpg" alt="Dr. Amrita Gogoi" />
+                                        <img loading="lazy" decoding="async" src="assets/images/people/Amrita_Gogoi.jpg" alt="Dr. Amrita Gogoi" />
                                     </div>
                                     <h3 class="title">Dr. Amrita Gogoi</h3>
                                     <span class="role"><em>Maggie Kaplan Postdoctoral Fellow</em><br>Nov 2024–current</span>
                                 </div>
                                 <div class="member-card">
                                     <div class="member-image-wrapper">
-                                        <img src="assets/images/people/Ajeet_Singh.jpg" alt="Dr. Ajeet Singh" />
+                                        <img loading="lazy" decoding="async" src="assets/images/people/Ajeet_Singh.jpg" alt="Dr. Ajeet Singh" />
                                     </div>
                                     <h3 class="title">Dr. Ajeet Kumar Singh</h3>
                                     <span class="role"><em>Postdoctoral Researcher</em><br>Sep 2025–current</span>
                                 </div>
                                 <div class="member-card">
                                     <div class="member-image-wrapper">
-                                        <img src="assets/images/people/Pallavi_Sarkar.jpg" alt="Dr. Pallavi Sarkar" />
+                                        <img loading="lazy" decoding="async" src="assets/images/people/Pallavi_Sarkar.jpg" alt="Dr. Pallavi Sarkar" />
                                     </div>
                                     <h3 class="title">Dr. Pallavi Sarkar</h3>
                                     <span class="role"><em>Lady Davis Postdoctoral Fellow</em><br>Oct 2025–current</span>
@@ -899,14 +777,14 @@
                         </div>
                     </div>
 
-                    <!-- GRADUATE + BSC STUDENTS -->
+                    <!-- GRADUATE STUDENTS + STAFF -->
                     <div class="position-row" style="align-items:flex-start;">
                         <div class="position-section" style="flex:0 0 230px;">
                             <h3 class="position-header">PhD Students</h3>
                             <div class="members-grid">
                                 <div class="member-card">
                                     <div class="member-image-wrapper">
-                                        <img src="assets/images/people/Fatimah Khaleel.png" alt="Fatimah Khaleel" />
+                                        <img loading="lazy" decoding="async" src="assets/images/people/Fatimah Khaleel.png" alt="Fatimah Khaleel" />
                                     </div>
                                     <h3 class="title">Fatimah Khaleel</h3>
                                     <span class="role"><em>MSc</em> Nov 2022–Sep 2024<br><em>PhD</em> Oct 2024–current</span>
@@ -914,39 +792,19 @@
                             </div>
                         </div>
 
-                        <div class="position-section">
-                            <h3 class="position-header">BSc Students</h3>
+                        <div class="position-section" style="flex:0 0 300px;">
+                            <h3 class="position-header">Administrative Staff</h3>
                             <div class="members-grid">
                                 <div class="member-card">
                                     <div class="member-image-wrapper">
-                                        <img src="assets/images/people/Ruth Ascoli Abbina.jpeg" alt="Ruth Ascoli Abbina" />
+                                        <img loading="lazy" decoding="async" src="assets/images/people/Elad_Apel.jpg" alt="Elad Apel" />
                                     </div>
-                                    <h3 class="title">Ruth Ascoli Abbina</h3>
-                                    <span class="role"><em>BSc Semester Project</em><br>Nov 2025–current</span>
-                                </div>
-                                <div class="member-card">
-                                    <div class="member-image-wrapper">
-                                        <img src="assets/images/people/Taqwa_Ghanayem.jpeg" alt="Taqwa Ghanayem" />
-                                    </div>
-                                    <h3 class="title">Taqwa Ghanayem</h3>
-                                    <span class="role"><em>BSc Semester Project</em><br>Nov 2025–current</span>
-                                </div>
-                                <div class="member-card">
-                                    <div class="member-image-wrapper">
-                                        <img src="assets/images/people/Maisam Halabi.jpeg" alt="Maisam Halabi" />
-                                    </div>
-                                    <h3 class="title">Maisam Halabi</h3>
-                                    <span class="role"><em>BSc Semester Project<br>(With Computer Science)</em><br>Oct 2025–current</span>
-                                </div>
-                                <div class="member-card">
-                                    <div class="member-image-wrapper">
-                                        <img src="assets/images/people/Maayan Farkash.jpeg" alt="Maayan Farkash" />
-                                    </div>
-                                    <h3 class="title">Maayan Farkash</h3>
-                                    <span class="role"><em>BSc Semester Project<br>(With Computer Science)</em><br>Oct 2025–current</span>
+                                    <h3 class="title">Elad Apel</h3>
+                                    <span class="role"><em>Administrative Assistant</em><br>2024–current</span>
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     <!-- JOIN US -->
@@ -954,10 +812,11 @@
                         <h3 class="position-header">Join Our Team!</h3>
                         <div class="member-card join-us" style="flex:none;width:100%;max-width:100%;padding:24px;">
                             <div class="member-image-wrapper" style="width:40%;height:auto;border-radius:8px;border:2px dashed #6B5EB6;margin:0 auto;">
-                                <img src="assets/images/people/JOIN US.JPG" alt="Join Us" style="width:100%;height:auto;object-fit:contain;" />
+                                <img loading="lazy" decoding="async" src="assets/images/people/JOIN US.JPG" alt="Join Us" style="width:100%;height:auto;object-fit:contain;" />
                             </div>
                             <h3 class="title" style="margin-top:16px;">This Could Be You!</h3>
                             <span class="role"><em>We are looking for MSc, PhD, and postdoctoral applicants!</em></span>
+                            <a href="join.html" class="join-link" style="display:inline-block;margin-top:14px;padding:8px 22px;border-radius:20px;background:#6B5EB6;color:#fff;text-decoration:none;font-weight:700;">See open positions &rarr;</a>
                         </div>
                     </div>
 
@@ -973,13 +832,7 @@
         <div class="container text-center footer-inner">
             <div class="footer-name">Poranne Research Group</div>
             <div>Schulich Faculty of Chemistry &middot; Technion &ndash; Israel Institute of Technology &middot; Haifa, Israel</div>
-            <div class="footer-links">
-                <a href="mailto:porannegroup@technion.ac.il"><i class="fa fa-envelope-o"></i> porannegroup@technion.ac.il</a>
-                <a href="research.html">Research</a>
-                <a href="publications.html">Publications</a>
-                <a href="people.html">The Group</a>
-                <a href="compas.html">COMPAS</a>
-            </div>
+            <div class="footer-social"><a href="https://x.com/PoranneG" target="_blank" rel="noopener" aria-label="The Poranne Group on X"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> @PoranneG</a></div>
             <div class="copyright">&copy; <span class="footer-year">2026</span> Poranne Research Group</div>
         </div>
         <script>document.querySelectorAll('.footer-year').forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>

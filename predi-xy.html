@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
 
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=6">
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css?v=25">
 
     <style>
         .section .heading { color: #C06BA8; font-size: 28px; font-weight: 700; }
@@ -74,6 +74,10 @@
             transition: opacity 0.2s;
         }
         .page-btn:hover { opacity: 0.85; }
+        @media (max-width: 600px) {
+            .content-card { padding: 22px 18px; }
+            .content-card p, .content-card ol, .content-card ul { text-align: left !important; }
+        }
     </style>
 </head>
 
@@ -82,7 +86,7 @@
      <!-- ******HEADER****** -->
     <header class="header">
         <div class="container text-center">
-            <h1 class="name">Poranne Research Group</h1>
+            <h1 class="name"><a href="index.html" class="header-home" title="Home">Poranne Research Group</a></h1>
             <p class="header-subtitle">Computational Physical Organic Chemistry &nbsp;·&nbsp; Technion — Israel Institute of Technology</p>
         </div>
     </header>
@@ -109,6 +113,7 @@
                                 <li><a href="rgp.html">Renana Gershoni-Poranne</a></li>
                                 <li><a href="people-alumni.html">Former Group Members</a></li>
                                 <li><a href="gallery.html">Photo Gallery</a></li>
+                                <li><a href="join.html">Join Us</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -132,6 +137,7 @@
                                 <li><a href="predi-xy.html">Predi-XY</a></li>
                             </ul>
                         </li>
+                        <li><a href="teaching.html"><h4 class="name">Teaching</h4></a></li>
                     </ul>
                 </div>
             </div>
@@ -151,10 +157,6 @@
                 <i class="fa fa-envelope-o" style="color:#C06BA8;"></i>
                 <a href="mailto:porannegroup@technion.ac.il">porannegroup@technion.ac.il</a>
             </span>
-            <span class="info-item">
-                <i class="fa fa-twitter" style="color:#C06BA8;"></i>
-                <a href="https://twitter.com/PoranneG" target="_blank">@PoranneG</a>
-            </span>
         </div>
     </div>
 
@@ -172,7 +174,7 @@
                             <p style="text-align:center;">
                                 <a class="page-btn" href="https://iopscience.iop.org/article/10.1088/2516-1075/abd081">To Predi-XY Paper</a>
                                 <a class="page-btn" href="https://gitlab.com/porannegroup/predixy/-/releases">To Predi-XY Code</a>
-                                <a class="page-btn" href="https://chemrxiv.org/articles/preprint/Predi-XY_A_Python_Program_for_Automated_Generation_of_NICS-XY-Scans_Based_on_an_Additivity_Scheme/13019591">To Predi-XY Preprint</a>
+                                <a class="page-btn" href="https://doi.org/10.26434/chemrxiv.13019591.v1">To Predi-XY Preprint</a>
                             </p>
 
                             <p style="text-align:justify;">Predi-XY is a homemade utility written in Python 3 for generating predicted <a href="https://onlinelibrary.wiley.com/doi/10.1002/chem.201304307/full">NICS-XY-Scans</a> of <i>cata</i>-condensed polycyclic aromatic systems, using a novel additivity scheme, which was described and expanded on in:</p>
@@ -183,7 +185,7 @@
 
                             <p style="text-align:justify;">Using its onboard library and the principles of additivity, Predi-XY generates NICS-XY-Scans for unbranched <i>cata</i>-condensed molecules composed of the building blocks below within seconds (or less), without the need for a quantum-mechanical calculation.</p>
 
-                            <p style="text-align:center;"><img alt="The building blocks in the Predi-XY library" class="centerImage" src="assets/images/buildingblocks.png" style="max-width:700px; width:90%; height:auto;" /></p>
+                            <p style="text-align:center;"><img loading="lazy" decoding="async" alt="The building blocks in the Predi-XY library" class="centerImage" src="assets/images/buildingblocks.png" style="max-width:700px; width:90%; height:auto;" /></p>
 
                             <p style="text-align:justify;"><b>Main features of Predi-XY:</b></p>
                             <ul style="padding-left:2em; text-align:justify;">
@@ -221,13 +223,7 @@
         <div class="container text-center footer-inner">
             <div class="footer-name">Poranne Research Group</div>
             <div>Schulich Faculty of Chemistry &middot; Technion &ndash; Israel Institute of Technology &middot; Haifa, Israel</div>
-            <div class="footer-links">
-                <a href="mailto:porannegroup@technion.ac.il"><i class="fa fa-envelope-o"></i> porannegroup@technion.ac.il</a>
-                <a href="research.html">Research</a>
-                <a href="publications.html">Publications</a>
-                <a href="people.html">The Group</a>
-                <a href="compas.html">COMPAS</a>
-            </div>
+            <div class="footer-social"><a href="https://x.com/PoranneG" target="_blank" rel="noopener" aria-label="The Poranne Group on X"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> @PoranneG</a></div>
             <div class="copyright">&copy; <span class="footer-year">2026</span> Poranne Research Group</div>
         </div>
         <script>document.querySelectorAll('.footer-year').forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
