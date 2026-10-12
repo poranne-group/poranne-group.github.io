@@ -1,5 +1,6 @@
 /* Renders window.NEWS (assets/js/news-data.js, built by tools/build_news.py) as the home page's
  * scrollable news strip:   <div class="news-strip"></div>
+ * (any list in the same format works too:  <div class="news-strip" data-source="TEACHING_AWARDS"></div>)
  * Four colour-coded categories; each item's "type" maps onto one of them.
  */
 (function () {
@@ -43,10 +44,11 @@
 
     // ---- home page: scrollable horizontal strip (oldest left -> newest right), hexagons on stems of varying height
     Array.prototype.forEach.call(document.querySelectorAll('.news-strip'), function (box) {
-        var limit = +box.getAttribute('data-limit') || NEWS.length;
+        var SRC = window[box.getAttribute('data-source') || 'NEWS'] || [];       // e.g. data-source="TEACHING_AWARDS"
+        var limit = +box.getAttribute('data-limit') || SRC.length;
         var HEX = '<svg class="htl-shape" viewBox="0 0 100 115" aria-hidden="true"><polygon points="50,2 97,29 97,86 50,113 3,86 3,29"/></svg>';
         var STEMS = [64, 26, 92, 44, 78, 34];          // connector heights, px
-        var items = NEWS.slice(0, limit).reverse();
+        var items = SRC.slice(0, limit).reverse();
         var SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         var html = '', year = null, month = null, k = 0;
         items.forEach(function (n, i) {
@@ -54,7 +56,7 @@
             if (y !== year) { html += '<div class="hz-year"><span class="hz-year-hex">' + HEX + '<b>' + y + '</b></span></div>'; year = y; }
             if (n.date !== month) {                       // month label sits on the line, before that month's items
                 var p = n.date.split('-');
-                html += '<div class="hz-mon"><span>' + (p[1] ? SHORT[+p[1] - 1] + ' ' + p[0] : p[0]) + '</span></div>';
+                if (p[1]) html += '<div class="hz-mon"><span>' + SHORT[+p[1] - 1] + ' ' + p[0] + '</span></div>';   // year-only: the year hexagon says it
                 month = n.date;
             }
             var c = cat(n), up = upcoming(n.date);

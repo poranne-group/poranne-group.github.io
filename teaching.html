@@ -65,6 +65,44 @@
         .btn-pill:hover { background: #7A54AF; }
         .tl-filter[data-cat="all"].on { background: #C77AB0; border-color: #C77AB0; }
         .lead-text a, .news-more { color: #a85a92; }
+        /* ---- Teaching page ---- */
+        .teach-hero { display: grid; grid-template-columns: 58% 42%; border-radius: 12px; overflow: hidden; margin: 0 0 30px;
+                      border: 3px solid #C77AB0; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(199,122,176,0.35); background: #fff; }
+        .teach-hero img { display: block; width: 100%; height: auto; }
+        .teach-hero-text { display: flex; flex-direction: column; justify-content: center; padding: 32px 34px; color: #2c3e50; }
+        .teach-hero-text h2 { font-size: 30px; font-weight: 700; color: #C06BA8; margin: 0 0 16px; }
+        .teach-hero-text blockquote { border: none; margin: 0; padding: 0; font-size: 19px; line-height: 1.55; font-style: italic; color: #3d4452;
+                                     border-left: 3px solid #C06BA8; padding-left: 16px; }
+        .teach-sig { display: block; margin-top: 14px; font-size: 14px; letter-spacing: 0.04em; color: #a85a92; padding-left: 19px; }
+        .course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 10px 0 18px; }
+        .course-card { background: #fff; border-radius: 10px; padding: 20px 22px 18px; border-top: 4px solid #C77AB0;
+                       box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; }
+        .course-top { display: flex; gap: 14px; align-items: center; margin-bottom: 10px; }
+        .course-hex { flex: 0 0 48px; height: 55px; display: flex; align-items: center; justify-content: center; background: #C77AB0; color: #fff;
+                      font-size: 21px; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+        .course-level { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #a85a92; }
+        .course-card h4 { margin: 2px 0 0; font-size: 1.02em; font-weight: 700; color: #2c3e50; line-height: 1.3; }
+        .course-card p { font-size: 0.88em; line-height: 1.55; color: #444; margin: 0 0 12px; flex: 1; }
+        .course-since { font-size: 0.78em; color: #888; }
+        .teach-earlier { font-size: 0.88em; color: #555; }
+        .htl-hint-text { color: #6b7280; font-size: 14px; margin: -6px 0 2px; }
+        .beyond { display: grid; grid-template-columns: 2fr 3fr; gap: 24px; align-items: stretch; }
+        .beyond-img { display: block; width: 100%; height: 100%; min-height: 260px; object-fit: cover; object-position: 72% 50%;
+                      border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+        .beyond-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .beyond-card { background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+        .beyond-card .fa { color: #C77AB0; font-size: 20px; }
+        .beyond-card h4 { font-size: 0.95em; font-weight: 700; color: #2c3e50; margin: 6px 0 4px; }
+        .beyond-card p { font-size: 0.82em; line-height: 1.5; color: #555; margin: 0; }
+        @media (max-width: 991px) {
+            .course-grid { grid-template-columns: 1fr; }
+            .beyond { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 767px) {
+            .teach-hero { grid-template-columns: 1fr; }
+            .teach-hero-text { padding: 22px 20px; }
+            .beyond-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -150,47 +188,76 @@
         <div class="row">
             <section class="about section">
                 <div class="section-inner">
-                    <h2 class="heading">Teaching</h2>
-                    <p class="lead-text">Teaching is a big part of life in the group. Renana teaches courses from first-year general chemistry
-                    to advanced computational chemistry, and her teaching has been recognized with numerous awards.</p>
-
-                    <h3 class="sub-heading">Courses at the Technion</h3>
-                    <div class="card-grid">
-                        <div class="info-card"><h4><i class="fa fa-desktop"></i>Applied Computational Chemistry</h4><p>Lecturer, since 2024</p></div>
-                        <div class="info-card"><h4><i class="fa fa-flask"></i>Principles of Chemistry A</h4><p>Lecturer, since 2022</p></div>
-                        <div class="info-card"><h4><i class="fa fa-circle-o-notch"></i>Molecular Orbitals in Organic Chemistry</h4><p>Lecturer, since 2022</p></div>
+                    <!-- banner with teaching statement -->
+                    <div class="teach-hero">
+                        <img src="assets/images/teaching/teaching-blackboard.jpg" alt="Renana teaching molecular orbital theory in front of a full blackboard">
+                        <div class="teach-hero-text">
+                            <h2>Teaching</h2>
+                            <blockquote>&ldquo;Chemistry makes the most sense when you can <em>see</em> why things happen. I want my students to leave
+                            not with a list of rules, but with the intuition to work out the answers for themselves.&rdquo;</blockquote>
+                            <span class="teach-sig">&mdash; Renana Gershoni-Poranne</span>
+                        </div>
                     </div>
 
-                    <h3 class="sub-heading">Earlier teaching</h3>
-                    <ul class="lead-text">
-                        <li><b>ETH Z&uuml;rich</b>, 2018&ndash;2021: Lecturer, Organic Chemistry IV: Physical Organic Chemistry</li>
-                        <li><b>Technion</b>, 2008&ndash;2015: Teaching assistant and senior teaching assistant for Principles of Chemistry A and B,
-                        Organic Chemistry Expanded 1 and 2, and Structure Determination by Physical Methods</li>
-                    </ul>
+                    <h3 class="sub-heading">Courses at the Technion</h3>
+                    <div class="course-grid">
+                        <div class="course-card">
+                            <div class="course-top"><span class="course-hex"><i class="fa fa-flask"></i></span>
+                                <div><span class="course-level">First year</span><h4>Principles of Chemistry A</h4></div></div>
+                            <p>The foundations of chemistry for first-year students: from atoms, light and quantum theory, through the
+                            periodic table and chemical bonding (from Lewis structures to molecular orbitals), to reactions, equilibrium,
+                            and acids and bases.</p>
+                            <span class="course-since">Lecturer since 2022</span>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-top"><span class="course-hex"><i class="fa fa-circle-o-notch"></i></span>
+                                <div><span class="course-level">Advanced undergraduate</span><h4>Molecular Orbitals in Organic Chemistry</h4></div></div>
+                            <p>A bridge between the quantum world and organic chemistry: qualitative MO theory, frontier orbitals,
+                            the Woodward&ndash;Hoffmann rules in ground and excited states, hyperconjugation and the anomeric effect.
+                            Students gain the intuition and tools to analyze &ndash; and predict &ndash; organic reactivity.</p>
+                            <span class="course-since">Lecturer since 2022</span>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-top"><span class="course-hex"><i class="fa fa-line-chart"></i></span>
+                                <div><span class="course-level">Advanced undergraduate</span><h4>Structure and Activity in Organic Chemistry</h4></div></div>
+                            <p>The physical organic chemistry behind reaction mechanisms: potential energy surfaces, the Curtin&ndash;Hammett
+                            principle and the Hammond postulate, linear free-energy relationships, kinetics and isotope effects, and the
+                            reactive intermediates of organic chemistry &ndash; carbocations, carbanions and carbenes.</p>
+                            <span class="course-since">New course &middot; coming soon</span>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-top"><span class="course-hex"><i class="fa fa-desktop"></i></span>
+                                <div><span class="course-level">Hands-on lab &middot; in English</span><h4>Applied Computational Chemistry</h4></div></div>
+                            <p>A hands-on lab for students with little or no prior experience: running electronic-structure calculations
+                            with freely available software (ORCA, xTB), analyzing molecular properties and exploring reaction mechanisms,
+                            and finishing with an independent project written up as a research communication.</p>
+                            <span class="course-since">Lecturer since 2024</span>
+                        </div>
+                    </div>
+                    <p class="teach-earlier">Before the Technion, Renana taught <b>Organic Chemistry IV: Physical Organic Chemistry</b> at ETH Z&uuml;rich
+                    (2018&ndash;2021), and for seven years was a teaching assistant and senior teaching assistant at the Technion for
+                    general, organic and physical-methods courses (2008&ndash;2015).</p>
+
+                    <h3 class="sub-heading">Beyond the classroom</h3>
+                    <div class="beyond">
+                        <img src="assets/images/teaching/teaching-writing.jpg" alt="Renana writing a correlation diagram on the blackboard" class="beyond-img">
+                        <div class="beyond-grid">
+                            <div class="beyond-card"><i class="fa fa-users"></i><h4>Mentoring new faculty</h4>
+                                <p>Mentor to new faculty members in the Technion Leadership Program (2026&ndash;2027).</p></div>
+                            <div class="beyond-card"><i class="fa fa-graduation-cap"></i><h4>Teaching the teachers</h4>
+                                <p>A scientific lecture for high-school chemistry teachers (2026).</p></div>
+                            <div class="beyond-card"><i class="fa fa-glass"></i><h4>Technion on the Bar</h4>
+                                <p>Popular science for a general audience (2025).</p></div>
+                            <div class="beyond-card"><i class="fa fa-picture-o"></i><h4>Poster-design workshop</h4>
+                                <p>A workshop for graduate students and postdocs on designing effective scientific posters (2025).</p></div>
+                            <div class="beyond-card"><i class="fa fa-trophy"></i><h4>Young chemists</h4>
+                                <p>A lecture for Chemistry Olympiad students and judging a high-school Chemistry Tournament (2024).</p></div>
+                        </div>
+                    </div>
 
                     <h3 class="sub-heading">Teaching awards</h3>
-                    <ul class="lead-text">
-                        <li>2023&ndash;2024 &middot; Commendation for Excellence in Teaching (Principles of Chemistry A), Technion</li>
-                        <li>2021 &middot; Golden Owl Award for Excellence in Teaching (OC4: Molecular Orbital Theory), ETH Z&uuml;rich</li>
-                        <li>2015 &middot; Weissman and Jacknow Prize for Continued Excellence in Teaching, Technion</li>
-                        <li>2014 &middot; Schulich Prize for Excellence in Teaching, Technion</li>
-                        <li>2014 &middot; Vivian Konigsberg Award for Continued Excellence in Teaching, Technion</li>
-                        <li>2013 &middot; Sandor Szego Award for Excellence in Teaching, Technion</li>
-                        <li>2012 &middot; Schulich Prize for Excellence in Teaching, Technion</li>
-                        <li>2010 &middot; Sandor Szego Award for Excellence in Teaching, Technion</li>
-                        <li>2009 &middot; Sandor Szego Award for Excellence in Teaching, Technion</li>
-                        <li>2009 &middot; Schulich Prize for Excellence in Teaching, Technion</li>
-                        <li>2008 &middot; Vivian Konigsberg Award for Excellence in Teaching, Technion</li>
-                    </ul>
-
-                    <h3 class="sub-heading">Mentoring and outreach</h3>
-                    <ul class="lead-text">
-                        <li>Mentor to new faculty members, Technion Leadership Program (2026&ndash;2027)</li>
-                        <li>Scientific lecture to high-school chemistry teachers (2026)</li>
-                        <li>&ldquo;Technion on the Bar&rdquo; &ndash; popular-science presentation for a general audience (2025)</li>
-                        <li>Workshop on poster design for graduate students and postdocs (2025)</li>
-                        <li>Scientific lecture to Chemistry Olympiad students (2024) and judge in a high-school Chemistry Tournament (2024)</li>
-                    </ul>
+                    <p class="htl-hint-text">Eleven awards for teaching, from the Technion and ETH Z&uuml;rich. Hover over or tap an award for the details.</p>
+                    <div class="news-strip" data-source="TEACHING_AWARDS"></div>
                 </div>
             </section>
         </div>
@@ -210,6 +277,8 @@
 
     <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">window.TEACHING_AWARDS = [{"date": "2024", "type": "award", "short": "Teaching Commen­dation", "title": "Commendation for Excellence in Teaching", "text": "Principles of Chemistry A, Technion (2023–2024).", "link": ""}, {"date": "2021", "type": "award", "short": "Golden Owl", "title": "Golden Owl Award for Excellence in Teaching", "text": "OC4: Molecular Orbital Theory, ETH Zürich. Voted by the students.", "link": ""}, {"date": "2015", "type": "award", "short": "Weissman & Jacknow Prize", "title": "The Weissman and Jacknow Prize for Continued Excellence in Teaching", "text": "Technion.", "link": ""}, {"date": "2014", "type": "award", "short": "Schulich Prize", "title": "The Schulich Prize for Excellence in Teaching", "text": "Technion.", "link": ""}, {"date": "2014", "type": "award", "short": "Konigsberg Award", "title": "Vivian Konigsberg Award for Continued Excellence in Teaching", "text": "Technion.", "link": ""}, {"date": "2013", "type": "award", "short": "Szego Award", "title": "Sandor Szego Award for Excellence in Teaching", "text": "Technion.", "link": ""}, {"date": "2012", "type": "award", "short": "Schulich Prize", "title": "The Schulich Prize for Excellence in Teaching", "text": "Technion.", "link": ""}, {"date": "2010", "type": "award", "short": "Szego Award", "title": "Sandor Szego Award for Excellence in Teaching", "text": "Technion.", "link": ""}, {"date": "2009", "type": "award", "short": "Szego Award", "title": "Sandor Szego Award for Excellence in Teaching", "text": "Technion.", "link": ""}, {"date": "2009", "type": "award", "short": "Schulich Prize", "title": "The Schulich Prize for Excellence in Teaching", "text": "Technion.", "link": ""}, {"date": "2008", "type": "award", "short": "Konigsberg Award", "title": "Vivian Konigsberg Award for Excellence in Teaching", "text": "Technion.", "link": ""}];</script>
+    <script type="text/javascript" src="assets/js/news.js"></script>
 </body>
 
 </html>
