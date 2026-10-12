@@ -75,11 +75,12 @@
                                      border-left: 3px solid #C06BA8; padding-left: 16px; }
         .teach-sig { display: block; margin-top: 14px; font-size: 14px; letter-spacing: 0.04em; color: #a85a92; padding-left: 19px; }
         .course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 10px 0 18px; }
-        .course-card { background: #fff; border-radius: 10px; padding: 20px 22px 18px; border-top: 4px solid #C77AB0;
+        .course-card { background: #fff; border-radius: 10px; padding: 20px 22px 18px; border: 1.5px solid #ecc6e0; border-top: 4px solid #C77AB0;
                        box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; }
         .course-top { display: flex; gap: 14px; align-items: center; margin-bottom: 10px; }
-        .course-hex { flex: 0 0 48px; height: 55px; display: flex; align-items: center; justify-content: center; background: #C77AB0; color: #fff;
-                      font-size: 21px; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+        .course-hex { flex: 0 0 56px; height: 64px; display: flex; align-items: center; justify-content: center; background: #C77AB0; color: #fff;
+                      font-size: 28px; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+        .course-ico { width: 40px; height: 40px; overflow: visible; }
         .course-level { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #a85a92; }
         .course-card h4 { margin: 2px 0 0; font-size: 1.02em; font-weight: 700; color: #2c3e50; line-height: 1.3; }
         .course-card p { font-size: 0.88em; line-height: 1.55; color: #444; margin: 0 0 12px; flex: 1; }
@@ -87,13 +88,14 @@
         .teach-earlier { font-size: 0.88em; color: #555; }
         .htl-hint-text { color: #6b7280; font-size: 14px; margin: -6px 0 2px; }
         .beyond { display: grid; grid-template-columns: 2fr 3fr; gap: 24px; align-items: stretch; }
-        .beyond-img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: 72% 50%;
-                      border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+        .beyond-photo { position: relative; min-height: 240px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+        .beyond-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 72% 40%; }
         .beyond-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: start; }
-        .beyond-card { background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
-        .beyond-card .fa { color: #C77AB0; font-size: 20px; }
-        .beyond-card h4 { font-size: 0.95em; font-weight: 700; color: #2c3e50; margin: 6px 0 4px; }
-        .beyond-card p { font-size: 0.82em; line-height: 1.5; color: #555; margin: 0; }
+        .beyond-card { background: #fff; border-radius: 10px; padding: 14px 16px; border: 1.5px solid #ecc6e0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+                       display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: center; align-content: start; }
+        .beyond-card .fa { color: #C77AB0; font-size: 20px; grid-column: 1; text-align: center; min-width: 22px; }
+        .beyond-card h4 { font-size: 0.95em; font-weight: 700; color: #2c3e50; margin: 0; grid-column: 2; }
+        .beyond-card p { font-size: 0.82em; line-height: 1.5; color: #555; margin: 6px 0 0; grid-column: 1 / -1; }
         @media (max-width: 991px) {
             .course-grid { grid-template-columns: 1fr; }
             .beyond { grid-template-columns: 1fr; }
@@ -210,7 +212,7 @@
                             <span class="course-since">Lecturer since 2022</span>
                         </div>
                         <div class="course-card">
-                            <div class="course-top"><span class="course-hex"><i class="fa fa-circle-o-notch"></i></span>
+                            <div class="course-top"><span class="course-hex"><svg class="course-ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 19 L15 13.9 A 7 7 0 1 1 25 13.9 Z" fill="#fff" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/><path d="M20 21 L15 26.1 A 7 7 0 1 0 25 26.1 Z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><circle cx="20" cy="20" r="1.6" fill="#fff"/></svg></span>
                                 <div><span class="course-level">Advanced undergraduate</span><h4>Molecular Orbitals in Organic Chemistry</h4></div></div>
                             <p>A bridge between the quantum world and organic chemistry: qualitative MO theory, frontier orbitals,
                             the Woodward&ndash;Hoffmann rules in ground and excited states, hyperconjugation and the anomeric effect.
@@ -218,7 +220,7 @@
                             <span class="course-since">Lecturer since 2022</span>
                         </div>
                         <div class="course-card">
-                            <div class="course-top"><span class="course-hex"><i class="fa fa-line-chart"></i></span>
+                            <div class="course-top"><span class="course-hex"><svg class="course-ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M5 3 V35 H38" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 6 L5 3 L7 6 M35 33 L38 35 L35 37" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 24 H11 C 15 24, 16 9, 21 9 C 26 9, 27 29, 31 29 H35" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                                 <div><span class="course-level">Advanced undergraduate</span><h4>Structure and Activity in Organic Chemistry</h4></div></div>
                             <p>The physical organic chemistry behind reaction mechanisms: potential energy surfaces, the Curtin&ndash;Hammett
                             principle and the Hammond postulate, linear free-energy relationships, kinetics and isotope effects, and the
@@ -240,7 +242,7 @@
 
                     <h3 class="sub-heading">Beyond the classroom</h3>
                     <div class="beyond">
-                        <img src="assets/images/teaching/teaching-writing.jpg" alt="Renana writing a correlation diagram on the blackboard" class="beyond-img">
+                        <div class="beyond-photo"><img src="assets/images/teaching/teaching-writing.jpg" alt="Renana writing a correlation diagram on the blackboard" class="beyond-img"></div>
                         <div class="beyond-grid">
                             <div class="beyond-card"><i class="fa fa-users"></i><h4>Mentoring new faculty</h4>
                                 <p>Mentor to new faculty members in the Technion Leadership Program (2026&ndash;2027).</p></div>
