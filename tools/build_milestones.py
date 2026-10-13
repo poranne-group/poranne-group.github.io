@@ -67,7 +67,6 @@ TALKS = [
     ("2026-09", "Invited", "ICPOC27 – 27th International Conference on Physical Organic Chemistry", "Munich, Germany"),
     ("2026-09", "Invited", "CBOND 2026 – 5th European Symposium on Chemical Bonding", "Brussels, Belgium"),
     ("2026-11", "Invited", "AI Week 2026", "Tel Aviv University, Israel"),
-    ("2027-09", "Invited", "ICESAA 2027 – 5th International Conference on Excited-State Aromaticity and Antiaromaticity", "Osaka, Japan"),
     # invited department seminars (year only in CV)
     ("2019", "Seminar", "Vrije Universiteit Amsterdam", ""),
     ("2021", "Seminar", "Florida State University", "online"),

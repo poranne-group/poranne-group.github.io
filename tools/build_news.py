@@ -13,9 +13,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 NEWS = [
-    # ---------------------------------------------------------------- 2027 (upcoming)
-    ("2027-09", "talk", "ICESAA 2027", "Renana is an invited speaker at ICESAA 2027",
-     "The 5th International Conference on Excited-State Aromaticity and Antiaromaticity, Osaka, Japan.", ""),
     # ---------------------------------------------------------------- 2026
     ("2026-12", "event", "Frontiers of Science", "Renana invited to the Israeli-American Frontiers of Science Symposium",
      "Organized by the U.S. National Academy of Sciences and the Israel Academy of Sciences and Humanities, in Jerusalem.", "rgp.html"),

@@ -494,17 +494,6 @@ window.RGP_MILESTONES = [
  {
   "lane": "talks",
   "start": [
-   2027,
-   9,
-   true
-  ],
-  "kind": "Invited",
-  "title": "ICESAA 2027 – 5th International Conference on Excited-State Aromaticity and Antiaromaticity",
-  "detail": "Osaka, Japan"
- },
- {
-  "lane": "talks",
-  "start": [
    2019,
    7,
    false
