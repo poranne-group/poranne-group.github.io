@@ -18,6 +18,14 @@ window.NEWS = [
   },
   {
     "date": "2026-09",
+    "type": "paper",
+    "short": "Linearly Expanded Azulenes",
+    "title": "New paper in the Journal of Computational Chemistry",
+    "text": "Linearly Expanded Azulenes in the S0, T1, and Qu1 States: A Unified View of Electronic Structure and Aromaticity, by Pallavi and Itay.",
+    "link": "https://doi.org/10.1002/jcc.70504"
+  },
+  {
+    "date": "2026-09",
     "type": "people",
     "short": "Well done, Taqwa!",
     "title": "Taqwa completes her BSc project",
@@ -63,14 +71,6 @@ window.NEWS = [
     "title": "Renana speaks at CBOND 2026 in Brussels",
     "text": "An invited talk at the 5th European Symposium on Chemical Bonding.",
     "link": ""
-  },
-  {
-    "date": "2026-09",
-    "type": "paper",
-    "short": "Linearly Expanded Azulenes",
-    "title": "New paper in the Journal of Computational Chemistry",
-    "text": "Linearly Expanded Azulenes in the S0, T1, and Qu1 States: A Unified View of Electronic Structure and Aromaticity, by Pallavi and Itay.",
-    "link": "https://doi.org/10.1002/jcc.70504"
   },
   {
     "date": "2026-08",
