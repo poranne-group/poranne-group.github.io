@@ -42,7 +42,7 @@ NEWS = [
      "An invited talk at the Reaction Mechanisms Conference in Michigan, USA.", ""),
     ("2026", "editorial", "JACS Topic Editor", "Renana appointed Topic Editor of the Journal of the American Chemical Society", "", "rgp.html"),
     ("2026", "award", "ICS Prize", "Renana receives the Israel Chemical Society Prize for Outstanding Young Investigator", "", "rgp.html"),
-    ("2026", "paper", "Linear azulenes", "New paper in the Journal of Computational Chemistry",
+    ("2026-09", "paper", "Linearly Expanded Azulenes", "New paper in the Journal of Computational Chemistry",
      "Linearly Expanded Azulenes in the S0, T1, and Qu1 States: A Unified View of Electronic Structure and Aromaticity, by Pallavi and Itay.",
      "https://doi.org/10.1002/jcc.70504"),
     ("2026", "paper", "Three Wrongs", "New paper in Chemical Science",

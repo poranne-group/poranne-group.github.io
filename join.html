@@ -58,6 +58,10 @@
         .info-card h4 { margin: 0 0 6px; font-size: 1.05em; color: #2c3e50; font-weight: 700; }
         .info-card .fa { color: #6B5EB6; margin-right: 6px; }
         .info-card p { margin: 0; font-size: 0.9em; line-height: 1.55; }
+        .card-grid.positions { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); margin-bottom: 14px; }
+        .positions .info-card { text-align: center; padding: 16px 12px; }
+        .positions .info-card .fa { display: block; font-size: 1.7em; margin: 0 0 8px; }
+        .positions .info-card h4 { margin: 0; }
         .sub-heading { font-size: 1.25em; font-weight: 700; color: #6B5EB6; border-bottom: 2px solid #6B5EB6;
                         padding-bottom: 6px; margin: 30px 0 16px; }
         .btn-pill { display: inline-block; padding: 9px 22px; border-radius: 22px; background: #6B5EB6; color: #fff !important;
@@ -159,21 +163,21 @@
                     <div style="clear:both"></div>
 
                     <h3 class="sub-heading">Open positions</h3>
-                    <div class="card-grid">
-                        <div class="info-card"><h4><i class="fa fa-lightbulb-o"></i>Undergraduate projects</h4>
-                            <p>Research projects for undergraduate students, including joint projects with Computer Science.</p></div>
-                        <div class="info-card"><h4><i class="fa fa-book"></i>MSc students</h4>
-                            <p>Research-based MSc projects within the group's research directions.</p></div>
-                        <div class="info-card"><h4><i class="fa fa-graduation-cap"></i>PhD students</h4>
-                            <p>Fully-funded PhD positions in computational physical organic chemistry and data-driven molecular design.</p></div>
-                        <div class="info-card"><h4><i class="fa fa-flask"></i>Postdoctoral researchers</h4>
-                            <p>Fully-funded postdoctoral positions. We are also happy to support applications for independent fellowships.</p></div>
+                    <p class="lead-text">All positions are in our main research directions:</p>
+                    <ul class="lead-text">
+                        <li><b>Physical organic chemistry of polycyclic aromatic systems</b></li>
+                        <li><b>Data-driven molecular design</b>, including <a href="compas.html">The COMPAS Project</a> and machine-learning models</li>
+                        <li><b>Mechanism elucidation</b>, together with experimental groups</li>
+                    </ul>
+                    <p class="lead-text">Read more on our <a href="research.html">Research</a> page and see our recent <a href="publications.html">publications</a>.</p>
+                    <div class="card-grid positions">
+                        <div class="info-card"><h4><i class="fa fa-lightbulb-o"></i>Undergraduate projects</h4></div>
+                        <div class="info-card"><h4><i class="fa fa-book"></i>MSc students</h4></div>
+                        <div class="info-card"><h4><i class="fa fa-graduation-cap"></i>PhD students</h4></div>
+                        <div class="info-card"><h4><i class="fa fa-flask"></i>Postdoctoral researchers</h4></div>
                     </div>
-
-                    <h3 class="sub-heading">What we work on</h3>
-                    <p class="lead-text">Our research spans the fundamentals of aromaticity, <a href="compas.html">The COMPAS Project</a> and
-                    machine-learning models for molecular design, and reactivity and mechanisms together with experimental groups.
-                    Read more on our <a href="research.html">Research</a> page and see our recent <a href="publications.html">publications</a>.</p>
+                    <p class="lead-text">Postdocs who would like to apply for an independent fellowship to join the group are very welcome
+                    &mdash; we are happy to support your application.</p>
 
                     <h3 class="sub-heading">How to apply</h3>
                     <p class="lead-text">Please send the following to our group email:</p>

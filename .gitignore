@@ -7,3 +7,7 @@ photo_gallery/*
 # Windows thumbnail caches
 Thumbs.db
 !photo_gallery/photo_details.xlsx
+
+# Dashboard exports and the profile-update checklist (personal details; not published)
+dashboard_export*.json
+profile_updates.md

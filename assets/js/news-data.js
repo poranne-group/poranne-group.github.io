@@ -65,6 +65,14 @@ window.NEWS = [
     "link": ""
   },
   {
+    "date": "2026-09",
+    "type": "paper",
+    "short": "Linearly Expanded Azulenes",
+    "title": "New paper in the Journal of Computational Chemistry",
+    "text": "Linearly Expanded Azulenes in the S0, T1, and Qu1 States: A Unified View of Electronic Structure and Aromaticity, by Pallavi and Itay.",
+    "link": "https://doi.org/10.1002/jcc.70504"
+  },
+  {
     "date": "2026-08",
     "type": "people",
     "short": "Well done, Ruth!",
@@ -111,14 +119,6 @@ window.NEWS = [
     "title": "Renana receives the Israel Chemical Society Prize for Outstanding Young Investigator",
     "text": "",
     "link": "rgp.html"
-  },
-  {
-    "date": "2026",
-    "type": "paper",
-    "short": "Linear azulenes",
-    "title": "New paper in the Journal of Computational Chemistry",
-    "text": "Linearly Expanded Azulenes in the S0, T1, and Qu1 States: A Unified View of Electronic Structure and Aromaticity, by Pallavi and Itay.",
-    "link": "https://doi.org/10.1002/jcc.70504"
   },
   {
     "date": "2026",
