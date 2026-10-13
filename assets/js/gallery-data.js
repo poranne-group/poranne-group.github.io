@@ -104,7 +104,10 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/through_the_years/nitz.z-9309745.jpg",
-                "date": "June 2026"
+                "event": "Faculty Research Day 2026",
+                "date": "June 2026",
+                "place": "Technion",
+                "people": "Shabu, Elad, Fatimah, Renana, Amrita, Pallavi, Ajeet"
             }
         ]
     },
@@ -257,15 +260,24 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/nitz.z-927515.jpg",
-                "date": "June 2026"
+                "event": "Brain storming session, Faculty Research Day 2026",
+                "date": "June 2026",
+                "place": "Technion",
+                "people": "Pallavi, Ajeet"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/nitz.z-9309734.jpg",
-                "date": "June 2026"
+                "event": "Poster Presentation, Faculty Research Day 2026",
+                "date": "June 2026",
+                "place": "Technion",
+                "people": "Ajeet, Renana"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/nitz.z-9309740.jpg",
-                "date": "June 2026"
+                "event": "Faculty Research Day 2026",
+                "date": "June 2026",
+                "place": "Technion",
+                "people": "Shabu, Renana, Ajeet"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/whatsapp-image-2026-09-10-at-9.47.53-am.jpg",
@@ -375,22 +387,38 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/img_0386.jpg",
-                "date": "September 2026"
+                "event": "Shabu receiving his farewell gift :)",
+                "date": "September 2026",
+                "place": "Haifa",
+                "people": "Shabu, Fatimah"
             },
             {
                 "file": "photo_gallery/web/our_milestones/img_0396.jpg",
-                "date": "September 2026"
+                "event": "Shabu with his Project students",
+                "date": "September 2026",
+                "place": "Haifa",
+                "people": "Keren, Shabu, Ruth"
             },
             {
-                "file": "photo_gallery/web/our_milestones/renana_birthday.jpg"
+                "file": "photo_gallery/web/our_milestones/renana_birthday.jpg",
+                "event": "Our beloved Renana's birthday blast :)",
+                "date": "July 2026",
+                "place": "Technion",
+                "people": "Fatimah, Pallavi, Amrita, Renana, Ajeet, Shabu, Ruth"
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-08-30-at-10.52.54-am.jpg",
-                "date": "August 2026"
+                "event": "Amrita's Birthday",
+                "date": "August 2026",
+                "place": "Technion",
+                "people": "Pallavi, Shabu, Renana, Amrita, Ajeet"
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-08-30-at-10.53.10-am.jpg",
-                "date": "August 2026"
+                "event": "Amrita's Birthday",
+                "date": "August 2026",
+                "place": "Technion",
+                "people": "Pallavi, Shabu, Renana, Amrita, Ajeet"
             }
         ]
     },
@@ -421,23 +449,38 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/img20260502111949.jpg",
-                "date": "May 2026"
+                "event": "Exploring the desert",
+                "date": "May 2026",
+                "place": "Negev, Israel",
+                "people": "Amrita, Ajeet"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/img20260502111952.jpg",
-                "date": "May 2026"
+                "event": "Beyond the lab, exploring Israel",
+                "date": "May 2026",
+                "place": "Negev, Israel",
+                "people": "Amrita, Ajeet"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/img20260703105516.jpg",
-                "date": "July 2026"
+                "event": "Summer trip!",
+                "date": "July 2026",
+                "place": "Beit She'an, Israel",
+                "people": "Shabu, Ajeet"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/img_0420.jpg",
-                "date": "September 2026"
+                "event": "Bowling Session: Shabu showing his magical trick!!!",
+                "date": "September 2026",
+                "place": "Haifa",
+                "people": "Shabu"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/img_0429.jpg",
-                "date": "September 2026"
+                "event": "Group activity: Bowling night!!!",
+                "date": "September 2026",
+                "place": "Haifa",
+                "people": "Ajeet, Amrita, Renana, Ron, Yoni, Shabu"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20250904_111646408.portrait.jpg",
@@ -466,7 +509,10 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20260129_090902476.jpg",
-                "date": "January 2026"
+                "event": "Shabu's birthday :)",
+                "date": "January 2026",
+                "place": "Technion",
+                "people": "Amrita, Ajeet, Shabu, Pallavi, Renana"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2025-10-10-at-12.59.25-pm.jpg",
@@ -478,7 +524,8 @@ window.GALLERY_ALBUMS = [
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-10-at-9.46.57-am2.jpg",
                 "event": "CBOND 2026 gala night",
                 "date": "September 2026",
-                "place": "Brussels, Belgium"
+                "place": "Brussels, Belgium",
+                "people": "Renana, Ajeet"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.53.29-pm.jpg",
@@ -488,7 +535,9 @@ window.GALLERY_ALBUMS = [
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.29-pm.jpg",
                 "event": "Paint by Numbers Night!!",
-                "date": "September 2026"
+                "date": "September 2026",
+                "place": "Technion",
+                "people": "Ajeet, Shabu, Renana, Fatimah, Amrita, Pallavi"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.42-pm.jpg",
@@ -503,17 +552,23 @@ window.GALLERY_ALBUMS = [
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.55-pm.jpg",
                 "event": "Paint by Numbers Night!!",
-                "date": "September 2026"
+                "date": "September 2026",
+                "place": "Technion",
+                "people": "Shabu, Fatimah, Renana, Amrita, Pallavi, Ajeet"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.56-pm.jpg",
                 "event": "Paint by Numbers Night!!",
-                "date": "September 2026"
+                "date": "September 2026",
+                "place": "Technion",
+                "people": "Pallavi, Shabu, Renana, Amrita, Ajeet, Fatimah"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.56-pm2.jpg",
                 "event": "Paint by Numbers Night!!",
-                "date": "September 2026"
+                "date": "September 2026",
+                "place": "Technion",
+                "people": "Pallavi, Shabu, Renana, Amrita, Ajeet, Fatimah"
             }
         ]
     },
