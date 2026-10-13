@@ -70,11 +70,17 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/through_the_years/img_0401.jpg",
-                "date": "September 2026"
+                "event": "Shabu's Farewell Lunch",
+                "date": "September 2026",
+                "place": "Japanika, Haifa",
+                "people": "Ajeet, Pallavi, Elad, Shabu, Renana, Amrita, Fatimah, Ruth, Keren, Itay"
             },
             {
                 "file": "photo_gallery/web/through_the_years/img_0407.jpg",
-                "date": "September 2026"
+                "event": "Shabu's last day at Poranne Group",
+                "date": "September 2026",
+                "place": "Poranne Group Office, Technion",
+                "people": "Ajeet, Renana, Shabu, Amrita, Pallavi"
             },
             {
                 "file": "photo_gallery/web/through_the_years/mccn1945.jpg"
@@ -84,11 +90,17 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/through_the_years/nitz.z-927316.jpg",
-                "date": "June 2026"
+                "event": "Faculty Research Day 2026",
+                "date": "June 2026",
+                "place": "Technion",
+                "people": "Shabu, Elad, Fatimah, Renana, Amrita, Pallavi, Ajeet"
             },
             {
                 "file": "photo_gallery/web/through_the_years/nitz.z-927322.jpg",
-                "date": "June 2026"
+                "event": "Faculty Research Day 2026",
+                "date": "June 2026",
+                "place": "Technion",
+                "people": "Shabu, Elad, Fatimah, Renana, Amrita, Pallavi, Ajeet"
             },
             {
                 "file": "photo_gallery/web/through_the_years/nitz.z-9309745.jpg",
