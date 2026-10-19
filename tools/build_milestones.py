@@ -260,6 +260,13 @@ def build():
     from collections import Counter
     print(out, Counter(e["lane"] for e in ev))
 
+    # bump the version stamp on the data file in rgp.html so browsers don't show a cached copy
+    page = ROOT / "rgp.html"
+    text = page.read_text(encoding="utf8")
+    stamp = str(int(out.stat().st_mtime))
+    text = re.sub(r'assets/js/rgp-milestones-data\.js(\?v=\d+)?"', f'assets/js/rgp-milestones-data.js?v={stamp}"', text)
+    page.write_text(text, encoding="utf8")
+
 
 if __name__ == "__main__":
     build()
