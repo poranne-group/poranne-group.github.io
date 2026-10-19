@@ -1229,6 +1229,17 @@ window.RGP_MILESTONES = [
   "lane": "awards",
   "start": [
    2026,
+   6,
+   true
+  ],
+  "title": "Outstanding Reviewer, Chemical Science",
+  "detail": "Royal Society of Chemistry · for reviewing in 2025",
+  "major": false
+ },
+ {
+  "lane": "awards",
+  "start": [
+   2026,
    12,
    true
   ],
@@ -1386,6 +1397,19 @@ window.RGP_MILESTONES = [
   "ongoing": true,
   "title": "International Standing Committee, European Symposium on Organic Reactivity (ESOR)",
   "detail": "",
+  "major": false
+ },
+ {
+  "lane": "service",
+  "start": [
+   2025,
+   9,
+   true
+  ],
+  "end": null,
+  "ongoing": false,
+  "title": "Featured in the Chemical Science Reviewer Spotlight",
+  "detail": "Royal Society of Chemistry",
   "major": false
  },
  {

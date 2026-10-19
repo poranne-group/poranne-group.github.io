@@ -140,6 +140,7 @@ AWARDS = [
     ("2025", "Academic Young Investigator Award", "Division of Organic Chemistry, ACS and EuChemS", True),
     ("2025", "Liebig Lectureship Award", "Organic Chemistry Division, GDCh", True),
     ("2026", "Prize for Outstanding Young Investigator", "Israel Chemical Society", True),
+    ("2026-06", "Outstanding Reviewer, Chemical Science", "Royal Society of Chemistry · for reviewing in 2025", False),
     ("2026-12", "Invited participant, Israeli-American Frontiers of Science Symposium", "Poster presentation · U.S. National Academy of Sciences and Israel Academy of Sciences and Humanities · Jerusalem", False),
 ]
 
@@ -157,6 +158,7 @@ SERVICE = [
     ("2025-07", None, "Co-organizer, Symposium in Honor of Prof. Dr. Peter Chen", "Zurich, July 2025", False),
     ("2025", "now", "Editorial Advisory Board, Journal of Computational Chemistry", "", False),
     ("2025", "now", "International Standing Committee, European Symposium on Organic Reactivity (ESOR)", "", False),
+    ("2025-09", None, "Featured in the Chemical Science Reviewer Spotlight", "Royal Society of Chemistry", False),
     ("2026", None, "Guest editor, Special Issue on Physical Organic Chemistry of Novel Aromatic Materials", "Beilstein Journal of Organic Chemistry", False),
     ("2026", None, "Guest editor, Special Issue on Excited State Aromaticity and Antiaromaticity", "Photochemical & Photobiological Sciences", False),
     ("2026", "now", "Topic Editor, Journal of the American Chemical Society", "", True),
