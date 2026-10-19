@@ -137,6 +137,14 @@ window.NEWS = [
     "link": ""
   },
   {
+    "date": "2026-06",
+    "type": "award",
+    "short": "Chem Sci Reviewer",
+    "title": "Renana named an Outstanding Reviewer for Chemical Science",
+    "text": "Selected by the Chemical Science editorial team for her contribution to peer review in 2025.",
+    "link": "https://doi.org/10.1039/d6sc90114j"
+  },
+  {
     "date": "2026-03",
     "type": "paper",
     "short": "Kumada coupling",
@@ -215,6 +223,14 @@ window.NEWS = [
     "title": "Renana speaks at ESOR 2025 in Padova",
     "text": "An invited talk at the 20th European Symposium on Organic Reactivity.",
     "link": ""
+  },
+  {
+    "date": "2025-09",
+    "type": "editorial",
+    "short": "Reviewer Spotlight",
+    "title": "Renana featured in the Chemical Science Reviewer Spotlight",
+    "text": "The journal's Reviewer Spotlight series highlights the reviewers who support Chemical Science.",
+    "link": "https://blogs.rsc.org/sc/2025/09/18/chemical-science-reviewer-spotlight-september-2025/"
   },
   {
     "date": "2025-08",
