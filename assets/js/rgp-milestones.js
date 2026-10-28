@@ -86,7 +86,7 @@
         '<div class="ms-controls"><div class="ms-ranges"></div></div>' +
         '<div class="ms-frame"><div class="ms-head"></div><div class="ms-chart"></div></div>' +
         '<div class="ms-legend"></div>' +
-        '<div class="ms-tip" role="tooltip"></div>';
+        '<div class="ms-tip" id="ms-tip"></div>';
     var head = root.querySelector('.ms-head');
     var chartBox = root.querySelector('.ms-chart');
     var tip = root.querySelector('.ms-tip');
@@ -299,6 +299,9 @@
     }
 
     function bind(g, d) {
+        g.setAttribute('role', 'button');
+        g.setAttribute('aria-label', d.title);
+        g.setAttribute('aria-describedby', 'ms-tip');
         g.addEventListener('mouseenter', function (e) { show(d, e); });
         g.addEventListener('mousemove', function (e) { move(e); });
         g.addEventListener('mouseleave', hide);

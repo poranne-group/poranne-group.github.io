@@ -56,7 +56,7 @@
         .research-card.data   { border-color: #4472C4; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(68, 114, 196, 0.35); }
         .research-card.cat    { border-color: #C06BA8; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(192, 107, 168, 0.35); }
         .research-card.hiring { border-color: #4A95CD; background: #f0f1f9; box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 12px rgba(74, 149, 205, 0.35); }
-        .research-card h4 {
+        .research-card h3, .research-card h4 {
             margin-top: 0;
             font-size: 1.05em;
             color: #2c3e50;
@@ -101,9 +101,12 @@
         }
     </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <link rel="stylesheet" href="assets/css/a11y.css?v=1">
+    <script src="assets/js/a11y.js?v=1"></script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- ******HEADER****** -->
     <header class="header">
@@ -115,7 +118,7 @@
     <!--//header-->
 
 <div id="wrapper">
-    <header>
+    <nav aria-label="Main menu">
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -127,9 +130,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html"><h4 class="name">Home</h4></a></li>
+                        <li><a href="index.html"><h4 class="name" role="none">Home</h4></a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">The Group</h4><b class="icon-angle-down"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name" role="none">The Group</h4><b class="icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="people.html">Current Members</a></li>
                                 <li><a href="rgp.html">Renana Gershoni-Poranne</a></li>
@@ -139,35 +142,35 @@
                             </ul>
                         </li>
                         <li class="active dropdown">
-                        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Research</h4><b class="icon-angle-down"></b></a>
+                        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name" role="none">Research</h4><b class="icon-angle-down"></b></a>
                         	<ul class="dropdown-menu">
                         		<li><a href="research.html">Research Projects</a></li>
                         		<li><a href="collaborators.html">Our Collaborators</a></li>
                         	</ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Publications</h4><b class="icon-angle-down"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name" role="none">Publications</h4><b class="icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="publications.html">Papers</a></li>
                                 <li><a href="covers.html">Cover Gallery</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Data &amp; Software</h4><b class="icon-angle-down"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name" role="none">Data &amp; Software</h4><b class="icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="compas.html">COMPAS</a></li>
                                 <li><a href="predi-xy.html">Predi-XY</a></li>
                             </ul>
                         </li>
-                        <li><a href="teaching.html"><h4 class="name">Teaching</h4></a></li>
+                        <li><a href="teaching.html"><h4 class="name" role="none">Teaching</h4></a></li>
                     </ul>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- *** INFO BAR *** -->
-    <div class="info-bar">
+    <div class="info-bar" role="complementary" aria-label="Contact">
         <div class="container">
             <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#4A95CD;" target="_blank">
                 <i class="fa fa-paper-plane"></i> Contact Us
@@ -182,6 +185,8 @@
         </div>
     </div>
 
+    <main id="main" tabindex="-1">
+
     <div class="container sections-wrapper">
         <div class="row">
             <div class="primary col-md-12 col-sm-12 col-xs-12">
@@ -192,45 +197,45 @@
 
                     <div class="research-card hiring">
                         <div class="card-body">
-                            <h4><strong>We Are Hiring!</strong></h4>
+                            <h3><strong>We Are Hiring!</strong></h3>
                             Fully-funded PhD and Postdoctoral positions are available in our group. To apply, send your letter of motivation and CV to our group email &mdash; see our <a href="join.html">Join Us</a> page for details.
                         </div>
                     </div>
 
                     <div style="display:flex; flex-wrap:wrap; gap:24px; margin-bottom:8px;">
 
-                        <div class="research-card arom" style="flex:1 1 calc(50% - 12px); min-width:280px; margin-bottom:0;">
+                        <div class="research-card arom" style="flex:1 1 calc(50% - 12px); min-width:min(280px, 100%); margin-bottom:0;">
                             <div class="card-body">
                                 <span class="cat-badge cat-badge-aromaticity">Aromaticity</span>
-                                <h4><strong>Making Sense of Aromaticity</strong></h4>
+                                <h3><strong>Making Sense of Aromaticity</strong></h3>
                                 Our group studies the relationship between various manifestations of aromaticity (e.g., energetic, geometric, magnetic) and other molecular properties (e.g., HOMO-LUMO gap, spin density). The uncovered structure-property relationships can advance rational design of molecules with targeted properties. In addition, we develop models and methods for visualization, interpretation, and prediction, which enable other chemists to gain chemical insight into their molecules of interest.
                             </div>
                             <img loading="lazy" decoding="async" alt="Illustration: Making Sense of Aromaticity" src="assets/images/Pillar1-STGaps.PNG" width="100%" class="img-responsive project-image" />
                         </div>
 
-                        <div class="research-card data" style="flex:1 1 calc(50% - 12px); min-width:280px; margin-bottom:0;">
+                        <div class="research-card data" style="flex:1 1 calc(50% - 12px); min-width:min(280px, 100%); margin-bottom:0;">
                             <div class="card-body">
                                 <span class="cat-badge cat-badge-data">Data &amp; AI</span>
-                                <h4><strong>The COMPAS Project</strong></h4>
+                                <h3><strong>The COMPAS Project</strong></h3>
                                 The chemical space of aromatic molecules is vast and diverse, which presents an opportunity for data-driven investigation. To facilitate this, our group has established The COMPAS Project: the first COMputational database of Polycyclic Aromatic Systems. We are actively expanding this chemical database in a methodical manner using high-throughput computational chemistry methods.
                             </div>
                             <img loading="lazy" decoding="async" alt="Illustration: The COMPAS Project" src="assets/images/Pillar2-Data.PNG" width="100%" class="img-responsive project-image" />
                         </div>
 
-                        <div class="research-card data" style="flex:1 1 calc(50% - 12px); min-width:280px; margin-bottom:0;">
+                        <div class="research-card data" style="flex:1 1 calc(50% - 12px); min-width:min(280px, 100%); margin-bottom:0;">
                             <div class="card-body">
                                 <span class="cat-badge cat-badge-data">Data &amp; AI</span>
-                                <h4><strong>Data-Driven Molecular Design</strong></h4>
+                                <h3><strong>Data-Driven Molecular Design</strong></h3>
                                 Polycyclic aromatic systems are well-known for being the workhorses of organic electronics. Our group is interested in using Machine Learning and Deep Learning models to enable the design and/or identification of new polycyclic aromatic molecules that can provide improved performance and stability.<br>
                                 The COMPAS Project is one component of this avenue of investigation; the second is the development of new chemical representations that are amenable to interpretation, and which allow exploration of the data for structure-property relationships.
                             </div>
                             <img loading="lazy" decoding="async" alt="Illustration: Data-Driven Molecular Design" src="assets/images/Pillar2-DL.PNG" width="100%" class="img-responsive project-image" />
                         </div>
 
-                        <div class="research-card cat" style="flex:1 1 calc(50% - 12px); min-width:280px; margin-bottom:0;">
+                        <div class="research-card cat" style="flex:1 1 calc(50% - 12px); min-width:min(280px, 100%); margin-bottom:0;">
                             <div class="card-body">
                                 <span class="cat-badge cat-badge-catalysis">Reaction Mechanisms &amp; Catalysis</span>
-                                <h4><strong>Reactivity and Mechanisms</strong></h4>
+                                <h3><strong>Reactivity and Mechanisms</strong></h3>
                                 Together with our experimental collaborators, we are studying the relationship between the aromaticity of molecules and their reactivity. Among our active areas of investigation:
                                 <br>&#x2022; Ligand non-innocence in organometallic catalysts (<em>with the de Ruiter Group, Technion</em>)
                                 <br>&#x2022; Novel helical structures containing five-membered rings (<em>with the Alabugin Group, Florida State University</em>)
@@ -246,12 +251,12 @@
                         <h3>Funding</h3>
                         <p>We are grateful for the generous support of the following funding agencies:</p>
                         <div class="funder-logos">
-                            <a class="funder" href="https://www.isf.org.il/" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/isf.png" alt="Israel Science Foundation"><span>Israel Science Foundation</span></a>
-                            <a class="funder" href="https://azrielifoundation.org/" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/azrieli.svg" alt="The Azrieli Foundation"><span>The Azrieli Foundation</span></a>
-                            <a class="funder" href="https://brancoweissfellowship.org/" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/branco-weiss.svg" alt="The Branco Weiss Fellowship – Society in Science"><span>The Branco Weiss Fellowship &ndash; Society in Science</span></a>
-                            <a class="funder" href="https://www.acs.org/funding/funding-opportunities/petroleum-research-fund.html" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/acs-prf.jpg" alt="ACS Petroleum Research Fund"><span>ACS Petroleum Research Fund</span></a>
-                            <a class="funder" href="https://www.technion.ac.il/en/" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/technion.svg" alt="Technion – Israel Institute of Technology"><span>Technion &ndash; Israel Institute of Technology</span></a>
-                            <a class="funder" href="https://www.gtiit.edu.cn/en/" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/gtiit.png" alt="Guangdong Technion – Israel Institute of Technology"><span>Guangdong Technion &ndash; Israel Institute of Technology</span></a>
+                            <a class="funder" href="https://www.isf.org.il/" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/isf.png" alt=""><span>Israel Science Foundation</span></a>
+                            <a class="funder" href="https://azrielifoundation.org/" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/azrieli.svg" alt=""><span>The Azrieli Foundation</span></a>
+                            <a class="funder" href="https://brancoweissfellowship.org/" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/branco-weiss.svg" alt=""><span>The Branco Weiss Fellowship &ndash; Society in Science</span></a>
+                            <a class="funder" href="https://www.acs.org/funding/funding-opportunities/petroleum-research-fund.html" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/acs-prf.jpg" alt=""><span>ACS Petroleum Research Fund</span></a>
+                            <a class="funder" href="https://www.technion.ac.il/en/" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/technion.svg" alt=""><span>Technion &ndash; Israel Institute of Technology</span></a>
+                            <a class="funder" href="https://www.gtiit.edu.cn/en/" target="_blank" rel="noopener"><img loading="lazy" src="assets/images/funders/gtiit.png" alt=""><span>Guangdong Technion &ndash; Israel Institute of Technology</span></a>
                         </div>
                     </div>
 							
@@ -291,13 +296,15 @@
 
 </div><!-- //wrapper -->
 
+    </main>
+
     <!-- ******FOOTER****** -->
     <footer class="footer">
         <div class="container text-center footer-inner">
             <div class="footer-name">Poranne Research Group</div>
             <div>Schulich Faculty of Chemistry &middot; Technion &ndash; Israel Institute of Technology &middot; Haifa, Israel</div>
             <div class="footer-social"><a href="https://x.com/PoranneG" target="_blank" rel="noopener" aria-label="The Poranne Group on X"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> @PoranneG</a></div>
-            <div class="copyright">&copy; <span class="footer-year">2026</span> Poranne Research Group</div>
+            <div class="copyright">&copy; <span class="footer-year">2026</span> Poranne Research Group &middot; <a href="accessibility.html">Accessibility statement</a></div>
         </div>
         <script>document.querySelectorAll('.footer-year').forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
     </footer>

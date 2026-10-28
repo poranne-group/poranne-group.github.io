@@ -106,8 +106,11 @@
             .beyond-grid { grid-template-columns: 1fr; }
         }
     </style>
+    <link rel="stylesheet" href="assets/css/a11y.css?v=1">
+    <script src="assets/js/a11y.js?v=1"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- ******HEADER****** -->
     <header class="header">
@@ -119,7 +122,7 @@
     <!--//header-->
 
 <div id="wrapper">
-    <header>
+    <nav aria-label="Main menu">
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -131,9 +134,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html"><h4 class="name">Home</h4></a></li>
+                        <li><a href="index.html"><h4 class="name" role="none">Home</h4></a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">The Group</h4><b class="icon-angle-down"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name" role="none">The Group</h4><b class="icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="people.html">Current Members</a></li>
                                 <li><a href="rgp.html">Renana Gershoni-Poranne</a></li>
@@ -143,35 +146,35 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Research</h4><b class="icon-angle-down"></b></a>
+                        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name" role="none">Research</h4><b class="icon-angle-down"></b></a>
                         	<ul class="dropdown-menu">
                         		<li><a href="research.html">Research Projects</a></li>
                         		<li><a href="collaborators.html">Our Collaborators</a></li>
                         	</ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Publications</h4><b class="icon-angle-down"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name" role="none">Publications</h4><b class="icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="publications.html">Papers</a></li>
                                 <li><a href="covers.html">Cover Gallery</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name">Data &amp; Software</h4><b class="icon-angle-down"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h4 class="name" role="none">Data &amp; Software</h4><b class="icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="compas.html">COMPAS</a></li>
                                 <li><a href="predi-xy.html">Predi-XY</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="teaching.html"><h4 class="name">Teaching</h4></a></li>
+                        <li class="active"><a href="teaching.html"><h4 class="name" role="none">Teaching</h4></a></li>
                     </ul>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- *** INFO BAR *** -->
-    <div class="info-bar">
+    <div class="info-bar" role="complementary" aria-label="Contact">
         <div class="container">
             <a href="mailto:porannegroup@technion.ac.il" class="btn-info-contact" style="background:#C77AB0;" target="_blank">
                 <i class="fa fa-paper-plane"></i> Contact Us
@@ -185,6 +188,8 @@
             </span>
         </div>
     </div>
+
+    <main id="main" tabindex="-1">
 
     <div class="container sections-wrapper">
         <div class="row">
@@ -264,6 +269,8 @@
             </section>
         </div>
     </div>
+
+    </main>
 </div>
 
     <!-- ******FOOTER****** -->
@@ -272,7 +279,7 @@
             <div class="footer-name">Poranne Research Group</div>
             <div>Schulich Faculty of Chemistry &middot; Technion &ndash; Israel Institute of Technology &middot; Haifa, Israel</div>
             <div class="footer-social"><a href="https://x.com/PoranneG" target="_blank" rel="noopener" aria-label="The Poranne Group on X"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> @PoranneG</a></div>
-            <div class="copyright">&copy; <span class="footer-year">2026</span> Poranne Research Group</div>
+            <div class="copyright">&copy; <span class="footer-year">2026</span> Poranne Research Group &middot; <a href="accessibility.html">Accessibility statement</a></div>
         </div>
         <script>document.querySelectorAll('.footer-year').forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
     </footer>
