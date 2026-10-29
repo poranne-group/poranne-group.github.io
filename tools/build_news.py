@@ -19,6 +19,7 @@ NEWS = [
      "Organized by the U.S. National Academy of Sciences and the Israel Academy of Sciences and Humanities, in Jerusalem.", "rgp.html"),
     ("2026-11", "talk", "AI Week 2026", "Renana speaks at AI Week 2026",
      "An invited talk at AI Week, Tel Aviv University.", "https://ai-week.com/"),
+    ("2026-10", "people", "Welcome, Ofree!", "Ofree joins the group as an MSc student", "", "people.html"),
     ("2026-09", "paper", "Linearly Expanded Azulenes", "New paper in the Journal of Computational Chemistry",
      "Linearly Expanded Azulenes in the S0, T1, and Qu1 States: A Unified View of Electronic Structure and Aromaticity, by Pallavi and Itay.",
      "https://doi.org/10.1002/jcc.70504"),

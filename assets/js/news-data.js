@@ -17,6 +17,14 @@ window.NEWS = [
     "link": "https://ai-week.com/"
   },
   {
+    "date": "2026-10",
+    "type": "people",
+    "short": "Welcome, Ofree!",
+    "title": "Ofree joins the group as an MSc student",
+    "text": "",
+    "link": "people.html"
+  },
+  {
     "date": "2026-09",
     "type": "paper",
     "short": "Linearly Expanded Azulenes",
