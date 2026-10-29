@@ -321,6 +321,7 @@
         .phex-pi .phex-face      { background: #4AB7D4; }
         .phex-postdoc .phex-face { background: #4A95CD; }
         .phex-phd .phex-face     { background: #6B5EB6; }
+        .phex-msc .phex-face     { background: #D896C0; }
         .phex-bsc .phex-face     { background: #D896C0; }
         .phex-staff .phex-face   { background: #C06BA8; }
 
@@ -352,6 +353,7 @@
         .phex-pi .phex-info-overlay      { background: rgba(74, 183, 212, 0.9); }
         .phex-postdoc .phex-info-overlay { background: rgba(74, 149, 205, 0.9); }
         .phex-phd .phex-info-overlay     { background: rgba(107, 94, 182, 0.9); }
+        .phex-msc .phex-info-overlay     { background: rgba(216, 150, 192, 0.9); }
         .phex-bsc .phex-info-overlay     { background: rgba(216, 150, 192, 0.9); }
         .phex-staff .phex-info-overlay   { background: rgba(192, 107, 168, 0.9); }
 
@@ -546,6 +548,7 @@
         Row 1 (no-offset, 8): Renana★ | D  | D  | null | D  | D  | D  | D
         Row 2 (offset,    7): D       | D  | Amrita● | D  | null | D  | Ajeet●
         Row 3 (no-offset, 8): Pallavi● | D  | null | D  | Fatimah▲ | D  | D  | null
+        Row 4 (offset,    7): null    | D  | Ofree◆ | D  | D  | D  | D
 
         Adjacency verification — no two people share an edge:
           Renana(R1[0])    → below: R2[−1]=edge, R2[0]=D ✓
@@ -553,6 +556,7 @@
           Ajeet(R2[6])     → below: R3[6]=D, R3[7]=null ✓
           Pallavi(R3[0])   → below: R4[−1]=edge, R4[0]=null ✓
           Fatimah(R3[4])   → below: R4[3]=D, R4[4]=D ✓
+          Ofree(R4[2])     → above: R3[2]=null, R3[3]=D ✓
     -->
     <section class="people-hex-section">
         <div class="people-hex-grid-wrapper">
@@ -647,6 +651,26 @@
                     <div class="phex-cell null"></div>
                 </div>
 
+                <!-- Row 4 (offset): Ofree center-left -->
+                <div class="phex-row offset">
+                    <div class="phex-cell null"></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell phex-msc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Ofree_Weisman.jpg?v=6" alt="Ofree Weisman">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Ofree Weisman</span>
+                                <span class="phex-info-role">MSc Student<br>Oct 2026–current</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                    <div class="phex-cell decor"><div class="phex-shadow"></div><div class="phex-face"></div></div>
+                </div>
+
             </div>
 
             <!-- Mobile: compact grid, max 3 per row, 4 rows (hidden on desktop) -->
@@ -719,6 +743,20 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Row: Ofree Weisman -->
+                <div class="phex-row">
+                    <div class="phex-cell phex-msc">
+                        <div class="phex-shadow"></div>
+                        <div class="phex-face">
+                            <img src="assets/images/people/Ofree_Weisman.jpg?v=6" alt="Ofree Weisman">
+                            <div class="phex-info-overlay">
+                                <span class="phex-info-name">Ofree Weisman</span>
+                                <span class="phex-info-role">MSc Student<br>Oct 2026–current</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div><!-- end .people-hex-grid-mobile -->
 
         </div>
@@ -736,6 +774,10 @@
             <div class="phex-legend-item">
                 <div class="phex-legend-hex" style="background:#6B5EB6;"></div>
                 <span>PhD Students</span>
+            </div>
+            <div class="phex-legend-item">
+                <div class="phex-legend-hex" style="background:#D896C0;"></div>
+                <span>MSc Students</span>
             </div>
             <div class="phex-legend-item">
                 <div class="phex-legend-hex" style="background:#C06BA8;"></div>
@@ -840,6 +882,20 @@
                         </div>
 
 
+                    </div>
+
+                    <!-- MSC STUDENTS -->
+                    <div class="position-section">
+                        <h3 class="position-header">MSc Students</h3>
+                        <div class="members-grid">
+                            <div class="member-card">
+                                <div class="member-image-wrapper">
+                                    <img loading="lazy" decoding="async" src="assets/images/people/Ofree_Weisman.jpg?v=6" alt="Ofree Weisman" />
+                                </div>
+                                <h3 class="title">Ofree Weisman</h3>
+                                <span class="role"><em>MSc Student</em><br>Oct 2026–current</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- JOIN US -->
