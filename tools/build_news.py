@@ -19,7 +19,7 @@ NEWS = [
      "Organized by the U.S. National Academy of Sciences and the Israel Academy of Sciences and Humanities, in Jerusalem.", "rgp.html"),
     ("2026-11", "talk", "AI Week 2026", "Renana speaks at AI Week 2026",
      "An invited talk at AI Week, Tel Aviv University.", "https://ai-week.com/"),
-    ("2026-10", "paper", "Zircona­cycles", "New paper in Organic Letters",
+    ("2026-10", "paper", "Phenan­threne-fused Antiaromatics", "New paper in Organic Letters",
      "Zirconacyclopentadiene Transformations to Phenanthrene-Annulated Antiaromatic Compounds, by Shabu together with the Tilley group.",
      "https://doi.org/10.1021/acs.orglett.6c03377"),
     ("2026-10", "people", "Welcome, Ofree!", "Ofree joins the group as an MSc student", "", "people.html"),

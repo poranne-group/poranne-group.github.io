@@ -19,7 +19,7 @@ window.NEWS = [
   {
     "date": "2026-10",
     "type": "paper",
-    "short": "Zircona­cycles",
+    "short": "Phenan­threne-fused Antiaromatics",
     "title": "New paper in Organic Letters",
     "text": "Zirconacyclopentadiene Transformations to Phenanthrene-Annulated Antiaromatic Compounds, by Shabu together with the Tilley group.",
     "link": "https://doi.org/10.1021/acs.orglett.6c03377"
