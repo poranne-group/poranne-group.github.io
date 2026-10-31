@@ -7,7 +7,8 @@
         contact_sheet.html    numbered form for filling in details / removing photos -- local only
         removed_photos/       photos taken out of the gallery from the contact sheet (not deleted)
         <album folder>/       original photos (any size) -- not published
-        web/<album folder>/   web-sized copies made by this script -- published
+        web/<album folder>/   web-sized copies made by this script (for the full-size viewer) -- published
+        thumbs/<album folder>/ small copies for the drifting strips, made by this script -- published
 
 Add photos to an album folder (or make a new folder), then run:
     python tools/build_gallery.py
@@ -27,12 +28,14 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parent.parent
 GAL = ROOT / "photo_gallery"
 WEB = GAL / "web"
+THUMBS = GAL / "thumbs"
 CONFIG = GAL / "albums.json"
 DETAILS = GAL / "photo_details.xlsx"
 SHEET = GAL / "contact_sheet.html"
 OUT = ROOT / "assets" / "js" / "gallery-data.js"
 EXTS = {".jpg", ".jpeg", ".png", ".webp", ".heic"}
-LONG_SIDE = 1800
+LONG_SIDE = 1600      # full-size viewer copies
+THUMB_HEIGHT = 560    # strip tiles are 260-360 px tall; this stays sharp on high-resolution screens
 COLUMNS = ["Album", "Photo", "Event", "Date", "Place", "People", "Note"]
 FIELDS = ["event", "date", "place", "people", "note"]          # the columns you fill in
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
@@ -55,15 +58,28 @@ def web_copy(src, album, flip=False):
     """Make the web-sized copy (mirrored left-right if flip) unless an up-to-date one exists."""
     dst = WEB / album.lower() / web_name(src)
     newest = max(src.stat().st_mtime, CONFIG.stat().st_mtime if flip else 0)
-    if not dst.exists() or dst.stat().st_mtime < newest:
+    if not dst.exists() or dst.stat().st_mtime < newest or max(Image.open(dst).size) > LONG_SIDE:
         dst.parent.mkdir(parents=True, exist_ok=True)
         im = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
         im.thumbnail((LONG_SIDE, LONG_SIDE), Image.LANCZOS)
         if flip:
             im = ImageOps.mirror(im)
-        im.save(dst, "JPEG", quality=82, optimize=True, progressive=True)
+        im.save(dst, "JPEG", quality=80, optimize=True, progressive=True)
         print(f"  resized {src.name} -> web/{album.lower()}/{dst.name} ({dst.stat().st_size // 1024} KB)")
     return dst.name
+
+
+def thumb_copy(web, album):
+    """Small copy of a web copy for the strips; returns (file name, width, height)."""
+    dst = THUMBS / album.lower() / web.name
+    if not dst.exists() or dst.stat().st_mtime < web.stat().st_mtime:
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        im = Image.open(web)
+        if im.height > THUMB_HEIGHT:
+            im = im.resize((round(im.width * THUMB_HEIGHT / im.height), THUMB_HEIGHT), Image.LANCZOS)
+        im.save(dst, "JPEG", quality=78, optimize=True, progressive=True)
+    w, h = Image.open(dst).size
+    return dst.name, w, h
 
 
 def guess_date(src):
@@ -291,7 +307,7 @@ def main():
         return a.get("folders") or [a["folder"]]
 
     known = {f for a in albums for f in folders_of(a)}
-    for folder in sorted(p for p in GAL.iterdir() if p.is_dir() and p.name not in ("web", REMOVED.name)):
+    for folder in sorted(p for p in GAL.iterdir() if p.is_dir() and p.name not in ("web", "thumbs", REMOVED.name)):
         if folder.name not in known and photos_in(folder):
             albums.append({"folder": folder.name, "title": folder.name.replace("_", " ").replace("-", " ").title(),
                            "date": "", "description": ""})
@@ -330,7 +346,9 @@ def main():
                 d["date"] = guess_date(p)
             entries.append((f, p.name, d))
             web = f"photo_gallery/web/{f.lower()}/{web_copy(p, f, p.name in flips)}"
-            photos.append(dict({"file": web}, **{k: d[k] for k in FIELDS if d.get(k)}))
+            tname, tw, th = thumb_copy(ROOT / web, f)
+            photos.append(dict({"file": web, "thumb": f"photo_gallery/thumbs/{f.lower()}/{tname}", "w": tw, "h": th},
+                               **{k: d[k] for k in FIELDS if d.get(k)}))
             sheet_photos.append({"name": p.name, "web": web[len("photo_gallery/"):], "details": d})
         data.append({"title": a["title"], "date": a.get("date", ""), "description": a.get("description", ""),
                      "banner": bool(a.get("banner")), "folder": "", "photos": photos})
@@ -344,16 +362,17 @@ def main():
 
     # remove web copies whose original is gone (and folders left empty)
     # web folder names are lower case (web servers are case-sensitive, Windows is not)
-    originals = {p.name.lower(): p for p in GAL.iterdir() if p.is_dir() and p.name not in ("web", REMOVED.name)}
-    for folder in list(WEB.iterdir()) if WEB.exists() else []:
-        src = originals.get(folder.name.lower())
-        keep = {web_name(p) for p in photos_in(src)} if src else set()
-        for f in folder.iterdir():
-            if f.name not in keep:
-                f.unlink()
-                print(f"  removed stale web/{folder.name}/{f.name}")
-        if not any(folder.iterdir()):
-            folder.rmdir()
+    originals = {p.name.lower(): p for p in GAL.iterdir() if p.is_dir() and p.name not in ("web", "thumbs", REMOVED.name)}
+    for base in (WEB, THUMBS):
+        for folder in list(base.iterdir()) if base.exists() else []:
+            src = originals.get(folder.name.lower())
+            keep = {web_name(p) for p in photos_in(src)} if src else set()
+            for f in folder.iterdir():
+                if f.name not in keep:
+                    f.unlink()
+                    print(f"  removed stale {base.name}/{folder.name}/{f.name}")
+            if not any(folder.iterdir()):
+                folder.rmdir()
 
     OUT.write_text("// Generated by tools/build_gallery.py from photo_gallery/ -- edit albums.json and "
                    "photo_details.xlsx, not this file.\n"

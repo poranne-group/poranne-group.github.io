@@ -80,12 +80,14 @@
         .gal-desc { color: #555; font-size: 0.9em; margin: 0 0 14px; }
 
         .gal-strip { position: relative; }
-        .gal-viewport {
-            overflow: hidden;
-            border-radius: 10px;
-            -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
-                    mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+        .gal-viewport { overflow: hidden; border-radius: 10px; }
+        /* soft fade at both ends: plain overlays, much cheaper for the GPU than a mask on a moving strip */
+        .gal-strip::before, .gal-strip::after {
+            content: ""; position: absolute; top: 0; bottom: 0; width: 40px; z-index: 1; pointer-events: none;
         }
+        .gal-strip::before { left: 0; background: linear-gradient(90deg, #fff, rgba(255,255,255,0)); }
+        .gal-strip::after { right: 0; background: linear-gradient(270deg, #fff, rgba(255,255,255,0)); }
+        .gal-static .gal-strip::before, .gal-static .gal-strip::after { display: none; }
         .gal-track { display: flex; width: max-content; will-change: transform; }
         .gal-set { display: flex; gap: 14px; padding-right: 14px; }
         .gal-tile {
@@ -109,7 +111,7 @@
         }
         .gal-prev { left: 6px; }
         .gal-next { right: 6px; }
-        .gal-static .gal-viewport { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+        .gal-static .gal-viewport { overflow-x: auto; }
 
         .gal-lightbox {
             position: fixed; inset: 0; z-index: 2000; display: none;
@@ -262,7 +264,7 @@
 
     <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/gallery-data.js?v=1791908044"></script>
+    <script type="text/javascript" src="assets/js/gallery-data.js?v=1793441169"></script>
     <script type="text/javascript" src="assets/js/gallery.js"></script>
 </body>
 

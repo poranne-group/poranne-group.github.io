@@ -9,67 +9,109 @@ window.GALLERY_ALBUMS = [
         "photos": [
             {
                 "file": "photo_gallery/web/through_the_years/group_photo_2025.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/group_photo_2025.jpg",
+                "w": 840,
+                "h": 560,
                 "event": "Group photo",
                 "date": "2025",
                 "place": "Faculty Day 2025"
             },
             {
                 "file": "photo_gallery/web/through_the_years/dsc0194.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/dsc0194.jpg",
+                "w": 840,
+                "h": 560,
                 "event": "Group photo",
                 "date": "March 2022",
                 "place": "Schulich Faculty of Chemistry, Technion"
             },
             {
                 "file": "photo_gallery/web/through_the_years/dsc0195.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/dsc0195.jpg",
+                "w": 840,
+                "h": 560,
                 "event": "Group photo",
                 "date": "March 2022",
                 "place": "Schulich Faculty of Chemistry, Technion"
             },
             {
                 "file": "photo_gallery/web/through_the_years/lounge-smiling.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/lounge-smiling.jpg",
+                "w": 1153,
+                "h": 560,
                 "date": "April 2022"
             },
             {
-                "file": "photo_gallery/web/through_the_years/lounge-discussion.jpg"
+                "file": "photo_gallery/web/through_the_years/lounge-discussion.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/lounge-discussion.jpg",
+                "w": 840,
+                "h": 560
             },
             {
                 "file": "photo_gallery/web/through_the_years/group_photo_june2023.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/group_photo_june2023.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Group photo",
                 "date": "June 2023"
             },
             {
                 "file": "photo_gallery/web/through_the_years/img_5515.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/img_5515.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Group photo",
                 "date": "June 2023"
             },
             {
                 "file": "photo_gallery/web/through_the_years/img_5521.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/img_5521.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Group photo",
                 "date": "June 2023"
             },
             {
                 "file": "photo_gallery/web/through_the_years/img_5536.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/img_5536.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Group photo",
                 "date": "June 2023"
             },
             {
                 "file": "photo_gallery/web/through_the_years/img_5537.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/img_5537.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Group photo",
                 "date": "June 2023"
             },
             {
                 "file": "photo_gallery/web/through_the_years/whatsapp-image-2022-03-29-at-4.35.41-pm.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/whatsapp-image-2022-03-29-at-4.35.41-pm.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Group photo",
                 "date": "March 2022"
             },
             {
-                "file": "photo_gallery/web/through_the_years/bvdz1484.jpg"
+                "file": "photo_gallery/web/through_the_years/bvdz1484.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/bvdz1484.jpg",
+                "w": 747,
+                "h": 560
             },
             {
-                "file": "photo_gallery/web/through_the_years/ifbt2444.jpg"
+                "file": "photo_gallery/web/through_the_years/ifbt2444.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/ifbt2444.jpg",
+                "w": 747,
+                "h": 560
             },
             {
                 "file": "photo_gallery/web/through_the_years/img_0401.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/img_0401.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Shabu's Farewell Lunch",
                 "date": "September 2026",
                 "place": "Japanika, Haifa",
@@ -77,19 +119,31 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/through_the_years/img_0407.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/img_0407.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Shabu's last day at Poranne Group",
                 "date": "September 2026",
                 "place": "Poranne Group Office, Technion",
                 "people": "Ajeet, Renana, Shabu, Amrita, Pallavi"
             },
             {
-                "file": "photo_gallery/web/through_the_years/mccn1945.jpg"
+                "file": "photo_gallery/web/through_the_years/mccn1945.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/mccn1945.jpg",
+                "w": 747,
+                "h": 560
             },
             {
-                "file": "photo_gallery/web/through_the_years/nyce6410.jpg"
+                "file": "photo_gallery/web/through_the_years/nyce6410.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/nyce6410.jpg",
+                "w": 747,
+                "h": 560
             },
             {
                 "file": "photo_gallery/web/through_the_years/nitz.z-927316.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/nitz.z-927316.jpg",
+                "w": 840,
+                "h": 560,
                 "event": "Faculty Research Day 2026",
                 "date": "June 2026",
                 "place": "Technion",
@@ -97,6 +151,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/through_the_years/nitz.z-927322.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/nitz.z-927322.jpg",
+                "w": 840,
+                "h": 560,
                 "event": "Faculty Research Day 2026",
                 "date": "June 2026",
                 "place": "Technion",
@@ -104,6 +161,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/through_the_years/nitz.z-9309745.jpg",
+                "thumb": "photo_gallery/thumbs/through_the_years/nitz.z-9309745.jpg",
+                "w": 840,
+                "h": 560,
                 "event": "Faculty Research Day 2026",
                 "date": "June 2026",
                 "place": "Technion",
@@ -120,30 +180,45 @@ window.GALLERY_ALBUMS = [
         "photos": [
             {
                 "file": "photo_gallery/web/we_love_our_science/ics_1_2026.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/ics_1_2026.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "ICS Annual Meeting",
                 "date": "February 2026",
                 "place": "Tel Aviv, Israel"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/ics_2_2026.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/ics_2_2026.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "ICS Annual Meeting",
                 "date": "February 2026",
                 "place": "Tel Aviv, Israel"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/ics_4_2026.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/ics_4_2026.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "ICS Annual Meeting",
                 "date": "February 2026",
                 "place": "Tel Aviv, Israel"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/ics_5_2026.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/ics_5_2026.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "ICS Annual Meeting",
                 "date": "February 2026",
                 "place": "Tel Aviv, Israel"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/fatimah-poster.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/fatimah-poster.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "ICESAA3 conference",
                 "date": "July 2024",
                 "place": "Croatia",
@@ -151,6 +226,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0012.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/img-20250101-wa0012.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "ICESAA3 conference",
                 "date": "July 2024",
                 "place": "Croatia",
@@ -158,29 +236,44 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0005.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/img-20250101-wa0005.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "ICESAA3 conference",
                 "date": "July 2024",
                 "place": "Croatia"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0008.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/img-20250101-wa0008.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "ICESAA3 conference",
                 "date": "July 2024",
                 "place": "Croatia"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0010.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/img-20250101-wa0010.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "ICESAA3 conference",
                 "date": "July 2024",
                 "place": "Croatia"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/fatimah-poster2.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/fatimah-poster2.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Poster presentation",
                 "people": "Fatimah"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/eduardo-poster.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/eduardo-poster.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Faculty Day",
                 "date": "2023",
                 "place": "Schulich Faculty of Chemistry, Technion",
@@ -188,6 +281,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/itay-poster.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/itay-poster.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Faculty Day",
                 "date": "2023",
                 "place": "Schulich Faculty of Chemistry, Technion",
@@ -195,6 +291,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/shabu-and-itay-poster.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/shabu-and-itay-poster.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Faculty Day",
                 "date": "2023",
                 "place": "Schulich Faculty of Chemistry, Technion",
@@ -202,6 +301,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/shabu-poster.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/shabu-poster.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Faculty Day",
                 "date": "2023",
                 "place": "Schulich Faculty of Chemistry, Technion",
@@ -209,6 +311,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/shany-poster.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/shany-poster.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Faculty Day",
                 "date": "2023",
                 "place": "Schulich Faculty of Chemistry, Technion",
@@ -216,6 +321,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/shany-poster2.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/shany-poster2.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Faculty Day",
                 "date": "2023",
                 "place": "Schulich Faculty of Chemistry, Technion",
@@ -223,6 +331,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0013.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/img-20250101-wa0013.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Chemistry @ Sete",
                 "date": "2023",
                 "place": "France",
@@ -230,6 +341,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/20250715_135739.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/20250715_135739.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Chemistry @ Sete",
                 "date": "2023",
                 "place": "France",
@@ -237,22 +351,37 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/20250715_135812.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/20250715_135812.jpg",
+                "w": 420,
+                "h": 560,
                 "date": "July 2025"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/20250715_135833.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/20250715_135833.jpg",
+                "w": 315,
+                "h": 560,
                 "date": "July 2025"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/20250715_140001.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/20250715_140001.jpg",
+                "w": 315,
+                "h": 560,
                 "date": "July 2025"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/20250715_140013.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/20250715_140013.jpg",
+                "w": 420,
+                "h": 560,
                 "date": "July 2025"
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/img-20250101-wa0007.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/img-20250101-wa0007.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Talk at ICESAA3",
                 "date": "July 2024",
                 "place": "Croatia",
@@ -260,6 +389,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/nitz.z-927515.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/nitz.z-927515.jpg",
+                "w": 840,
+                "h": 560,
                 "event": "Brain storming session, Faculty Research Day 2026",
                 "date": "June 2026",
                 "place": "Technion",
@@ -267,6 +399,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/nitz.z-9309734.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/nitz.z-9309734.jpg",
+                "w": 840,
+                "h": 560,
                 "event": "Poster Presentation, Faculty Research Day 2026",
                 "date": "June 2026",
                 "place": "Technion",
@@ -274,6 +409,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/nitz.z-9309740.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/nitz.z-9309740.jpg",
+                "w": 840,
+                "h": 560,
                 "event": "Faculty Research Day 2026",
                 "date": "June 2026",
                 "place": "Technion",
@@ -281,6 +419,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/we_love_our_science/whatsapp-image-2026-09-10-at-9.47.53-am.jpg",
+                "thumb": "photo_gallery/thumbs/we_love_our_science/whatsapp-image-2026-09-10-at-9.47.53-am.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "CBOND",
                 "date": "September 2026",
                 "place": "Brussels",
@@ -297,6 +438,9 @@ window.GALLERY_ALBUMS = [
         "photos": [
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-11-at-2.16.39-pm.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/whatsapp-image-2026-09-11-at-2.16.39-pm.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Chemistry Poster Prize for Ajeet at CBOND 2026",
                 "date": "September 2026",
                 "place": "Brussels, Belgium",
@@ -304,6 +448,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-11-at-1.47.55-pm.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/whatsapp-image-2026-09-11-at-1.47.55-pm.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Chemistry Poster Prize for Ajeet at CBOND 2026",
                 "date": "September 2026",
                 "place": "Brussels, Belgium",
@@ -311,6 +458,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-11-at-2.30.10-pm.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/whatsapp-image-2026-09-11-at-2.30.10-pm.jpg",
+                "w": 395,
+                "h": 560,
                 "event": "Chemistry Poster Prize for Ajeet at CBOND 2026",
                 "date": "September 2026",
                 "place": "Brussels, Belgium",
@@ -318,6 +468,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-09-06-at-5.37.56-pm-1.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/whatsapp-image-2026-09-06-at-5.37.56-pm-1.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Itay receives his MSc!",
                 "date": "September 2026",
                 "place": "Technion",
@@ -325,6 +478,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-08-13-at-8.58.56-am.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/whatsapp-image-2026-08-13-at-8.58.56-am.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Amrita's Chem Sci is published!!",
                 "date": "August 2026",
                 "place": "Technion",
@@ -332,61 +488,94 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/eduardo-defense.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/eduardo-defense.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Eduardo's thesis defense",
                 "people": "Eduardo"
             },
             {
                 "file": "photo_gallery/web/our_milestones/20220615_124230.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/20220615_124230.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Moving into our new office!",
                 "date": "June 2022",
                 "place": "Technion"
             },
             {
                 "file": "photo_gallery/web/our_milestones/20220615_124701.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/20220615_124701.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Moving into our new office",
                 "date": "June 2022",
                 "place": "Technion"
             },
             {
                 "file": "photo_gallery/web/our_milestones/20250323_102940.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/20250323_102940.jpg",
+                "w": 994,
+                "h": 560,
                 "event": "Fatimah's birthday",
                 "date": "March 2025",
                 "people": "Fatimah"
             },
             {
                 "file": "photo_gallery/web/our_milestones/20250323_103002.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/20250323_103002.jpg",
+                "w": 994,
+                "h": 560,
                 "event": "Kasia's birthday",
                 "date": "March 2025",
                 "people": "Kasia"
             },
             {
                 "file": "photo_gallery/web/our_milestones/20250714_132616.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/20250714_132616.jpg",
+                "w": 994,
+                "h": 560,
                 "event": "Renana's birthday",
                 "date": "July 2025",
                 "people": "Renana"
             },
             {
                 "file": "photo_gallery/web/our_milestones/img-20250101-wa0025.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/img-20250101-wa0025.jpg",
+                "w": 315,
+                "h": 560,
                 "event": "Fatimah's MSc Seminar",
                 "place": "Technion",
                 "people": "Fatimah"
             },
             {
                 "file": "photo_gallery/web/our_milestones/img-20250101-wa0026.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/img-20250101-wa0026.jpg",
+                "w": 996,
+                "h": 560,
                 "event": "Fatimah's MSc Seminar",
                 "place": "Technion"
             },
             {
                 "file": "photo_gallery/web/our_milestones/img-20250101-wa0027.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/img-20250101-wa0027.jpg",
+                "w": 996,
+                "h": 560,
                 "event": "Fatimah's MSc Seminar",
                 "place": "Technion"
             },
             {
                 "file": "photo_gallery/web/our_milestones/img_0252.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/img_0252.jpg",
+                "w": 747,
+                "h": 560,
                 "date": "September 2026"
             },
             {
                 "file": "photo_gallery/web/our_milestones/img_0386.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/img_0386.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Shabu receiving his farewell gift :)",
                 "date": "September 2026",
                 "place": "Haifa",
@@ -394,6 +583,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/img_0396.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/img_0396.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Shabu with his Project students",
                 "date": "September 2026",
                 "place": "Haifa",
@@ -401,6 +593,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/renana_birthday.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/renana_birthday.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Our beloved Renana's birthday blast :)",
                 "date": "July 2026",
                 "place": "Technion",
@@ -408,6 +603,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-08-30-at-10.52.54-am.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/whatsapp-image-2026-08-30-at-10.52.54-am.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Amrita's Birthday",
                 "date": "August 2026",
                 "place": "Technion",
@@ -415,6 +613,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/our_milestones/whatsapp-image-2026-08-30-at-10.53.10-am.jpg",
+                "thumb": "photo_gallery/thumbs/our_milestones/whatsapp-image-2026-08-30-at-10.53.10-am.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Amrita's Birthday",
                 "date": "August 2026",
                 "place": "Technion",
@@ -431,6 +632,9 @@ window.GALLERY_ALBUMS = [
         "photos": [
             {
                 "file": "photo_gallery/web/having_a_blast/20220915_230425.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/20220915_230425.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Getting to see Greta in Cambridge!",
                 "date": "September 2022",
                 "place": "Cambridge, UK",
@@ -438,17 +642,26 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/20250714_155815.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/20250714_155815.jpg",
+                "w": 315,
+                "h": 560,
                 "event": "Renana's Birthday (we won't say how old)",
                 "date": "July 2025"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/20250822_210225.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/20250822_210225.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Catching up with Alex!",
                 "date": "August 2025",
                 "people": "Alex W., Renana"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/img20260502111949.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/img20260502111949.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Exploring the desert",
                 "date": "May 2026",
                 "place": "Negev, Israel",
@@ -456,6 +669,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/img20260502111952.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/img20260502111952.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Beyond the lab, exploring Israel",
                 "date": "May 2026",
                 "place": "Negev, Israel",
@@ -463,6 +679,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/img20260703105516.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/img20260703105516.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Summer trip!",
                 "date": "July 2026",
                 "place": "Beit She'an, Israel",
@@ -470,6 +689,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/img_0420.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/img_0420.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Bowling Session: Shabu showing his magical trick!!!",
                 "date": "September 2026",
                 "place": "Haifa",
@@ -477,6 +699,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/img_0429.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/img_0429.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Group activity: Bowling night!!!",
                 "date": "September 2026",
                 "place": "Haifa",
@@ -484,12 +709,18 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20250904_111646408.portrait.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/pxl_20250904_111646408.portrait.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Kasia's Birthday :-)",
                 "date": "September 2025",
                 "people": "Kasia"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20250911_190210657.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/pxl_20250911_190210657.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "With Sasha at ESOR2025",
                 "date": "September 2025",
                 "place": "Padova",
@@ -497,18 +728,27 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20251010_111046551.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/pxl_20251010_111046551.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Keren's Wedding!",
                 "date": "October 2025",
                 "people": "Ajeet, Itay"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20251010_111056036.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/pxl_20251010_111056036.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Keren's Wedding!",
                 "date": "October 2025",
                 "people": "Renana, Shabu"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/pxl_20260129_090902476.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/pxl_20260129_090902476.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Shabu's birthday :)",
                 "date": "January 2026",
                 "place": "Technion",
@@ -516,12 +756,18 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2025-10-10-at-12.59.25-pm.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/whatsapp-image-2025-10-10-at-12.59.25-pm.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Keren's Wedding!",
                 "date": "October 2025",
                 "people": "Renana, Ajeet, Shabu, Itay"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-10-at-9.46.57-am2.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/whatsapp-image-2026-09-10-at-9.46.57-am2.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "CBOND 2026 gala night",
                 "date": "September 2026",
                 "place": "Brussels, Belgium",
@@ -529,11 +775,17 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.53.29-pm.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/whatsapp-image-2026-09-16-at-8.53.29-pm.jpg",
+                "w": 315,
+                "h": 560,
                 "event": "Paint by Numbers Night!!",
                 "date": "September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.29-pm.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/whatsapp-image-2026-09-16-at-8.59.29-pm.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Paint by Numbers Night!!",
                 "date": "September 2026",
                 "place": "Technion",
@@ -541,16 +793,25 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.42-pm.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/whatsapp-image-2026-09-16-at-8.59.42-pm.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Paint by Numbers Night!!",
                 "date": "September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.52-pm.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/whatsapp-image-2026-09-16-at-8.59.52-pm.jpg",
+                "w": 420,
+                "h": 560,
                 "event": "Paint by Numbers Night!!",
                 "date": "September 2026"
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.55-pm.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/whatsapp-image-2026-09-16-at-8.59.55-pm.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Paint by Numbers Night!!",
                 "date": "September 2026",
                 "place": "Technion",
@@ -558,6 +819,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.56-pm.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/whatsapp-image-2026-09-16-at-8.59.56-pm.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Paint by Numbers Night!!",
                 "date": "September 2026",
                 "place": "Technion",
@@ -565,6 +829,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/having_a_blast/whatsapp-image-2026-09-16-at-8.59.56-pm2.jpg",
+                "thumb": "photo_gallery/thumbs/having_a_blast/whatsapp-image-2026-09-16-at-8.59.56-pm2.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Paint by Numbers Night!!",
                 "date": "September 2026",
                 "place": "Technion",
@@ -581,6 +848,9 @@ window.GALLERY_ALBUMS = [
         "photos": [
             {
                 "file": "photo_gallery/web/with_our_friends/anya_watoc_2022.jpg",
+                "thumb": "photo_gallery/thumbs/with_our_friends/anya_watoc_2022.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "WATOC 2022",
                 "date": "July 2022",
                 "place": "Vancouver, Canada",
@@ -588,6 +858,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/with_our_friends/20220702_120019.jpg",
+                "thumb": "photo_gallery/thumbs/with_our_friends/20220702_120019.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "WATOC 2022",
                 "date": "July 2022",
                 "place": "Vancouver, Canada",
@@ -595,6 +868,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/with_our_friends/20250709_170226.jpg",
+                "thumb": "photo_gallery/thumbs/with_our_friends/20250709_170226.jpg",
+                "w": 994,
+                "h": 560,
                 "event": "Peter Chen Symposium",
                 "date": "July 2025",
                 "place": "ETH Zurich",
@@ -602,6 +878,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/with_our_friends/20250710_093403.jpg",
+                "thumb": "photo_gallery/thumbs/with_our_friends/20250710_093403.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Peter Chen Symposium",
                 "date": "July 2025",
                 "place": "ETH Zurich",
@@ -609,6 +888,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/with_our_friends/20250710_200322.jpg",
+                "thumb": "photo_gallery/thumbs/with_our_friends/20250710_200322.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Peter Chen Symposium",
                 "date": "July 2025",
                 "place": "Zurich",
@@ -616,6 +898,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/with_our_friends/pxl_20250910_063029882.mp.jpg",
+                "thumb": "photo_gallery/thumbs/with_our_friends/pxl_20250910_063029882.mp.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "ESOR 2025",
                 "date": "September 2025",
                 "place": "Padova",
@@ -623,6 +908,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/with_our_friends/pxl_20251013_175543692.mp.jpg",
+                "thumb": "photo_gallery/thumbs/with_our_friends/pxl_20251013_175543692.mp.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Liebig Lectureship Tour",
                 "date": "October 2025",
                 "place": "Freiburg",
@@ -630,6 +918,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/with_our_friends/pxl_20251210_075901835.jpg",
+                "thumb": "photo_gallery/thumbs/with_our_friends/pxl_20251210_075901835.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "Solvay Workshop",
                 "date": "December 2025",
                 "place": "Brussels",
@@ -637,6 +928,9 @@ window.GALLERY_ALBUMS = [
             },
             {
                 "file": "photo_gallery/web/with_our_friends/whatsapp-image-2026-09-10-at-9.46.57-am.jpg",
+                "thumb": "photo_gallery/thumbs/with_our_friends/whatsapp-image-2026-09-10-at-9.46.57-am.jpg",
+                "w": 747,
+                "h": 560,
                 "event": "CBOND 2026",
                 "date": "September 2026",
                 "place": "Brussels, Belgium",

@@ -3,6 +3,7 @@
  * The banner album (group photos) is a large strip at the top of the page.
  * Each other album is a strip of photos drifting slowly from left to right; hovering, keyboard focus
  * or the pause button stop it, the arrows nudge it, and clicking a photo opens it full size with previous / next.
+ * Strips show small thumbnails; the animation only runs while a strip is on screen and moving.
  */
 (function () {
     var ALBUMS = window.GALLERY_ALBUMS || [];
@@ -10,6 +11,7 @@
     if (!root) return;
 
     var SPEED = 28;   // drift speed in px per second
+    var last = null, running = false;   // the animation loop (see frame / wake below)
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (!ALBUMS.length) {
@@ -48,6 +50,7 @@
             motion.paused = !motion.paused;
             pauseBtn.setAttribute('aria-pressed', String(motion.paused));
             pauseBtn.innerHTML = motion.paused ? '<span aria-hidden="true">&#9654;</span> Play photos' : '<span aria-hidden="true">&#10073;&#10073;</span> Pause photos';
+            wake();
         };
         root.appendChild(pauseBtn);
     }
@@ -109,7 +112,8 @@
             var cap = shortCaption(p);
             // the button carries the name, so the image itself is not announced a second time
             b.setAttribute('aria-label', 'View full size: ' + (cap || album.title + ', photo ' + (i + 1)));
-            b.innerHTML = '<img src="' + album.folder + p.file + '" alt="" loading="lazy">' +
+            b.innerHTML = '<img src="' + album.folder + (p.thumb || p.file) + '" alt="" loading="lazy" decoding="async"' +
+                (p.w ? ' width="' + p.w + '" height="' + p.h + '"' : '') + '>' +
                 (cap ? '<span class="gal-cap" aria-hidden="true">' + esc(cap) + '</span>' : '');
             b.onclick = function () { openLightbox(album, i); };
             return b;
@@ -146,10 +150,11 @@
                 track.appendChild(c);
             }
             s.setWidth = w * reps;
+            wake();
         }
 
         viewport.addEventListener('mouseenter', function () { s.hover = true; });
-        viewport.addEventListener('mouseleave', function () { s.hover = false; });
+        viewport.addEventListener('mouseleave', function () { s.hover = false; wake(); });
         // tabbing to a photo: stop the strip and slide the photo into view
         viewport.addEventListener('focusin', function (e) {
             s.focus = true;
@@ -159,18 +164,34 @@
                 var t = e.target.getBoundingClientRect(), v = viewport.getBoundingClientRect(), pad = 48;
                 if (t.left < v.left + pad) s.offset += v.left + pad - t.left;
                 else if (t.right > v.right - pad) s.offset -= t.right - (v.right - pad);
-                track.style.transform = 'translateX(' + (s.offset - s.setWidth) + 'px)';
+                apply();
             });
         });
-        viewport.addEventListener('focusout', function () { s.focus = false; });
-        sec.querySelector('.gal-prev').onclick = function () { s.nudge -= 320; if (!s.loop) viewport.scrollBy({ left: -320, behavior: 'smooth' }); };
-        sec.querySelector('.gal-next').onclick = function () { s.nudge += 320; if (!s.loop) viewport.scrollBy({ left: 320, behavior: 'smooth' }); };
+        viewport.addEventListener('focusout', function () { s.focus = false; wake(); });
+        sec.querySelector('.gal-prev').onclick = function () { s.nudge -= 320; wake(); if (!s.loop) viewport.scrollBy({ left: -320, behavior: 'smooth' }); };
+        sec.querySelector('.gal-next').onclick = function () { s.nudge += 320; wake(); if (!s.loop) viewport.scrollBy({ left: 320, behavior: 'smooth' }); };
 
         // touch: drag to move
         var startX = null, startOff = 0;
         viewport.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; startOff = s.offset; s.hover = true; }, { passive: true });
-        viewport.addEventListener('touchmove', function (e) { if (startX !== null) s.offset = startOff + (e.touches[0].clientX - startX); }, { passive: true });
-        viewport.addEventListener('touchend', function () { startX = null; s.hover = false; });
+        viewport.addEventListener('touchmove', function (e) { if (startX !== null) { s.offset = startOff + (e.touches[0].clientX - startX); apply(); } }, { passive: true });
+        viewport.addEventListener('touchend', function () { startX = null; s.hover = false; wake(); });
+
+        // only animate while the strip is on screen
+        s.visible = true;
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (es) { s.visible = es[es.length - 1].isIntersecting; wake(); }).observe(viewport);
+        }
+
+        var shown = null;
+        function apply() {
+            if (!s.setWidth) return;
+            s.offset = ((s.offset % s.setWidth) + s.setWidth) % s.setWidth;
+            var x = Math.round(s.offset - s.setWidth);   // whole-pixel steps: the slow drift redraws ~28 times a second, not 60
+            if (x === shown) return;
+            shown = x;
+            track.style.transform = 'translate3d(' + x + 'px,0,0)';
+        }
 
         // re-measure once images have loaded (widths depend on them)
         build();
@@ -179,27 +200,35 @@
             img.addEventListener('load', function () { if (s.loop) measure(); });
         });
 
+        s.drifting = function () { return !(s.hover || s.focus || lightboxOpen || stopped()); };
+        s.active = function () { return s.loop && s.setWidth && s.visible && !s.focus && (s.nudge || s.drifting()); };
         s.step = function (dt) {
-            if (!s.loop || !s.setWidth || s.focus) return;
+            if (!s.active()) return;
             // moving left -> right: offset grows, wraps by one unit width
-            var v = (s.hover || s.focus || lightboxOpen || stopped()) ? 0 : SPEED;
             if (s.nudge) { var d = s.nudge * Math.min(1, dt * 6); s.offset -= d; s.nudge -= d; if (Math.abs(s.nudge) < 0.5) s.nudge = 0; }
-            s.offset += v * dt;
-            s.offset = ((s.offset % s.setWidth) + s.setWidth) % s.setWidth;
-            track.style.transform = 'translateX(' + (s.offset - s.setWidth) + 'px)';
+            if (s.drifting()) s.offset += SPEED * dt;
+            apply();
         };
         s.remeasure = function () { if (s.loop) measure(); };
         return s;
     }
 
-    var last = null;
+    // one animation loop for all strips; it stops itself when nothing is moving and wake() restarts it
     function frame(ts) {
         var dt = last === null ? 0 : Math.min((ts - last) / 1000, 0.1);
         last = ts;
         strips.forEach(function (s) { s.step(dt); });
+        if (strips.some(function (s) { return s.active(); })) requestAnimationFrame(frame);
+        else { running = false; last = null; }
+    }
+    function wake() {
+        if (running) return;
+        running = true;
         requestAnimationFrame(frame);
     }
-    requestAnimationFrame(frame);
+    // the toolbar's "Stop motion" switch
+    new MutationObserver(wake).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    wake();
 
     var rt;
     window.addEventListener('resize', function () {
@@ -252,6 +281,7 @@
         lightboxOpen = false;
         document.body.style.overflow = '';
         if (opener) opener.focus();
+        wake();
     }
     lb.querySelector('.gal-lb-close').onclick = close;
     lb.querySelector('.gal-lb-prev').onclick = function (e) { e.stopPropagation(); show(cur.i - 1); };
