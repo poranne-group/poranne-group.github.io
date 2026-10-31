@@ -18,6 +18,14 @@ window.NEWS = [
   },
   {
     "date": "2026-10",
+    "type": "paper",
+    "short": "Zircona­cycles",
+    "title": "New paper in Organic Letters",
+    "text": "Zirconacyclopentadiene Transformations to Phenanthrene-Annulated Antiaromatic Compounds, by Shabu together with the Tilley group.",
+    "link": "https://doi.org/10.1021/acs.orglett.6c03377"
+  },
+  {
+    "date": "2026-10",
     "type": "people",
     "short": "Welcome, Ofree!",
     "title": "Ofree joins the group as an MSc student",
